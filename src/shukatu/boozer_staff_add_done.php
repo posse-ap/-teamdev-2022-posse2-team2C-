@@ -30,7 +30,7 @@ session_start();
 $name = htmlspecialchars($_POST["name"], ENT_QUOTES, "UTF-8");
 $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
  
-$dsn = "mysql:host=db;dbname=shukatsu;charset=utf8";
+$dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
 $password = "password";
 $dbh = new PDO($dsn, $user, $password);

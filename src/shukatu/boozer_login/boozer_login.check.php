@@ -11,7 +11,7 @@ $pass = $post["pass"];
 //パスワード乱数化
 $pass = md5($pass);
     
-$dsn = "mysql:host=db;dbname=shukatsu;charset=utf8";
+$dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
 $password = "password";
 $dbh = new PDO($dsn, $user, $password);
