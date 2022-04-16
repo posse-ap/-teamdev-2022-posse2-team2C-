@@ -1,4 +1,4 @@
-DROP SCHEMA IF EXISTS shukatsu;
+DROP SCHEMA IF EXISTS shukasu;
 
 CREATE SCHEMA shukatsu;
 
@@ -44,7 +44,19 @@ SET
 
 
 DROP TABLE IF EXISTS agent_acount;
-CREATE TABLE  (
+CREATE TABLE agent_acount (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `agent_id` INT NOT NULL ,
+  `conpany_name` VARCHAR(255) NOT NULL,
+  `company_staff` VARCHAR(255) NOT NULL,
+  `account_email_address` VARCHAR(255) NOT NULL,
+  `account_password` VARCHAR(255) NOT NULL,
+  `google account` VARCHAR(255) NOT NULL,
+  `post_period` DATETIME NOT NULL
+);
+
+DROP TABLE IF EXISTS agent_acount;
+CREATE TABLE agent_acount (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `agent_id` INT NOT NULL ,
   `conpany_name` VARCHAR(255) NOT NULL,
