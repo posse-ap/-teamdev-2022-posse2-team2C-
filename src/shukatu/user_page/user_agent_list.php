@@ -11,10 +11,12 @@ session_regenerate_id(true);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECサイトTOP</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="./style.css">
 </head>
     
 <body>
+    <!-- この辺にheader作ってもろて！ -->
+    <h1 class="head_text">css繋がってますかちぇっく</h1>
  
 <?php
 try{
