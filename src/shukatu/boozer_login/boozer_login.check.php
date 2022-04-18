@@ -31,7 +31,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 //databaseに情報があるかどうかチェック
 if(empty($rec["name"]) === true) {
     print "入力が間違っています。<br><br>";
-    print "<a href='staff_login.html'>戻る</a>";
+    print "<a href='boozer_login.html'>戻る</a>";
     exit();
 } else {
     //一意のsessionIDを付与 ページ移動しても情報保持できる

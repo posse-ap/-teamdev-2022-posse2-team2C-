@@ -45,7 +45,7 @@ SET
 DROP TABLE IF EXISTS agent;
 CREATE TABLE  agent(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  agent_code INT NOT NULL ,
+  agent_id INT NOT NULL ,
   catchphrase VARCHAR(255) NOT NULL,
   feature VARCHAR(255) NOT NULL,
   region_code VARCHAR(255) NOT NULL,
@@ -82,16 +82,17 @@ CREATE TABLE  agent_area_connect(
 
 
 -- ここからエージェント自身の情報テーブル
-DROP TABLE IF EXISTS agent_acount;
-CREATE TABLE  agent_acount(
+DROP TABLE IF EXISTS agent_account;
+CREATE TABLE  agent_account(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   agent_id INT NOT NULL ,
-  conpany_name VARCHAR(255) NOT NULL,
+  company_name VARCHAR(255) NOT NULL,
   company_staff VARCHAR(255) NOT NULL,
   account_email_address VARCHAR(255) NOT NULL,
   account_password VARCHAR(255) NOT NULL,
   google_account VARCHAR(255) NOT NULL,
-  `post_period` DATETIME NOT NULL
+  `post_period_start` DATETIME NOT NULL,
+  `post_period_end` DATETIME NOT NULL
 );
 
 -- タグテーブル
@@ -112,4 +113,14 @@ CREATE TABLE shukatu.staff (
 code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 name VARCHAR(225) NOT NULL,
 password VARCHAR(225) NOT NULL
+); 
+
+DROP TABLE IF EXISTS product;
+CREATE TABLE product (
+code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+category VARCHAR(10) NOT NULL,
+name VARCHAR(30) NOT NULL,
+price INT NOT NULL,
+image VARCHAR(300) NOT NULL,
+explanation VARCHAR(100) NOT NULL
 ); 
