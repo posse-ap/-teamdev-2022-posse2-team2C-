@@ -6,23 +6,31 @@ header {
   background-color: #26a69a;
   width: 100vw;
 }
+
 header #header_logo {
   color: white;
   margin: 0 auto;
   text-align: center;
 }
+
 header #header_logo_shukatu {
   display: inline-block;
   font-size: 30px;
 }
+
 header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 0;
 }
+
 header nav ul li {
   display: inline-block;
 }
+
 header nav ul li a {
   text-decoration: none;
   color: white;
@@ -33,6 +41,7 @@ footer {
   background-color: #26a69a;
   height: 100px;
 }
+
 footer #boozer_logo {
   margin: 0 auto;
   display: block;

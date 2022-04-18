@@ -11,32 +11,14 @@ session_regenerate_id(true);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECサイトTOP</title>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./momo.css">
 </head>
     
 <body>
-    <!-- この辺にheader作ってもろて！ -->
-    <header id="header">
-        <div id="header_logo">
-            <section id = "header_logo_shukatu">就活</section>.com
-        </div>
-        <nav>
-            <ul>
-                <li><a href="">就活サイト</a></li>
-                <li><a href="">就活支援サービス</a></li>
-                <li><a href="">自己分析診断ツール</a></li>
-                <li><a href="">ES添削サービス</a></li>
-                <li><a href="">就活エージェント</a></li>
-                <li><a href="">就活エージェント比較</a></li>
-                <li><a href="">就活.comとは</a></li>
-                <li><a href="">お問い合わせ</a></li>
-            </ul>
-        </nav>
-    </header>
- 
-<?php
+    <!-- header -->
+    <?php include "../common/common_header.html" ;
+
 try{
- 
     $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
     $user = "root";
     $password = "password";
@@ -122,7 +104,7 @@ $dbh_2 = null;
          //デメリット
          print $rec_2["cons"]."<br>";
          print "<br>";
-         print '<a href="">';
+         print "<a href='user_detail.php?agent_id=".$agent_id."'>";
         print "<div>詳しく見る</div>";
         print "</a>";
         

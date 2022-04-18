@@ -24,12 +24,13 @@ session_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お気に入り情報</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="./momo.css">
 </head>
     
 <body>
-    
+<?php include "../common/common_header.html" ?> 
 <?php
+
 
 if(empty($_SESSION["cart"]) === true) {
 
@@ -47,30 +48,21 @@ $max = count($cart);
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
 $password = "password";
-$dbh_2 = new PDO($dsn, $user, $password);
-$dbh_2 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dbh = new PDO($dsn, $user, $password);
+$dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 foreach($cart as $key => $val) {
 
-$sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
-$stmt_2 = $dbh_2 -> prepare($sql_2);
+$sql = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+$stmt = $dbh -> prepare($sql);
 $data[0] = $val;
-$stmt_2 -> execute($data);
+$stmt -> execute($data);
     
-$rec_2 = $stmt_2 -> fetch(PDO::FETCH_ASSOC);
+$rec = $stmt -> fetch(PDO::FETCH_ASSOC);
     
-$agent_id[] =$rec_2["agent_id"];
-// $catchphrase[] = $rec_2["catchphrase"];
-// $feature[] = $rec_2["feature"];
-// $region_code[] = $rec_2["region_code"];
-// $prefecture_code[] = $rec_2["prefecture_code"];
-// $online_meeting[] = $rec_2["online_meeting"];
-// $membership[] = $rec_2["membership"];
-// $pros[] = $rec_2["pros"];
-// $cons[] = $rec_2["cons"];
-
+$agent_id[] = $rec["agent_id"];
 }
-$dbh_2 = null;
+$dbh = null;
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
@@ -78,12 +70,19 @@ catch(Exception $e) {
 }
 ?>
     
-<form action="agent_quantity.php" method="post">
+<form action="shop_quantity.php" method="post">
 お気に入り一覧<br><br>
-<?php for($i = 1; $i < $max; $i++) {;?>
-
-エージェントcode:<?php print $agent_id[$i];?><br>
-
+<?php for($i = 0; $i < $max; $i++) {;?>
+<?php if(empty($image[$i]) === true) {;?>
+<?php $disp_image = "";?>
+<?php } else {;?>
+<?php $disp_image = "<img src='../product/image/".$image[$i]."'>";?>
+<?php };?>
+<?php print $disp_image;?>
+エージェント名:<?php print $name[$i];?><br>
+価格:<?php print $price[$i]."円　";?><br>
+数量:<input type="text" name="quantity<?php print $i;?>" value="<?php print $quantity[$i];?>"><br>
+合計価格:<?php print $price[$i] * $quantity[$i]."円";?><br>
 削除:<input type="checkbox" name="delete<?php print $i;?>"><br>
 <br>
  
