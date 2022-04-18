@@ -47,12 +47,12 @@ $dbh = null;
         
 }catch(Exception $e) {
     echo "(´･ω･`)人(`･ω･´)ﾄﾞﾝﾏｲ!!: " . $e->getMessage() . "\n";
-    print "<a href='./staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='./staff_login/boozer_login.html'>ログイン画面へ</a>";
 }
 ?>
     
-スタッフを追加しました。<br><br>
-<a href="staff_list.php">スタッフ一覧へ</a>
+boozerスタッフを追加しました。<br><br>
+<a href="boozer_staff_list.php">boozerスタッフ一覧へ</a>
  
 </body>
 </html>
