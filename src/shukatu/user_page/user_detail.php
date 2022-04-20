@@ -48,7 +48,7 @@ catch(Exception $e) {
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
-<a href="user_cartin.php?code=<?php print $agent_id;?>">お気に入り一覧に入れる</a>
+<a href="user_cartin.php?agent_id=<?php print $agent_id;?>">お気に入り一覧に入れる</a>
 
 
 
