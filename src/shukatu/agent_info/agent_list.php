@@ -53,7 +53,7 @@ $stmt_2 -> execute();
 $dbh_2 = null;
     
 print "エージェント一覧<br><br>";
-print "<form action='pro_branch.php' method='post'>";
+print "<form action='agent_branch.php' method='post'>";
     
 //ずっとループ
 while(true) {
@@ -61,7 +61,7 @@ while(true) {
     if($rec === false) {
         break;
     }
-    print "<input type='radio' name='code' value='".$rec['agent_id']."'>";
+    print "<input type='radio' name='agent_id' value='".$rec['agent_id']."'>";
     //会社名
     print $rec["company_name"]."<br>";
     //担当者名

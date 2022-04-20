@@ -41,7 +41,7 @@ $stmt -> execute();
 $dbh = null;
     
 print "スタッフ一覧<br><br>";
-print "<form action='staff_branch.php' method='post'>";
+print "<form action='boozer_staff_branch.php' method='post'>";
 
 //trueの間は実行=永久ぐるぐる、レコードの情報を$recに格納
 while(true) {

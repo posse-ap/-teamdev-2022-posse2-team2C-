@@ -44,6 +44,7 @@ $agent_id = $_GET["agent_id"];
 // postやgetで値を渡さなくともページ移動で値が保持されるもの 
 
 //cartが空っぽじゃなかったらtrue
+
 if(isset($_SESSION["cart"]) === true) {
     //複数選択されたら配列を渡したいから一旦任意の変数に情報を移す
     $cart = $_SESSION["cart"];

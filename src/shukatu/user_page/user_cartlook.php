@@ -24,26 +24,27 @@ session_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お気に入り情報</title>
-<link rel="stylesheet" href="./momo.css">
+<link rel="stylesheet" href="../style.css">
 </head>
     
 <body>
-<?php include "../common/common_header.html" ?> 
+    
 <?php
-
 
 if(empty($_SESSION["cart"]) === true) {
 
     print "お気に入りにエージェントはありません。<br><br>";
-    // var_dump($_SESSION["cart"]);
-    print "<a href='shop_list.php'>エージェント一覧へ戻る</a>";
+    var_dump($_SESSION["cart"]);
+
+    print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
     exit();
 }
  
 try{
 $cart = $_SESSION["cart"];
-$quantity = $_SESSION["quantity"];
+// $quantity = $_SESSION["quantity"];
 $max = count($cart);
+echo $max;
     
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
@@ -59,8 +60,13 @@ $data[0] = $val;
 $stmt -> execute($data);
     
 $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
-    
+
+// var_dump($rec);
+
 $agent_id[] = $rec["agent_id"];
+$catchphrase[] = $rec["catchphrase"];
+$feature[] = $rec["feature"];
+
 }
 $dbh = null;
 }
@@ -70,7 +76,7 @@ catch(Exception $e) {
 }
 ?>
     
-<form action="shop_quantity.php" method="post">
+<form action="agent_quantity.php" method="post">
 お気に入り一覧<br><br>
 <?php for($i = 0; $i < $max; $i++) {;?>
 <?php if(empty($image[$i]) === true) {;?>
@@ -79,10 +85,11 @@ catch(Exception $e) {
 <?php $disp_image = "<img src='../product/image/".$image[$i]."'>";?>
 <?php };?>
 <?php print $disp_image;?>
-エージェント名:<?php print $name[$i];?><br>
-価格:<?php print $price[$i]."円　";?><br>
-数量:<input type="text" name="quantity<?php print $i;?>" value="<?php print $quantity[$i];?>"><br>
-合計価格:<?php print $price[$i] * $quantity[$i]."円";?><br>
+エージェント名:<?php print $agent_id[$i];?><br>
+キャッチフレーズ:<?php print $catchphrase[$i];?><br>
+特徴:<?php print $feature[$i];?><br>
+
+<!-- 合計価格:<?php print $price[$i] * $quantity[$i]."円";?><br> -->
 削除:<input type="checkbox" name="delete<?php print $i;?>"><br>
 <br>
  
@@ -95,7 +102,7 @@ catch(Exception $e) {
 <input type="button" onclick="history.back()" value="戻る">
 </form>
 <br>
-<a href="shop_form_check.php">個人情報入力に進む</a><br>
+<a href="user_info_form_check.php">個人情報入力に進む</a><br>
 <br><br>
  
 </body>
