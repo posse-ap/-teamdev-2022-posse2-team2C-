@@ -25,7 +25,7 @@ if(isset($_SESSION["login"]) === false) {
 
 <?php
 try{
-//pro_branch.phpでurlに乗せたやつを取ってくる 
+//agent_branch.phpでurlに乗せたやつを取ってくる 
 $agent_id = $_GET["agent_id"];
     
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -33,9 +33,7 @@ $user = "root";
 $password = "password";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- 
-//urlに乗ってきたcodeを元に識別
-$sql = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+$sql = "SELECT agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent_account WHERE agent_id=?";
 $stmt = $dbh -> prepare($sql);
 $data[] = $agent_id;
 $stmt -> execute($data);
@@ -43,13 +41,22 @@ $stmt -> execute($data);
 $dbh = null;
     
 $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
+
+$dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+$user = "root";
+$password = "password";
+$dbh_2 = new PDO($dsn, $user, $password);
+$dbh_2 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ 
+//urlに乗ってきたcodeを元に識別
+$sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+$stmt_2 = $dbh_2 -> prepare($sql_2);
+$data_2[] = $agent_id;
+$stmt_2 -> execute($data_2);
     
-// if(empty($rec["image"]) === true) {
-//     $disp_image = "";
-// } else {
-//     $disp_image = "<img src='./image/".$rec['image']."'>";
-// }
+$dbh_2 = null;
     
+$rec_2 = $stmt_2 -> fetch(PDO::FETCH_ASSOC);
 }
 catch(Exception $e) {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
@@ -62,23 +69,61 @@ catch(Exception $e) {
  の情報を修正します。
 <br><br>
 <form action="agent_edit_check.php" method="post" enctype="multipart/form-data">
-カテゴリー<br>
 
+アカウント情報の登録<br>
+エージェントid<br>
+<input type="text" name="agent_id" value="<?php print $rec['agent_id'];?>">
+<br><br>
+エージェント会社名<br>
+<input type="text" name="company_name" value="<?php print $rec['company_name'];?>">
+<br><br>
+エージェント会社スタッフ名<br>
+<input type="text" name="company_staff" value="<?php print $rec['company_staff'];?>">
+<br><br>
+アカウントのメールアドレス<br>
+<input type="text" name="account_email_address" value="<?php print $rec['account_email_address'];?>">
+<br><br>
+アカウントのパスワード<br>
+<input type="text" name="account_password" value="<?php print $rec['account_password'];?>">
+<br><br>
+google_account<br>
+<input type="text" name="google_account" value="<?php print $rec['google_account'];?>">
+<br><br>
+掲載開始日<br>
+<input type="datetime" name="post_period_start" value="<?php print $rec['post_period_start'];?>">
+<br><br>
+掲載終了日<br>
+<input type="text" name="post_period_end" value="<?php print $rec['post_period_end'];?>">
+<br><br><br><br>
+掲載情報の登録<br>
+エージェントid（上のagent_idと同じだから入力なし）<br>
+<!-- <input type="text" name="agent_id" value=""> -->
+<br><br>
+キャッチフレーズ<br>
+<input type="text" name="catchphrase" value="<?php print $rec_2['catchphrase'];?>">
+<br><br>
+特徴<br>
+<input type="text" name="feature" value="<?php print $rec_2['feature'];?>">
+<br><br>
+エリア<br>
+地域code<br>
+<input type="text" name="region_code" value="<?php print $rec_2['region_code'];?>">
+<br><br>
+県code<br>
+<input type="text" name="prefecture_code" value="<?php print $rec_2['prefecture_code'];?>">
+<br><br>
+オンライン面談可否<br>
+<input type="text" name="online_meeting" value="<?php print $rec_2['online_meeting'];?>">
+<br><br>
+会員数<br>
+<input type="text" name="membership" value="<?php print $rec_2['membership'];?>">
+<br><br>
+メリット<br>
+<input type="text" name="pros" value="<?php print $rec_2['pros'];?>">
+<br><br>
+デメリット<br>
+<input type="text" name="cons" value="<?php print $rec_2['cons'];?>">
 
-<br><br>
-エージェント名<br>
-<input type="text" name="name" value="<?php print $rec['catchphrase'];?>">
-<br><br>
-価格<br>
-<input type="text" name="price" value="<?php print $rec['feature'];?>">
-<br><br>
-画像<br>
-
-<br>
-<input type="file" name="image">
-<br><br>
-詳細<br>
-<textarea name="comments" style="width: 500px; height: 100px;"><?php print $rec['pros'];?></textarea>
 <br><br>
 <input type="hidden" name="agent_id" value="<?php print $rec['agent_id'];?>">
 <input type="button" onclick="history.back()" value="戻る">

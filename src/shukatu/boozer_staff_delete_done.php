@@ -20,7 +20,6 @@ if(isset($_SESSION["login"]) === false) {
 <title>スタッフ削除実効</title>
 <link rel="stylesheet" href="../style.css">
 </head>
-    
 <body>
 
 <?php
