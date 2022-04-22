@@ -9,20 +9,6 @@
 </head>
 <body>
   <?php include "../common/common_header.html" ?>
-  <section class="page_switch">
-    <a href="">
-      <div class="page_switch_button">TOPページ</div>
-    </a>
-    <a href="">
-      <div class="page_switch_button">使い方ガイド</div>
-    </a>
-    <a href="">
-      <div class="page_switch_button">お気に入り一覧</div>
-    </a>
-    <a href="">
-      <div class="page_switch_button">Q&A・お問い合わせ</div>
-    </a>
-  </section>
 
   <div id="title_howToUse">CRAFT利用の流れ</div>
   <div id="user_flow">
