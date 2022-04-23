@@ -28,7 +28,7 @@ if(isset($_SESSION["login"]) === false) {
 <?php print $_SESSION["code"];
   ?><br><br>
 
-    <a href="../boozer_staff_list.php">スタッフ管理</a>
+    <a href="../boozer_page/boozer_staff_list.php">スタッフ管理</a>
     <br><br>
     <a href="../agent_info/agent_add.php">新規エージェント登録</a>
     <br><br>

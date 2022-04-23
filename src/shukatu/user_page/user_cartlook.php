@@ -107,6 +107,6 @@ catch(Exception $e) {
 <br>
 <a href="user_info_form_check.php">個人情報入力に進む</a><br>
 <br><br>
- 
+<script src="../js/header.js"></script>
 </body>
 </html>
