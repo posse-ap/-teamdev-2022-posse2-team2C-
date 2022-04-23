@@ -1,8 +1,9 @@
 <?php
 try {
- 
+
 //入力された情報をpostで取得（クロスサイトスクリプティング防止）
 $code = htmlspecialchars($_POST["code"], ENT_QUOTES, "UTF-8");
+// 入力された情報が変なものだったとき用に入力されたものを一旦意味のない文字列に変換する
 $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
 
 //パスワード乱数化
@@ -24,6 +25,7 @@ $stmt -> execute($data);
 $dbh = null;
     
 $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
+// テーブルで撮ってきたものをここで吐いている
     
 //databaseに情報があるかどうかチェック
 if(empty($rec["name"]) === true) {
@@ -48,3 +50,4 @@ catch(Exception $e) {
     print "<a href='agent_login.html'>戻る</a>";
 }
 ?>
+
