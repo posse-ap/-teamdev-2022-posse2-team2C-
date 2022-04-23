@@ -5,7 +5,7 @@ session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
     exit();
 } else {
     print $_SESSION["name"]."さんログイン中";
@@ -67,7 +67,6 @@ catch(Exception $e) {
 }
 ?>
 <br><br>
-<a href="./boozer_login/boozer_login_top.php">管理画面TOPへ</a>
-    
+<a href="../boozer_login/boozer_login_top.php">管理画面TOPへ</a>
 </body>
 </html>

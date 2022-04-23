@@ -69,6 +69,6 @@ print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
  
 ?>
 <br><br>
- 
+<script src="../js/header.js"></script>
 </body>
 </html>
