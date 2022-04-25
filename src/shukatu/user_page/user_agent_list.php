@@ -120,5 +120,7 @@ $dbh_2 = null;
     <footer>
         <img src="./img/boozer_logo.png" alt="" id = "boozer_logo">
     </footer>
+
+    <script src="../js/header.js"></script>
 </body>
 </html>

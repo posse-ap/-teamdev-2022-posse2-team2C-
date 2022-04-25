@@ -47,7 +47,7 @@ $dbh = null;
         
 }catch(Exception $e) {
     echo "(´･ω･`)人(`･ω･´)ﾄﾞﾝﾏｲ!!: " . $e->getMessage() . "\n";
-    print "<a href='./staff_login/boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
 }
 ?>
     

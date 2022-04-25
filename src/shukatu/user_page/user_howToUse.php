@@ -26,5 +26,6 @@
 
     <div id="step_5">⑤面談や企業紹介</div>
   </div>
+  <script src="../js/header.js"></script>
 </body>
 </html>

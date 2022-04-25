@@ -1,0 +1,73 @@
+
+📦shukatu
+┃
+┣ 📂agent_info
+┃ ┣ 📜agent_add.php
+┃ ┣ 📜agent_add_check.php
+┃ ┣ 📜agent_add_done.php
+┃ ┣ 📜agent_branch.php
+┃ ┣ 📜agent_delete.php
+┃ ┣ 📜agent_delete_done.php
+┃ ┣ 📜agent_disp.php
+┃ ┣ 📜agent_edit.php
+┃ ┣ 📜agent_edit_check.php
+┃ ┣ 📜agent_edit_done.php
+┃ ┣ 📜agent_list.php
+┃ ┗ 📜agent_ng.php
+┃
+┣ 📂agent_login
+┃ ┣ 📜agent_login.html（エージェントログイン）
+┃ ┣ 📜agent_login_check.php
+┃ ┣ 📜agent_login_top.php
+┃ ┗ 📜agent_logout.php
+┃
+┣ 📂boozer_login
+┃ ┣ 📜boozer_login.check.php
+┃ ┣ 📜boozer_login.html（boozerログイン）
+┃ ┣ 📜boozer_login_top.php
+┃ ┗ 📜boozer_logout.php
+┃
+┣ 📂boozer_page
+┃ ┣ 📜boozer_staff_add.php
+┃ ┣ 📜boozer_staff_add_check.php
+┃ ┣ 📜boozer_staff_add_done.php
+┃ ┣ 📜boozer_staff_branch.php
+┃ ┣ 📜boozer_staff_delete.php
+┃ ┣ 📜boozer_staff_delete_done.php
+┃ ┣ 📜boozer_staff_disp.php
+┃ ┣ 📜boozer_staff_edit.php
+┃ ┣ 📜boozer_staff_edit_check.php
+┃ ┣ 📜boozer_staff_edit_done.php
+┃ ┣ 📜boozer_staff_list.php
+┃ ┗ 📜boozer_staff_ng.php
+┃
+┣ 📂common（共通部分で省略したいものはここ）
+┃ ┣ 📜common.php（phpのクロスなんちゃら防止）
+┃ ┗ 📜common_header.html（headerのhtml）
+┃
+┣ 📂js
+┃ ┗ 📜header.js
+┃
+┣ 📂style
+┃ ┣ 📜.DS_Store
+┃ ┣ 📜_howToUse.scss
+┃ ┣ 📜craft.css
+┃ ┣ 📜craft.css.map
+┃ ┣ 📜craft.min.css
+┃ ┣ 📜craft.min.css.map
+┃ ┗ 📜craft.scss
+┃
+┣ 📂user_page
+┃ ┣ 📂agent_img
+┃ ┣ 📂img
+┃ ┃ ┗ 📜boozer_logo.png
+┃ ┣ 📜.DS_Store
+┃ ┣ 📜agent_quantity.php
+┃ ┣ 📜user_agent_list.php
+┃ ┣ 📜user_cartin.php
+┃ ┣ 📜user_cartlook.php
+┃ ┣ 📜user_detail.php
+┃ ┣ 📜user_howToUse.php
+┃ ┗ 📜user_info_form_check.php
+┃
+┗ 📜.DS_Store
