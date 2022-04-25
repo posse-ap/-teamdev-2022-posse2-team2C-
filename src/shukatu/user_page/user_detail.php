@@ -69,6 +69,6 @@ catch(Exception $e) {
 <a href="shop_list_book.php">書籍</a><br>
 <a href="shop_list_niti.php">日用品</a><br>
 <a href="shop_list_sonota.php">その他</a><br> -->
- 
+<script src="../js/header.js"></script>
 </body>
 </html>

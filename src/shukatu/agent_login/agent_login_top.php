@@ -8,8 +8,8 @@ if(isset($_SESSION["login"]) === false) {
     print "<a href='agent_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print "<h1>boozer用管理画面TOP</h1><br>" . $_SESSION["name"]."様ログイン中";
-    print "<br>ここがboozerのホーム画面";
+    print "<h1>エージェント用管理画面TOP</h1><br>" . $_SESSION["name"]."様ログイン中";
+    print "<br>";
 }
 ?>
  
@@ -25,15 +25,8 @@ if(isset($_SESSION["login"]) === false) {
 <body>
     
 <br><br>
-<?php print $_SESSION["code"];
+<?php print $_SESSION["agent_id"];
   ?><br><br>
-
-    <a href="../boozer_page/boozer_staff_list.php">スタッフ管理</a>
-    <br><br>
-    <a href="../agent_info/agent_add.php">新規エージェント登録</a>
-    <br><br>
-    <a href="../agent_info/agent_list.php">エージェント一覧</a>
-    <br><br>
-    <a href="boozer_logout.php">ログアウト</a>
+    <a href="agent_logout.php">ログアウト</a>
 </body>
 </html>

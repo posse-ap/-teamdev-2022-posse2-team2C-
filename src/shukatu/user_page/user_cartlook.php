@@ -24,7 +24,7 @@ session_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お気に入り情報</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style/craft.css">
 </head>
     
 <body>
@@ -41,6 +41,8 @@ if(empty($_SESSION["cart"]) === true) {
 }
  
 try{
+    //header表示
+    include "../common/common_header.html" ; 
 $cart = $_SESSION["cart"];
 // $quantity = $_SESSION["quantity"];
 $max = count($cart);
@@ -74,6 +76,7 @@ catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
+
 ?>
     
 <form action="agent_quantity.php" method="post">
@@ -104,6 +107,6 @@ catch(Exception $e) {
 <br>
 <a href="user_info_form_check.php">個人情報入力に進む</a><br>
 <br><br>
- 
+<script src="../js/header.js"></script>
 </body>
 </html>

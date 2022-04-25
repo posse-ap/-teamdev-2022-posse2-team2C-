@@ -10,7 +10,7 @@ session_regenerate_id(true);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECサイトTOP</title>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="../style/craft.css">
 </head>
     
 <body>
@@ -41,7 +41,6 @@ $stmt_2 -> execute();
 $dbh_2 = null;
         
     print "エージェント一覧";
-    print "<br> <a href='user_cartlook.php'>お気に入り一覧</a>";
     print "<br><br>";
         
     while(true) {
@@ -121,5 +120,7 @@ $dbh_2 = null;
     <footer>
         <img src="./img/boozer_logo.png" alt="" id = "boozer_logo">
     </footer>
+
+    <script src="../js/header.js"></script>
 </body>
 </html>
