@@ -1,0 +1,40 @@
+.container {
+    height: 100vh;
+    background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+.craft_logo {
+    color: rgba(255, 255, 255, 0.692);
+    font-size: 4rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 4rem;
+}
+.input_boxes_container  {
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.603);
+}
+.input_box_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+.login_text {
+    color: white;
+    padding: 10%;
+}
+.input_box_text {
+    color: white;
+    padding: 1%;
+}
+.input_box {
+    width: 50%;
+}
+.login_submit_btn {
+    width: 30%;
+    padding: 3%;
+}

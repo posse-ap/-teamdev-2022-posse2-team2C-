@@ -10,6 +10,7 @@ session_regenerate_id(true);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECサイトTOP</title>
+<link rel="stylesheet" href="../style/reset.css">
 <link rel="stylesheet" href="../style/craft.css">
 </head>
     

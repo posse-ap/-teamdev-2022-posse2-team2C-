@@ -9,7 +9,7 @@ $code = $post["code"];
 $pass = $post["pass"];
 
 //パスワード乱数化
-$pass = md5($pass);
+// $pass = md5($pass);
     
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
