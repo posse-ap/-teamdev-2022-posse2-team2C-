@@ -12,7 +12,7 @@
 エージェント管理画面<br>ログイン<br><br>
 <form action="agent_login_check.php" method="post">
 メールアドレス<br>
-<input type="text" name="code">
+<input type="text" name="e_mail">
 <br><br>
 パスワード<br>
 <input type="password" name="pass">
@@ -21,6 +21,12 @@
 <br><br>
 <a href="agent_login_forget.php">パスワードを忘れた方はこちら</a>
 </form>   
+
+<!-- このままじゃ動かない。agent_idで判別している。idじゃなくてそっちを使って判別したい。
+スタッフはstaffとpasswordでやったと思う
+→メールアドレスとpasswordで判別できるようにする
+→文字変わっただけで中身変わってない。nameをcodeじゃなくてmail_addressにして。
+→agent_infoはブザーからしかアクセスできない。 -->
 
 
 </body>

@@ -95,6 +95,8 @@ CREATE TABLE  agent_account(
   `post_period_end` DATETIME NOT NULL
 );
 
+
+
 -- タグテーブル
 DROP TABLE IF EXISTS tag;
 CREATE TABLE  tag(
