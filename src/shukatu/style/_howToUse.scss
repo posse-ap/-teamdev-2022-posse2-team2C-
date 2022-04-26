@@ -47,7 +47,7 @@
 
 .head_howToUse{
   background-color: #26a69a;
-  margin: 25px auto;
+  margin: 45px auto 25px;
   color: white;
   height: 50px;
   width: 400px;
@@ -59,13 +59,24 @@
 
 .user_flow{
   width: 90%;
+  max-width: 700px;
   margin: 0 auto;
   .steps{
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px #000;
+    margin-bottom: 15px;
+    .head_flow{
+      margin: 0;
+    }
+    .text_flow{
+      margin-top: 40px;
+    }
     .images{
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin-bottom: 30px;
+      // margin-bottom: 70px;
       .arrow_flow{
         font-size: large;
       }
@@ -95,6 +106,15 @@
           width: 300px;
         }
         &9{
+          width: 300px;
+        }
+        &10{
+          width: 300px;
+        }
+        &11{
+          width: 300px;
+        }
+        &12{
           width: 300px;
         }
       }
