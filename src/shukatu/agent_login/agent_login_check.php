@@ -9,7 +9,7 @@ $account_email_address = htmlspecialchars($_POST["account_email_address"], ENT_Q
 $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
 
 //パスワード乱数化
-$pass = md5($pass);
+// $pass = md5($pass);
     
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
@@ -51,7 +51,7 @@ if(empty($rec["account_email_address"]) === true) {
     session_start();
     $_SESSION["login"] = 1;
     $_SESSION["account_email_address"] = $rec["account_email_address"];
-    $_SESSION["code"] = $code;
+    $_SESSION["pass"] = $pass;
     //認証されたらこのページに飛ぶ
     header("Location:agent_login_top.php");
     exit();
