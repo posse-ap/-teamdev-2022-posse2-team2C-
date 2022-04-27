@@ -8,8 +8,6 @@ if(isset($_SESSION["login"]) === false) {
     print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"]."さんログイン中";
-    print "<br><br>";
 }
 ?>
 
@@ -19,10 +17,16 @@ if(isset($_SESSION["login"]) === false) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>スタッフ一覧</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/boozer.css">
+    <link rel="stylesheet" href="../style/craft.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
     
 <body>
+
 
 <?php
 try{
@@ -39,10 +43,11 @@ $stmt = $dbh -> prepare($sql);
 $stmt -> execute();
     
 $dbh = null;
+?>
     
-print "スタッフ一覧<br><br>";
-print "<form action='boozer_staff_branch.php' method='post'>";
-
+<h1 class="text-center">スタッフ一覧</h1>
+<form action='boozer_staff_branch.php' method='post'>
+<?php
 //trueの間は実行=永久ぐるぐる、レコードの情報を$recに格納
 while(true) {
     $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
@@ -67,6 +72,6 @@ catch(Exception $e) {
 }
 ?>
 <br><br>
-<a href="../boozer_login/boozer_login_top.php">管理画面TOPへ</a>
+<a href="../boozer_login/../boozer_login/boozer_login_top.php">管理画面TOPへ</a>
 </body>
 </html>

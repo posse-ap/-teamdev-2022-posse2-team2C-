@@ -56,6 +56,11 @@ CREATE TABLE  agent(
   cons VARCHAR(255) NOT NULL
 );
 
+INSERT INTO agent (agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons) VALUES 
+("1","「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","1","1","可","1,000","サポート体制が厚い","連絡頻度が高い"),
+("2","「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","1","1","不可","1,000","サポート体制が厚い","連絡頻度が高い"),
+("3","「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","1","1","可","1,000","サポート体制が厚い","連絡頻度が高い");
+
 
 -- 地域指定テーブル
 DROP TABLE IF EXISTS region;
@@ -91,9 +96,14 @@ CREATE TABLE  agent_account(
   account_email_address VARCHAR(255) NOT NULL,
   account_password VARCHAR(255) NOT NULL,
   google_account VARCHAR(255) NOT NULL,
-  `post_period_start` DATETIME NOT NULL,
-  `post_period_end` DATETIME NOT NULL
+  post_period_start DATETIME NOT NULL,
+  post_period_end DATETIME NOT NULL
 );
+
+INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end) VALUES 
+("1","就活エージェントA","小野寛太","onokan@icloud.com","0706","onokan@gmail.com","2022-3-1","2022-4-1"),
+("2","就活エージェントB","寺下渓志朗","terashi@icloud.com","0706","terashi@gmail.com","2022-3-1","2022-4-1"),
+("3","就活エージェントC","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1");
 
 -- タグテーブル
 DROP TABLE IF EXISTS tag;
@@ -112,15 +122,11 @@ DROP TABLE IF EXISTS shukatu.staff;
 CREATE TABLE shukatu.staff (
 code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 name VARCHAR(225) NOT NULL,
-password VARCHAR(225) NOT NULL
+password VARCHAR(225) NOT NULL,
+mail_address VARCHAR(50) NOT NULL
 ); 
 
-DROP TABLE IF EXISTS product;
-CREATE TABLE product (
-code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-category VARCHAR(10) NOT NULL,
-name VARCHAR(30) NOT NULL,
-price INT NOT NULL,
-image VARCHAR(300) NOT NULL,
-explanation VARCHAR(100) NOT NULL
-); 
+INSERT INTO shukatu.staff (code, name, password, mail_address) VALUES 
+("1","小野寛太","0706","onokan@gmail.com"),
+("2","寺下渓志朗","0225","terashi@gmail.com"),
+("3","冨永桃","0315","momo@gmail.com");

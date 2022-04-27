@@ -3,37 +3,70 @@
 session_start();
 //セッションハイジャック防止（ページ毎にsession idをランダムに変更）
 session_regenerate_id(true);
-if(isset($_SESSION["login"]) === false) {
+if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
     print "<a href='agent_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print "<h1>boozer用管理画面TOP</h1><br>" . $_SESSION["name"]."様ログイン中";
-    print "<br>ここがboozerのホーム画面";
+    $code = $_SESSION["code"];
+    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+    $user = "root";
+    $password = "password";
+    $dbh = new PDO($dsn, $user, $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //codeとpasswordが一致する人を選択(nameカラムから)
+    $sql = "SELECT mail_address FROM staff WHERE code=?";
+    $stmt = $dbh->prepare($sql);
+    $data[] = $code;
+    $stmt->execute($data);
+
+    $dbh = null;
+
+    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>管理画面TOP</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-    
-<body>
-    
-<br><br>
-<?php print $_SESSION["code"];
-  ?><br><br>
 
-    <a href="../boozer_page/boozer_staff_list.php">スタッフ管理</a>
-    <br><br>
-    <a href="../agent_info/agent_add.php">新規エージェント登録</a>
-    <br><br>
-    <a href="../agent_info/agent_list.php">エージェント一覧</a>
-    <br><br>
-    <a href="boozer_logout.php">ログアウト</a>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boozer管理画面TOP</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/boozer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <?php include "../common/boozer_page_header.php"; ?>
+
+    <div class="boozer_top_page_container">
+        <div class="side_menu_container">
+            <ul class="side_menu_wrapper">
+                <li class="side_menu"><a href="../boozer_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
+                <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">エージェント一覧</a></li>
+                <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">新規エージェント作成</a></li>
+                <li class="side_menu"><a href="" class="side_menu_text">学生情報一覧</a></li>
+                <li class="side_menu"><a href="../boozer_page/boozer_staff_list.php" class="side_menu_text">boozerスタッフ管理</a></li>
+                <li class="side_menu"><a href="boozer_logout.php" class="side_menu_text">ログアウト</a></li>
+            </ul>
+        </div>
+        <div class="right_page_container">
+            <div class="user_info_container">
+                <ul class="user_info_wrapper">
+                    <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
+                    <li class="user_info"><span class="user_info_text">担当者名</span><span><?php print $_SESSION["name"]; ?></span></li>
+                    <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
+                </ul>
+            </div>
+            <div class="request_list"></div>
+        </div>
+    </div>
 </body>
+
 </html>

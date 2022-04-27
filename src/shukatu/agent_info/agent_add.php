@@ -2,95 +2,125 @@
 //ログインチェック
 session_start();
 session_regenerate_id(true);
-if(isset($_SESSION["login"]) === false) {
+if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
     print "<a href='boozer_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"]."さんログイン中";
-    print "<br><br>";
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>エージェント追加</title>
-<link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エージェント追加</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/boozer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
-    
+
 <body>
+    <?php include "../common/boozer_page_header.php"; ?>
 
-<form action="agent_add_check.php" method="post" enctype="multipart/form-data">
-エージェント追加<br><br>
-<?php 
-require_once("../common/common.php");
-?>
-<!-- カテゴリー<br> -->
-<!-- common.phpでエージェントのpulldownの関数生成してる -->
-<?php
-//  print pulldown_cate();
- ?>
- アカウント情報の登録<br>
-エージェントid<br>
-<input type="text" name="agent_id">
-<br><br>
-エージェント会社名<br>
-<input type="text" name="company_name">
-<br><br>
-エージェント会社スタッフ名<br>
-<input type="text" name="company_staff">
-<br><br>
-アカウントのメールアドレス<br>
-<input type="text" name="account_email_address">
-<br><br>
-アカウントのパスワード<br>
-<input type="text" name="account_password">
-<br><br>
-google_account<br>
-<input type="text" name="google_account">
-<br><br>
-掲載開始日<br>
-<input type="text" name="post_period_start">
-<br><br>
-掲載終了日<br>
-<input type="text" name="post_period_end">
-<br><br><br><br>
-掲載情報の登録<br>
-エージェントid（上のagent_idと同じだから入力なし）<br>
-<!-- <input type="text" name="agent_id" value=""> -->
-<br><br>
-キャッチフレーズ<br>
-<input type="text" name="catchphrase">
-<br><br>
-特徴<br>
-<input type="text" name="feature">
-<br><br>
-エリア<br>
-地域code<br>
-<input type="text" name="region_code">
-<br><br>
-県code<br>
-<input type="text" name="prefecture_code">
-<br><br>
-オンライン面談可否<br>
-<input type="text" name="online_meeting">
-<br><br>
-会員数<br>
-<input type="text" name="membership">
-<br><br>
-メリット<br>
-<input type="text" name="pros">
-<br><br>
-デメリット<br>
-<input type="text" name="cons">
-<br><br>
-
-<input type="button" onclick="history.back()" value="戻る">
-<input type="submit" value="OK">
-</form>    
+    <div class="boozer_top_page_container">
+        <div class="side_menu_container">
+            <ul class="side_menu_wrapper">
+                <li class="side_menu"><a href="../boozer_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
+                <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">エージェント一覧</a></li>
+                <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">新規エージェント作成</a></li>
+                <li class="side_menu"><a href="" class="side_menu_text">学生情報一覧</a></li>
+                <li class="side_menu"><a href="../boozer_page/boozer_staff_list.php" class="side_menu_text">boozerスタッフ管理</a></li>
+                <li class="side_menu"><a href="boozer_logout.php" class="side_menu_text">ログアウト</a></li>
+            </ul>
+        </div>
     
+    <div class="agent_add_right_page_container">
+    <form action="agent_add_check.php" method="post" enctype="multipart/form-data" width="100%">
+                <div class="agent_reg_form_wrapper">
+                    <div class="agent_account_reg_wrapper">
+                        <h2 class="agent_reg_form_tittle">アカウント情報の登録</h2>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">エージェントid</span>
+                            <input type="text" name="agent_id">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <spa class="agent_reg_form_box_text">エージェント会社名</spa>
+                            <input type="text" name="company_name">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">エージェント担当者名</span>
+                            <input type="text" name="company_staff">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">アカウントメールアドレス</span>
+                            <input type="text" name="account_email_address">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">アカウントパスワード</span>
+                            <input type="text" name="account_password">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">google account</span>
+                            <input type="text" name="google_account">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">掲載開始日</span>
+                            <input type="datetime" name="post_period_start">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">掲載終了日</span>
+                            <input type="text" name="post_period_end">
+                        </div>
+                    </div>
+                    <div class="agent_info_reg_wrapper">
+                        <h2 class="agent_reg_form_tittle">掲載情報の登録</h2>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">キャッチフレーズ</span>
+                            <input type="text" name="catchphrase">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">特徴</span>
+                            <input type="text" name="feature">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">エリア指定</span>
+                            <span>地域code</span>
+                            <input type="text" name="region_code">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">県code</span>
+                            <input type="text" name="prefecture_code">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">オンライン面談可否</span>
+                            <input type="text" name="online_meeting">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">会員数</span>
+                            <input type="text" name="membership">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">メリット</span>
+                            <input type="text" name="pros">
+                        </div>
+                        <div class="agent_reg_form_box">
+                            <span class="agent_reg_form_box_text">デメリット</span>
+                            <input type="text" name="cons">
+                        </div>
+
+                    </div>
+                </div>
+                <input type="hidden" name="agent_id" value="<?php print $rec['agent_id']; ?>">
+                <input type="submit" value="OK" class="form_submit_btn">
+            </form>
+    </div>
+    </div>
+
 </body>
+
 </html>
