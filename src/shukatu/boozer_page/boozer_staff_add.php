@@ -23,14 +23,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+<?php include "../common/boozer_page_header.php"; ?>
+
+<div class="boozer_top_page_container">
+
 <form action="boozer_staff_add_check.php" method="post">
 boozerのスタッフ追加<br><br>
 boozerスタッフ名<br>
 <input type="text" name="name">
+<br><br>
+メールアドレス<br>
+<input type="text" name="mail_address">
 <br><br>
 パスワード<br>
 <input type="password" name="pass">
@@ -41,6 +53,7 @@ boozerスタッフ名<br>
 <input type="button" onclick="history.back()" value="戻る">
 <input type="submit" value="OK">
 </form>    
+</div>
     
 </body>
 

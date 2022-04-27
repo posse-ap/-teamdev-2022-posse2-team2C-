@@ -29,6 +29,7 @@ session_start();
 //入力された情報をpostで取得（クロスサイトスクリプティング防止）
 $name = htmlspecialchars($_POST["name"], ENT_QUOTES, "UTF-8");
 $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
+$mail_address = htmlspecialchars($_POST["mail_address"], ENT_QUOTES, "UTF-8");
  
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
@@ -37,17 +38,18 @@ $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 //スタッフをレーコードに追加（nameとpassword, codeは自動でincrement）
-$sql = "INSERT INTO staff(name, password) VALUES(?,?)";
+$sql = "INSERT INTO staff(name, password, mail_address) VALUES(?,?,?)";
 $stmt = $dbh -> prepare($sql);
 $data[] = $name;
 $data[] = $pass;
+$data[] = $mail_address;
 $stmt -> execute($data);
     
 $dbh = null;
         
 }catch(Exception $e) {
     echo "(´･ω･`)人(`･ω･´)ﾄﾞﾝﾏｲ!!: " . $e->getMessage() . "\n";
-    print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
 }
 ?>
     

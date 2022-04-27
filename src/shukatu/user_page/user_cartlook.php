@@ -24,7 +24,7 @@ session_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お気に入り情報</title>
-<link rel="stylesheet" href="../style/craft.css">
+<link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
 </head>
     
 <body>
@@ -42,7 +42,7 @@ if(empty($_SESSION["cart"]) === true) {
  
 try{
     //header表示
-    include "../common/common_header.html" ; 
+    include "../common/user_page_header.html" ; 
 $cart = $_SESSION["cart"];
 // $quantity = $_SESSION["quantity"];
 $max = count($cart);

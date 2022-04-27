@@ -9,7 +9,7 @@ $code = $post["code"];
 $pass = $post["pass"];
 
 //パスワード乱数化
-$pass = md5($pass);
+// $pass = md5($pass);
     
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
@@ -31,7 +31,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 //databaseに情報があるかどうかチェック
 if(empty($rec["name"]) === true) {
     print "入力が間違っています。<br><br>";
-    print "<a href='boozer_login.html'>戻る</a>";
+    print "<a href='boozer_login.php'>戻る</a>";
     exit();
 } else {
     //一意のsessionIDを付与 ページ移動しても情報保持できる
@@ -42,11 +42,11 @@ if(empty($rec["name"]) === true) {
     $_SESSION["name"] = $rec["name"];
     $_SESSION["code"] = $code;
     //認証されたらこのページに飛ぶ
-    header("Location:boozer_login_top.php");
+    header("Location:../boozer_login/boozer_login_top.php");
     exit();
 }
 }
 catch(Exception $e) {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-    print "<a href='boozer_login.html'>戻る</a>";
+    print "<a href='boozer_login.php'>戻る</a>";
 }

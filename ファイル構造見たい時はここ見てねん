@@ -23,8 +23,8 @@
 ┃
 ┣ 📂boozer_login
 ┃ ┣ 📜boozer_login.check.php
-┃ ┣ 📜boozer_login.html（boozerログイン）
-┃ ┣ 📜boozer_login_top.php
+┃ ┣ 📜boozer_login.php（boozerログイン）
+┃ ┣ 📜../boozer_login/boozer_login_top.php
 ┃ ┗ 📜boozer_logout.php
 ┃
 ┣ 📂boozer_page
@@ -43,7 +43,7 @@
 ┃
 ┣ 📂common（共通部分で省略したいものはここ）
 ┃ ┣ 📜common.php（phpのクロスなんちゃら防止）
-┃ ┗ 📜common_header.html（headerのhtml）
+┃ ┗ 📜user_page_header.html（headerのhtml）
 ┃
 ┣ 📂js
 ┃ ┗ 📜header.js
