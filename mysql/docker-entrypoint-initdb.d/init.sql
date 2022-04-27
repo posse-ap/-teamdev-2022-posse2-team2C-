@@ -122,10 +122,11 @@ DROP TABLE IF EXISTS shukatu.staff;
 CREATE TABLE shukatu.staff (
 code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 name VARCHAR(225) NOT NULL,
-password VARCHAR(225) NOT NULL
+password VARCHAR(225) NOT NULL,
+mail_address VARCHAR(50) NOT NULL
 ); 
 
-INSERT INTO shukatu.staff (code, name, password) VALUES 
-("1","小野寛太","0706"),
-("2","寺下渓志朗","0225"),
-("3","冨永桃","0315");
+INSERT INTO shukatu.staff (code, name, password, mail_address) VALUES 
+("1","小野寛太","0706","onokan@gmail.com"),
+("2","寺下渓志朗","0225","terashi@gmail.com"),
+("3","冨永桃","0315","momo@gmail.com");

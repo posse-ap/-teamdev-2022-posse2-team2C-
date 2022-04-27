@@ -27,6 +27,7 @@ session_start();
     
 //入力された情報をpostで取得（クロスサイトスクリプティング防止）
 $name = htmlspecialchars($_POST["name"], ENT_QUOTES, "UTF-8");
+$mail_address = htmlspecialchars($_POST["mail_address"], ENT_QUOTES, "UTF-8");
 $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
 $pass2 = htmlspecialchars($_POST["pass2"], ENT_QUOTES, "UTF-8");
 
@@ -58,6 +59,7 @@ if(empty($name) or empty($pass) or $pass != $pass2) {
     print "上記スタッフを追加しますか？<br><br>";
     print "<form action='boozer_staff_add_done.php' method='post'>";
     print "<input type='hidden' name='name' value='".$name."'>";
+    print "<input type='hidden' name='mail_address' value='".$mail_address."'>";
     print "<input type='hidden' name='pass' value='".$pass."'>";
     print "<input type='button' onclick='history.back()' value='戻る'>";
     print "<input type='submit' value='OK'>";

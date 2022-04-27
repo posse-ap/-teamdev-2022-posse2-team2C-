@@ -42,7 +42,7 @@ if(empty($rec["name"]) === true) {
     $_SESSION["name"] = $rec["name"];
     $_SESSION["code"] = $code;
     //認証されたらこのページに飛ぶ
-    header("Location:boozer_login_top.php");
+    header("Location:../boozer_login/boozer_login_top.php");
     exit();
 }
 }

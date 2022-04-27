@@ -17,10 +17,10 @@ print "ようこそ";
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>エージェント選択画面</title>
-<link rel="stylesheet" href="./momo.css">
+<link rel="stylesheet" href="./boozer.css">
 </head>
 <body>
-<?php include "../common/common_header.html" ?>
+<?php include "../common/user_page_header.html" ?>
 <?php
 try{
 //選択したエージェントだけ表示
