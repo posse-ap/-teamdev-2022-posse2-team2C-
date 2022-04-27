@@ -9,7 +9,7 @@ $code = $post["code"];
 $pass = $post["pass"];
 
 //パスワード乱数化
-$pass = md5($pass);
+// $pass = md5($pass);
     
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
@@ -42,7 +42,7 @@ if(empty($rec["name"]) === true) {
     $_SESSION["name"] = $rec["name"];
     $_SESSION["code"] = $code;
     //認証されたらこのページに飛ぶ
-    header("Location:boozer_login_top.php");
+    header("Location:../boozer_login/boozer_login_top.php");
     exit();
 }
 }

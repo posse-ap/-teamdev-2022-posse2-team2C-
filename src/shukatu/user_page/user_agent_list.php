@@ -10,12 +10,13 @@ session_regenerate_id(true);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECサイトTOP</title>
+<link rel="stylesheet" href="../style/reset.css">
 <link rel="stylesheet" href="../style/craft.css">
 </head>
     
 <body>
     <!-- header -->
-    <?php include "../common/common_header.html" ;
+    <?php include "../common/user_page_header.html" ;
 
 try{
     $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";

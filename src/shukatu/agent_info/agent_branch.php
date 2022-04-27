@@ -13,11 +13,7 @@ if(isset($_POST["add"]) === true) {
 }
 
 if(isset($_POST["disp"]) === true) {
-    if(isset($_POST["agent_id"]) === false) {
-        header("Location:agent_ng.php");
-        exit();
-    } 
-    $agent_id = $_POST["agent_id"];
+    $agent_id = $_POST["disp"];
     header("Location:agent_disp.php?agent_id=".$agent_id);
     exit();
 }

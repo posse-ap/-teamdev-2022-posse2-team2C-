@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  <?php include "../common/common_header.html" ?>
+  <?php include "../common/user_page_header.html" ?>
 
   <div id="title_howToUse">CRAFT利用の流れ</div>
   <div id="user_flow">

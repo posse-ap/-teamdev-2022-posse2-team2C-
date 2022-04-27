@@ -42,7 +42,7 @@ if(empty($_SESSION["cart"]) === true) {
  
 try{
     //header表示
-    include "../common/common_header.html" ; 
+    include "../common/user_page_header.html" ; 
 $cart = $_SESSION["cart"];
 // $quantity = $_SESSION["quantity"];
 $max = count($cart);
