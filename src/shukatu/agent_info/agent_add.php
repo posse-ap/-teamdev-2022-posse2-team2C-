@@ -4,7 +4,9 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
+
     print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
+
     exit();
 } else {
 }
@@ -18,7 +20,7 @@ if (isset($_SESSION["login"]) === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント追加</title>
     <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/boozer.css">
+    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -70,11 +72,11 @@ if (isset($_SESSION["login"]) === false) {
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">掲載開始日</span>
-                            <input type="datetime" name="post_period_start">
+                            <input type="date" name="post_period_start">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">掲載終了日</span>
-                            <input type="text" name="post_period_end">
+                            <input type="date" name="post_period_end">
                         </div>
                     </div>
                     <div class="agent_info_reg_wrapper">
@@ -115,7 +117,7 @@ if (isset($_SESSION["login"]) === false) {
 
                     </div>
                 </div>
-                <input type="hidden" name="agent_id" value="<?php print $rec['agent_id']; ?>">
+                
                 <input type="submit" value="OK" class="form_submit_btn">
             </form>
     </div>

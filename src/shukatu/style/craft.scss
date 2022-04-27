@@ -6,7 +6,7 @@ header{
   background-color: #26a69a;
   width: 100vw;
   #header_logo{
-    color: white;
+    color: #fff;
     margin: 0 auto;
     text-align: center;
     &_shukatu{
@@ -23,7 +23,7 @@ header{
         display: inline-block;
         a{
           text-decoration: none;
-          color: white;
+          color: #fff;
           line-height: 3;
         }
       }
@@ -34,7 +34,6 @@ header{
 footer{
   background-color: #26a69a;
   height: 100px;
-
   #boozer_logo{
     margin: 0 auto;
     display: block;

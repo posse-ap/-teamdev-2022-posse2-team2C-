@@ -4,7 +4,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
 }
@@ -18,7 +18,7 @@ if (isset($_SESSION["login"]) === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント一覧</title>
     <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/boozer.css">
+    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">

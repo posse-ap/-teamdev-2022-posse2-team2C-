@@ -4,7 +4,7 @@ session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
     print $_SESSION["name"]."さんログイン中";
@@ -47,7 +47,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 }
 catch(Exception $e) {
     echo "(´･ω･`)人(`･ω･´)ﾄﾞﾝﾏｲ!!: " . $e->getMessage() . "\n";
-    print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
 }
 ?>
 スタッフ詳細<br><br>

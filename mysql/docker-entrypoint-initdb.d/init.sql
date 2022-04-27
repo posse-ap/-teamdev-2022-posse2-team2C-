@@ -96,8 +96,8 @@ CREATE TABLE  agent_account(
   account_email_address VARCHAR(255) NOT NULL,
   account_password VARCHAR(255) NOT NULL,
   google_account VARCHAR(255) NOT NULL,
-  post_period_start DATETIME NOT NULL,
-  post_period_end DATETIME NOT NULL
+  post_period_start VARCHAR(255) NOT NULL,
+  post_period_end VARCHAR(255) NOT NULL
 );
 
 
