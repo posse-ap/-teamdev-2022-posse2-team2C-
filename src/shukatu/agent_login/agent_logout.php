@@ -21,7 +21,7 @@ session_destroy();
 </head>
     
 <body>
-    
+ 
 ログアウトしました。<br><br>
 <a href="agent_login.html">ログイン画面へ</a>
 
