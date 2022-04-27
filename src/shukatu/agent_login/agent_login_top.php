@@ -8,7 +8,7 @@ if(isset($_SESSION["login"]) === false) {
     print "<a href='agent_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print "<h1>エージェント用管理画面TOP</h1><br>" . $_SESSION["email"]."様ログイン中";
+    print "<h1>エージェント用管理画面TOP</h1><br>" . $_SESSION["account_email_address"]."様ログイン中";
     print "<br>";
 }
 ?>
@@ -25,7 +25,7 @@ if(isset($_SESSION["login"]) === false) {
 <body>
 
 <br><br>
-<?php print $_SESSION["email"];
+<?php print $_SESSION["account_email_address"];
   ?><br><br>
     <a href="agent_logout.php">ログアウト</a>
 </body>

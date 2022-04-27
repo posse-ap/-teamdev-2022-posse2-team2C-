@@ -2,10 +2,9 @@
 try {
 
 require_once("../common/common.php");
-// code→e_mail
 
 //入力された情報をpostで取得（クロスサイトスクリプティング防止）
-$e_mail = htmlspecialchars($_POST["e_mail"], ENT_QUOTES, "UTF-8");
+$account_email_address = htmlspecialchars($_POST["account_email_address"], ENT_QUOTES, "UTF-8");
 // 入力された情報が変なものだったとき用に入力されたものを一旦意味のない文字列に変換する
 $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
 
@@ -23,9 +22,9 @@ $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //codeとpasswordが一致する人を選択(nameカラムから)
 
 // ネーム以外にもとってこないといけないものがある気がする。他ファイル参照。selectで検索
-$sql = "SELECT account_email_address FROM agent_account WHERE  account_email_address =?AND account_password=?";
+$sql = "SELECT account_email_address FROM agent_account WHERE account_email_address =? AND account_password=?";
 $stmt = $dbh -> prepare($sql);
-$data[] = $email;
+$data[] = $account_email_address;
 $data[] = $pass;
 $stmt -> execute($data);
     // 同じメールアドレスだとどうするの？
@@ -51,7 +50,7 @@ if(empty($rec["account_email_address"]) === true) {
     // セッションセキュリティを調べる
     session_start();
     $_SESSION["login"] = 1;
-    $_SESSION["email"] = $rec["account_email_address"];
+    $_SESSION["account_email_address"] = $rec["account_email_address"];
     $_SESSION["code"] = $code;
     //認証されたらこのページに飛ぶ
     header("Location:agent_login_top.php");
