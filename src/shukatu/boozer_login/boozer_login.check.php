@@ -31,7 +31,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 //databaseに情報があるかどうかチェック
 if(empty($rec["name"]) === true) {
     print "入力が間違っています。<br><br>";
-    print "<a href='boozer_login.html'>戻る</a>";
+    print "<a href='boozer_login.php'>戻る</a>";
     exit();
 } else {
     //一意のsessionIDを付与 ページ移動しても情報保持できる
@@ -48,5 +48,5 @@ if(empty($rec["name"]) === true) {
 }
 catch(Exception $e) {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-    print "<a href='boozer_login.html'>戻る</a>";
+    print "<a href='boozer_login.php'>戻る</a>";
 }

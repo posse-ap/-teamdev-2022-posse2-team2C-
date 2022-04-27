@@ -17,7 +17,7 @@ print "ようこそ";
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>エージェント選択画面</title>
-<link rel="stylesheet" href="./boozer.css">
+<link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
 </head>
 <body>
 <?php include "../common/user_page_header.html" ?>

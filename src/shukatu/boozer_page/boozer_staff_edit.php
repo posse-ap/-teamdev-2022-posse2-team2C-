@@ -47,7 +47,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 }
 catch(Exception $e) {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-    print "<a href='./boozer_login/boozer_login.html'>ログイン画面へ</a>";
+    print "<a href='./boozer_login/boozer_login.php'>ログイン画面へ</a>";
 }
 ?>
 

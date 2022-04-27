@@ -36,7 +36,7 @@ if (isset($_SESSION["login"]) === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boozer管理画面TOP</title>
     <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/boozer.css">
+    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">

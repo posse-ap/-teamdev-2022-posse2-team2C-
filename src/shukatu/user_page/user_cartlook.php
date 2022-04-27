@@ -24,7 +24,7 @@ session_start();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お気に入り情報</title>
-<link rel="stylesheet" href="../style/craft.css">
+<link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
 </head>
     
 <body>

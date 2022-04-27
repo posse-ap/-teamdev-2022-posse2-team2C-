@@ -17,7 +17,7 @@ if (isset($_SESSION["login"]) === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント修正画面</title>
     <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/boozer.css">
+    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -111,7 +111,7 @@ if (isset($_SESSION["login"]) === false) {
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">掲載終了日</span>
-                            <input type="text" name="post_period_end" value="<?php print $rec['post_period_end']; ?>">
+                            <input type="datetime" name="post_period_end" value="<?php print $rec['post_period_end']; ?>">
                         </div>
                     </div>
                     <div class="agent_info_reg_wrapper">
