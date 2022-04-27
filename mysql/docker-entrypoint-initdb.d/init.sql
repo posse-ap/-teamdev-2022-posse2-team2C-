@@ -85,6 +85,45 @@ CREATE TABLE  agent_area_connect(
   prefecture_code INT NOT NULL
 );
 
+-- タグテーブル
+DROP TABLE IF EXISTS tag;
+CREATE TABLE  tag(
+  tag_code INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  tag_name VARCHAR(255) NOT NULL
+);
+
+INSERT INTO tag (tag_code, tag_name) VALUES
+(1,"文系"),
+(2,"理系"),
+(3,"オンライン面談可"),
+(4,"23卒"),
+(5,"24卒"),
+(6,"25卒"),
+(7,"大手"),
+(8,"ベンチャー"),
+(9,"広告・出版・マスコミ"),
+(10,"金融"),
+(11,"サービス・インフラ"),
+(12,"小売"),
+(13,"ソフトウェア"),
+(14,"官公庁・校舎・団体"),
+(15,"商社");
+
+-- エージェントとタグを結びつけるテーブル
+DROP TABLE IF EXISTS tag_agent_connect;
+CREATE TABLE  tag_agent_connect(
+  id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  agent_id INT NOT NULL,
+  tag_code INT NOT NULL
+);
+
+INSERT INTO tag_agent_connect (agent_id, tag_code) VALUES
+(1,1),
+(1,2),
+(1,3),
+(2,1),
+(2,4);
+
 
 -- ここからエージェント自身の情報テーブル
 DROP TABLE IF EXISTS agent_account;
@@ -105,19 +144,7 @@ INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_
 ("2","就活エージェントB","寺下渓志朗","terashi@icloud.com","0706","terashi@gmail.com","2022-3-1","2022-4-1"),
 ("3","就活エージェントC","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1");
 
--- タグテーブル
-DROP TABLE IF EXISTS tag;
-CREATE TABLE  tag(
-  tag_code INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
-  tag_name VARCHAR(255) NOT NULL
-);
 
--- エージェントとタグを結びつけるテーブル
-DROP TABLE IF EXISTS tag_agent_connect;
-CREATE TABLE  tag_agent_connect(
-  agent_id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
-  tag_code INT NOT NULL
-);
 DROP TABLE IF EXISTS shukatu.staff;
 CREATE TABLE shukatu.staff (
 code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,

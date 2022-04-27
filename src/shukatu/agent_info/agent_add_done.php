@@ -91,7 +91,7 @@ $dbh_2 = null;
 }
 catch(Exception $e) {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     echo "(´･ω･`)人(`･ω･´)ﾄﾞﾝﾏｲ!!: " . $e->getMessage() . "\n";
     exit();
 }

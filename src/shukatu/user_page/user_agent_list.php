@@ -22,24 +22,13 @@ try{
     $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
     $user = "root";
     $password = "password";
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-    // $sql = "SELECT agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent_account WHERE1";
-    // $stmt = $dbh -> prepare($sql);
-    // $stmt -> execute();
-        
-    // $dbh = null;
-    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-    $user = "root";
-    $password = "password";
     $dbh_2 = new PDO($dsn, $user, $password);
     $dbh_2 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE1";
-$stmt_2 = $dbh_2 -> prepare($sql_2);
-$stmt_2 -> execute();
+    $sql_2 = "SELECT agent.agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons, company_name FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id";
+    $stmt_2 = $dbh_2 -> prepare($sql_2);
+    $stmt_2 -> execute();
     
-$dbh_2 = null;
+    $dbh_2 = null;
         
     print "エージェント一覧";
     print "<br><br>";
@@ -57,23 +46,6 @@ $dbh_2 = null;
         // } else {
         //     $image = "<img src='../product/image/".$rec['image']."'>";
         // }
-       
-        // print "エージェント名:".$rec["company_name"];
-        // print "<br>";
-        // print "担当者名:".$rec["company_staff"];
-        // print "<br>";
-        // print "アカウントメールアドレス:".$rec["account_email_address"];
-        // print "<br>";
-        // print "アカウントパスワード:".$rec["account_password"];
-        // print "<br>";
-        // print "グーグルアカウント:".$rec["google_account"];
-        // print "<br>";
-        // print "掲載開始日:".$rec["post_period_start"];
-        // print "<br>";
-        // print "掲載終了日:".$rec["post_period_end"];
-        // print "<br>";
-        // print "<a href='shop_product.php?code=".$agent_id."'>";
-        // print "<br>";
 
         $rec_2 = $stmt_2 -> fetch(PDO::FETCH_ASSOC);
         if($rec_2 === false) {
@@ -83,6 +55,7 @@ $dbh_2 = null;
         print "<a href='user_cartin.php?agent_id=".$agent_id."'>♡</a><br>";
         //エージェントid
         print $rec_2["agent_id"]."<br>";
+        print $rec_2["company_name"]."<br>";
         //キャッチフレーズ
         print $rec_2["catchphrase"]."<br>";
         //特徴
@@ -115,7 +88,8 @@ $dbh_2 = null;
     }
     catch(Exception $e) {
         print "只今障害が発生しております。<br><br>";
-        print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+        echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
+        print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
     <footer>

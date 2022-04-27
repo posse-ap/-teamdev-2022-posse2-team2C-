@@ -73,7 +73,7 @@
     z-index: 99999999999;
 }
 /* ヘッダーのcraftの文字 */
-.header_craft_logo {
+.header__craft_logo {
     position: absolute;
     top: 30%;
     left: 30%;
@@ -82,7 +82,7 @@
     font-family: 'Roboto', sans-serif;
 }
 /* craftの文字の横のfor boozer */
-.header_for_boozer {
+.header__for_boozer {
     position: absolute;
     top: 45%;
     left: 45%;
@@ -91,7 +91,7 @@
     font-family: 'Roboto', sans-serif;
 }
 /* ログイン中のスタッフ名 */
-.header_staff_name {
+.header__staff_name {
     position: absolute;
     top: 50%;
     left: 70%;
