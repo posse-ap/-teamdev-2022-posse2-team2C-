@@ -9,7 +9,7 @@ header {
 }
 
 header #header_logo {
-  color: white;
+  color: #fff;
   margin: 0 auto;
   text-align: center;
 }
@@ -34,7 +34,7 @@ header nav ul li {
 
 header nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   line-height: 3;
 }
 
@@ -62,7 +62,6 @@ footer #boozer_logo {
 }
 
 .page_switch_button {
-  background-color: #f5835f;
   color: white;
   width: 200px;
   height: 32px;
@@ -70,14 +69,82 @@ footer #boozer_logo {
   font-size: 16px;
   text-align: center;
   line-height: 2;
+  background-color: #f5835f;
+  opacity: 50%;
 }
 
-#title_howToUse {
+.head_howToUse {
   background-color: #26a69a;
+  margin: 45px auto 25px;
   color: white;
-  width: 380px;
-  height: 90px;
-  border-radius: 30px;
+  height: 50px;
+  width: 400px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2;
+}
+
+.user_flow {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.user_flow .steps {
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 2px #000;
+  margin-bottom: 15px;
+}
+.user_flow .steps .head_flow {
+  margin: 0;
+}
+.user_flow .steps .text_flow {
+  margin-top: 40px;
+}
+.user_flow .steps .images {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.user_flow .steps .images .arrow_flow {
+  font-size: large;
+}
+.user_flow .steps .images #flow_img_1 {
+  width: 150px;
+}
+.user_flow .steps .images #flow_img_2 {
+  width: 150px;
+}
+.user_flow .steps .images #flow_img_3 {
+  width: 150px;
+}
+.user_flow .steps .images #flow_img_4 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_5 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_6 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_7 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_8 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_9 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_10 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_11 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_12 {
+  width: 300px;
 }
 
 /* ログイン情報入力画面 */
