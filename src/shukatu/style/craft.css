@@ -7,62 +7,38 @@ header {
   background-color: #26a69a;
   width: 100vw;
 }
-
 header #header_logo {
   color: #fff;
   margin: 0 auto;
   text-align: center;
 }
-
 header #header_logo_shukatu {
   display: inline-block;
   font-size: 30px;
 }
-
 header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   padding: 0;
 }
-
 header nav ul li {
   display: inline-block;
 }
-
 header nav ul li a {
   text-decoration: none;
   color: #fff;
   line-height: 3;
 }
 
-footer {
-  background-color: #26a69a;
-  height: 100px;
-}
-
-footer #boozer_logo {
-  margin: 0 auto;
-  display: block;
-  width: 288px;
-}
-
 .page_switch {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-
 .page_switch a {
   text-decoration: none;
 }
-
-.page_switch_button {
-  color: white;
+.page_switch_link .page_switch_button {
+  color: #fff;
   width: 200px;
   height: 32px;
   border-radius: 16px;
@@ -71,6 +47,26 @@ footer #boozer_logo {
   line-height: 2;
   background-color: #f5835f;
   opacity: 50%;
+}
+.page_switch_link_here .page_switch_button {
+  color: #fff;
+  width: 200px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2;
+  background-color: #f5835f;
+}
+
+footer {
+  background-color: #26a69a;
+  height: 100px;
+}
+footer #boozer_logo {
+  margin: 0 auto;
+  display: block;
+  width: 288px;
 }
 
 .head_howToUse {
@@ -155,14 +151,14 @@ footer #boozer_logo {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* 左上のクラフトのロゴ */
 .craft_logo {
   color: rgba(255, 255, 255, 0.692);
   font-size: 4rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 4rem;
 }
 
@@ -183,34 +179,22 @@ footer #boozer_logo {
 
 /* form部分のみをまとめるやつ */
 .form_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 文字とinput部分を縦並びにする */
 .input_box_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 1% 0;
 }
 
 /* インプットの上の文字 */
 .input_box_text {
   color: white;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   margin-bottom: 3%;
 }
 
@@ -218,7 +202,7 @@ footer #boozer_logo {
 .login_submit_btn {
   margin: 3% 0% 3% 1%;
   padding: 1% 5%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: rgba(255, 255, 255, 0.589);
   border-radius: 3px;
 }
@@ -242,7 +226,7 @@ footer #boozer_logo {
   left: 30%;
   color: rgba(255, 255, 255, 0.801);
   font-size: 4rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* craftの文字の横のfor boozer */
@@ -252,7 +236,7 @@ footer #boozer_logo {
   left: 45%;
   color: rgba(255, 255, 255, 0.801);
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* ログイン中のスタッフ名 */
@@ -262,7 +246,7 @@ footer #boozer_logo {
   left: 70%;
   color: rgba(255, 255, 255, 0.801);
   font-size: 1.8rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* ヘッダー以外の部分まとめるやつ */
@@ -323,36 +307,24 @@ footer #boozer_logo {
 
 .post_period_buttons {
   width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin: 2% auto;
 }
 
 .post_period_button {
   background: #cfcfcf;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   border-radius: 10px;
-  -webkit-box-shadow: 0 1px 2px #757575;
-          box-shadow: 0 1px 2px #757575;
+  box-shadow: 0 1px 2px #757575;
   font-size: 15px;
 }
 
 .agent_info_disp_btn_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   background: #b1afaf;
   padding: 1rem 2rem;
   margin: 1rem;
@@ -360,19 +332,14 @@ footer #boozer_logo {
 }
 
 .agent_info_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .agent_info_text {
   background: white;
-  margin: 0 .2rem;
-  padding: .5rem;
+  margin: 0 0.2rem;
+  padding: 0.5rem;
   font-size: 12px;
 }
 
@@ -402,31 +369,22 @@ footer #boozer_logo {
 /* エージェント修正画面 */
 /* アカウント情報と掲載情報を横並びにする */
 .agent_reg_form_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
   margin-left: 5%;
   width: 80%;
 }
 
 /* 文字とインプットを縦並びにまとめる */
 .agent_reg_form_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 /* インプットの大きさ指定 */
 .agent_reg_form_box input {
   /* width: 50%; */
-  padding: .3rem;
+  padding: 0.3rem;
 }
 
 /* アカウント情報と掲載情報、それぞれの幅指定 */
@@ -439,7 +397,7 @@ footer #boozer_logo {
 }
 
 .agent_reg_form_box_text {
-  margin: 1.5rem 0 .5rem 0;
+  margin: 1.5rem 0 0.5rem 0;
   font-size: 1rem;
 }
 
