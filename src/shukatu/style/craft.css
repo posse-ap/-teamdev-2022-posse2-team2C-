@@ -30,16 +30,6 @@ header nav ul li a {
   line-height: 3;
 }
 
-footer {
-  background-color: #26a69a;
-  height: 100px;
-}
-footer #boozer_logo {
-  margin: 0 auto;
-  display: block;
-  width: 288px;
-}
-
 .page_switch {
   display: flex;
   justify-content: space-around;
@@ -47,8 +37,8 @@ footer #boozer_logo {
 .page_switch a {
   text-decoration: none;
 }
-.page_switch_button {
-  color: white;
+.page_switch_link .page_switch_button {
+  color: #fff;
   width: 200px;
   height: 32px;
   border-radius: 16px;
@@ -57,6 +47,26 @@ footer #boozer_logo {
   line-height: 2;
   background-color: #f5835f;
   opacity: 0.5;
+}
+.page_switch_link_here .page_switch_button {
+  color: #fff;
+  width: 200px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2;
+  background-color: #f5835f;
+}
+
+footer {
+  background-color: #26a69a;
+  height: 100px;
+}
+footer #boozer_logo {
+  margin: 0 auto;
+  display: block;
+  width: 288px;
 }
 
 .head_howToUse {
@@ -183,7 +193,7 @@ footer #boozer_logo {
 
 /* インプットの上の文字 */
 .input_box_text {
-  color: rgb(255, 255, 255);
+  color: white;
   font-family: "Dosis", sans-serif;
   margin-bottom: 3%;
 }
@@ -304,10 +314,10 @@ footer #boozer_logo {
 }
 
 .post_period_button {
-  background: rgb(207, 207, 207);
+  background: #cfcfcf;
   padding: 0.5rem 2rem;
   border-radius: 10px;
-  box-shadow: 0 1px 2px rgb(117, 117, 117);
+  box-shadow: 0 1px 2px #757575;
   font-size: 15px;
 }
 
@@ -315,7 +325,7 @@ footer #boozer_logo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgb(177, 175, 175);
+  background: #b1afaf;
   padding: 1rem 2rem;
   margin: 1rem;
   width: 80%;

@@ -63,8 +63,6 @@ $stmt -> execute($data);
     
 $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 
-// var_dump($rec);
-
 $agent_id[] = $rec["agent_id"];
 $catchphrase[] = $rec["catchphrase"];
 $feature[] = $rec["feature"];

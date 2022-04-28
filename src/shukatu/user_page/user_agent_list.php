@@ -44,7 +44,7 @@ session_regenerate_id(true);
             
             <div class="user_page__agent_container">
                 <div class="user_page__heart_img_wrapper">
-                    <a href='user_cartin.php?agent_id=" . $agent_id . "'>♡</a>
+                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>">♡</a>
                     <div class="user_page__img_wrapper">
                         <img src="./agent_img/agent_img.1" alt="" class="user_page__img">
                     </div>

@@ -4,43 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/craft.css">
+  <script src="../js/header.js" defer></script>
   <title>Document</title>
 </head>
 <body>
-  <header id="header">
-    <div id="header_logo">
-        <section id = "header_logo_shukatu">就活</section>.com
-    </div>
-    <nav>
-        <ul>
-            <li><a href="">就活サイト</a></li>
-            <li><a href="">就活支援サービス</a></li>
-            <li><a href="">自己分析診断ツール</a></li>
-            <li><a href="">ES添削サービス</a></li>
-            <li><a href="">就活エージェント</a></li>
-            <li><a href="">就活エージェント比較</a></li>
-            <li><a href="">就活.comとは</a></li>
-            <li><a href="">お問い合わせ</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="page_switch">
-    <a href="user_agent_list.php">
-      <div class="page_switch_button" id="header_top_button">TOPページ</div>
-    </a>
-    <a href="user_howToUse.html">
-      <div class="page_switch_button" id="header_howToUse_button">使い方ガイド</div>
-    </a>
-    <a href="user_cartlook.php">
-      <div class="page_switch_button" id="header_cartIn_button">お気に入り一覧</div>
-    </a>
-    <a href="">
-      <div class="page_switch_button" id="header_QA_button">Q&A・お問い合わせ</div>
-    </a>
-  </section>
-
+  <?php include "../common/user_page_header.html"?>
   <!-- figma通りやったやつ（途中まで） -->
   <!-- <div id="title_howToUse">CRAFT利用の流れ</div>
   <div id="user_flow">

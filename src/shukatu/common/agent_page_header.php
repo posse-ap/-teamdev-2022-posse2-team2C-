@@ -7,9 +7,9 @@
 <div class="boozer_top_page_container">
         <div class="side_menu_container">
             <ul class="side_menu_wrapper">
-                <li class="side_menu"><a href="../agent_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">学生情報一覧</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">掲載情報編集</a></li>
+                <li class="side_menu"><a href="../agent_login/agent_login_top.php" class="side_menu_text">ホーム</a></li>
+                <li class="side_menu"><a href="../student_info/student_list.php" class="side_menu_text">学生情報一覧</a></li>
+                <li class="side_menu"><a href="../agent_agent/agent_edit_request.php" class="side_menu_text">掲載情報編集</a></li>
                 <li class="side_menu"><a href="../agent_login/agent_logout.php" class="side_menu_text">ログアウト</a></li>
             </ul>
         </div>
