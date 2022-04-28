@@ -1,22 +1,3 @@
-.page_switch{
-  display: flex;
-  justify-content: space-around;
-  a{
-    text-decoration: none;
-  }
-  &_button{
-    color: white;
-    width: 200px;
-    height: 32px;
-    border-radius: 16px;
-    font-size: 16px;
-    text-align: center;
-    line-height: 2;
-    background-color: #f5835f;
-    opacity: 50%;
-  }
-}
-
 // #title_howToUse{
 //   background-color: #26a69a;
 //   margin: 25px auto;
