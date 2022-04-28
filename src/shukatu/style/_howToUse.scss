@@ -5,7 +5,6 @@
     text-decoration: none;
   }
   &_button{
-    background-color: #f5835f;
     color: white;
     width: 200px;
     height: 32px;
@@ -13,13 +12,112 @@
     font-size: 16px;
     text-align: center;
     line-height: 2;
+    background-color: #f5835f;
+    opacity: 0.5;
   }
 }
 
-#title_howToUse{
+// #title_howToUse{
+//   background-color: #26a69a;
+//   margin: 25px auto;
+//   color: white;
+//   height: 50px;
+//   width: 400px;
+//   border-radius: 25px;
+//   text-align: center;
+//   font-size: 25px;
+//   line-height: 2;
+// }
+
+// #user_flow{
+//   display: flex;
+//   width: 90%;
+//   justify-content: space-between;
+//   margin: 0 auto;
+//   align-items: center;
+//   .steps{
+//     width: 15%;
+//     .icon{
+//       height: 250px;
+//       background-color: #26a69a;
+//       border-radius: 25px;
+//     }
+//   }
+// }
+
+.head_howToUse{
   background-color: #26a69a;
+  margin: 45px auto 25px;
   color: white;
-  width: 380px;
-  height: 90px;
-  border-radius: 30px;
+  height: 50px;
+  width: 400px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2;
+}
+
+.user_flow{
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  .steps{
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px #000;
+    margin-bottom: 15px;
+    .head_flow{
+      margin: 0;
+    }
+    .text_flow{
+      margin-top: 40px;
+    }
+    .images{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      // margin-bottom: 70px;
+      .arrow_flow{
+        font-size: large;
+      }
+      #flow_img_{
+        &1{
+          width: 150px;
+        }
+        &2{
+          width: 150px;
+        }
+        &3{
+          width: 150px;
+        }
+        &4{
+          width: 300px;
+        }
+        &5{
+          width: 300px;
+        }
+        &6{
+          width: 300px;
+        }
+        &7{
+          width: 300px;
+        }
+        &8{
+          width: 300px;
+        }
+        &9{
+          width: 300px;
+        }
+        &10{
+          width: 300px;
+        }
+        &11{
+          width: 300px;
+        }
+        &12{
+          width: 300px;
+        }
+      }
+    }
+  }
 }

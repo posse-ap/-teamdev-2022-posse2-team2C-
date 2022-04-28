@@ -139,6 +139,7 @@ CREATE TABLE  agent_account(
   post_period_end VARCHAR(255) NOT NULL
 );
 
+
 INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end) VALUES 
 ("1","就活エージェントA","小野寛太","onokan@icloud.com","0706","onokan@gmail.com","2022-3-1","2022-4-1"),
 ("2","就活エージェントB","寺下渓志朗","terashi@icloud.com","0706","terashi@gmail.com","2022-3-1","2022-4-1"),

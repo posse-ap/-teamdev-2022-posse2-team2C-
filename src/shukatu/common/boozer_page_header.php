@@ -1,7 +1,7 @@
-<header class="header">
-    <span class="header__craft_logo">CRAFT</span>
-    <span class="header__for_boozer">for boozer</span>
-    <span class="header__staff_name"><?php print $_SESSION["name"];?>様ログイン中</span>
+<header class="boozer_page_header">
+    <span class="boozer_page_header__craft_logo">CRAFT</span>
+    <span class="boozer_page_header__for_boozer">for boozer</span>
+    <span class="boozer_page_header__staff_name"><?php print $_SESSION["name"];?>様ログイン中</span>
 </header>
 
 <div class="boozer_top_page_container">

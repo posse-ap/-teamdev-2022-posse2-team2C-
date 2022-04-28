@@ -1,7 +1,7 @@
 /* ログイン情報入力画面 */
 
 /* 全体の背景に写真設定 */
-.container {
+.boozer_login_container {
     height: 100vh;
     background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
     background-size: cover;
@@ -62,7 +62,7 @@
 /* ログイン後home画面 */
 
 
-.header {
+.boozer_page_header {
     width: 100%;
     height: 20vh;
     background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
@@ -73,7 +73,7 @@
     z-index: 99999999999;
 }
 /* ヘッダーのcraftの文字 */
-.header__craft_logo {
+.boozer_page_header__craft_logo {
     position: absolute;
     top: 30%;
     left: 30%;
@@ -82,7 +82,7 @@
     font-family: 'Roboto', sans-serif;
 }
 /* craftの文字の横のfor boozer */
-.header__for_boozer {
+.boozer_page_header__for_boozer {
     position: absolute;
     top: 45%;
     left: 45%;
@@ -91,7 +91,7 @@
     font-family: 'Roboto', sans-serif;
 }
 /* ログイン中のスタッフ名 */
-.header__staff_name {
+.boozer_page_header__staff_name {
     position: absolute;
     top: 50%;
     left: 70%;
