@@ -3,7 +3,7 @@ session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='staff_login.html'>ログイン画面へ</a>";
+    print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 }
 
@@ -13,7 +13,10 @@ if(isset($_POST["add"]) === true) {
 }
 
 if(isset($_POST["disp"]) === true) {
-    $agent_id = $_POST["disp"];
+    if(isset($_POST["agent_id"]) === false) {
+        header("Location:agent_ng.php");
+        exit();}
+    $agent_id = $_POST["agent_id"];
     header("Location:agent_disp.php?agent_id=".$agent_id);
     exit();
 }

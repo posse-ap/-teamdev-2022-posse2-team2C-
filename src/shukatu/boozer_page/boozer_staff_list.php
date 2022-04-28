@@ -19,7 +19,6 @@ if(isset($_SESSION["login"]) === false) {
 <title>スタッフ一覧</title>
 <link rel="stylesheet" href="../style/reset.css">
     <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
-    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -44,7 +43,9 @@ $stmt -> execute();
     
 $dbh = null;
 ?>
-    
+
+<?php include "../common/boozer_page_header.php"; ?>
+<div class="agent_list_right_page_container">
 <h1 class="text-center">スタッフ一覧</h1>
 <form action='boozer_staff_branch.php' method='post'>
 <?php
@@ -71,6 +72,7 @@ catch(Exception $e) {
     print "<a href='./boozer_login/boozer_login.php'>ログイン画面へ</a>";
 }
 ?>
+</div>
 <br><br>
 <a href="../boozer_login/../boozer_login/boozer_login_top.php">管理画面TOPへ</a>
 </body>

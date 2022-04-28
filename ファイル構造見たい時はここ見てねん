@@ -16,7 +16,7 @@
 ┃ ┗ 📜agent_ng.php
 ┃
 ┣ 📂agent_login
-┃ ┣ 📜agent_login.html（エージェントログイン）
+┃ ┣ 📜agent_login.php（エージェントログイン）
 ┃ ┣ 📜agent_login_check.php
 ┃ ┣ 📜agent_login_top.php
 ┃ ┗ 📜agent_logout.php
@@ -67,7 +67,7 @@
 ┃ ┣ 📜user_cartin.php
 ┃ ┣ 📜user_cartlook.php
 ┃ ┣ 📜user_detail.php
-┃ ┣ 📜user_howToUse.php
+┃ ┣ 📜user_howToUse.html
 ┃ ┗ 📜user_info_form_check.php
 ┃
 ┗ 📜.DS_Store
