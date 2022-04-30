@@ -46,7 +46,7 @@ header nav ul li a {
   text-align: center;
   line-height: 2;
   background-color: #f5835f;
-  opacity: 50%;
+  opacity: 0.5;
 }
 .page_switch_link_here .page_switch_button {
   color: #fff;
@@ -145,7 +145,7 @@ footer #boozer_logo {
 
 /* ログイン情報入力画面 */
 /* 全体の背景に写真設定 */
-.container {
+.boozer_login_container {
   height: 100vh;
   background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
   background-size: cover;
@@ -208,7 +208,7 @@ footer #boozer_logo {
 }
 
 /* ログイン後home画面 */
-.header {
+.boozer_page_header {
   width: 100%;
   height: 20vh;
   background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
@@ -220,7 +220,7 @@ footer #boozer_logo {
 }
 
 /* ヘッダーのcraftの文字 */
-.header_craft_logo {
+.boozer_page_header__craft_logo {
   position: absolute;
   top: 30%;
   left: 30%;
@@ -230,7 +230,7 @@ footer #boozer_logo {
 }
 
 /* craftの文字の横のfor boozer */
-.header_for_boozer {
+.boozer_page_header__for_boozer {
   position: absolute;
   top: 45%;
   left: 45%;
@@ -240,7 +240,7 @@ footer #boozer_logo {
 }
 
 /* ログイン中のスタッフ名 */
-.header_staff_name {
+.boozer_page_header__staff_name {
   position: absolute;
   top: 50%;
   left: 70%;
@@ -259,7 +259,7 @@ footer #boozer_logo {
 .side_menu_container {
   width: 20%;
   height: 80vh;
-  background: #d4d4d4;
+  background: rgb(212, 212, 212);
   position: fixed;
 }
 
@@ -276,7 +276,7 @@ footer #boozer_logo {
 
 /* 左側のメニュー（一つの項目のテキスト カーソル当てたら色変化） */
 .side_menu_text:hover {
-  color: #706f6f;
+  color: rgb(112, 111, 111);
 }
 
 .right_page_container {
@@ -285,7 +285,7 @@ footer #boozer_logo {
 
 .user_info_wrapper {
   font-size: 1.5rem;
-  background: #bdbcbc;
+  background: rgb(189, 188, 188);
   width: 50%;
   margin-top: 3rem;
   margin-left: 3rem;
@@ -416,4 +416,47 @@ footer #boozer_logo {
   padding: 1rem 4rem;
   margin: 3rem 0% 5rem 40%;
 }
-/*# sourceMappingURL=craft.css.map */
+
+.agent_login_container {
+  height: 100vh;
+  background-image: url(./img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.agent_login_forget_link {
+  color: white;
+}
+
+.agent_logout_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent_logout_container {
+  margin-top: 50vh;
+}
+
+.agent_page_header {
+  width: 100%;
+  height: 20vh;
+  background-image: url(./img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  position: fixed;
+  z-index: 99999999999;
+}
+
+.user_page__img_wrapper {
+  width: 30%;
+  height: auto;
+}
+
+.user_page__img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=craft.css.map */

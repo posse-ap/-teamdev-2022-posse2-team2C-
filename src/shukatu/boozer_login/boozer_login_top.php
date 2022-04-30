@@ -5,7 +5,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='agent_login.html'>ログイン画面へ</a>";
+    print "<a href='agent_login.php'>ログイン画面へ</a>";
     exit();
 } else {
     $code = $_SESSION["code"];
@@ -45,17 +45,6 @@ if (isset($_SESSION["login"]) === false) {
 <body>
     <?php include "../common/boozer_page_header.php"; ?>
 
-    <div class="boozer_top_page_container">
-        <div class="side_menu_container">
-            <ul class="side_menu_wrapper">
-                <li class="side_menu"><a href="../boozer_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">エージェント一覧</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">新規エージェント作成</a></li>
-                <li class="side_menu"><a href="" class="side_menu_text">学生情報一覧</a></li>
-                <li class="side_menu"><a href="../boozer_page/boozer_staff_list.php" class="side_menu_text">boozerスタッフ管理</a></li>
-                <li class="side_menu"><a href="boozer_logout.php" class="side_menu_text">ログアウト</a></li>
-            </ul>
-        </div>
         <div class="right_page_container">
             <div class="user_info_container">
                 <ul class="user_info_wrapper">

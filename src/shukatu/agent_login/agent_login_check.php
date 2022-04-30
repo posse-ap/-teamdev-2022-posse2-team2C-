@@ -22,7 +22,7 @@ $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //codeとpasswordが一致する人を選択(nameカラムから)
 
 // ネーム以外にもとってこないといけないものがある気がする。他ファイル参照。selectで検索
-$sql = "SELECT account_email_address FROM agent_account WHERE account_email_address =? AND account_password=?";
+$sql = "SELECT account_email_address, company_name FROM agent_account WHERE account_email_address =? AND account_password=?";
 $stmt = $dbh -> prepare($sql);
 $data[] = $account_email_address;
 $data[] = $pass;
@@ -39,7 +39,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 //databaseに情報があるかどうかチェック
 if(empty($rec["account_email_address"]) === true) {
     print "入力が間違っています。<br><br>";
-    print "<a href='agent_login.html'>戻る</a>";
+    print "<a href='agent_login.php'>戻る</a>";
     exit();
 } else {
     //一意のsessionIDを付与 ページ移動しても情報保持できる
@@ -51,6 +51,7 @@ if(empty($rec["account_email_address"]) === true) {
     session_start();
     $_SESSION["login"] = 1;
     $_SESSION["account_email_address"] = $rec["account_email_address"];
+    $_SESSION["company_name"] = $rec["company_name"];
     $_SESSION["pass"] = $pass;
     //認証されたらこのページに飛ぶ
     header("Location:agent_login_top.php");
@@ -59,7 +60,5 @@ if(empty($rec["account_email_address"]) === true) {
 }
 catch(Exception $e) {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-    print "<a href='agent_login.html'>戻る</a>";
+    print "<a href='agent_login.php'>戻る</a>";
 }
-?>
-
