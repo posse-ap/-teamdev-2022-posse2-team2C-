@@ -1,0 +1,118 @@
+#Q-A{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 650px;
+  #Q-A_title{
+    background-color: #26a69a;
+    margin: 45px auto 25px;
+    color: #fff;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 2;
+  }
+  #Q-A_area{
+    width: 100%;
+    .pare_of_Q-A{
+      width: 100%;
+      margin-bottom: 35px;
+      .question{
+        width: 100%;
+        margin: 5px 0;
+        background-color: #f3f3f3;
+        display: flex;
+        position: relative;
+        .Q{
+          width: 24px;
+          opacity: 50%;
+          background-color: #26a69a;
+          color: #fff;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .question_textarea{
+          padding: 10px;
+          p{
+            line-height: 1.5;
+          }
+        }
+        .show_ans_wrapper{
+          display: flex;
+          align-items: center;
+          position: absolute;
+          right: 4px;
+          height: 100%;
+          .show_ans{
+            width: 24px;
+            height: 20px;
+            position: relative;
+            &::before{
+              content: "";
+              width: 2px;
+              height: 20px;
+              background-color: #000;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 9px;
+            }
+            &::after{
+              content: "";
+              width: 2px;
+              height: 20px;
+              background-color: #000;
+              display: block;
+              transform: rotate(90deg);
+              position: absolute;
+              top: 0;
+              left: 9px;
+            }
+          }
+          .hide_ans{
+            width: 24px;
+            height: 20px;
+            position: relative;
+            &::after{
+              content: "";
+              width: 2px;
+              height: 20px;
+              background-color: #000;
+              display: block;
+              transform: rotate(90deg);
+              position: absolute;
+              top: 0;
+              left: 9px;
+            }
+          }
+        }
+      }
+      .answer{
+        width: 100%;
+        margin: 5px 0;
+        background-color: #f3f3f3;
+        display: none;
+        position: relative;
+        .A{
+          width: 24px;
+          opacity: 50%;
+          background-color: #ff7575;
+          color: #fff;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .ans_textarea{
+          padding: 10px;
+          p{
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

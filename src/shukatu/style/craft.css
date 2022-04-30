@@ -46,7 +46,7 @@ header nav ul li a {
   text-align: center;
   line-height: 2;
   background-color: #f5835f;
-  opacity: 0.5;
+  opacity: 50%;
 }
 .page_switch_link_here .page_switch_button {
   color: #fff;
@@ -72,7 +72,7 @@ footer #boozer_logo {
 .head_howToUse {
   background-color: #26a69a;
   margin: 45px auto 25px;
-  color: white;
+  color: #fff;
   height: 50px;
   width: 400px;
   border-radius: 25px;
@@ -259,7 +259,7 @@ footer #boozer_logo {
 .side_menu_container {
   width: 20%;
   height: 80vh;
-  background: rgb(212, 212, 212);
+  background: #d4d4d4;
   position: fixed;
 }
 
@@ -276,7 +276,7 @@ footer #boozer_logo {
 
 /* 左側のメニュー（一つの項目のテキスト カーソル当てたら色変化） */
 .side_menu_text:hover {
-  color: rgb(112, 111, 111);
+  color: #706f6f;
 }
 
 .right_page_container {
@@ -285,7 +285,7 @@ footer #boozer_logo {
 
 .user_info_wrapper {
   font-size: 1.5rem;
-  background: rgb(189, 188, 188);
+  background: #bdbcbc;
   width: 50%;
   margin-top: 3rem;
   margin-left: 3rem;
@@ -459,4 +459,124 @@ footer #boozer_logo {
 .user_page__img {
   width: 100%;
   height: 100%;
-}/*# sourceMappingURL=craft.css.map */
+}
+
+#Q-A {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 650px;
+}
+#Q-A #Q-A_title {
+  background-color: #26a69a;
+  margin: 45px auto 25px;
+  color: #fff;
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2;
+}
+#Q-A #Q-A_area {
+  width: 100%;
+}
+#Q-A #Q-A_area .pare_of_Q-A {
+  width: 100%;
+  margin-bottom: 35px;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question {
+  width: 100%;
+  margin: 5px 0;
+  background-color: #f3f3f3;
+  display: flex;
+  position: relative;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .Q {
+  width: 24px;
+  opacity: 50%;
+  background-color: #26a69a;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .question_textarea {
+  padding: 10px;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .question_textarea p {
+  line-height: 1.5;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .show_ans_wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 4px;
+  height: 100%;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .show_ans_wrapper .show_ans {
+  width: 24px;
+  height: 20px;
+  position: relative;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .show_ans_wrapper .show_ans::before {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 9px;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .show_ans_wrapper .show_ans::after {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+  display: block;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 0;
+  left: 9px;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .show_ans_wrapper .hide_ans {
+  width: 24px;
+  height: 20px;
+  position: relative;
+}
+#Q-A #Q-A_area .pare_of_Q-A .question .show_ans_wrapper .hide_ans::after {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+  display: block;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 0;
+  left: 9px;
+}
+#Q-A #Q-A_area .pare_of_Q-A .answer {
+  width: 100%;
+  margin: 5px 0;
+  background-color: #f3f3f3;
+  display: none;
+  position: relative;
+}
+#Q-A #Q-A_area .pare_of_Q-A .answer .A {
+  width: 24px;
+  opacity: 50%;
+  background-color: #ff7575;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea {
+  padding: 10px;
+}
+#Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea p {
+  line-height: 1.5;
+}
+/*# sourceMappingURL=craft.css.map */
