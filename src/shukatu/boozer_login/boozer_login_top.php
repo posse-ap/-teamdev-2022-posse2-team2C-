@@ -36,7 +36,7 @@ if (isset($_SESSION["login"]) === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boozer管理画面TOP</title>
     <link rel="stylesheet" href="../style/reset.css">
-    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
+    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -45,16 +45,16 @@ if (isset($_SESSION["login"]) === false) {
 <body>
     <?php include "../common/boozer_page_header.php"; ?>
 
-        <div class="right_page_container">
-            <div class="user_info_container">
-                <ul class="user_info_wrapper">
-                    <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
-                    <li class="user_info"><span class="user_info_text">担当者名</span><span><?php print $_SESSION["name"]; ?></span></li>
-                    <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
-                </ul>
-            </div>
-            <div class="request_list"></div>
+    <div class="right_page_container">
+        <div class="user_info_container">
+            <ul class="user_info_wrapper">
+                <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
+                <li class="user_info"><span class="user_info_text">担当者名</span><span><?php print $_SESSION["name"]; ?></span></li>
+                <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
+            </ul>
         </div>
+        <div class="request_list"></div>
+    </div>
     </div>
 </body>
 

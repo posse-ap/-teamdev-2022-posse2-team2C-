@@ -4,7 +4,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='boozer_login.php'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
 }
@@ -135,7 +135,7 @@ if (isset($_SESSION["login"]) === false) {
         //   print "<br>";
     } catch (Exception $e) {
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-        print "<a href='../boozer_login/login.html'>ログイン画面へ</a>";
+        print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
     }
     ?>
 </body>

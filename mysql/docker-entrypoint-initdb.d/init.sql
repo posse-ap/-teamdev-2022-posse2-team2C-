@@ -158,3 +158,27 @@ INSERT INTO shukatu.staff (code, name, password, mail_address) VALUES
 ("1","小野寛太","0706","onokan@gmail.com"),
 ("2","寺下渓志朗","0225","terashi@gmail.com"),
 ("3","冨永桃","0315","momo@gmail.com");
+
+
+DROP TABLE IF EXISTS shukatu.student_info;
+CREATE TABLE shukatu.student_info (
+  id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  student_family_name VARCHAR(255) NOT NULL,
+  student_first_name VARCHAR(255) NOT NULL,
+  student_family_name_ruby VARCHAR(255) NOT NULL,
+  student_first_name_ruby VARCHAR(255) NOT NULL,
+  email_address VARCHAR(255) NOT NULL,
+  phone_number VARCHAR(255) NOT NULL,
+  name_of_the_univ VARCHAR(255) NOT NULL,
+  faculty VARCHAR(255) NOT NULL,
+  department VARCHAR(255) NOT NULL,
+  school_year INT NOT NULL,
+  the_year_of_grad INT NOT NULL
+);
+
+DROP TABLE IF EXISTS shukatu.student_agent_connection_table;
+
+CREATE TABLE shukatu.student_agent_connection_table (
+  student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  agent_id INT NOT NULL
+);
