@@ -38,10 +38,10 @@ session_regenerate_id(true);
             $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
             if ($rec_2 === false) {
                 break;
-            } 
+            }
             $agent_id = $rec_2["agent_id"];
-            ?>
-            
+    ?>
+
             <div class="user_page__agent_container">
                 <div class="user_page__heart_img_wrapper">
                     <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>">♡</a>
@@ -50,21 +50,14 @@ session_regenerate_id(true);
                     </div>
                 </div>
                 <div class="user_page__text_wrapper">
-                    <span class="user_page__company_name"><?php print $rec_2["company_name"];?></span>
-                    <span class="user_page__catchphrase"><?php print $rec_2["catchphrase"];?></span>
+                    <span class="user_page__company_name"><?php print $rec_2["company_name"]; ?></span>
+                    <span class="user_page__catchphrase"><?php print $rec_2["catchphrase"]; ?></span>
                 </div>
-                <a href='user_detail.php?agent_id=<?php echo $agent_id;?>'>詳しくはこちら！</a>
-                
+                <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>'>詳しくはこちら！</a>
             </div>
-
-
-
-            <!-- <div id="question_area"></div> -->
-
     <?php
-           
+
         }
-        print "<br>";
     } catch (Exception $e) {
         print "只今障害が発生しております。<br><br>";
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";

@@ -1,4 +1,4 @@
-document.write("URL:"+location.href);
+// document.write("URL:"+location.href);
 
 // const header_top_button = document.getElementById('header_top_button');
 // const header_howToUse_button = document.getElementById('howToUse_button');
