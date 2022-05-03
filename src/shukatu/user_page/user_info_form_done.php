@@ -8,7 +8,9 @@ $agent_id = $_GET["agent_id"];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>個人情報入力ページ</title>
+
     <link rel="stylesheet" href="../style.css">
 </head>
 

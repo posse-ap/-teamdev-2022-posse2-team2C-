@@ -188,12 +188,14 @@ INSERT INTO shukatu.student_info (student_family_name, student_first_name, stude
 ("寺下","渓志朗","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","1","26"),
 ("小野","寛太","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","3","24");
 
+
 DROP TABLE IF EXISTS shukatu.student_agent_connection_table;
 
 CREATE TABLE shukatu.student_agent_connection_table (
   student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   agent_id INT NOT NULL
 );
+
 
 INSERT INTO shukatu.student_agent_connection_table (agent_id) VALUES 
 (1),

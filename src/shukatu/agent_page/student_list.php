@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>[AGENT]学生情報一覧</title>
+
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +19,9 @@
 <body>
     <?php
     include "../common/agent_page_header.php"; ?>
+
     <div class="right_page_container">
+
     <?php
     $agent_id = $_GET["agent_id"];
 
@@ -62,12 +66,14 @@
         <?php
     
          }
+
         
     } catch (Exception $e) {
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
         print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
+
     
 
     <?php
@@ -75,6 +81,7 @@
         ?>
 
        
+
     </div>
     </div>
 

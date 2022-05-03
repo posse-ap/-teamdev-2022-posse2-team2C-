@@ -36,6 +36,7 @@ session_start();
     // $max = count($cart);
     $agent_id = $_GET['agent_id'];
 
+
     $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
     $user = "root";
     $password = "password";
@@ -44,7 +45,9 @@ session_start();
 
     print "<h1>【申請エージェント】<br></h1>";
     // for ($i = 0; $i < $max; $i++) {
+
       $sql = "SELECT * FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
+
       $stmt = $dbh->prepare($sql);
       $data = array();
       $data[] = $agent_id;

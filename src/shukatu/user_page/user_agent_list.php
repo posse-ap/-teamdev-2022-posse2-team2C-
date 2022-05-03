@@ -64,10 +64,12 @@ session_regenerate_id(true);
             if ($rec === false) {
                 break;
             }
+
             $agent_id = $rec["agent_id"];
         ?>
 
             
+
             <div class="user_page__agent_container">
                 <div class="user_page__heart_img_wrapper">
                     <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>">♡</a>
@@ -77,6 +79,7 @@ session_regenerate_id(true);
                     </div>
                 </div>
                 <div class="user_page__text_wrapper">
+
                     <span class="user_page__company_name"><?php print $rec["company_name"]; ?></span>
                     <span class="user_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
                     <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="user_page__detail_btn">詳しくはこちら！</a>
@@ -84,6 +87,7 @@ session_regenerate_id(true);
                 
             </div>
     <?php }
+
     } catch (Exception $e) {
         print "只今障害が発生しております。<br><br>";
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";

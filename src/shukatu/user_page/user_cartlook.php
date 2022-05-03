@@ -24,7 +24,9 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>お気に入り一覧ページ</title>
+
     <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
 </head>
 
@@ -48,6 +50,7 @@ session_start();
         // $quantity = $_SESSION["quantity"];
         $max = count($cart);
 
+
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
         $password = "password";
@@ -56,7 +59,9 @@ session_start();
 
         foreach ($cart as $key => $val) {
 
+
             $sql = "SELECT * FROM agent WHERE agent_id=?";
+
             $stmt = $dbh->prepare($sql);
             $data[0] = $val;
             $stmt->execute($data);
@@ -64,7 +69,9 @@ session_start();
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $agent_id[] = $rec["agent_id"];
+
             $company_name[] = $rec["company_name"];
+
             $catchphrase[] = $rec["catchphrase"];
             $feature[] = $rec["feature"];
         }
@@ -93,18 +100,23 @@ session_start();
             
 
             お気に入りから削除する:<input type="checkbox" name="delete<?php print $i; ?>"><br>
+
             <br>
 
         <?php }; ?>
 
         <br><br>
         <input type="hidden" name="max" value="<?php print $max; ?>">
+
         <input type="submit" value="お気に入りから削除">
+
         <br><br>
         <input type="button" onclick="history.back()" value="戻る">
     </form>
     <br>
+
     <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
+
 
     <script src="../js/header.js"></script>
 </body>

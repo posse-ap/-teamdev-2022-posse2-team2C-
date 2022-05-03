@@ -39,6 +39,7 @@ if (isset($_SESSION["login"]) === false) {
         $post_period_start = $post["post_period_start"];
         $post_period_end = $post["post_period_end"];
 
+
         $catchphrase = $post["catchphrase"];
         $feature = $post["feature"];
         $region_code = $post["region_code"];
@@ -77,6 +78,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh_2 = new PDO($dsn, $user, $password);
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
         $sql_2 = "UPDATE agent SET catchphrase=?, feature=?, online_meeting=?, membership=?, pros=?, cons=? WHERE agent_id=?";
         $stmt_2 = $dbh_2->prepare($sql_2);
         // $data_2[] = $cate;
@@ -88,7 +90,9 @@ if (isset($_SESSION["login"]) === false) {
         $data_2[] = $membership;
         $data_2[] = $pros;
         $data_2[] = $cons;
+
         $data_2[] = $agent_id;
+
         $stmt_2->execute($data_2);
 
         $dbh_2 = null;
