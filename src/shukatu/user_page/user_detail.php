@@ -17,7 +17,7 @@ if (isset($_SESSION["member_login"]) === true) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エージェント選択画面</title>
+    <title>就活エージェント詳細ページ</title>
     <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
 </head>
 
@@ -35,7 +35,7 @@ if (isset($_SESSION["member_login"]) === true) {
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT agent.agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons, company_name, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
+        $sql = "SELECT * FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $agent_id;
         $stmt->execute($data);
@@ -57,7 +57,7 @@ if (isset($_SESSION["member_login"]) === true) {
         <div class="user_page__heart_img_wrapper">
             <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>">♡</a>
             <div class="user_page__img_wrapper">
-                <img src="./agent_img/agent_img.1" alt="" class="user_page__img">
+            <img src="./agent_img/agent_img_<?php echo $agent_id;?>.png" alt="" class="user_page__img">
             </div>
         </div>
         <div class="user_page__text_wrapper">

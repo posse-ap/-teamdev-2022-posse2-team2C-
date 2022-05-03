@@ -24,7 +24,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お気に入り情報</title>
+    <title>お気に入り一覧ページ</title>
     <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
 </head>
 
@@ -47,7 +47,6 @@ session_start();
         $cart = $_SESSION["cart"];
         // $quantity = $_SESSION["quantity"];
         $max = count($cart);
-        echo $max;
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
@@ -57,7 +56,7 @@ session_start();
 
         foreach ($cart as $key => $val) {
 
-            $sql = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+            $sql = "SELECT * FROM agent WHERE agent_id=?";
             $stmt = $dbh->prepare($sql);
             $data[0] = $val;
             $stmt->execute($data);
@@ -65,6 +64,7 @@ session_start();
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $agent_id[] = $rec["agent_id"];
+            $company_name[] = $rec["company_name"];
             $catchphrase[] = $rec["catchphrase"];
             $feature[] = $rec["feature"];
         }
@@ -79,30 +79,32 @@ session_start();
     <form action="agent_quantity.php" method="post">
         お気に入り一覧<br><br>
         <?php for ($i = 0; $i < $max; $i++) {; ?>
-            <?php if (empty($image[$i]) === true) {; ?>
-                <?php $disp_image = ""; ?>
-            <?php } else {; ?>
-                <?php $disp_image = "<img src='../product/image/" . $image[$i] . "'>"; ?>
-            <?php }; ?>
-            <?php print $disp_image; ?>
-            エージェント名:<?php print $agent_id[$i]; ?><br>
-            キャッチフレーズ:<?php print $catchphrase[$i]; ?><br>
-            特徴:<?php print $feature[$i]; ?><br>
 
-            <!-- 合計価格:<?php print $price[$i] * $quantity[$i] . "円"; ?><br> -->
-            削除:<input type="checkbox" name="delete<?php print $i; ?>"><br>
+            <div class="user_page__heart_img_wrapper">
+            <div class="user_page__img_wrapper">
+            <img src="./agent_img/agent_img_<?php echo $agent_id[$i];?>.png" alt="" class="user_page__img">
+            </div>
+        </div>
+        <div class="user_page__text_wrapper">
+            <span class="user_page__company_name"><?php print $company_name[$i]; ?></span>
+            <span class="user_page__catchphrase"><?php print $catchphrase[$i]; ?></span>
+        </div>
+
+            
+
+            お気に入りから削除する:<input type="checkbox" name="delete<?php print $i; ?>"><br>
             <br>
 
         <?php }; ?>
 
         <br><br>
         <input type="hidden" name="max" value="<?php print $max; ?>">
-        <input type="submit" value="数量変更/削除">
+        <input type="submit" value="お気に入りから削除">
         <br><br>
         <input type="button" onclick="history.back()" value="戻る">
     </form>
     <br>
-    <a href="user_info_form_check.php">個人情報入力に進む</a>
+    <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
 
     <script src="../js/header.js"></script>
 </body>

@@ -36,7 +36,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //全レコード対象にcode,name,price取得
-        $sql = "SELECT agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent_account WHERE1";
+        $sql = "SELECT * FROM agent_account WHERE1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -49,7 +49,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //全レコード対象にcode,name,price取得
-        $sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE1";
+        $sql_2 = "SELECT * FROM agent WHERE1";
         $stmt_2 = $dbh_2->prepare($sql_2);
         $stmt_2->execute();
 

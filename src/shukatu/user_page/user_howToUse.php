@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/craft.css">
   <script src="../js/header.js" defer></script>
-  <title>Document</title>
+  <title>使い方ガイドページ</title>
 </head>
 
 <body>

@@ -297,7 +297,10 @@ footer #boozer_logo {
   border: 1px solid black;
 }
 
+
 /* エージェント一覧 */
+
+
 .agent_list_right_page_container {
   width: 80%;
   position: absolute;
@@ -580,3 +583,73 @@ footer #boozer_logo {
   line-height: 1.5;
 }
 /*# sourceMappingURL=craft.css.map */
+
+
+
+/* use_agent_list.phpの簡易的なデザイン・cssに直接書いてますごめんなさいいいい */
+
+/* エージェント間の間隔を開けて見やすくするだけ */
+.user_page__agent_container {
+  width: 80%;
+  margin: 5% auto;
+}
+
+/* とりあえず画像の大きさ設定 */
+.user_page__img_wrapper {
+  width: 30%;
+  height: auto;
+  box-shadow: 0 3px 4px #9b9a9a;
+}
+
+.user_page__img {
+  width: 100%;
+  height:  100%;
+}
+
+/* 会社名・キャッチコピー。ボタン並べ方 */
+.user_page__text_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_page__company_name {
+  font-size:2rem;
+  margin: 1% 0;
+}
+
+/* 詳細ボタン */
+.user_page__detail_btn {
+  width: 20%;
+  margin: 3% 0;
+  padding: 1%;
+  text-align: center;
+  color: white;
+  background: #26A69A;
+  border-radius: 30px;
+  box-shadow: 0 3px 4px #9b9a9a;
+}
+
+
+/* タグ検索部分 */
+.tags_wrapper {
+  position: fixed;
+  width: 50vh;
+  top: 25vh;
+  right: 5%;
+  background: rgb(183, 182, 182);
+  padding: 1%;
+  border-radius:30px;
+  box-shadow: 0 3px 4px #9b9a9a;
+}
+
+/* agent_pageの学生情報一覧の見た目です後で消しますほんとごめんねええ */
+
+.agent_page_student_info_wrapper {
+background:rgb(203, 203, 203);
+padding: 1%;
+margin: 1%;
+}
+.agent_page_student_info_wrapper_span {
+  background: white;
+  padding: .5%;
+}

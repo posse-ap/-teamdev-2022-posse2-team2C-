@@ -46,20 +46,21 @@ DROP TABLE IF EXISTS agent;
 CREATE TABLE  agent(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   agent_id INT NOT NULL ,
+  company_name VARCHAR(255) NOT NULL,
   catchphrase VARCHAR(255) NOT NULL,
   feature VARCHAR(255) NOT NULL,
-  region_code VARCHAR(255) NOT NULL,
-  prefecture_code VARCHAR(255) NOT NULL,
   online_meeting VARCHAR(255) NOT NULL,
   membership VARCHAR(255) NOT NULL,
   pros VARCHAR(255) NOT NULL,
   cons VARCHAR(255) NOT NULL
 );
 
-INSERT INTO agent (agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons) VALUES 
-("1","「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","1","1","可","1,000","サポート体制が厚い","連絡頻度が高い"),
-("2","「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","1","1","不可","1,000","サポート体制が厚い","連絡頻度が高い"),
-("3","「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","1","1","可","1,000","サポート体制が厚い","連絡頻度が高い");
+INSERT INTO agent (agent_id, company_name, catchphrase, feature, online_meeting, membership, pros, cons) VALUES 
+("1", "irodas", "「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","可","1,000","サポート体制が厚い","連絡頻度が高い"),
+("2", "リクナビ就活エージェント", "「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","不可","1,000","サポート体制が厚い","連絡頻度が高い"),
+("3", "マイナビ", "「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","可","1,000","サポート体制が厚い","連絡頻度が高い"),
+("4", "doda", "「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","可","1,000","サポート体制が厚い","連絡頻度が高い"),
+("5", "キャリタス", "「いい会社じゃなく,いい人生に出会える場所」","自己分析～内定まで1対1でメンターがサポート","可","1,000","サポート体制が厚い","連絡頻度が高い");
 
 
 -- 地域指定テーブル
@@ -122,7 +123,11 @@ INSERT INTO tag_agent_connect (agent_id, tag_code) VALUES
 (1,2),
 (1,3),
 (2,1),
-(2,4);
+(2,4),
+(3,1),
+(4,1),
+(4,4);
+
 
 
 -- ここからエージェント自身の情報テーブル
@@ -141,9 +146,11 @@ CREATE TABLE  agent_account(
 
 
 INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end) VALUES 
-("1","就活エージェントA","小野寛太","onokan@icloud.com","0706","onokan@gmail.com","2022-3-1","2022-4-1"),
-("2","就活エージェントB","寺下渓志朗","terashi@icloud.com","0706","terashi@gmail.com","2022-3-1","2022-4-1"),
-("3","就活エージェントC","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1");
+("1","irodas","小野寛太","onokan@icloud.com","0706","onokan@gmail.com","2022-3-1","2022-4-1"),
+("2","リクナビ就職エージェント","寺下渓志朗","terashi@icloud.com","0706","terashi@gmail.com","2022-3-1","2022-4-1"),
+("3","マイナビ","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1"),
+("4","doda","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1"),
+("5","キャリタス","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1");
 
 
 DROP TABLE IF EXISTS shukatu.staff;
@@ -176,9 +183,23 @@ CREATE TABLE shukatu.student_info (
   the_year_of_grad INT NOT NULL
 );
 
+INSERT INTO shukatu.student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES
+("冨永","桃","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","2","25"),
+("寺下","渓志朗","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","1","26"),
+("小野","寛太","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","3","24");
+
 DROP TABLE IF EXISTS shukatu.student_agent_connection_table;
 
 CREATE TABLE shukatu.student_agent_connection_table (
   student_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   agent_id INT NOT NULL
 );
+
+INSERT INTO shukatu.student_agent_connection_table (agent_id) VALUES 
+(1),
+(2),
+(3),
+(1),
+(3),
+(2),
+(4);

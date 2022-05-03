@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会員登録完了</title>
+    <title>個人情報登録完了</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -52,6 +52,43 @@
         $stmt->execute($data);
 
         $dbh = null;
+
+        // $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+        // $user = "root";
+        // $password = "password";
+        // $dbh_3 = new PDO($dsn, $user, $password);
+        // $dbh_3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+
+        // $sql_3 = $dbh_3->prepare('SELECT id FROM student_info 
+        // WHERE student_family_name = :student_family_name, 
+        // student_first_name = :student_family_name_ruby, 
+        // student_family_name_ruby = :student_first_name,
+        // student_first_name_ruby = :student_first_name_ruby,
+        // email_address = :email_address,
+        // phone_number = :phone_number,
+        // name_of_the_univ = :name_of_the_univ,
+        // faculty = :faculty,
+        // department = :department,
+        // school_year = :school_year,
+        // the_year_of_grad = :the_year_of_grad,
+        // ');
+        // $sql_3->bindValue(":student_family_name",$student_family_name,PDO::PARAM_STR);
+        // $sql_3->bindValue(":student_first_name",$student_first_name,PDO::PARAM_STR);
+        // $sql_3->bindValue(":student_family_name_ruby",$student_family_name_ruby,PDO::PARAM_STR);
+        // $sql_3->bindValue(":student_first_name_ruby",$student_first_name_ruby,PDO::PARAM_STR);
+        // $sql_3->bindValue(":email_address",$email_address,PDO::PARAM_STR);
+        // $sql_3->bindValue(":phone_number",$phone_number,PDO::PARAM_STR);
+        // $sql_3->bindValue(":name_of_the_univ",$name_of_the_univ,PDO::PARAM_STR);
+        // $sql_3->bindValue(":faculty",$faculty,PDO::PARAM_STR);
+        // $sql_3->bindValue(":school_year",$school_year,PDO::PARAM_STR);
+        // $sql_3->bindValue(":the_year_of_grad",$the_year_of_grad,PDO::PARAM_STR);
+        // $sql_3->execute();
+
+        // $dbh_3 = null;
+
+        // $rec_3 = $sql_3->fetch(PDO::FETCH_ASSOC);
+    
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";

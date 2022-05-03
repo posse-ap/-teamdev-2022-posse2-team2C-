@@ -73,13 +73,12 @@ $password = "password";
 $dbh_2 = new PDO($dsn, $user, $password);
 $dbh_2 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //掲載情報
-$sql_2 = "INSERT INTO agent(agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons) VALUES(?,?,?,?,?,?,?,?,?)";
+$sql_2 = "INSERT INTO agent(agent_id, company_name, catchphrase, feature, online_meeting, membership, pros, cons) VALUES(?,?,?,?,?,?,?)";
 $stmt_2 = $dbh_2 -> prepare($sql_2);
 $data_2[] = $agent_id;
+$data[] = $company_name;
 $data_2[] = $catchphrase;
 $data_2[] = $feature;
-$data_2[] = $region_code;
-$data_2[] = $prefecture_code;
 $data_2[] = $online_meeting;
 $data_2[] = $membership;
 $data_2[] = $pros;

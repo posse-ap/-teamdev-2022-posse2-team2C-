@@ -37,7 +37,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT agent.agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons, company_name, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
+        $sql = "SELECT * FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $agent_id;
         $stmt->execute($data);
