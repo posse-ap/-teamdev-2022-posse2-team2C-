@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style/craft.css">
   <script src="../js/header.js" defer></script>
   <script src="../js/user_Q&A.js" defer></script>
-  <title>Document</title>
+  <title>Q&A・お問合せページ</title>
 </head>
 
 <body>

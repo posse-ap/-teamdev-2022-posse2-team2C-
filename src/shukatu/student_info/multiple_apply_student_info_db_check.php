@@ -1,12 +1,20 @@
+<?php session_start();
+
+ $cart = $_SESSION["cart"];
+ $quantity = $_SESSION["quantity"];
+ $max = count($cart);
+
+//  echo $max;
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>個人情報入力チェック</title>
-
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -18,7 +26,6 @@
 
     $post = sanitize($_POST);
 
-    $agent_id = $post["agent_id"];
     $student_family_name = $post["student_family_name"];
     $student_first_name = $post["student_first_name"];
     $student_family_name_ruby = $post["student_family_name_ruby"];
@@ -50,15 +57,15 @@
     //     print "住所を入力してください。<br>";
     //     $okflag = false;
     // }
-    if (empty($phone_number) === true) {
-        print "電話番号を入力してください。<br>";
-        $okflag = false;
-    }
-    // //桁数おかしいとか
-    if (preg_match("/\A\d{2,5}-?\d{2,5}-?\d{4,5}\z/", $phone_number) === 0) {
-        print "正しい電話番号を入力してください。<br>";
-        $okflag = false;
-    }
+    // if (empty($phone_number) === true) {
+    //     print "電話番号を入力してください。<br>";
+    //     $okflag = false;
+    // }
+    // // //桁数おかしいとか
+    // if (preg_match("/\A\d{2,5}-?\d{2,5}-?\d{4,5}\z/", $phone_number) === 0) {
+    //     print "正しい電話番号を入力してください。<br>";
+    //     $okflag = false;
+    // }
     // if(empty($pass) === true) {
     //     print "パスワードを入力してください。<br>";
     //     $okflag = false;
@@ -74,8 +81,11 @@
         print "下記内容で登録しますか？<br><br>";
     ?>
 
-        <form action='student_info_db_done.php' method='post'>
-            <input type="text" name="agent_id" value="<?php echo $agent_id?>">
+        <form action='multiple_apply_student_info_db_done.php' method='post'>
+
+
+
+            <input type="hidden" name="cart" value="<?php echo $cart;?>">
             <input type="text" name="student_family_name" value="<?php echo $student_family_name ?>">
             <input type="text" name="student_first_name" value="<?php echo $student_first_name ?>">
             <input type="text" name="student_family_name_ruby" value="<?php echo $student_family_name_ruby ?>">

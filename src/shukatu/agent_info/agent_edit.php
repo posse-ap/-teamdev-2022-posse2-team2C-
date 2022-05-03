@@ -51,7 +51,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //urlに乗ってきたcodeを元に識別
-        $sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+        $sql_2 = "SELECT * FROM agent WHERE agent_id=?";
         $stmt_2 = $dbh_2->prepare($sql_2);
         $data_2[] = $agent_id;
         $stmt_2->execute($data_2);
@@ -113,7 +113,7 @@ if (isset($_SESSION["login"]) === false) {
                             <span class="agent_reg_form_box_text">特徴</span>
                             <input type="text" name="feature" value="<?php print $rec_2['feature']; ?>">
                         </div>
-                        <div class="agent_reg_form_box">
+                        <!-- <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">エリア指定</span>
                             <span>地域code</span>
                             <input type="text" name="region_code" value="<?php print $rec_2['region_code']; ?>">
@@ -121,7 +121,7 @@ if (isset($_SESSION["login"]) === false) {
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">県code</span>
                             <input type="text" name="prefecture_code" value="<?php print $rec_2['prefecture_code']; ?>">
-                        </div>
+                        </div> -->
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">オンライン面談可否</span>
                             <input type="text" name="online_meeting" value="<?php print $rec_2['online_meeting']; ?>">

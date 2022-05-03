@@ -51,7 +51,9 @@ if (isset($_SESSION["login"]) === false) {
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //全レコード対象にcode,name,price取得
-        $sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+
+        $sql_2 = "SELECT * FROM agent WHERE agent_id=?";
+
         $stmt_2 = $dbh_2->prepare($sql_2);
         $data_2[] = $agent_id;
         $stmt_2->execute($data_2);

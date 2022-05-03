@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ログイン入力</title>
+    <title>[AGENT]ログイン入力</title>
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
