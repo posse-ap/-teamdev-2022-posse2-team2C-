@@ -1,9 +1,8 @@
-body {
-  margin: 0;
-}
+@use "../base/var";
+@forward "../base/var";
 
 header {
-  background-color: #26a69a;
+  background-color: var.$main_color;
   width: 100vw;
   #header_logo {
     color: #fff;
@@ -63,19 +62,3 @@ header {
     }
   }
 }
-
-footer {
-  background-color: #26a69a;
-  height: 100px;
-  #boozer_logo {
-    margin: 0 auto;
-    display: block;
-    width: 288px;
-  }
-}
-
-@import "howToUse";
-@import "boozerLogin";
-@import "agentLogin";
-@import "userAgentList";
-@import "userQ&A";

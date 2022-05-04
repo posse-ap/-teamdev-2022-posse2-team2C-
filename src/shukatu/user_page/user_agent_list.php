@@ -11,8 +11,9 @@ session_regenerate_id(true);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>就活エージェント比較サイトTOPページ</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/user-agentList.css">
+    <script src="../js/user_page.js" defer></script>
 </head>
 
 <body>
@@ -99,7 +100,6 @@ session_regenerate_id(true);
     </footer>
 
     <script src="../js/header.js"></script>
-    <script src="../js/user_page.js"></script>
 </body>
 
 </html>

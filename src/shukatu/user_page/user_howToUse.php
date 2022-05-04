@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style/reset.css">
-  <link rel="stylesheet" href="../style/craft.css">
+  <link rel="stylesheet" href="../style/sass/base/reset.css">
+  <link rel="stylesheet" href="../style/css/user-howToUse.css">
   <script src="../js/header.js" defer></script>
   <title>使い方ガイドページ</title>
 </head>
