@@ -1,74 +1,4 @@
 @charset "UTF-8";
-body {
-  margin: 0;
-}
-
-header {
-  background-color: #26a69a;
-  width: 100vw;
-}
-header #header_logo {
-  color: #fff;
-  margin: 0 auto;
-  text-align: center;
-}
-header #header_logo_shukatu {
-  display: inline-block;
-  font-size: 30px;
-}
-header nav ul {
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-}
-header nav ul li {
-  display: inline-block;
-}
-header nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  line-height: 3;
-}
-
-.page_switch {
-  display: flex;
-  justify-content: space-around;
-}
-.page_switch a {
-  text-decoration: none;
-}
-.page_switch_link .page_switch_button {
-  color: #fff;
-  width: 200px;
-  height: 32px;
-  border-radius: 16px;
-  font-size: 16px;
-  text-align: center;
-  line-height: 2;
-  background-color: #f5835f;
-  opacity: 50%;
-}
-.page_switch_link_here .page_switch_button {
-  color: #fff;
-  width: 200px;
-  height: 32px;
-  border-radius: 16px;
-  font-size: 16px;
-  text-align: center;
-  line-height: 2;
-  background-color: #f5835f;
-}
-
-footer {
-  background-color: #26a69a;
-  height: 100px;
-}
-footer #boozer_logo {
-  margin: 0 auto;
-  display: block;
-  width: 288px;
-}
-
 .head_howToUse {
   background-color: #26a69a;
   margin: 45px auto 25px;
@@ -297,10 +227,7 @@ footer #boozer_logo {
   border: 1px solid black;
 }
 
-
 /* エージェント一覧 */
-
-
 .agent_list_right_page_container {
   width: 80%;
   position: absolute;
@@ -464,6 +391,10 @@ footer #boozer_logo {
   height: 100%;
 }
 
+.tags_wrapper {
+  background: #b7b6b6;
+}
+
 #Q-A {
   width: 90%;
   margin: 0 auto;
@@ -582,74 +513,74 @@ footer #boozer_logo {
 #Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea p {
   line-height: 1.5;
 }
-/*# sourceMappingURL=craft.css.map */
 
-
-
-/* use_agent_list.phpの簡易的なデザイン・cssに直接書いてますごめんなさいいいい */
-
-/* エージェント間の間隔を開けて見やすくするだけ */
-.user_page__agent_container {
-  width: 80%;
-  margin: 5% auto;
+header {
+  background-color: #26a69a;
+  width: 100vw;
 }
-
-/* とりあえず画像の大きさ設定 */
-.user_page__img_wrapper {
-  width: 30%;
-  height: auto;
-  box-shadow: 0 3px 4px #9b9a9a;
-}
-
-.user_page__img {
-  width: 100%;
-  height:  100%;
-}
-
-/* 会社名・キャッチコピー。ボタン並べ方 */
-.user_page__text_wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.user_page__company_name {
-  font-size:2rem;
-  margin: 1% 0;
-}
-
-/* 詳細ボタン */
-.user_page__detail_btn {
-  width: 20%;
-  margin: 3% 0;
-  padding: 1%;
+header #header_logo {
+  color: #fff;
+  margin: 0 auto;
   text-align: center;
-  color: white;
-  background: #26A69A;
-  border-radius: 30px;
-  box-shadow: 0 3px 4px #9b9a9a;
+}
+header #header_logo_shukatu {
+  display: inline-block;
+  font-size: 30px;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 3;
 }
 
-
-/* タグ検索部分 */
-.tags_wrapper {
-  position: fixed;
-  width: 50vh;
-  top: 25vh;
-  right: 5%;
-  background: rgb(183, 182, 182);
-  padding: 1%;
-  border-radius:30px;
-  box-shadow: 0 3px 4px #9b9a9a;
+.page_switch {
+  display: flex;
+  justify-content: space-around;
+}
+.page_switch a {
+  text-decoration: none;
+}
+.page_switch_link .page_switch_button {
+  color: #fff;
+  width: 200px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2;
+  background-color: #f5835f;
+  opacity: 50%;
+}
+.page_switch_link_here .page_switch_button {
+  color: #fff;
+  width: 200px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2;
+  background-color: #f5835f;
 }
 
-/* agent_pageの学生情報一覧の見た目です後で消しますほんとごめんねええ */
+body {
+  margin: 0;
+}
 
-.agent_page_student_info_wrapper {
-background:rgb(203, 203, 203);
-padding: 1%;
-margin: 1%;
+footer {
+  background-color: #26a69a;
+  height: 100px;
 }
-.agent_page_student_info_wrapper_span {
-  background: white;
-  padding: .5%;
+footer #boozer_logo {
+  margin: 0 auto;
+  display: block;
+  width: 288px;
 }
+/*# sourceMappingURL=craft.css.map */

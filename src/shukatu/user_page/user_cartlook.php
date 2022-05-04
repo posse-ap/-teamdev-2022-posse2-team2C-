@@ -27,7 +27,9 @@ session_start();
 
     <title>お気に入り一覧ページ</title>
 
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/user_favorite.css">
+    <script src="../js/header.js" defer></script>
 </head>
 
 <body>
@@ -117,8 +119,6 @@ session_start();
 
     <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
 
-
-    <script src="../js/header.js"></script>
 </body>
 
 </html>
