@@ -34,7 +34,7 @@ session_regenerate_id(true);
 
         if (isset($_POST["2"])) {
 
-            $tag_2 = 2;
+            $tag_2 = 1;
         } else {
             $tag_2 = 0;
             // echo $tag_1;
@@ -46,38 +46,55 @@ session_regenerate_id(true);
         $password = "password";
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_agent_connect ON agent.agent_id = tag_agent_connect.agent_id  WHERE tag_code in ($tag_1, $tag_2)";
+        // $sql = "SELECT DISTINCT agent.agent_id, GROUP_CONCAT(tag_agent_connect.tag_code) FROM agent INNER JOIN tag_agent_connect ON agent.agent_id = tag_agent_connect.agent_id GROUP BY agent.agent_id";
 
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
+        // $stmt = $dbh->prepare($sql);
+        // $stmt->execute();
 
-        $dbh_2 = null;
+        // $dbh_2 = null;
     ?>
         <div>
 
             <div class="tags_wrapper">
                 <h1>タグ検索</h1>
-                <form action="user_agent_list_tag.php" method="post">
-                    <div><input type="checkbox" name="1" value="1">文系</div>
-                    <div><input type="checkbox" name="2" value="2">理系</div>
-                    <div><input type="checkbox" name="3" value="3">オンライン面談可</div>
-                    <div><input type="checkbox" name="4" value="4">23卒</div>
-                    <div><input type="checkbox" name="5" value="5">24卒</div>
-                    <div><input type="checkbox" name="6" value="6">25卒</div>
-                    <div><input type="checkbox" name="7" value="7">大手</div>
-                    <div><input type="checkbox" name="8" value="8">ベンチャー</div>
-                    <div><input type="checkbox" name="9" value="9">広告・出版・マスコミ</div>
-                    <div><input type="checkbox" name="10" value="10">金融</div>
-                    <div><input type="checkbox" name="11" value="11">サービス・インフラ</div>
-                    <div><input type="checkbox" name="12" value="12">小売</div>
-                    <div><input type="checkbox" name="13" value="13">ソフトウェア</div>
-                    <div><input type="checkbox" name="14" value="14">官公庁・校舎・団体</div>
-                    <div><input type="checkbox" name="15" value="15">商社</div>
+                <form action="user_agent_list_tag.php" method="get">
+                    <div><input type="checkbox" name="tag[]" value="1">文系</div>
+                    <div><input type="checkbox" name="tag[]" value="2">理系</div>
+                    <div><input type="checkbox" name="tag[]" value="3">オンライン面談可</div>
+                    <div><input type="checkbox" name="tag[]" value="4">23卒</div>
+                    <div><input type="checkbox" name="tag[]" value="5">24卒</div>
+                    <div><input type="checkbox" name="tag[]" value="6">25卒</div>
+                    <div><input type="checkbox" name="tag[]" value="7">大手</div>
+                    <div><input type="checkbox" name="tag[]" value="8">ベンチャー</div>
+                    <div><input type="checkbox" name="tag[]" value="9">広告・出版・マスコミ</div>
+                    <div><input type="checkbox" name="tag[]" value="10">金融</div>
+                    <div><input type="checkbox" name="tag[]" value="11">サービス・インフラ</div>
+                    <div><input type="checkbox" name="tag[]" value="12">小売</div>
+                    <div><input type="checkbox" name="tag[]" value="13">ソフトウェア</div>
+                    <div><input type="checkbox" name="tag[]" value="14">官公庁・校舎・団体</div>
+                    <div><input type="checkbox" name="tag[]" value="15">商社</div>
                     <input type="submit" value="検索しちゃうよ">
                 </form>
             </div>
         </div>
         <?php
+
+        $arr1 = array();
+        foreach ($_GET['tag'] as $tag) {
+            $arr1[] = "tag_" . $tag . "=1";
+        }
+
+        $a = implode(" AND ", $arr1);
+
+        var_dump($tag);
+        var_dump($a);
+
+        $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+
+        $dbh = null;
+
 
         while (true) {
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
