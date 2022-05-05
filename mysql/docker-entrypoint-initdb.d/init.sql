@@ -129,6 +129,33 @@ INSERT INTO tag_agent_connect (agent_id, tag_code) VALUES
 (4,4);
 
 
+DROP TABLE IF EXISTS shukatu.tag_existence;
+CREATE TABLE shukatu.tag_existence(
+  agent_id INT NOT NULL,
+  tag_1 INT NOT NULL,
+  tag_2 INT NOT NULL,
+  tag_3 INT NOT NULL,
+  tag_4 INT NOT NULL,
+  tag_5 INT NOT NULL,
+  tag_6 INT NOT NULL,
+  tag_7 INT NOT NULL,
+  tag_8 INT NOT NULL,
+  tag_9 INT NOT NULL,
+  tag_10 INT NOT NULL,
+  tag_11 INT NOT NULL,
+  tag_12 INT NOT NULL,
+  tag_13 INT NOT NULL,
+  tag_14 INT NOT NULL,
+  tag_15 INT NOT NULL
+);
+
+INSERT INTO shukatu.tag_existence(agent_id, tag_1, tag_2, tag_3, tag_4, tag_5, tag_6, tag_7, tag_8, tag_9, tag_10,tag_11, tag_12, tag_13, tag_14,tag_15) VALUES
+(1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0),
+(2,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0),
+(3,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0),
+(4,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0),
+(5,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0);
+
 
 -- ここからエージェント自身の情報テーブル
 DROP TABLE IF EXISTS agent_account;
@@ -205,3 +232,4 @@ INSERT INTO shukatu.student_agent_connection_table (agent_id) VALUES
 (3),
 (2),
 (4);
+
