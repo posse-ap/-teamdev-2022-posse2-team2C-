@@ -1,0 +1,15 @@
+@use "./var";
+@forward "./var";
+
+
+
+@mixin header_responsive {
+  @media screen and (max-width: var.$header_size){
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: var.$sp){
+    @content;
+  }
+}

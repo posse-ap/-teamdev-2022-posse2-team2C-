@@ -1,5 +1,7 @@
 @use "../base/var";
 @forward "../base/var";
+@use "../base/mixin";
+@forward "../base/mixin";
 
 header {
   background-color: var.$main_color;
@@ -14,6 +16,9 @@ header {
     }
   }
   nav {
+    @include mixin.header_responsive{
+      display: none;
+    }
     ul {
       display: flex;
       justify-content: space-around;
