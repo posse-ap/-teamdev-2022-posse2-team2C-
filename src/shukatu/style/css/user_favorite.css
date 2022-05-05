@@ -11,6 +11,11 @@ header #header_logo_shukatu {
   display: inline-block;
   font-size: 30px;
 }
+@media screen and (max-width: 980px) {
+  header nav {
+    display: none;
+  }
+}
 header nav ul {
   display: flex;
   justify-content: space-around;
