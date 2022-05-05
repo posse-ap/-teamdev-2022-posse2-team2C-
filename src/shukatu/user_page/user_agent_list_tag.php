@@ -57,7 +57,7 @@ session_regenerate_id(true);
 
             <div class="tags_wrapper">
                 <h1>タグ検索</h1>
-                <form action="user_agent_list_tag.php" method="get">
+                <form action="user_agent_list.php_tag" method="get">
                     <div><input type="checkbox" name="tag[]" value="1">文系</div>
                     <div><input type="checkbox" name="tag[]" value="2">理系</div>
                     <div><input type="checkbox" name="tag[]" value="3">オンライン面談可</div>

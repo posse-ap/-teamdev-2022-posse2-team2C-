@@ -37,23 +37,23 @@ session_regenerate_id(true);
             
             <div class="tags_wrapper">
                 <h1>タグ検索</h1>
-                <form action="user_agent_list_tag.php" method="post">
-                <div><input type="checkbox" name="1">文系</div>
-                    <div><input type="checkbox" name="2">理系</div>
-                    <div><input type="checkbox" name="3">オンライン面談可</div>
-                    <div><input type="checkbox" name="4">23卒</div>
-                    <div><input type="checkbox" name="5">24卒</div>
-                    <div><input type="checkbox" name="6">25卒</div>
-                    <div><input type="checkbox" name="7">大手</div>
-                    <div><input type="checkbox" name="8">ベンチャー</div>
-                    <div><input type="checkbox" name="9">広告・出版・マスコミ</div>
-                    <div><input type="checkbox" name="10">金融</div>
-                    <div><input type="checkbox" name="11">サービス・インフラ</div>
-                    <div><input type="checkbox" name="12">小売</div>
-                    <div><input type="checkbox" name="13">ソフトウェア</div>
-                    <div><input type="checkbox" name="14">官公庁・校舎・団体</div>
-                    <div><input type="checkbox" name="15">商社</div>
-                <input type="submit" value="検索しちゃうよ">
+                <form action="user_agent_list_tag.php" method="get">
+                    <div><input type="checkbox" name="tag[]" value="1">文系</div>
+                    <div><input type="checkbox" name="tag[]" value="2">理系</div>
+                    <div><input type="checkbox" name="tag[]" value="3">オンライン面談可</div>
+                    <div><input type="checkbox" name="tag[]" value="4">23卒</div>
+                    <div><input type="checkbox" name="tag[]" value="5">24卒</div>
+                    <div><input type="checkbox" name="tag[]" value="6">25卒</div>
+                    <div><input type="checkbox" name="tag[]" value="7">大手</div>
+                    <div><input type="checkbox" name="tag[]" value="8">ベンチャー</div>
+                    <div><input type="checkbox" name="tag[]" value="9">広告・出版・マスコミ</div>
+                    <div><input type="checkbox" name="tag[]" value="10">金融</div>
+                    <div><input type="checkbox" name="tag[]" value="11">サービス・インフラ</div>
+                    <div><input type="checkbox" name="tag[]" value="12">小売</div>
+                    <div><input type="checkbox" name="tag[]" value="13">ソフトウェア</div>
+                    <div><input type="checkbox" name="tag[]" value="14">官公庁・校舎・団体</div>
+                    <div><input type="checkbox" name="tag[]" value="15">商社</div>
+                    <input type="submit" value="検索しちゃうよ">
                 </form>
             </div>
         </div>
