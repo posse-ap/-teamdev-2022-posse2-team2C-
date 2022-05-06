@@ -37,9 +37,9 @@ session_start();
     <?php
 
     if (empty($_SESSION["cart"]) === true) {
+        include "../common/user_page_header.html";
 
         print "お気に入りにエージェントはありません。<br><br>";
-        var_dump($_SESSION["cart"]);
 
         print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
         exit();

@@ -4,42 +4,7 @@ CREATE SCHEMA shukatu;
 
 USE shukatu;
 
-DROP TABLE IF EXISTS users;
 
-
-
-CREATE TABLE users (
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
-INSERT INTO
-  users
-SET
-  email = 'test@posse-ap.com',
-  password = sha1('password');
-
-DROP TABLE IF EXISTS events;
-
-CREATE TABLE events (
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
-INSERT INTO
-  events
-SET
-  title = 'イベント1';
-
-INSERT INTO
-  events
-SET
-  title = 'イベント2';
 
 -- ここからエージェントの掲載情報一覧テーブル
 DROP TABLE IF EXISTS agent;
@@ -174,10 +139,10 @@ CREATE TABLE  agent_account(
 
 INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end) VALUES 
 ("1","irodas","小野寛太","onokan@icloud.com","0706","onokan@gmail.com","2022-3-1","2022-4-1"),
-("2","リクナビ就職エージェント","寺下渓志朗","terashi@icloud.com","0706","terashi@gmail.com","2022-3-1","2022-4-1"),
-("3","マイナビ","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1"),
-("4","doda","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1"),
-("5","キャリタス","冨永桃","momo@icloud.com","0706","momo@gmail.com","2022-3-1","2022-4-1");
+("2","リクナビ就職エージェント","寺下渓志朗","terashi@icloud.com","0225","terashi@gmail.com","2022-3-1","2022-4-1"),
+("3","マイナビ","冨永桃","momo@icloud.com","0315","momo@gmail.com","2022-3-1","2022-4-1"),
+("4","doda","小林哲","akira@icloud.com","0115","momo@gmail.com","2022-3-1","2022-4-1"),
+("5","キャリタス","三浦ぽんた","ponta@icloud.com","1009","momo@gmail.com","2022-3-1","2022-4-1");
 
 
 DROP TABLE IF EXISTS shukatu.staff;
