@@ -37,15 +37,52 @@ try{
     
         // codeじゃなくてemailとかにすれば？
         // セッションセキュリティを調べる
-
+        
 
         // ランダムな数を生成
             
         // メールURLを作成
-
+        mb_language("Japanese");
+        mb_internal_encoding("UTF-8");
+        $to = $account_email_address;
+        $subject = "TEST";
+        $message = "パスワード変更のためのURLをお送りします。こちらからパスワード変更を完了させてください。";
+        $headers = "From: onokan@gmail.com";
+        // 最終的なメール
         // メールを送信する
+        mb_send_mail($to, $subject, $message, $headers); 
 
         // 送信した時間を取得する
+
+
+        // 二つ目のパターン
+         // 以下、mail関数でパスワードリセット用メールを送信
+    // mb_language("Japanese");
+    // mb_internal_encoding("UTF-8");
+
+    // // URLはご自身の環境に合わせてください
+    // $url = "http://shukatu/agent_login/agent_login_forget_done.php?token={$passwordResetToken}";
+
+    // $subject =  'パスワードリセット用URLをお送りします';
+
+    // $body = <<<EOD
+    //     24時間以内に下記URLへアクセスし、パスワードの変更を完了してください。
+    //     {$url}
+    //     EOD;
+
+    // // Fromはご自身の環境に合わせてください
+    // $headers = "From : onokan@gmail.com\n";
+    
+    // // text/htmlを指定し、html形式で送ることも可能
+    // $headers .= "Content-Type : text/plain";
+
+    // // mb_send_mailは成功したらtrue、失敗したらfalseを返す
+    // $isSent = mb_send_mail($email, $subject, $body, $headers);
+
+    // if (!$isSent) throw new \Exception('メール送信に失敗しました。');
+
+    // // メール送信まで成功したら、password_resetsテーブルへの変更を確定
+    // $pdo->commit();
 
 
 
@@ -55,7 +92,7 @@ try{
         $_SESSION["login"] = 1;
         $_SESSION["account_email_address"] = $rec["account_email_address"];
         //認証されたらこのページに飛ぶ
-        header("Location:agent_login_top.php");
+        header("Location:agent_login_forget_done.php");
         exit();
     }
 
