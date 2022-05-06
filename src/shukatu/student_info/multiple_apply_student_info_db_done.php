@@ -21,64 +21,61 @@ try {
     $school_year = $post["school_year"];
     $the_year_of_grad = $post["the_year_of_grad"];
 
-    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-    $user = "root";
-    $password = "password";
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sql = "INSERT INTO student_info(student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-    $stmt = $dbh->prepare($sql);
-    $data[] = $student_family_name;
-    $data[] = $student_first_name;
-    $data[] = $student_family_name_ruby;
-    $data[] = $student_first_name_ruby;
-    $data[] = $email_address;
-    $data[] = $phone_number;
-    $data[] = $name_of_the_univ;
-    $data[] = $faculty;
-    $data[] = $department;
-    $data[] = $school_year;
-    $data[] = $the_year_of_grad;
-    $stmt->execute($data);
-
-    $dbh = null;
+ 
 
 
     $cart = $_SESSION["cart"];
     $quantity = $_SESSION["quantity"];
     $max = count($cart);
 
-    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-    $user = "root";
-    $password = "password";
-    $dbh_3 = new PDO($dsn, $user, $password);
-    $dbh_3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    for($i = 0; $i < $max; $i++) {
+        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+        $user = "root";
+        $password = "password";
+        $dbh = new PDO($dsn, $user, $password);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    
+        $stmt= $dbh -> prepare("INSERT INTO student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES (:student_family_name, :student_first_name, :student_family_name_ruby, :student_first_name_ruby, :email_address, :phone_number, :name_of_the_univ, :faculty, :department, :school_year, :the_year_of_grad)");
+        $stmt->bindParam(':student_family_name', $student_family_name, PDO::PARAM_STR);
+        $stmt->bindParam(':student_first_name', $student_first_name, PDO::PARAM_STR);
+        $stmt->bindParam(':student_family_name_ruby', $student_family_name_ruby, PDO::PARAM_STR);
+        $stmt->bindParam(':student_first_name_ruby', $student_first_name_ruby, PDO::PARAM_STR);
+        $stmt->bindParam(':email_address', $email_address, PDO::PARAM_STR);
+        $stmt->bindParam(':phone_number', $phone_number, PDO::PARAM_STR);
+        $stmt->bindParam(':name_of_the_univ', $name_of_the_univ, PDO::PARAM_STR);
+        $stmt->bindParam(':faculty', $faculty, PDO::PARAM_STR);
+        $stmt->bindParam(':department', $department, PDO::PARAM_STR);
+        $stmt->bindParam(':school_year', $school_year, PDO::PARAM_STR);
+        $stmt->bindParam(':the_year_of_grad', $the_year_of_grad, PDO::PARAM_STR);
+        $stmt->execute();
+    
+        $dbh = null;
+
+    }
+
 
 
     foreach ($cart as $key => $val) {
-        echo $val; 
-            
+
+
+        echo $val;
+
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
         $password = "password";
         $dbh_2 = new PDO($dsn, $user, $password);
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql_2 = "INSERT INTO student_agent_connection_table(agent_id) VALUES(?)";
-        $stmt_2 = $dbh_2->prepare($sql_2);
-        $data_2[] = $val;
-        $stmt_2->execute($data_2);
+        $stmt_2 = $dbh_2 -> prepare("INSERT INTO student_agent_connection_table (agent_id) VALUES (:agent_id)");
+        $stmt_2->bindParam(':agent_id', $val, PDO::PARAM_STR);
+        $stmt_2->execute();
 
         $dbh_2 = null;
-        
-        // echo $agent_id;
-         }
-        // }
+
+        }
         
     
-
-   
 
 
 } catch (Exception $e) {

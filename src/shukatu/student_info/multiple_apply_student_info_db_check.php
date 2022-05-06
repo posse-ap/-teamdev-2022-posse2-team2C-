@@ -83,20 +83,22 @@
 
         <form action='multiple_apply_student_info_db_done.php' method='post'>
 
+<ul>
 
+            <li><input type="hidden" name="cart" value="<?php echo $cart;?>"></li>
+            <li><input type="text" name="student_family_name" value="<?php echo $student_family_name ?>"></li>
+            <li><input type="text" name="student_first_name" value="<?php echo $student_first_name ?>"></li>
+            <li><input type="text" name="student_family_name_ruby" value="<?php echo $student_family_name_ruby ?>"></li>
+            <li><input type="text" name="student_first_name_ruby" value="<?php print $student_first_name_ruby ?>"></li>
+            <li><input type="text" name="email_address" value="<?php print $email_address ?>"></li>
+            <li><input type="text" name="phone_number" value="<?php print $phone_number ?>"></li>
+            <li><input type="text" name="name_of_the_univ" value="<?php print $name_of_the_univ ?>"></li>
+            <li><input type="text" name="faculty" value="<?php print $faculty ?>"></li>
+            <li><input type="text" name="department" value="<?php print $department ?>"></li>
+            <li><input type="text" name="school_year" value="<?php print $school_year ?>"></li>
+            <li><input type="text" name="the_year_of_grad" value="<?php print $the_year_of_grad ?>"></li>
 
-            <input type="hidden" name="cart" value="<?php echo $cart;?>">
-            <input type="text" name="student_family_name" value="<?php echo $student_family_name ?>">
-            <input type="text" name="student_first_name" value="<?php echo $student_first_name ?>">
-            <input type="text" name="student_family_name_ruby" value="<?php echo $student_family_name_ruby ?>">
-            <input type="text" name="student_first_name_ruby" value="<?php print $student_first_name_ruby ?>">
-            <input type="text" name="email_address" value="<?php print $email_address ?>">
-            <input type="text" name="phone_number" value="<?php print $phone_number ?>">
-            <input type="text" name="name_of_the_univ" value="<?php print $name_of_the_univ ?>">
-            <input type="text" name="faculty" value="<?php print $faculty ?>">
-            <input type="text" name="department" value="<?php print $department ?>">
-            <input type="text" name="school_year" value="<?php print $school_year ?>">
-            <input type="text" name="the_year_of_grad" value="<?php print $the_year_of_grad ?>">
+            </ul>
 
             <input type='button' onclick='history.back()' value='戻る'>
             <input type='submit' value='登録'>
