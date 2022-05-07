@@ -1,63 +1,63 @@
 @charset "UTF-8";
-.agent_login_container {
+.agent-login {
   height: 100vh;
-  background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
+  background-image: url(../img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: "Roboto", sans-serif;
+  /* 左上のクラフトのロゴ */
+  /* login入力部分全体（黒っぽいところ）をまとめるやつ */
+  /* loginの文字 */
+  /* form部分のみをまとめるやつ */
+  /* 文字とinput部分を縦並びにする */
+  /* submitボタン */
 }
-
-/* 左上のクラフトのロゴ */
-.craft_logo {
+.agent-login__craft-logo {
   color: rgba(255, 255, 255, 0.692);
   font-size: 4rem;
   font-family: "Roboto", sans-serif;
   padding: 4rem;
 }
-
-/* login入力部分全体（黒っぽいところ）をまとめるやつ */
-.input_boxes_container {
+.agent-login__input-boxes {
   margin: 0 auto;
   width: 100%;
   height: 60%;
   background: rgba(0, 0, 0, 0.603);
 }
-
-/* loginの文字 */
-.login_text {
+.agent-login__login_text {
   color: rgba(255, 255, 255, 0.774);
   font-size: 3rem;
   padding: 3%;
 }
-
-/* form部分のみをまとめるやつ */
-.form_box {
+.agent-login__form_box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-/* 文字とinput部分を縦並びにする */
-.input_box_wrapper {
+.agent-login__input-box {
   display: flex;
   flex-direction: column;
   margin: 1% 0;
+  /* インプットの上の文字 */
 }
-
-/* インプットの上の文字 */
-.input_box_text {
+.agent-login__input-box_text {
   color: white;
   font-family: "Dosis", sans-serif;
   margin-bottom: 3%;
 }
-
-/* submitボタン */
-.login_submit_btn {
+.agent-login__submit-btn {
   margin: 3% 0% 3% 1%;
   padding: 1% 5%;
   font-family: "Roboto", sans-serif;
   background: rgba(255, 255, 255, 0.589);
   border-radius: 3px;
 }
+.agent-login__forget-link {
+  color: white;
+}
+
+/********
+エージェントログインページ
+*********/
 /*# sourceMappingURL=agentPage.css.map */
