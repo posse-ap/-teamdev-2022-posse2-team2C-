@@ -24,7 +24,7 @@
           <div class="question_textarea">
             <p>question1</p>
           </div>
-          <span class="show_ans_wrapper"><span class="show_ans" id="show_ans_1" onclick="showAnswer(1)"></span></span>
+          <span class="show_ans_wrapper"><span class="show_ans" id="show_ans_1"></span></span>
         </div>
         <div class="answer" id="answer_1">
           <span class="A">A</span>
@@ -40,7 +40,7 @@
           <div class="question_textarea">
             <p>question2</p>
           </div>
-          <span class="show_ans_wrapper"><span class="show_ans" id="show_ans_2" onclick="showAnswer(2)"></span></span>
+          <span class="show_ans_wrapper"><span class="show_ans" id="show_ans_2"></span></span>
         </div>
         <div class="answer" id="answer_2">
           <span class="A">A</span>
@@ -56,7 +56,7 @@
           <div class="question_textarea">
             <p>question3</p>
           </div>
-          <span class="show_ans_wrapper"><span class="show_ans" id="show_ans_3" onclick="showAnswer(3)"></span></span>
+          <span class="show_ans_wrapper"><span class="show_ans" id="show_ans_3"></span></span>
         </div>
         <div class="answer" id="answer_3">
           <span class="A">A</span>
