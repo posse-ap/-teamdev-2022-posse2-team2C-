@@ -18,8 +18,8 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[AGENT]管理画面TOP</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/agentPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -27,15 +27,15 @@ if (isset($_SESSION["login"]) === false) {
 
 <body>
     <?php include "../common/agent_page_header.php"; ?>
-    <div class="right_page_container">
-        <div class="user_info_container">
-            <ul class="user_info_wrapper">
-                <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
-                <li class="user_info"><span class="user_info_text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
-                <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
+    <div class="right-page__container">
+        <div class="agent-login">
+            <ul class="agent-login__container">
+                <li class="agent-login__menu"><span class="agent-login__text">ユーザー情報</span></li>
+                <li class="agent-login__menu"><span class="agent-login__text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
+                <li class="agent-login__menu"><span class="agent-login__text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
             </ul>
         </div>
-        <div class="request_list"></div>
+        <div class="request-list"></div>
     </div>
     </div>
     <?php

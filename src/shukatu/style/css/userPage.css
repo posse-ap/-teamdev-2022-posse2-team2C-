@@ -69,6 +69,94 @@ footer #boozer_logo {
   width: 288px;
 }
 
+.user_page__img_wrapper {
+  width: 30%;
+  height: auto;
+}
+
+.user_page__img {
+  width: 100%;
+  height: 100%;
+}
+
+.tags_wrapper {
+  background: #b7b6b6;
+}
+
+.head_howToUse {
+  background-color: #26a69a;
+  margin: 45px auto 25px;
+  color: #fff;
+  height: 50px;
+  width: 400px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2;
+}
+
+.user_flow {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.user_flow .steps {
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 2px #000;
+  margin-bottom: 15px;
+}
+.user_flow .steps .head_flow {
+  margin: 0;
+}
+.user_flow .steps .text_flow {
+  margin-top: 40px;
+}
+.user_flow .steps .images {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.user_flow .steps .images .arrow_flow {
+  font-size: large;
+}
+.user_flow .steps .images #flow_img_1 {
+  width: 150px;
+}
+.user_flow .steps .images #flow_img_2 {
+  width: 150px;
+}
+.user_flow .steps .images #flow_img_3 {
+  width: 150px;
+}
+.user_flow .steps .images #flow_img_4 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_5 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_6 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_7 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_8 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_9 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_10 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_11 {
+  width: 300px;
+}
+.user_flow .steps .images #flow_img_12 {
+  width: 300px;
+}
+
 #Q-A {
   width: 90%;
   margin: 0 auto;
@@ -187,4 +275,4 @@ footer #boozer_logo {
 #Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea p {
   line-height: 1.5;
 }
-/*# sourceMappingURL=user-Q&A.css.map */
+/*# sourceMappingURL=userPage.css.map */

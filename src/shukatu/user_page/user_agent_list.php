@@ -12,7 +12,7 @@ session_regenerate_id(true);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>就活エージェント比較サイトTOPページ</title>
     <link rel="stylesheet" href="../style/sass/base/reset.css">
-    <link rel="stylesheet" href="../style/css/user-agentList.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
     <script src="../js/user_page.js" defer></script>
 </head>
 

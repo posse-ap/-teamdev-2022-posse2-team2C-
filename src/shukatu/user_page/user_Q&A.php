@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/sass/base/reset.css">
-  <link rel="stylesheet" href="../style/css/user-Q&A.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
   <script src="../js/header.js" defer></script>
   <script src="../js/user_Q&A.js" defer></script>
   <title>Q&A・お問合せページ</title>

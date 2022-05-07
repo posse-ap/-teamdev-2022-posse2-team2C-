@@ -11,7 +11,8 @@ $agent_id = $_GET["agent_id"];
 
     <title>個人情報入力ページ</title>
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>
