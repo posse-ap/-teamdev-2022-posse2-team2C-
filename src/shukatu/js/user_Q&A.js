@@ -9,3 +9,9 @@ function showAnswer(num){
     mark.className = "show_ans";
   }
 }
+
+const show_ans_button = document.querySelectorAll(".show_ans_wrapper");
+
+show_ans_button.forEach(function(element, index){
+  element.setAttribute("onclick", `showAnswer(${index + 1})`);
+})
