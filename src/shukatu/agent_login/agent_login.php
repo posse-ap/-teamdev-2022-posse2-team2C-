@@ -22,23 +22,23 @@
 
     <div class="agent-login">
         <div class="agent-login__craft-logo">CRAFT</div>
-        <div class="input_boxes_container">
-            <form action="agent_login_check.php" method="post" class="form_box">
-                <span class="login_text">LOGIN</span>
-                <div class="input_box_wrapper">
-                    <span class="input_box_text">
+        <div class="agent-login__input-boxes">
+            <form action="agent_login_check.php" method="post" class="agent-login__form_box">
+                <span class="agent-login__login_text">LOGIN</span>
+                <div class="agent-login__input-box">
+                    <span class="agent-login__input-box_text">
                         mail address
                     </span>
-                    <input type="text" name="account_email_address" class="input_box" placeholder="email address">
+                    <input type="text" name="account_email_address" class="agent-login__input-box_style" placeholder="email address">
                 </div>
-                <div class="input_box_wrapper">
-                    <span class="input_box_text">
+                <div class="agent-login__input-box">
+                    <span class="agent-login__input-box_text">
                         password
                     </span>
-                    <input type="password" name="pass" class="input_box" placeholder="password">
+                    <input type="password" name="pass" class="agent-login__input-box_style" placeholder="password">
                 </div>
-                <input type="submit" value="OK" class="login_submit_btn">
-                <a href="agent_login_forget.php" class="agent_login_forget_link">パスワードを忘れた方はこちら</a>
+                <input type="submit" value="OK" class="agent-login__submit-btn">
+                <a href="agent_login_forget.php" class="agent-login__forget-link">パスワードを忘れた方はこちら</a>
             </form>
         </div>
     </div>
