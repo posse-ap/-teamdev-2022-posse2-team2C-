@@ -1,22 +1,4 @@
-// document.write("URL:"+location.href);
-
-// const header_top_button = document.getElementById('header_top_button');
-// const header_howToUse_button = document.getElementById('howToUse_button');
-// const header_cartIn_button = document.getElementById('header_cartIn_button');
-// const header_QA_button = document.getElementById("header_QA_button");
-
-// if(location.href === "http://localhost:83/shukatu/user_page/user_agent_list.php") {
-//     console.log('a');
-// };
-
-// if(location.href == "http://localhost:83/shukatu/user_page/user_howToUse.php") {
-//     console.log('b');
-// };
-
-// if(location.href == "http://localhost:83/shukatu/user_page/user_cartlook.php") {
-//     console.log('c');
-// };
-
+//現在のページのボタンの色を変化させる
 const page_switch_link = document.querySelectorAll(".page_switch_link");
 
 change_button_color();
@@ -28,3 +10,16 @@ function change_button_color(){
         }
     })
 }
+
+//ハンバーガーメニュー
+menu.addEventListener("click", function(){
+    const menu = document.getElementById("menu");
+    const nav_area = document.getElementById("nav_area");
+    if (menu.className === "cross"){
+        menu.className = "menu";
+        nav_area.className = "hidden";
+    }else{
+        menu.className = "cross";
+        nav_area.className = "shown";
+    }
+})
