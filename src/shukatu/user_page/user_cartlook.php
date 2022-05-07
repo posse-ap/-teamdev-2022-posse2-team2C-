@@ -28,7 +28,7 @@ session_start();
     <title>お気に入り一覧ページ</title>
 
     <link rel="stylesheet" href="../style/sass/base/reset.css">
-    <link rel="stylesheet" href="../style/css/user_favorite.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
     <script src="../js/header.js" defer></script>
 </head>
 

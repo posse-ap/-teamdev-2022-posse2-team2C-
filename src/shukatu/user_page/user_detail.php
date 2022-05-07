@@ -19,8 +19,8 @@ if (isset($_SESSION["member_login"]) === true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>就活エージェント詳細ページ</title>
-
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>

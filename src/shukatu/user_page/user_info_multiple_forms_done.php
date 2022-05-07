@@ -19,7 +19,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人情報入力ページ</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>

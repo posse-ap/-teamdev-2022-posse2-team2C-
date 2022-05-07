@@ -28,8 +28,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お気に入りに追加</title>
 
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 
 </head>
 
