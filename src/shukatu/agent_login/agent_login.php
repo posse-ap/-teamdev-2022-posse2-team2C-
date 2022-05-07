@@ -20,8 +20,8 @@
 
 <body class="body">
 
-    <div class="agent_login_container">
-        <div class="craft_logo">CRAFT</div>
+    <div class="agent-login">
+        <div class="agent-login__craft-logo">CRAFT</div>
         <div class="input_boxes_container">
             <form action="agent_login_check.php" method="post" class="form_box">
                 <span class="login_text">LOGIN</span>

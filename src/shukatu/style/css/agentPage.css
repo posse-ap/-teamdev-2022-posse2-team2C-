@@ -1,15 +1,14 @@
 @charset "UTF-8";
-.agent_login_container {
+.agent-login {
   height: 100vh;
   background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: "Roboto", sans-serif;
+  /* 左上のクラフトのロゴ */
 }
-
-/* 左上のクラフトのロゴ */
-.craft_logo {
+.agent-login__craft-logo {
   color: rgba(255, 255, 255, 0.692);
   font-size: 4rem;
   font-family: "Roboto", sans-serif;

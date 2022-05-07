@@ -28,11 +28,11 @@ if (isset($_SESSION["login"]) === false) {
 <body>
     <?php include "../common/agent_page_header.php"; ?>
     <div class="right-page__container">
-        <div class="agent-login">
-            <ul class="agent-login__container">
-                <li class="agent-login__menu"><span class="agent-login__text">ユーザー情報</span></li>
-                <li class="agent-login__menu"><span class="agent-login__text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
-                <li class="agent-login__menu"><span class="agent-login__text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
+        <div class="agent-logged-in">
+            <ul class="agent-logged-in__container">
+                <li class="agent-logged-in__menu"><span class="agent-logged-in__text">ユーザー情報</span></li>
+                <li class="agent-logged-in__menu"><span class="agent-logged-in__text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
+                <li class="agent-logged-in__menu"><span class="agent-logged-in__text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
             </ul>
         </div>
         <div class="request-list"></div>
