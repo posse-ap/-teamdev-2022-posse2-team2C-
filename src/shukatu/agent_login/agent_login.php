@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[AGENT]ログイン入力</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/agentPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -20,25 +20,25 @@
 
 <body class="body">
 
-    <div class="agent_login_container">
-        <div class="craft_logo">CRAFT</div>
-        <div class="input_boxes_container">
-            <form action="agent_login_check.php" method="post" class="form_box">
-                <span class="login_text">LOGIN</span>
-                <div class="input_box_wrapper">
-                    <span class="input_box_text">
+    <div class="agent-login">
+        <div class="agent-login__craft-logo">CRAFT</div>
+        <div class="agent-login__input-boxes">
+            <form action="agent_login_check.php" method="post" class="agent-login__form_box">
+                <span class="agent-login__login_text">LOGIN</span>
+                <div class="agent-login__input-box">
+                    <span class="agent-login__input-box_text">
                         mail address
                     </span>
-                    <input type="text" name="account_email_address" class="input_box" placeholder="email address">
+                    <input type="text" name="account_email_address" class="agent-login__input-box_style" placeholder="email address">
                 </div>
-                <div class="input_box_wrapper">
-                    <span class="input_box_text">
+                <div class="agent-login__input-box">
+                    <span class="agent-login__input-box_text">
                         password
                     </span>
-                    <input type="password" name="pass" class="input_box" placeholder="password">
+                    <input type="password" name="pass" class="agent-login__input-box_style" placeholder="password">
                 </div>
-                <input type="submit" value="OK" class="login_submit_btn">
-                <a href="agent_login_forget.php" class="agent_login_forget_link">パスワードを忘れた方はこちら</a>
+                <input type="submit" value="OK" class="agent-login__submit-btn">
+                <a href="agent_login_forget.php" class="agent-login__forget-link">パスワードを忘れた方はこちら</a>
             </form>
         </div>
     </div>

@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+//ヘッダー
+@use "../../parts/header-userPage" as header;
+//フッター
+@use "../../parts/footer-userPage" as footer;
+
+//お気に入りページ
+@use "./user_favorite";
+@use "./user-agentList";
+@use "./user-howToUse";
+@use "./user-Q&A" as q-a;

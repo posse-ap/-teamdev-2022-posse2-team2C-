@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[BOOZER]ログイン入力</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -15,24 +15,24 @@
 
 <body class="body">
 
-    <div class="boozer_login_container">
-        <div class="craft_logo">CRAFT</div>
-        <div class="input_boxes_container">
-            <form action="boozer_login.check.php" method="post" class="form_box">
-            <span class="login_text">LOGIN</span>
-            <div class="input_box_wrapper">
-                <span class="input_box_text">
+    <div class="boozer-login">
+        <div class="boozer-login__craft-logo">CRAFT</div>
+        <div class="boozer-login__input-boxes">
+            <form action="boozer_login.check.php" method="post" class="boozer-login__form_box">
+            <span class="boozer-login__login_text">LOGIN</span>
+            <div class="boozer-login__input-box">
+                <span class="boozer-login__input-box_text">
                     staff code
                 </span>
-                <input type="text" name="code" class="input_box" placeholder="staff code" >
+                <input type="text" name="code" class="agent-login__input-box_style" placeholder="staff code" >
             </div>
-            <div class="input_box_wrapper">
-                <span class="input_box_text">
+            <div class="boozer-login__input-box">
+                <span class="boozer-login__input-box_text">
                     password
                 </span>
-                <input type="password" name="pass" class="input_box" placeholder="password">
+                <input type="password" name="pass" class="agent-login__input-box_style" placeholder="password">
             </div>
-            <input type="submit" value="OK" class="login_submit_btn">
+            <input type="submit" value="OK" class="boozer-login__submit-btn">
             </form>
         </div>
     </div>

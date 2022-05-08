@@ -102,7 +102,7 @@
         $sql_2 = "INSERT INTO student_agent_connection_table(agent_id) VALUES(?)";
         $stmt_2 = $dbh_2->prepare($sql_2);
         $data_2[] = $agent_id;
-        $stmt_2->execute($data_2);
+        $stmt_2->execute($data_2); 
 
         $dbh_2 = null;
 

@@ -1,0 +1,110 @@
+
+// // ログアウトページのデザイン
+// .agent_logout_container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+// .agent_logout_container {
+//     margin-top: 50vh;
+// }
+// // boozerログイントップページ
+// .agent_page_header {
+//     width: 100%;
+//     height: 20vh;
+//     background-image: url(./img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     position: relative;
+//     position: fixed;
+//     z-index: 99999999999;
+// }
+
+// .agent-login {
+//     height: 100vh;
+//     background-image: url(./img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     font-family: 'Roboto', sans-serif;
+// }
+// エージェントログイン入力画面
+.agent-login {
+    height: 100vh;
+    background-image: url(../img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+
+
+    /* 左上のクラフトのロゴ */
+    &__craft-logo {
+        color: rgba(255, 255, 255, 0.692);
+        font-size: 4rem;
+        font-family: 'Roboto', sans-serif;
+        padding: 4rem;
+    }
+
+    /* login入力部分全体（黒っぽいところ）をまとめるやつ */
+    &__input-boxes {
+        margin: 0 auto;
+        width: 100%;
+        height: 60%;
+        background: rgba(0, 0, 0, 0.603);
+    }
+
+    /* loginの文字 */
+    &__login_text {
+        color: rgba(255, 255, 255, 0.774);
+        font-size: 3rem;
+        padding: 3%;
+    }
+
+    /* form部分のみをまとめるやつ */
+    &__form_box {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    /* 文字とinput部分を縦並びにする */
+    &__input-box {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 1% 0;
+
+        /* インプットの上の文字 */
+        &_text {
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            margin-bottom: 3%;
+        }
+    }
+
+    /* submitボタン */
+
+    &__submit-btn {
+        margin: 3% 0% 3% 1%;
+        padding: 1% 5%;
+        font-family: 'Roboto', sans-serif;
+        background: rgba(255, 255, 255, 0.589);
+        border-radius: 3px;
+    }
+// パスワード忘れた方はこちらのリンク
+    &__forget-link {
+        color: white;
+    }
+}

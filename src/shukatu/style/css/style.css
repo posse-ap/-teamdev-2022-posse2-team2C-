@@ -1,0 +1,290 @@
+@charset "UTF-8";
+.agent-login {
+  height: 100vh;
+  background-image: url(./img/Interview\ with\ the\ ultimate\ wave\ photographer\ Clark\ Little\ I\ AM.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ログイン情報入力画面 */
+/* 全体の背景に写真設定 */
+.boozer_login_container {
+  height: 100vh;
+  background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* 左上のクラフトのロゴ */
+.craft_logo {
+  color: rgba(255, 255, 255, 0.692);
+  font-size: 4rem;
+  font-family: "Roboto", sans-serif;
+  padding: 4rem;
+}
+
+/* login入力部分全体（黒っぽいところ）をまとめるやつ */
+.input_boxes_container {
+  margin: 0 auto;
+  width: 100%;
+  height: 60%;
+  background: rgba(0, 0, 0, 0.603);
+}
+
+/* loginの文字 */
+.login_text {
+  color: rgba(255, 255, 255, 0.774);
+  font-size: 3rem;
+  padding: 3%;
+}
+
+/* form部分のみをまとめるやつ */
+.form_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 文字とinput部分を縦並びにする */
+.input_box_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0;
+}
+
+/* インプットの上の文字 */
+.input_box_text {
+  color: white;
+  font-family: "Dosis", sans-serif;
+  margin-bottom: 3%;
+}
+
+/* submitボタン */
+.login_submit_btn {
+  margin: 3% 0% 3% 1%;
+  padding: 1% 5%;
+  font-family: "Roboto", sans-serif;
+  background: rgba(255, 255, 255, 0.589);
+  border-radius: 3px;
+}
+
+/* ログイン後home画面 */
+.boozer_page_header {
+  width: 100%;
+  height: 20vh;
+  background-image: url(./img/wallpaperflare.com_wallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  position: fixed;
+  z-index: 99999999999;
+}
+
+/* ヘッダーのcraftの文字 */
+.boozer_page_header__craft_logo {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  color: rgba(255, 255, 255, 0.801);
+  font-size: 4rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* craftの文字の横のfor boozer */
+.boozer_page_header__for_boozer {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  color: rgba(255, 255, 255, 0.801);
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ログイン中のスタッフ名 */
+.boozer_page_header__staff_name {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  color: rgba(255, 255, 255, 0.801);
+  font-size: 1.8rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ヘッダー以外の部分まとめるやつ */
+.boozer_top_page_container {
+  padding-top: 20vh;
+  /* display: flex; */
+}
+
+/* 左側のメニュー */
+.side_menu_container {
+  width: 20%;
+  height: 80vh;
+  background: #d4d4d4;
+  position: fixed;
+}
+
+/* 左側のメニュー（一つの項目） */
+.side_menu {
+  padding: 7% 5%;
+  font-size: 1.2rem;
+}
+
+/* 左側のメニュー（一つの項目のテキスト） */
+.side_menu_text {
+  color: black;
+}
+
+/* 左側のメニュー（一つの項目のテキスト カーソル当てたら色変化） */
+.side_menu_text:hover {
+  color: #706f6f;
+}
+
+.right_page_container {
+  margin-left: 20%;
+}
+
+.user_info_wrapper {
+  font-size: 1.5rem;
+  background: #bdbcbc;
+  width: 50%;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+.user_info {
+  border: 1px solid black;
+}
+
+/* エージェント一覧 */
+.agent_list_right_page_container {
+  width: 80%;
+  position: absolute;
+  top: 20vh;
+  left: 20%;
+}
+
+.post_period_buttons {
+  width: 50%;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  margin: 2% auto;
+}
+
+.post_period_button {
+  background: #cfcfcf;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px #757575;
+  font-size: 15px;
+}
+
+.agent_info_disp_btn_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #b1afaf;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  width: 80%;
+}
+
+.agent_info_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.agent_info_text {
+  background: white;
+  margin: 0 0.2rem;
+  padding: 0.5rem;
+  font-size: 12px;
+}
+
+.agent_info_disp_btn {
+  background: #26A69A;
+}
+
+.agent_info_disp_btn_text {
+  color: white;
+  font-size: 12px;
+  padding: 1rem;
+}
+
+/* .disp_btn {
+    position: relative;
+    width: 3rem;
+    background:black;
+    color: white;
+    z-index: 999999;
+} */
+.disp_btn_inner {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+}
+
+/* エージェント修正画面 */
+/* アカウント情報と掲載情報を横並びにする */
+.agent_reg_form_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 5%;
+  width: 80%;
+}
+
+/* 文字とインプットを縦並びにまとめる */
+.agent_reg_form_box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* インプットの大きさ指定 */
+.agent_reg_form_box input {
+  /* width: 50%; */
+  padding: 0.3rem;
+}
+
+/* アカウント情報と掲載情報、それぞれの幅指定 */
+.agent_account_reg_wrapper {
+  width: 30%;
+}
+
+.agent_info_reg_wrapper {
+  width: 30%;
+}
+
+.agent_reg_form_box_text {
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.agent_reg_form_tittle {
+  font-size: 1.5rem;
+  margin: 2rem 0 0 0;
+}
+
+/* エージェント追加画面 */
+.agent_add_right_page_container {
+  margin-left: 20%;
+}
+
+.form_submit_btn {
+  font-size: 1rem;
+  padding: 1rem 4rem;
+  margin: 3rem 0% 5rem 40%;
+}
+
+/**************
+
+* ログインページ
+
+***************/
+/*# sourceMappingURL=style.css.map */
