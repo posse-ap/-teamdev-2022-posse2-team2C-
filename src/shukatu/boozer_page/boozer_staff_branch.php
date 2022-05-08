@@ -46,4 +46,3 @@ if(isset($_POST["delete"]) === true) {
     header("Location:boozer_staff_delete.php?code=".$code);
     exit();
 }
-?>

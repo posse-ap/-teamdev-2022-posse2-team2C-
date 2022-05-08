@@ -1,54 +1,10 @@
-.page_switch{
-  display: flex;
-  justify-content: space-around;
-  a{
-    text-decoration: none;
-  }
-  &_button{
-    color: white;
-    width: 200px;
-    height: 32px;
-    border-radius: 16px;
-    font-size: 16px;
-    text-align: center;
-    line-height: 2;
-    background-color: #f5835f;
-    opacity: 50%;
-  }
-}
-
-// #title_howToUse{
-//   background-color: #26a69a;
-//   margin: 25px auto;
-//   color: white;
-//   height: 50px;
-//   width: 400px;
-//   border-radius: 25px;
-//   text-align: center;
-//   font-size: 25px;
-//   line-height: 2;
-// }
-
-// #user_flow{
-//   display: flex;
-//   width: 90%;
-//   justify-content: space-between;
-//   margin: 0 auto;
-//   align-items: center;
-//   .steps{
-//     width: 15%;
-//     .icon{
-//       height: 250px;
-//       background-color: #26a69a;
-//       border-radius: 25px;
-//     }
-//   }
-// }
+@use "../../parts/header-userPage";
+@use "../../parts/footer-userPage";
 
 .head_howToUse{
   background-color: #26a69a;
   margin: 45px auto 25px;
-  color: white;
+  color: #fff;
   height: 50px;
   width: 400px;
   border-radius: 25px;

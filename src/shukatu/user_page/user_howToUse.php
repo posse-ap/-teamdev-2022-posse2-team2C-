@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style/craft.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="../style/sass/base/reset.css">
+  <link rel="stylesheet" href="../style/css/user-howToUse.css">
+  <script src="../js/header.js" defer></script>
+  <title>使い方ガイドページ</title>
 </head>
+
 <body>
-  <header id="header">
-    <div id="header_logo">
-        <section id = "header_logo_shukatu">就活</section>.com
-    </div>
-    <nav>
-        <ul>
-            <li><a href="">就活サイト</a></li>
-            <li><a href="">就活支援サービス</a></li>
-            <li><a href="">自己分析診断ツール</a></li>
-            <li><a href="">ES添削サービス</a></li>
-            <li><a href="">就活エージェント</a></li>
-            <li><a href="">就活エージェント比較</a></li>
-            <li><a href="">就活.comとは</a></li>
-            <li><a href="">お問い合わせ</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="page_switch">
-    <a href="user_agent_list.php">
-      <div class="page_switch_button" id="header_top_button">TOPページ</div>
-    </a>
-    <a href="user_howToUse.php">
-      <div class="page_switch_button" id="header_howToUse_button">使い方ガイド</div>
-    </a>
-    <a href="user_cartlook.php">
-      <div class="page_switch_button" id="header_cartIn_button">お気に入り一覧</div>
-    </a>
-    <a href="">
-      <div class="page_switch_button" id="header_QA_button">Q&A・お問い合わせ</div>
-    </a>
-  </section>
-
+  <?php include "../common/user_page_header.html" ?>
   <!-- figma通りやったやつ（途中まで） -->
   <!-- <div id="title_howToUse">CRAFT利用の流れ</div>
   <div id="user_flow">
@@ -81,9 +53,9 @@
       <h2 class="head_flow">step1 絞り込み</h2>
       <div class="text_flow">・自分の住んでいるエリアで面談可能なエージェントを絞り込み</div>
       <div class="images">
-          <img src="../user_page/img/flow_sort_1.png" alt="" id="flow_img_1">
+        <img src="../user_page/img/flow_sort_1.png" alt="" id="flow_img_1">
         <div class="arrow_flow">→</div>
-          <img src="../user_page/img/flow_sort_2.png" alt="" id="flow_img_2">
+        <img src="../user_page/img/flow_sort_2.png" alt="" id="flow_img_2">
       </div>
       <div class="text_flow">・タグを使って自分にぴったりのエージェントを探す</div>
       <div class="images">
@@ -100,7 +72,7 @@
       <div class="images">
         <img src="../user_page/img/flow_5.png" alt="" id="flow_img_5">
         <div class="arrow_flow">→</div>
-        <img src="../user_page/img/flow_6.png" alt="" id = "flow_img_6">
+        <img src="../user_page/img/flow_6.png" alt="" id="flow_img_6">
       </div>
       <div class="text_flow">・必要な情報を入力して、申請する</div>
       <div class="images">
@@ -133,10 +105,12 @@
         <img src="../user_page/img/flow_12.png" alt="" id="flow_img_12">
       </div>
     </div>
-    </div>
+  </div>
 
   <footer>
-    <img src="./img/boozer_logo.png" alt="" id = "boozer_logo">
-</footer>
+    <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+  </footer>
+  <script src="../js/header.js"></script>
 </body>
+
 </html>

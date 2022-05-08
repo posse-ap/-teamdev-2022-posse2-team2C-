@@ -3,30 +3,45 @@
 session_start();
 //セッションハイジャック防止（ページ毎にsession idをランダムに変更）
 session_regenerate_id(true);
-if(isset($_SESSION["login"]) === false) {
+if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='agent_login.html'>ログイン画面へ</a>";
+    print "<a href='agent_login.php'>ログイン画面へ</a>";
     exit();
 } else {
-    print "<h1>エージェント用管理画面TOP</h1><br>" . $_SESSION["account_email_address"]."様ログイン中";
-    print "<br>";
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>管理画面TOP</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-    
-<body>
 
-<br><br>
-<?php print $_SESSION["account_email_address"];
-  ?><br><br>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[AGENT]管理画面TOP</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <?php include "../common/agent_page_header.php"; ?>
+    <div class="right_page_container">
+        <div class="user_info_container">
+            <ul class="user_info_wrapper">
+                <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
+                <li class="user_info"><span class="user_info_text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
+                <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
+            </ul>
+        </div>
+        <div class="request_list"></div>
+    </div>
+    </div>
+    <?php
+    print $_SESSION["account_email_address"];
+    ?><br><br>
     <a href="agent_logout.php">ログアウト</a>
 </body>
+
 </html>

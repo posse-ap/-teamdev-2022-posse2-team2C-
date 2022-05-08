@@ -1,0 +1,69 @@
+@use "../base/var";
+@forward "../base/var";
+@use "../base/mixin";
+@forward "../base/mixin";
+
+header {
+  background-color: var.$main_color;
+  width: 100vw;
+  #header_logo {
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    &_shukatu {
+      display: inline-block;
+      font-size: 30px;
+    }
+  }
+  nav {
+    @include mixin.header_responsive{
+      display: none;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      li {
+        display: inline-block;
+        a {
+          text-decoration: none;
+          color: #fff;
+          line-height: 3;
+        }
+      }
+    }
+  }
+}
+
+.page_switch {
+  display: flex;
+  justify-content: space-around;
+  a {
+    text-decoration: none;
+  }
+  &_link {
+    .page_switch_button {
+      color: #fff;
+      width: 200px;
+      height: 32px;
+      border-radius: 16px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 2;
+      background-color: #f5835f;
+      opacity: 50%;
+    }
+    &_here {
+      .page_switch_button {
+        color: #fff;
+        width: 200px;
+        height: 32px;
+        border-radius: 16px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 2;
+        background-color: #f5835f;
+      }
+    }
+  }
+}

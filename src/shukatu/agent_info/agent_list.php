@@ -4,7 +4,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='boozer_login.php'>ログイン画面へ</a>";
+    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
 }
@@ -36,7 +36,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //全レコード対象にcode,name,price取得
-        $sql = "SELECT agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent_account WHERE1";
+        $sql = "SELECT * FROM agent_account WHERE1";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -49,7 +49,7 @@ if (isset($_SESSION["login"]) === false) {
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //全レコード対象にcode,name,price取得
-        $sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE1";
+        $sql_2 = "SELECT * FROM agent WHERE1";
         $stmt_2 = $dbh_2->prepare($sql_2);
         $stmt_2->execute();
 
@@ -57,17 +57,7 @@ if (isset($_SESSION["login"]) === false) {
     ?>
 
 
-        <div class="boozer_top_page_container">
-            <div class="side_menu_container">
-                <ul class="side_menu_wrapper">
-                    <li class="side_menu"><a href="../boozer_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
-                    <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">エージェント一覧</a></li>
-                    <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">新規エージェント作成</a></li>
-                    <li class="side_menu"><a href="" class="side_menu_text">学生情報一覧</a></li>
-                    <li class="side_menu"><a href="../boozer_page/boozer_staff_list.php" class="side_menu_text">boozerスタッフ管理</a></li>
-                    <li class="side_menu"><a href="boozer_logout.php" class="side_menu_text">ログアウト</a></li>
-                </ul>
-            </div>
+       
             <div class="agent_list_right_page_container">
                 <ul class="post_period_buttons">
                     <li class="post_period_button">全て</li>
@@ -77,6 +67,7 @@ if (isset($_SESSION["login"]) === false) {
                 <div>
                     <form action='agent_branch.php' method='post'>
                     <div>
+                    <input type='submit' name='disp' value='詳細・掲載状態確認'>
                     <input type='submit' name='edit' value='修正'>
                     <input type='submit' name='delete' value='削除'>
                 </div>
@@ -101,7 +92,7 @@ if (isset($_SESSION["login"]) === false) {
         
                                 </div>
                                 <!-- <div class="disp_btn">詳細 -->
-                                <?php print "<input class='disp_btn_inner' type='submit' name='disp' value='" . $rec['agent_id'] . "'>"; ?>
+                                
                                 <!-- </div> -->
                             </div>
                         <?php
@@ -144,7 +135,7 @@ if (isset($_SESSION["login"]) === false) {
         //   print "<br>";
     } catch (Exception $e) {
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-        print "<a href='../boozer_login/login.html'>ログイン画面へ</a>";
+        print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";
     }
     ?>
 </body>

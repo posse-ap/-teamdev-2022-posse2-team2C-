@@ -5,7 +5,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='agent_login.html'>ログイン画面へ</a>";
+    print "<a href='agent_login.php'>ログイン画面へ</a>";
     exit();
 } else {
     $code = $_SESSION["code"];
@@ -34,9 +34,9 @@ if (isset($_SESSION["login"]) === false) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>boozer管理画面TOP</title>
+    <title>[BOOZER]管理画面TOP</title>
     <link rel="stylesheet" href="../style/reset.css">
-    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
+    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -45,27 +45,16 @@ if (isset($_SESSION["login"]) === false) {
 <body>
     <?php include "../common/boozer_page_header.php"; ?>
 
-    <div class="boozer_top_page_container">
-        <div class="side_menu_container">
-            <ul class="side_menu_wrapper">
-                <li class="side_menu"><a href="../boozer_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">エージェント一覧</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">新規エージェント作成</a></li>
-                <li class="side_menu"><a href="" class="side_menu_text">学生情報一覧</a></li>
-                <li class="side_menu"><a href="../boozer_page/boozer_staff_list.php" class="side_menu_text">boozerスタッフ管理</a></li>
-                <li class="side_menu"><a href="boozer_logout.php" class="side_menu_text">ログアウト</a></li>
+    <div class="right_page_container">
+        <div class="user_info_container">
+            <ul class="user_info_wrapper">
+                <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
+                <li class="user_info"><span class="user_info_text">担当者名</span><span><?php print $_SESSION["name"]; ?></span></li>
+                <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
             </ul>
         </div>
-        <div class="right_page_container">
-            <div class="user_info_container">
-                <ul class="user_info_wrapper">
-                    <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
-                    <li class="user_info"><span class="user_info_text">担当者名</span><span><?php print $_SESSION["name"]; ?></span></li>
-                    <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
-                </ul>
-            </div>
-            <div class="request_list"></div>
-        </div>
+        <div class="request_list"></div>
+    </div>
     </div>
 </body>
 

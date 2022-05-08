@@ -4,7 +4,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='staff_login.html'>ログイン画面へ</a>";
+    print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
 }
@@ -35,14 +35,13 @@ if (isset($_SESSION["login"]) === false) {
         $password = "password";
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end FROM agent_account WHERE agent_id=?";
+        $sql = "SELECT * FROM agent JOIN agent_account ON agent.id=agent_account.agent_id JOIN tag_existence ON agent.id=tag_existence.agent_id WHERE agent.agent_id=?";
         $stmt = $dbh->prepare($sql);
         $data[] = $agent_id;
         $stmt->execute($data);
-
         $dbh = null;
-
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
@@ -51,30 +50,18 @@ if (isset($_SESSION["login"]) === false) {
         $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //urlに乗ってきたcodeを元に識別
-        $sql_2 = "SELECT agent_id, catchphrase, feature, region_code, prefecture_code, online_meeting, membership, pros, cons FROM agent WHERE agent_id=?";
+        $sql_2 = "SELECT * FROM tag";
         $stmt_2 = $dbh_2->prepare($sql_2);
-        $data_2[] = $agent_id;
-        $stmt_2->execute($data_2);
-
+        
+        $stmt_2->execute();
         $dbh_2 = null;
+        
 
-        $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-        print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+        print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
-    <div class="boozer_top_page_container">
-        <div class="side_menu_container">
-            <ul class="side_menu_wrapper">
-                <li class="side_menu"><a href="../boozer_login/boozer_login_top.php" class="side_menu_text">ホーム</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_list.php" class="side_menu_text">エージェント一覧</a></li>
-                <li class="side_menu"><a href="../agent_info/agent_add.php" class="side_menu_text">新規エージェント作成</a></li>
-                <li class="side_menu"><a href="" class="side_menu_text">学生情報一覧</a></li>
-                <li class="side_menu"><a href="../boozer_page/boozer_staff_list.php" class="side_menu_text">boozerスタッフ管理</a></li>
-                <li class="side_menu"><a href="boozer_logout.php" class="side_menu_text">ログアウト</a></li>
-            </ul>
-        </div>
         <div class="agent_list_right_page_container">
             <h1><?php print $rec["company_name"]; ?>の情報を修正します。</h1>
             <form action="agent_edit_check.php" method="post" enctype="multipart/form-data" width="100%">
@@ -107,48 +94,48 @@ if (isset($_SESSION["login"]) === false) {
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">掲載開始日</span>
-                            <input type="datetime" name="post_period_start" value="<?php print $rec['post_period_start']; ?>">
+                            <input type="date" name="post_period_start" value="<?php print $rec['post_period_start']; ?>">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">掲載終了日</span>
-                            <input type="datetime" name="post_period_end" value="<?php print $rec['post_period_end']; ?>">
+                            <input type="date" name="post_period_end" value="<?php print $rec['post_period_end']; ?>">
                         </div>
                     </div>
                     <div class="agent_info_reg_wrapper">
                         <h2 class="agent_reg_form_tittle">掲載情報の登録</h2>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">キャッチフレーズ</span>
-                            <input type="text" name="catchphrase" value="<?php print $rec_2['catchphrase']; ?>">
+                            <input type="text" name="catchphrase" value="<?php print $rec['catchphrase']; ?>">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">特徴</span>
-                            <input type="text" name="feature" value="<?php print $rec_2['feature']; ?>">
-                        </div>
-                        <div class="agent_reg_form_box">
-                            <span class="agent_reg_form_box_text">エリア指定</span>
-                            <span>地域code</span>
-                            <input type="text" name="region_code" value="<?php print $rec_2['region_code']; ?>">
-                        </div>
-                        <div class="agent_reg_form_box">
-                            <span class="agent_reg_form_box_text">県code</span>
-                            <input type="text" name="prefecture_code" value="<?php print $rec_2['prefecture_code']; ?>">
+                            <input type="text" name="feature" value="<?php print $rec['feature']; ?>">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">オンライン面談可否</span>
-                            <input type="text" name="online_meeting" value="<?php print $rec_2['online_meeting']; ?>">
+                            <input type="text" name="online_meeting" value="<?php print $rec['online_meeting']; ?>">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">会員数</span>
-                            <input type="text" name="membership" value="<?php print $rec_2['membership']; ?>">
+                            <input type="text" name="membership" value="<?php print $rec['membership']; ?>">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">メリット</span>
-                            <input type="text" name="pros" value="<?php print $rec_2['pros']; ?>">
+                            <input type="text" name="pros" value="<?php print $rec['pros']; ?>">
                         </div>
                         <div class="agent_reg_form_box">
                             <span class="agent_reg_form_box_text">デメリット</span>
-                            <input type="text" name="cons" value="<?php print $rec_2['cons']; ?>">
+                            <input type="text" name="cons" value="<?php print $rec['cons']; ?>">
                         </div>
+                        <?php
+                        while (true) {
+                    $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                    if ($rec_2 === false) {
+                        break;
+                    }?><div>
+                    <input type="radio" class="agent-edit__tag-existence" 
+                    value="<?php echo $rec_2["tag_code"]?>">
+                    <?php echo $rec_2["tag_name"];}?></input></div>
 
                     </div>
                 </div>

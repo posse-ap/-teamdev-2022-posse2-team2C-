@@ -1,0 +1,12 @@
+@use "../base/var";
+@forward "../base/var";
+
+footer {
+  background-color: var.$main_color;
+  height: 100px;
+  #boozer_logo {
+    margin: 0 auto;
+    display: block;
+    width: 288px;
+  }
+}
