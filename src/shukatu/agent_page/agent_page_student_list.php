@@ -9,18 +9,18 @@
 
     <title>[AGENT]学生情報一覧</title>
 
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/agentPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <?php
-    include "../common/agent_page_header.php"; ?>
 
-    <div class="right_page_container">
+    <?php include "../common/agent_page_header.php"; ?>
+
+    <div class="agent-page__right-page-container">
 
     <?php
     $agent_id = $_GET["agent_id"];

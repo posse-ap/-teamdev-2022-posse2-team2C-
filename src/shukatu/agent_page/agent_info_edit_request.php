@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[agent]掲載情報編集申請</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/agentPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@ try {
         print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
-        <div class="agent_list_right_page_container">
+         <div class="agent-page__right-page-container">
             <h1><?php print $rec["company_name"]; ?>の情報を修正します。</h1>
             <form action="agent_edit_check.php" method="post" enctype="multipart/form-data" width="100%">
                 <div class="agent_reg_form_wrapper">
