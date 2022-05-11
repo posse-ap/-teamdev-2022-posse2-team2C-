@@ -1,0 +1,18 @@
+// タグ検索ボックス
+.tag-area__wrapper {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.tag {
+    background: rgb(183, 182, 182);
+    width: 40%;
+
+    &__tittle {
+        font-size:3rem;
+    }
+
+}
+
+

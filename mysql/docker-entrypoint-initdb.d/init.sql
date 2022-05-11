@@ -175,10 +175,10 @@ CREATE TABLE shukatu.student_info (
   the_year_of_grad INT NOT NULL
 );
 
-INSERT INTO shukatu.student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES
-("冨永","桃","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","2","25"),
-("寺下","渓志朗","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","1","26"),
-("小野","寛太","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","3","24");
+-- INSERT INTO shukatu.student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES
+-- ("冨永","桃","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","2","25"),
+-- ("寺下","渓志朗","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","1","26"),
+-- ("小野","寛太","とみなが","もも","momo1777@icloud.com", "09071250315","早稲田大学","政治経済学部","国際政治経済学科","3","24");
 
 
 DROP TABLE IF EXISTS shukatu.student_agent_connection_table;
@@ -189,12 +189,12 @@ CREATE TABLE shukatu.student_agent_connection_table (
 );
 
 
-INSERT INTO shukatu.student_agent_connection_table (agent_id) VALUES 
-(1),
-(2),
-(3),
-(1),
-(3),
-(2),
-(4);
+-- INSERT INTO shukatu.student_agent_connection_table (agent_id) VALUES 
+-- (1),
+-- (2),
+-- (3),
+-- (1),
+-- (3),
+-- (2),
+-- (4);
 

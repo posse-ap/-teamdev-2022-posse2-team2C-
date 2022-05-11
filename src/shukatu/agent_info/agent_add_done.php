@@ -25,9 +25,9 @@ if(isset($_SESSION["login"]) === false) {
 <?php
     try{
     
-require_once("../common/common.php");
+// require_once("../common/common.php");
     
-$post = sanitize($_POST);
+$post = $_POST;
 $agent_id = $post["agent_id"];
 $company_name = $post["company_name"];
 $company_staff = $post["company_staff"];
@@ -45,6 +45,8 @@ $online_meeting = $post["online_meeting"];
 $membership = $post["membership"];
 $pros = $post["pros"];
 $cons = $post["cons"];
+
+   
  
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
 $user = "root";
@@ -53,18 +55,16 @@ $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //アカウント情報
-$sql = "INSERT INTO agent_account(agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end) VALUES(?,?,?,?,?,?,?,?)";
-$stmt = $dbh -> prepare($sql);
-$data[] = $agent_id;
-$data[] = $company_name;
-$data[] = $company_staff;
-$data[] = $account_email_address;
-$data[] = $account_password;
-$data[] = $google_account;
-$data[] = $post_period_start;
-$data[] = $post_period_end;
-$stmt -> execute($data);
-    
+$stmt= $dbh -> prepare("INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_address, account_password, google_account, post_period_start, post_period_end) VALUES (:agent_id, :company_name, :company_staff, :account_email_address, :account_password, :google_account, :post_period_start, :post_period_end)");
+$stmt->bindParam(':agent_id', $agent_id, PDO::PARAM_STR);
+$stmt->bindParam(':company_name', $company_name, PDO::PARAM_STR);
+$stmt->bindParam(':company_staff', $company_staff, PDO::PARAM_STR);
+$stmt->bindParam(':account_email_address', $account_email_address, PDO::PARAM_STR);
+$stmt->bindParam(':account_password', $account_password, PDO::PARAM_STR);
+$stmt->bindParam(':google_account', $google_account, PDO::PARAM_STR);
+$stmt->bindParam(':post_period_start', $post_period_start, PDO::PARAM_STR);
+$stmt->bindParam(':post_period_end', $post_period_end, PDO::PARAM_STR);
+$stmt -> execute();
 $dbh = null;
 
 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -73,19 +73,48 @@ $password = "password";
 $dbh_2 = new PDO($dsn, $user, $password);
 $dbh_2 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //掲載情報
-$sql_2 = "INSERT INTO agent(agent_id, company_name, catchphrase, feature, online_meeting, membership, pros, cons) VALUES(?,?,?,?,?,?,?)";
-$stmt_2 = $dbh_2 -> prepare($sql_2);
-$data_2[] = $agent_id;
-$data[] = $company_name;
-$data_2[] = $catchphrase;
-$data_2[] = $feature;
-$data_2[] = $online_meeting;
-$data_2[] = $membership;
-$data_2[] = $pros;
-$data_2[] = $cons;
-$stmt_2 -> execute($data_2);
+$stmt_2= $dbh_2 -> prepare("INSERT INTO agent (agent_id, company_name, catchphrase, feature, online_meeting, membership, pros, cons) VALUES (:agent_id, :company_name, :catchphrase, :feature, :online_meeting, :membership, :pros, :cons)");
+$stmt_2->bindParam(':agent_id', $agent_id, PDO::PARAM_STR);
+$stmt_2->bindParam(':company_name', $company_name, PDO::PARAM_STR);
+$stmt_2->bindParam(':catchphrase', $catchphrase, PDO::PARAM_STR);
+$stmt_2->bindParam(':feature', $feature, PDO::PARAM_STR);
+$stmt_2->bindParam(':online_meeting', $online_meeting, PDO::PARAM_STR);
+$stmt_2->bindParam(':membership', $membership, PDO::PARAM_STR);
+$stmt_2->bindParam(':pros', $pros, PDO::PARAM_STR);
+$stmt_2->bindParam(':cons', $cons, PDO::PARAM_STR);
+$stmt_2 -> execute();
     
 $dbh_2 = null;
+
+$dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+$user = "root";
+$password = "password";
+$dbh_3 = new PDO($dsn, $user, $password);
+$dbh_3 -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$arr1 = array();
+    foreach ($_POST['tag'] as $tag) {
+        $arr1[] = "tag_" . $tag . "=1";
+
+
+        $stmt_3= $dbh_3 -> prepare("UPDATE  tag_existence SET (agent_id, company_name, catchphrase, feature, online_meeting, membership, pros, cons) VALUES (:agent_id, :company_name, :catchphrase, :feature, :online_meeting, :membership, :pros, :cons)");
+
+    }
+
+    $a = implode(" AND ", $arr1);
+    
+    echo $a;
+
+//掲載情報
+
+$stmt_3->bindParam(':agent_id', $agent_id, PDO::PARAM_STR);
+$stmt_3->bindParam(':company_name', $company_name, PDO::PARAM_STR);
+$stmt_3->bindParam(':catchphrase', $catchphrase, PDO::PARAM_STR);
+$stmt_3->bindParam(':feature', $feature, PDO::PARAM_STR);
+$stmt_3->bindParam(':online_meeting', $online_meeting, PDO::PARAM_STR);
+$stmt_3->bindParam(':membership', $membership, PDO::PARAM_STR);
+$stmt_3->bindParam(':pros', $pros, PDO::PARAM_STR);
+$stmt_3->bindParam(':cons', $cons, PDO::PARAM_STR);
         
 }
 catch(Exception $e) {
