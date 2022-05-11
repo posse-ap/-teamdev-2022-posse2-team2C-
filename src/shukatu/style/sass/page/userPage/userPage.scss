@@ -10,3 +10,7 @@
 @use "./user-agentList";
 @use "./user-howToUse";
 @use "./user-Q&A" as q-a;
+
+// タグ検索box
+@use "../../parts/tag-userPage" as tag;
+@use "../../parts/area-userPage" as area;

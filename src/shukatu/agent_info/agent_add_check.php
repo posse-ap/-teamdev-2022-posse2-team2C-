@@ -9,6 +9,18 @@ if(isset($_SESSION["login"]) === false) {
 } else {
     print $_SESSION["name"]."さんログイン中";
     print "<br><br>";
+    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+    $user = "root";
+    $password = "password";
+    $dbh_2 = new PDO($dsn, $user, $password);
+    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //urlに乗ってきたcodeを元に識別
+    $sql_2 = "SELECT * FROM tag";
+    $stmt_2 = $dbh_2->prepare($sql_2);
+    
+    $stmt_2->execute();
+    $dbh_2 = null;
 }
 ?>
  
@@ -25,9 +37,9 @@ if(isset($_SESSION["login"]) === false) {
 
 <?php
 
-require_once("../common/common.php");
+// require_once("../common/common.php");
     
-$post = sanitize($_POST);
+$post = $_POST;
 $agent_id = $post["agent_id"];
 $company_name = $post["company_name"];
 $company_staff = $post["company_staff"];
@@ -73,6 +85,15 @@ if(preg_match("/\A[\w\-\.]+\@[\w\-\.]+\.([a-z]+)\z/", $account_email_address) ==
     print "<br><br>";
 }
 
+
+if(isset($_POST["tag"]) === false) {
+    
+}
+
+
+
+
+
 //どれか一つでもだめだったら戻る    
 if(empty($company_name) or empty($company_staff) or empty($account_email_address) or preg_match("/\A[\w\-\.]+\@[\w\-\.]+\.([a-z]+)\z/", $account_email_address === 0)) {
     print "<form>";
@@ -99,6 +120,13 @@ if(empty($company_name) or empty($company_staff) or empty($account_email_address
     print "<input type='hidden' name='membership' value='".$membership."'>";
     print "<input type='hidden' name='pros' value='".$pros."'>";
     print "<input type='hidden' name='cons' value='".$cons."'>";
+
+    $arr1 = array();
+    foreach ($_POST['tag'] as $tag) {
+        $arr1[] = "tag_" . $tag . "=1";
+        print "<input type='text' name='tag[]' value='".$tag."'>";
+    }
+
 
     print "<input type='button' onclick='history.back()' value='戻る'>";
     print "<input type='submit' value='OK'>";

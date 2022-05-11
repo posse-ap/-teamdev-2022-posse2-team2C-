@@ -1,0 +1,18 @@
+.area {
+    background: rgb(183, 182, 182);
+    width: 40%;
+   
+
+    &__wrapper {
+        display: flex;
+    } 
+
+    &__tittle {
+        font-size:3rem;
+    }
+
+    &__region {
+        padding-bottom: 1rem;
+    }
+
+}

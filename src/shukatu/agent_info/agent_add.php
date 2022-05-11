@@ -9,6 +9,18 @@ if (isset($_SESSION["login"]) === false) {
 
     exit();
 } else {
+    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+    $user = "root";
+    $password = "password";
+    $dbh_2 = new PDO($dsn, $user, $password);
+    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //urlに乗ってきたcodeを元に識別
+    $sql_2 = "SELECT * FROM tag";
+    $stmt_2 = $dbh_2->prepare($sql_2);
+    
+    $stmt_2->execute();
+    $dbh_2 = null;
 }
 ?>
 
@@ -105,6 +117,18 @@ if (isset($_SESSION["login"]) === false) {
                             <span class="agent_reg_form_box_text">デメリット</span>
                             <input type="text" name="cons">
                         </div>
+
+                        <?php
+                        while (true) {
+                    $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                    if ($rec_2 === false) {
+                        break;
+                    }?><div>
+                       
+                    
+                    <input type="checkbox" class="agent-edit__tag-existence" 
+                    name="tag[]" value=<?php echo $rec_2["tag_code"];?>>
+                    <?php echo $rec_2["tag_name"];}?></input></div>
 
                     </div>
                 </div>
