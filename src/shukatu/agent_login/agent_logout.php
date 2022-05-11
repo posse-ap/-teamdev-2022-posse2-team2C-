@@ -18,16 +18,16 @@ session_destroy();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログアウト</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/agentPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="agent_logout_container">
-        <div class="agent_logout_wrapper">
+    <div class="agent-logout">
+        <div class="agent-logout__wrapper">
             <span>ログアウトしました。</span>
             <a href="agent_login.php">ログイン画面へ</a>
         </div>

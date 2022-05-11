@@ -19,7 +19,12 @@ session_regenerate_id(true);
 
 <body>
     <!-- header -->
-    <?php include "../common/user_page_header.html";
+    <?php
+    phpinfo();
+
+
+
+    include "../common/user_page_header.html";
 
     try {
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";

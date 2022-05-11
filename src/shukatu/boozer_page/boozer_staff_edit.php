@@ -7,8 +7,7 @@ if (isset($_SESSION["login"]) === false) {
     print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"] . "さんログイン中";
-    print "<br><br>";
+   
 }
 ?>
 
@@ -19,7 +18,8 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スタッフ修正画面</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
 </head>
 
 <body>
@@ -49,7 +49,8 @@ if (isset($_SESSION["login"]) === false) {
         print "<a href='./boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
-
+        <?php include "../common/boozer_page_header.php"; ?>
+ <div class="boozer-page__right-page-container">
     スタッフコード<br>
     <?php print $rec["code"]; ?>
     の情報を修正します。
@@ -68,6 +69,7 @@ if (isset($_SESSION["login"]) === false) {
         <input type="button" onclick="history.back()" value="戻る">
         <input type="submit" value="OK">
     </form>
+ </div>
 </body>
 
 </html>

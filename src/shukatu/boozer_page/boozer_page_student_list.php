@@ -9,8 +9,8 @@
 
     <title>[AGENT]学生情報一覧</title>
 
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -48,6 +48,7 @@
             }
         // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
+            <div class="boozer-page__right-page-container">
             <div class="student-info__wrapper">
             <span class="student-info___span"><?php echo $rec['student_family_name'];?></span>
             <span class="student-info___span"><?php echo $rec['student_first_name'];?></span>
@@ -63,6 +64,7 @@
             <span class="student-info___span"><?php echo $rec['agent_id'];?></span>
             
 
+            </div>
             </div>
         <?php
     

@@ -17,7 +17,7 @@
 <body class="body">
 
     <div class="boozer-login">
-        <div class="boozer-login__craft-logo">CRAFT</div>
+        <div class="boozer-login__craft-logo">CRAFT for boozer</div>
         <div class="boozer-login__input-boxes">
             <form action="boozer_login.check.php" method="post" class="boozer-login__form_box">
             <span class="boozer-login__login_text">LOGIN</span>
