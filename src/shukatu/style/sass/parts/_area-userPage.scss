@@ -1,6 +1,6 @@
 .area {
-    background: rgb(183, 182, 182);
-    width: 40%;
+    background: rgb(204, 203, 203);
+    border-radius:3px;
    
 
     &__wrapper {
@@ -8,11 +8,91 @@
     } 
 
     &__tittle {
-        font-size:3rem;
+        font-size:1rem;
     }
 
     &__region {
-        padding-bottom: 1rem;
+        font-size: 1rem;
     }
 
 }
+//エリア検索ボタン
+.area-search {
+    display: flex;
+    flex-direction: column;
+  
+    &__btn {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.5;
+      position: relative;
+      display: inline-block;
+      padding: 1rem 4rem;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      color: #212529;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0;
+      border-radius: 0.75rem;
+      border: none;
+  
+      &_text {
+        position: relative;
+        display: block;
+        padding: 1rem 3rem;
+  
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: 2px solid #000;
+        border-radius: inherit;
+        background: #fff100;
+      }
+    }
+    &__btn:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  
+      width: 100%;
+      height: 100%;
+  
+      content: "";
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      -webkit-transform: translate3d(0, 0.75rem, -1rem);
+      transform: translate3d(0, 0.75rem, -1rem);
+  
+      border: 2px solid #000;
+      border-radius: inherit;
+      background: #ccc100;
+      -webkit-box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+    &__btn:hover {
+      -webkit-transform: translate(0, 0.25rem);
+      transform: translate(0, 0.25rem);
+      background: #fff100;
+    }
+    &__btn:hover::before {
+      -webkit-transform: translate3d(0, 0.5rem, -1rem);
+      transform: translate3d(0, 0.5rem, -1rem);
+      -webkit-box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+    &__btn:active {
+      -webkit-transform: translate(0rem, 0.75rem);
+      transform: translate(0rem, 0.75rem);
+    }
+  }
