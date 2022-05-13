@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
   <script src="../js/header.js" defer></script>
   <script src="../js/user_Q&A.js" defer></script>
   <title>Q&A・お問合せページ</title>

@@ -23,25 +23,26 @@ if (isset($_SESSION["login"]) === false) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 </head>
 
 <body>
-    <?php include "../common/agent_page_header.php"; ?>
-    <div class="right-page__container">
-        <div class="agent-logged-in">
-            <ul class="agent-logged-in__container">
-                <li class="agent-logged-in__menu"><span class="agent-logged-in__text">ユーザー情報</span></li>
-                <li class="agent-logged-in__menu"><span class="agent-logged-in__text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
-                <li class="agent-logged-in__menu"><span class="agent-logged-in__text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
-            </ul>
+        <?php include "../common/agent_page_header.php"; ?>
+        <div class="agent-page__right-page-container">
+            <div class="agent-page___top">
+                <ul class="agent-page___top_container">
+                    <li class="agent-page___top_info"><span class="agent-page___top_info-text">ユーザー情報</span></li>
+                    <li class="agent-page___top_info"><span class="agent-page___top_info-text">エージェント会社名</span><span><?php print $_SESSION["company_name"]; ?></span></li>
+                    <li class="agent-page___top_info"><span class="agent-page___top_info-text">メールアドレス</span><span><?php print $_SESSION["account_email_address"] ?></span></li>
+                </ul>
+            </div>
+            <div class="request-list"></div>
         </div>
-        <div class="request-list"></div>
     </div>
     </div>
     <?php
     print $_SESSION["account_email_address"];
     ?><br><br>
-    <a href="agent_logout.php">ログアウト</a>
 </body>
 
 </html>

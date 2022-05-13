@@ -13,12 +13,16 @@ session_regenerate_id(true);
     <title>就活エージェント比較サイトTOPページ</title>
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <link rel="stylesheet" href="../style/sass/parts/favorite_heart.css">
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
     <script src="../js/user_page.js" defer></script>
 </head>
 
 <body>
     <!-- header -->
-    <?php include "../common/user_page_header.html";
+    <?php
+    include "../common/user_page_header.html";
 
     try {
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -33,30 +37,121 @@ session_regenerate_id(true);
 
         $dbh = null;
     ?>
-        <div>
-            
-            <div class="tags_wrapper">
-                <h1>タグ検索</h1>
-                <form action="user_agent_list_tag.php" method="get">
-                    <div><input type="checkbox" name="tag[]" value="1">文系</div>
-                    <div><input type="checkbox" name="tag[]" value="2">理系</div>
-                    <div><input type="checkbox" name="tag[]" value="3">オンライン面談可</div>
-                    <div><input type="checkbox" name="tag[]" value="4">23卒</div>
-                    <div><input type="checkbox" name="tag[]" value="5">24卒</div>
-                    <div><input type="checkbox" name="tag[]" value="6">25卒</div>
-                    <div><input type="checkbox" name="tag[]" value="7">大手</div>
-                    <div><input type="checkbox" name="tag[]" value="8">ベンチャー</div>
-                    <div><input type="checkbox" name="tag[]" value="9">広告・出版・マスコミ</div>
-                    <div><input type="checkbox" name="tag[]" value="10">金融</div>
-                    <div><input type="checkbox" name="tag[]" value="11">サービス・インフラ</div>
-                    <div><input type="checkbox" name="tag[]" value="12">小売</div>
-                    <div><input type="checkbox" name="tag[]" value="13">ソフトウェア</div>
-                    <div><input type="checkbox" name="tag[]" value="14">官公庁・校舎・団体</div>
-                    <div><input type="checkbox" name="tag[]" value="15">商社</div>
-                    <input type="submit" value="検索しちゃうよ">
+
+        <div class="tag-area-search__wrapper">
+            <div class="tag-search">
+                <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
+            </div>
+            <div class="area-search">
+                <button class="area-search__btn"><span class="area-search__btn_text">エリアから探す</span></button>
+            </div>
+
+        </div>
+
+        <div class="tag-area__wrapper">
+
+            <div class="tag">
+                <span class="tag__tittle">タグ検索</span>
+                <form action="user_agent_list_tag.php" method="get" class="tag__form">
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="1">文系</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="2">理系</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="3">オンライン面談可</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="4">23卒</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="5">24卒</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="6">25卒</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="7">大手</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="8">ベンチャー</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="9">広告・出版・マスコミ</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="10">金融</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="11">サービス・インフラ</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="12">小売</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="13">ソフトウェア</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="14">官公庁・校舎・団体</div>
+                    <div class="tag__input"><input type="checkbox" name="tag[]" value="15">商社</div>
+                    <input class="tag__submit" type="submit" value="検索しちゃうよ">
+
+            </div>
+
+            <div class="area">
+                <span class="area__tittle">エリア検索</span>
+                <div class="area__wrapper">
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="1">北海道</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="2">東北</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">青森</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">秋田</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">岩手</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">山形</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="5">宮城</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="6">福島</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="3">関東</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">東京</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">埼玉</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">群馬</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">栃木</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="5">茨城</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="6">千葉</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="7">神奈川</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="4">中部</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">長野</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">山梨</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">新潟</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">岐阜</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="5">静岡</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="6">愛知</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="7">富山</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="8">石川</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="9">福井</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="5">近畿</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">三重</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">滋賀</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">京都</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">兵庫</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="5">大阪</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="6">和歌山</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="7">奈良</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="6">中国</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">岡山</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">広島</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">鳥取</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">島根</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="5">山口</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="7">四国</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">香川</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">高知</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">徳島</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">愛媛</div>
+                    </div>
+                    <div class="area__container">
+                        <div class="area__region"><input type="checkbox" name="region[]" value="8">九州</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="1">福岡</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="2">大分</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="3">宮崎</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="4">鹿児島</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="5">熊本</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="6">佐賀</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="7">長崎</div>
+                        <div class="area__prefecture"><input type="checkbox" name="prefecture[]" value="8">沖縄</div>
+                    </div>
+                </div>
                 </form>
             </div>
         </div>
+
+
+
         <?php
 
 
@@ -69,26 +164,34 @@ session_regenerate_id(true);
             $agent_id = $rec["agent_id"];
         ?>
 
-            
+            <div class="top-page__agent">
+                <div class="top-page__agent_wrapper">
 
-            <div class="user_page__agent_container">
-                <div class="user_page__heart_img_wrapper">
-                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>">♡</a>
-                    <div class="user_page__img_wrapper">
-                        <img src="./agent_img/agent_img_<?php echo $agent_id;?>.png" alt="" class="user_page__img">
 
+                    <div class="top-page__agent_img-wrapper">
+                        <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
+                        <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
+                        <div class="top-page__agent_heart">
+                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                <div class="Likes">
+                                    <div class="LikesIcon"></div>
+                                </div>
+                        </div>
+                        </a>
                     </div>
                 </div>
-                <div class="user_page__text_wrapper">
+                <div class="top-page__agent_text">
 
-                    <span class="user_page__company_name"><?php print $rec["company_name"]; ?></span>
-                    <span class="user_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
-                    <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="user_page__detail_btn">詳しくはこちら！</a>
+                    <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
+                    <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
                 </div>
-                
+                <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
+                    <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
+                </a>
+
+
             </div>
     <?php }
-
     } catch (Exception $e) {
         print "只今障害が発生しております。<br><br>";
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
@@ -99,7 +202,10 @@ session_regenerate_id(true);
         <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
     </footer>
 
+    <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/favorite.js"></script>
+
 </body>
 
 </html>

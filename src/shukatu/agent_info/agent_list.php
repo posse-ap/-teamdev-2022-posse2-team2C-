@@ -17,8 +17,8 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント一覧</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -58,7 +58,7 @@ if (isset($_SESSION["login"]) === false) {
 
 
        
-            <div class="agent_list_right_page_container">
+<div class="boozer-page__right-page-container">
                 <ul class="post_period_buttons">
                     <li class="post_period_button">全て</li>
                     <li class="post_period_button">掲載中</li>

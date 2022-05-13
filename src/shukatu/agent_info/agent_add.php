@@ -9,6 +9,18 @@ if (isset($_SESSION["login"]) === false) {
 
     exit();
 } else {
+    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+    $user = "root";
+    $password = "password";
+    $dbh_2 = new PDO($dsn, $user, $password);
+    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //urlに乗ってきたcodeを元に識別
+    $sql_2 = "SELECT * FROM tag";
+    $stmt_2 = $dbh_2->prepare($sql_2);
+    
+    $stmt_2->execute();
+    $dbh_2 = null;
 }
 ?>
 
@@ -19,8 +31,8 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント追加</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link  rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi');?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -32,7 +44,7 @@ if (isset($_SESSION["login"]) === false) {
     <!-- <div class="boozer_top_page_container"> -->
       
     
-    <div class="agent_add_right_page_container">
+    <div class="boozer-page__right-page-container">
     <form action="agent_add_check.php" method="post" enctype="multipart/form-data" width="100%">
                 <div class="agent_reg_form_wrapper">
                     <div class="agent_account_reg_wrapper">
@@ -105,6 +117,18 @@ if (isset($_SESSION["login"]) === false) {
                             <span class="agent_reg_form_box_text">デメリット</span>
                             <input type="text" name="cons">
                         </div>
+
+                        <?php
+                        while (true) {
+                    $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                    if ($rec_2 === false) {
+                        break;
+                    }?><div>
+                       
+                    
+                    <input type="checkbox" class="agent-edit__tag-existence" 
+                    name="tag[]" value=<?php echo $rec_2["tag_code"];?>>
+                    <?php echo $rec_2["tag_name"];}?></input></div>
 
                     </div>
                 </div>

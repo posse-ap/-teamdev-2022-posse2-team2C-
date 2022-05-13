@@ -6,7 +6,11 @@
 @use "../../parts/footer-userPage" as footer;
 
 //お気に入りページ
-@use "./user_favorite";
-@use "./user-agentList";
+@use "./user_favorite" as favorite;
+@use "./user-agentList" as topPage;
 @use "./user-howToUse";
 @use "./user-Q&A" as q-a;
+
+// タグ検索box
+@use "../../parts/tag-userPage" as tag;
+@use "../../parts/area-userPage" as area;

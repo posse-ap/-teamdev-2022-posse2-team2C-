@@ -9,8 +9,8 @@
 
     <title>[AGENT]学生情報一覧</title>
 
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // $sql = "SELECT student_id FROM student_agent_connection_table WHERE agent_id=?";
-        $sql = "SELECT student_info.id, student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id";
+        $sql = "SELECT student_info.id, student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad, student_agent_connection_table.agent_id FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id";
 
         $stmt = $dbh->prepare($sql);
     
@@ -48,19 +48,23 @@
             }
         // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
-            <div class="agent_page_student_info_wrapper">
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_family_name'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_first_name'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_family_name_ruby'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_first_name_ruby'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['email_address'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['phone_number'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['name_of_the_univ'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['faculty'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['department'];?></span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['school_year'];?>年</span>
-            <span class="agent_page_student_info_wrapper_span"><?php echo $rec['the_year_of_grad'];?>年卒</span>
+            <div class="boozer-page__right-page-container">
+            <div class="student-info__wrapper">
+            <span class="student-info___span"><?php echo $rec['student_family_name'];?></span>
+            <span class="student-info___span"><?php echo $rec['student_first_name'];?></span>
+            <span class="student-info___span"><?php echo $rec['student_family_name_ruby'];?></span>
+            <span class="student-info___span"><?php echo $rec['student_first_name_ruby'];?></span>
+            <span class="student-info___span"><?php echo $rec['email_address'];?></span>
+            <span class="student-info___span"><?php echo $rec['phone_number'];?></span>
+            <span class="student-info___span"><?php echo $rec['name_of_the_univ'];?></span>
+            <span class="student-info___span"><?php echo $rec['faculty'];?></span>
+            <span class="student-info___span"><?php echo $rec['department'];?></span>
+            <span class="student-info___span"><?php echo $rec['school_year'];?>年</span>
+            <span class="student-info___span"><?php echo $rec['the_year_of_grad'];?>年卒</span>
+            <span class="student-info___span"><?php echo $rec['agent_id'];?></span>
+            
 
+            </div>
             </div>
         <?php
     

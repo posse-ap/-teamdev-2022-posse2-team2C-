@@ -10,13 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 
 </head>
 
 <body class="body">
 
     <div class="boozer-login">
-        <div class="boozer-login__craft-logo">CRAFT</div>
+        <div class="boozer-login__craft-logo">CRAFT for boozer</div>
         <div class="boozer-login__input-boxes">
             <form action="boozer_login.check.php" method="post" class="boozer-login__form_box">
             <span class="boozer-login__login_text">LOGIN</span>

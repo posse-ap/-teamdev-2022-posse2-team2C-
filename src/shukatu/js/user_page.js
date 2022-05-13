@@ -11,3 +11,7 @@
 
 //     document.getElementById("question_area").insertAdjacentHTML("beforeend", question);//htmlに作ったdivタグに入れる
 //     }
+
+$(".LikesIcon").on("click", function () {
+    
+}

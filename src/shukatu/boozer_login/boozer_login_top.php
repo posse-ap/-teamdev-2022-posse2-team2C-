@@ -35,17 +35,18 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[BOOZER]管理画面TOP</title>
-    <link rel="stylesheet" href="../style/reset.css">
-    <link rel="stylesheet" href="../style/craft.css?<?php echo date('Ymd-Hi'); ?>">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 </head>
 
 <body>
     <?php include "../common/boozer_page_header.php"; ?>
 
-    <div class="right_page_container">
+    <div class="boozer-page__right-page-container">
         <div class="user_info_container">
             <ul class="user_info_wrapper">
                 <li class="user_info"><span class="user_info_text">ユーザー情報</span></li>
