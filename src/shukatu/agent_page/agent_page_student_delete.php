@@ -35,7 +35,7 @@
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // $sql = "SELECT student_id FROM student_agent_connection_table WHERE agent_id=?";
-        $sql = "SELECT student_info.id, student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id WHERE student_id=?";
+        $sql = "SELECT * FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id WHERE student_id=?";
 
         $stmt = $dbh->prepare($sql);
         $data[] = $student_id;

@@ -22,7 +22,6 @@ session_regenerate_id(true);
 <body>
     <!-- header -->
     <?php
-    phpinfo();
     include "../common/user_page_header.html";
 
     try {
