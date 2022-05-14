@@ -1,3 +1,5 @@
+<?php 
+session_start();?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,7 +14,7 @@
 </body>
 </html>
 
-<?php session_start();
+<?php 
  $cart = $_SESSION["cart"];
  $quantity = $_SESSION["quantity"];
  $max = count($cart);
@@ -34,7 +36,7 @@ try {
     $department = $post["department"];
     $school_year = $post["school_year"];
     $the_year_of_grad = $post["the_year_of_grad"];
-
+    $form_send_time = date('Y-m-d H:i:s');
  
 
 
@@ -50,7 +52,7 @@ try {
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     
-        $stmt= $dbh -> prepare("INSERT INTO student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES (:student_family_name, :student_first_name, :student_family_name_ruby, :student_first_name_ruby, :email_address, :phone_number, :name_of_the_univ, :faculty, :department, :school_year, :the_year_of_grad)");
+        $stmt= $dbh -> prepare("INSERT INTO student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad ,form_send_time) VALUES (:student_family_name, :student_first_name, :student_family_name_ruby, :student_first_name_ruby, :email_address, :phone_number, :name_of_the_univ, :faculty, :department, :school_year, :the_year_of_grad, :form_send_time)");
         $stmt->bindParam(':student_family_name', $student_family_name, PDO::PARAM_STR);
         $stmt->bindParam(':student_first_name', $student_first_name, PDO::PARAM_STR);
         $stmt->bindParam(':student_family_name_ruby', $student_family_name_ruby, PDO::PARAM_STR);
@@ -62,6 +64,7 @@ try {
         $stmt->bindParam(':department', $department, PDO::PARAM_STR);
         $stmt->bindParam(':school_year', $school_year, PDO::PARAM_STR);
         $stmt->bindParam(':the_year_of_grad', $the_year_of_grad, PDO::PARAM_STR);
+        $stmt->bindParam(':form_send_time', $form_send_time, PDO::PARAM_STR);
         $stmt->execute();
     
         $dbh = null;

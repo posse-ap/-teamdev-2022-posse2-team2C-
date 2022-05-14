@@ -4,8 +4,8 @@
     padding: 3rem;
 
     &_heart {
-        position: absolute;
-        top: -5%;
+      position: absolute;
+      top: -5%;
     }
     &_img-wrapper {
       width: 30%;
@@ -20,10 +20,10 @@
       position: absolute;
       top: 10%;
       right: -5%;
-     
+
       &_text {
-        background:rgb(186, 185, 185);
-        padding: .7rem;
+        background: rgb(186, 185, 185);
+        padding: 0.7rem;
       }
     }
     &_text {
@@ -32,25 +32,22 @@
       align-items: baseline;
 
       &_company-name {
-        font-size:2rem;
-        font-weight:bold;
+        font-size: 2rem;
+        font-weight: bold;
         padding-right: 1rem;
       }
-    &_catchphrase {
-      font-size: .7rem;
-    }
+      &_catchphrase {
+        font-size: 0.7rem;
+      }
     }
     &_detail-btn {
       border: 8px double #0090bb;
-      background: #80CBC4;
+      background: #80cbc4;
       padding: 1rem 1.5rem;
-     
 
       &_text {
         color: black;
       }
     }
-
-
   }
 }
