@@ -1,0 +1,21 @@
+.right_page_container{
+  .boozer-page__right-page-container{
+    .student-info{
+      &__wrapper{
+        padding: 8px;
+        background-color: #c4c4c4;
+        width: 90%;
+        margin: 16px auto;
+      }
+      &___span{
+        background-color: #fff;
+        padding: 0 10px;
+        font-size: 16px;
+        line-height: 2;
+        height: 32px;
+        margin: 8px;
+        display: inline-block;
+      }
+    }
+  }
+}

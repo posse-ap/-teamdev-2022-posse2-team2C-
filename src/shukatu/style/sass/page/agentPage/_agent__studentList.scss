@@ -1,0 +1,17 @@
+.agent_page{
+  &_student_info_wrapper{
+    background-color: #c4c4c4;
+    width: 95%;
+    margin: 16px 0 0 2%;
+    padding-bottom: 16px;
+    &_span{
+      display: inline-block;
+      padding: 0 16px;
+      font-size: 16px;
+      height: 32px;
+      line-height: 2;
+      margin: 16px 0 0 16px;
+      background-color: #fff;
+    }
+  }
+}

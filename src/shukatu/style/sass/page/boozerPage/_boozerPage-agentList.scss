@@ -1,0 +1,45 @@
+@use "../../base/var";
+@forward "../../base/var";
+.boozer-page__right-page-container{
+  .post_period{
+    &_buttons{
+      width: 60%;
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-around;
+    }
+    &_button{
+      width: 30%;
+      height: 32px;
+      border-radius: 16px;
+      font-size: 16px;
+      line-height: 2;
+      text-align: center;
+      background-color: var.$main_color;
+      color: #fff;
+      &:nth-of-type(1){
+        color: #000;
+        background-color: #c4c4c4;
+      }
+    }
+  }
+  .agent_info{
+    &_wrapper{
+      display: flex;
+      background-color: #c4c4c4;
+      width: 95%;
+      height: 64px;
+      margin: 30px 0 0 30px;
+      align-items: center;
+    }
+    &_text{
+      background-color: #fff;
+      font-size: 16px;
+      height: 32px;
+      line-height: 2;
+      display: inline-block;
+      margin-left: 16px;
+      padding: 0 10px;
+    }
+  }
+}
