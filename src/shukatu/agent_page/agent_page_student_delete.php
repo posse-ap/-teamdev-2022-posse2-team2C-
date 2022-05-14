@@ -22,33 +22,33 @@
 
     <div class="agent-page__right-page-container">
 
-        <?php
-        $student_id = $_GET["student_id"];
-        $agent_id = $_GET["agent_id"];
+    <?php
+    $student_id = $_GET["student_id"];
+    $agent_id = $_GET["agent_id"];
 
-        try {
-            //スタッフ一覧を表示させたいからdbにconnect
-            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-            $user = "root";
-            $password = "password";
-            $dbh = new PDO($dsn, $user, $password);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    try {
+        //スタッフ一覧を表示させたいからdbにconnect
+        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+        $user = "root";
+        $password = "password";
+        $dbh = new PDO($dsn, $user, $password);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // $sql = "SELECT student_id FROM student_agent_connection_table WHERE agent_id=?";
-            $sql = "SELECT * FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id WHERE student_id=?";
+        // $sql = "SELECT student_id FROM student_agent_connection_table WHERE agent_id=?";
+        $sql = "SELECT * FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id WHERE student_id=?";
 
-            $stmt = $dbh->prepare($sql);
-            $data[] = $student_id;
-            $stmt->execute($data);
+        $stmt = $dbh->prepare($sql);
+        $data[] = $student_id;
+        $stmt->execute($data);
 
-            $dbh = null;
+        $dbh = null;
 
-            while (true) {
-                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-                if ($rec === false) {
-                    break;
-                }
-                // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+         while (true) {
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($rec === false) {
+                break;
+            }
+        // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
                 <h1>この学生を削除申請しますか？</h1>
                 <div class="student-info">

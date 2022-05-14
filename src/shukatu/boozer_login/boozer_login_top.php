@@ -100,6 +100,7 @@ if (isset($_SESSION["login"]) === false) {
                     <input type="hidden" name="reason" value="<?php echo $rec_2["reason"]; ?>">
                     <input type="hidden" name="agent_id" value="<?php echo $rec_2["agent_id"]; ?>">
                     <input type="hidden" name="student_id" value="<?php echo $rec_2["student_id"]; ?>">
+
                     <input type="submit" value="削除する">
                 </form>
             <?php }
