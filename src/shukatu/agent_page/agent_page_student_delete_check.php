@@ -53,14 +53,11 @@
                 // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
                 <h1>申請が完了しました boozerからの連絡をお待ちになって</h1>
-                
-
-
         <?php
-require_once("../common/common.php");
+                require_once("../common/common.php");
 
-$post = sanitize($_POST);
-$reason = $post["reason"];
+                $post = sanitize($_POST);
+                $reason = $post["reason"];
 
 
                 $student_family_name = $rec['student_family_name'];
@@ -80,7 +77,6 @@ $reason = $post["reason"];
                 $password = "password";
                 $dbh = new PDO($dsn, $user, $password);
                 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 
                 $stmt = $dbh->prepare("INSERT INTO student_delete_request_table (student_id, student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad, agent_id, reason) VALUES (:student_id, :student_family_name, :student_first_name, :student_family_name_ruby, :student_first_name_ruby, :email_address, :phone_number, :name_of_the_univ, :faculty, :department, :school_year, :the_year_of_grad, :agent_id, :reason)");
                 $stmt->bindParam(':student_id', $student_id, PDO::PARAM_STR);
@@ -106,15 +102,6 @@ $reason = $post["reason"];
             print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
         }
         ?>
-
-
-
-        <?php
-
-        ?>
-
-
-
     </div>
     </div>
 

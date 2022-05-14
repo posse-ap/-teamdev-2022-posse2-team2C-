@@ -34,11 +34,8 @@
 
             // $sql = "SELECT student_id FROM student_agent_connection_table WHERE agent_id=?";
             $sql = "SELECT student_info.id, student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad, form_send_time, student_agent_connection_table.agent_id FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id";
-
             $stmt = $dbh->prepare($sql);
-
             $stmt->execute();
-
             $dbh = null;
 
             while (true) {
@@ -63,8 +60,6 @@
                         <span class="student-info___span"><?php echo $rec['the_year_of_grad']; ?>年卒</span>
                         <span class="student-info___span"><?php echo $rec['form_send_time']; ?>送信</span>
                         <span class="student-info___span">エージェントid:<?php echo $rec['agent_id']; ?></span>
-
-
                     </div>
                 </div>
         <?php
@@ -75,15 +70,6 @@
             print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
         }
         ?>
-
-
-
-        <?php
-
-        ?>
-
-
-
     </div>
     </div>
 
