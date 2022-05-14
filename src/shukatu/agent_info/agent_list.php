@@ -57,51 +57,50 @@ if (isset($_SESSION["login"]) === false) {
     ?>
 
 
-       
-<div class="boozer-page__right-page-container">
-                <ul class="post_period_buttons">
-                    <li class="post_period_button">全て</li>
-                    <li class="post_period_button">掲載中</li>
-                    <li class="post_period_button">未掲載</li>
-                </ul>
-                <div>
-                    <form action='agent_branch.php' method='post'>
+        <div class="boozer-page__right-page-container">
+            <ul class="post_period_buttons">
+                <li class="post_period_button">全て</li>
+                <li class="post_period_button">掲載中</li>
+                <li class="post_period_button">未掲載</li>
+            </ul>
+            <div>
+                <form action='agent_branch.php' method='post'>
                     <div>
-                    <input type='submit' name='disp' value='詳細・掲載状態確認'>
-                    <input type='submit' name='edit' value='修正'>
-                    <input type='submit' name='delete' value='削除'>
-                </div>
-                        <?php
-                        while (true) {
-                            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-                            if ($rec === false) {
-                                break;
-                            }
-
-                        ?>
-                            <div class="agent_info_disp_btn_wrapper">
-                                <div class="agent_info_wrapper">
-                                    <?php print "<input type='radio' name='agent_id' value='" . $rec['agent_id'] . "'>"; ?>
-                                    <div class="agent_info_text"><?php print $rec["company_name"]; ?></div>
-                                    <div class="agent_info_text"><?php print $rec["company_staff"]; ?></div>
-                                    <div class="agent_info_text"><?php print $rec["account_email_address"]; ?></div>
-                                    <div class="agent_info_text"><?php print $rec["account_password"]; ?></div>
-                                    <div class="agent_info_text"><?php print $rec["google_account"]; ?></div>
-                                    <div class="agent_info_text"><?php print $rec["post_period_start"]; ?></div>
-                                    <div class="agent_info_text"><?php print $rec["post_period_end"]; ?></div>
-        
-                                </div>
-                                <!-- <div class="disp_btn">詳細 -->
-                                
-                                <!-- </div> -->
-                            </div>
-                        <?php
+                        <input type='submit' name='disp' value='詳細・掲載状態確認'>
+                        <input type='submit' name='edit' value='修正'>
+                        <input type='submit' name='delete' value='削除'>
+                    </div>
+                    <?php
+                    while (true) {
+                        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($rec === false) {
+                            break;
                         }
-                        ?>
-                    
-                </div>
-                </form>
+
+                    ?>
+                        <div class="agent_info_disp_btn_wrapper">
+                            <div class="agent_info_wrapper">
+                                <?php print "<input type='radio' name='agent_id' value='" . $rec['agent_id'] . "'>"; ?>
+                                <div class="agent_info_text"><?php print $rec["company_name"]; ?></div>
+                                <div class="agent_info_text"><?php print $rec["company_staff"]; ?></div>
+                                <div class="agent_info_text"><?php print $rec["account_email_address"]; ?></div>
+                                <div class="agent_info_text"><?php print $rec["account_password"]; ?></div>
+                                <div class="agent_info_text"><?php print $rec["google_account"]; ?></div>
+                                <div class="agent_info_text"><?php print $rec["post_period_start"]; ?></div>
+                                <div class="agent_info_text"><?php print $rec["post_period_end"]; ?></div>
+
+                            </div>
+                            <!-- <div class="disp_btn">詳細 -->
+
+                            <!-- </div> -->
+                        </div>
+                    <?php
+                    }
+                    ?>
+
             </div>
+            </form>
+        </div>
         </div>
     <?php
 

@@ -8,3 +8,7 @@
 
 //boozerログインページ
 @use "./boozerLogin" as boozerLogIn;
+@use "./boozerPage-agentList";
+@use "./boozer-top";
+@use "./boozer-addAgent";
+@use "./boozer-studentList";
