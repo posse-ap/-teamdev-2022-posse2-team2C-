@@ -14,8 +14,8 @@
 
     <?php
     //日本時間を取得
-date_default_timezone_set('Asia/Tokyo');
-echo date('Y-m-d H:i:s') ;
+    date_default_timezone_set('Asia/Tokyo');
+    echo date('Y-m-d H:i:s');
     try {
 
         require_once("../common/common.php");
@@ -63,7 +63,7 @@ echo date('Y-m-d H:i:s') ;
         // $password = "password";
         // $dbh_3 = new PDO($dsn, $user, $password);
         // $dbh_3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      
+
 
         // $sql_3 = $dbh_3->prepare('SELECT id FROM student_info 
         // WHERE student_family_name = :student_family_name, 
@@ -93,7 +93,7 @@ echo date('Y-m-d H:i:s') ;
         // $dbh_3 = null;
 
         // $rec_3 = $sql_3->fetch(PDO::FETCH_ASSOC);
-    
+
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
@@ -104,7 +104,7 @@ echo date('Y-m-d H:i:s') ;
         $sql_2 = "INSERT INTO student_agent_connection_table(agent_id) VALUES(?)";
         $stmt_2 = $dbh_2->prepare($sql_2);
         $data_2[] = $agent_id;
-        $stmt_2->execute($data_2); 
+        $stmt_2->execute($data_2);
 
         $dbh_2 = null;
 
