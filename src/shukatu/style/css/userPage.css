@@ -754,6 +754,7 @@ footer #boozer_logo {
   height: 40vh;
   top: 30vh;
   width: 40vw;
+  min-width: 420px;
   left: 30vw;
   padding: 15px;
   opacity: 100%;
@@ -853,18 +854,21 @@ footer #boozer_logo {
 }
 
 .area {
+  display: none;
   background: #f0f0f0;
   border-radius: 15px;
   position: fixed;
   height: 40vh;
   top: 30vh;
   width: 40vw;
+  min-width: 420px;
   left: 30vw;
   padding: 15px;
   opacity: 100%;
   z-index: 100;
 }
 .area__background {
+  display: none;
   width: 100vw;
   height: 100vh;
   position: fixed;
