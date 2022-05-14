@@ -13,6 +13,9 @@
 <body>
 
     <?php
+    //日本時間を取得
+date_default_timezone_set('Asia/Tokyo');
+echo date('Y-m-d H:i:s') ;
     try {
 
         require_once("../common/common.php");
@@ -31,6 +34,7 @@
         $department = $post["department"];
         $school_year = $post["school_year"];
         $the_year_of_grad = $post["the_year_of_grad"];
+        $form_send_time = date('Y-m-d H:i:s');
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
@@ -38,23 +42,21 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "INSERT INTO student_info(student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-        $stmt = $dbh->prepare($sql);
-        $data[] = $student_family_name;
-        $data[] = $student_first_name;
-        $data[] = $student_family_name_ruby;
-        $data[] = $student_first_name_ruby;
-        $data[] = $email_address;
-        $data[] = $phone_number;
-        $data[] = $name_of_the_univ;
-        $data[] = $faculty;
-        $data[] = $department;
-        $data[] = $school_year;
-        $data[] = $the_year_of_grad;
-        $stmt->execute($data);
-
+        $stmt = $dbh->prepare("INSERT INTO student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad, form_send_time) VALUES (:student_family_name, :student_first_name, :student_family_name_ruby, :student_first_name_ruby, :email_address, :phone_number, :name_of_the_univ, :faculty, :department, :school_year, :the_year_of_grad, :form_send_time)");
+        $stmt->bindParam(':student_family_name', $student_family_name, PDO::PARAM_STR);
+        $stmt->bindParam(':student_first_name', $student_first_name, PDO::PARAM_STR);
+        $stmt->bindParam(':student_family_name_ruby', $student_family_name_ruby, PDO::PARAM_STR);
+        $stmt->bindParam(':student_first_name_ruby', $student_first_name_ruby, PDO::PARAM_STR);
+        $stmt->bindParam(':email_address', $email_address, PDO::PARAM_STR);
+        $stmt->bindParam(':phone_number', $phone_number, PDO::PARAM_STR);
+        $stmt->bindParam(':name_of_the_univ', $name_of_the_univ, PDO::PARAM_STR);
+        $stmt->bindParam(':faculty', $faculty, PDO::PARAM_STR);
+        $stmt->bindParam(':department', $department, PDO::PARAM_STR);
+        $stmt->bindParam(':school_year', $school_year, PDO::PARAM_STR);
+        $stmt->bindParam(':the_year_of_grad', $the_year_of_grad, PDO::PARAM_STR);
+        $stmt->bindParam(':form_send_time', $form_send_time, PDO::PARAM_STR);
+        $stmt->execute();
         $dbh = null;
-
 
         // $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         // $user = "root";

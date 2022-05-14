@@ -5,7 +5,7 @@ session_start();
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
     print "ログインしていません。<br><br>";
-    print "<a href='agent_login.php'>ログイン画面へ</a>";
+    print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
     $code = $_SESSION["code"];
@@ -24,6 +24,19 @@ if (isset($_SESSION["login"]) === false) {
     $dbh = null;
 
     $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+    $user = "root";
+    $password = "password";
+    $dbh_2 = new PDO($dsn, $user, $password);
+    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //codeとpasswordが一致する人を選択(nameカラムから)
+    $sql_2 = "SELECT * FROM student_delete_request_table";
+    $stmt_2 = $dbh_2->prepare($sql_2);
+    $stmt_2->execute();
+
+    $dbh_2 = null;
 }
 
 ?>
@@ -54,7 +67,34 @@ if (isset($_SESSION["login"]) === false) {
                 <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
             </ul>
         </div>
-        <div class="request_list"></div>
+        <div class="request_list">
+            <h1>学生削除申請</h1>
+            <?php
+            while (true) {
+                $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                if ($rec_2 === false) {
+                    break;
+                } ?>
+                <ul>
+                    <li><?php echo $rec_2["student_family_name"]; ?></li>
+                    <li><?php echo $rec_2["student_first_name"]; ?></li>
+                    <li><?php echo $rec_2["student_family_name_ruby"]; ?></li>
+                    <li><?php echo $rec_2["student_first_name_ruby"]; ?></li>
+                    <li><?php echo $rec_2["email_address"]; ?></li>
+                    <li><?php echo $rec_2["phone_number"]; ?></li>
+                    <li><?php echo $rec_2["name_of_the_univ"]; ?></li>
+                    <li><?php echo $rec_2["faculty"]; ?></li>
+                </ul>
+
+                <form action="boozer_page_student_delete.php">
+                    <input type="text">
+                    <input type="submit" value="削除する">
+                </form>
+
+            <?php }
+
+            ?>
+        </div>
     </div>
     </div>
 </body>

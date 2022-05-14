@@ -7,11 +7,12 @@
 // for (let i = 0; i < 10; i++) {
 //     let question =
 //         `<div>${i}</div>`
-
-
 //     document.getElementById("question_area").insertAdjacentHTML("beforeend", question);//htmlに作ったdivタグに入れる
 //     }
 
-$(".LikesIcon").on("click", function () {
-    
-}
+// $tag　$(".tag-area__wrapper")
+
+// $(".tag-search").on("click", function () {
+//     console.log("a");
+//     $(".tag-area__wrapper").display = "block";
+// })
