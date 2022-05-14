@@ -1,3 +1,9 @@
+@use "../base/animation";
+@forward "../base/animation";
+@use "../base/mixin";
+@forward "../base/mixin";
+@use "../base/var";
+@forward "../base/var";
 .tag-area-search__wrapper {
   position: fixed;
   right: 2vh;
@@ -86,21 +92,72 @@
 }
 
 // タグ検索ボックス
-.tag-area__wrapper {
-  // position: fixed;
-  // right: 2vh;
-  // top: 20vh;
-  display: none;
-}
-
 .tag {
-  background: rgb(204, 203, 203);
-  border-radius: 3px;
+  display: none;
+  background: #f0f0f0;
+  border-radius: 15px;
+  position: fixed;
+  height: 45vh;
+  top: 30vh;
+  width: 40vw;
+  min-width: 420px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include mixin.sp{
+  width: 94vw;
+  min-width: 0;
+  height: 70vh;
+  left: 0;
+  padding: 15px 3vw;
+  transform: translateX(0);
+  }
+  padding: 15px;
+  opacity: 100%;
+  z-index: 100;
 
+  &__background{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 50%;
+    z-index: 99;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+  }
   &__tittle {
-    font-size: 1rem;
+    font-size: 16px;
+  }
+  &__determination-btn{
+    width: 16vw;
+    height: 32px;
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    line-height: 2;
+    color: #fff;
+    background-color: var.$main_color;
+    border-radius: 16px;
+    text-align: center;
+    @include mixin.sp{
+      width: 40vw;
+      bottom: 40px;
+    }
   }
   &__input {
-    width: 50%;
+    padding-right: 48px;
+    background-color: #fff;
+    height: 32px;
+    border-radius: 16px;
+    box-shadow: 0 2px 2px #000;
+    line-height: 2;
+    margin: 10px 15px 0 0;
   }
 }

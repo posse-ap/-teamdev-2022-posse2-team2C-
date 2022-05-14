@@ -1,7 +1,7 @@
 @use "./var";
 @forward "./var";
 
-
+//レスポンシブ
 @mixin header_responsive {
   @media screen and (max-width: var.$header_size){
     @content;
