@@ -205,6 +205,7 @@ session_regenerate_id(true);
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/favorite.js"></script>
+    <script src="../js/user_page.js"></script>
 
 </body>
 
