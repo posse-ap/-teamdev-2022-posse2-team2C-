@@ -82,9 +82,19 @@
                 $dbh_2 = new PDO($dsn, $user, $password);
                 $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $sql_2 = "SELECT * FROM student_delete_request_table WHERE student_family_name= :student_family_name AND agent_id= :agent_id";
+                $sql_2 = "SELECT * FROM student_delete_request_table WHERE student_family_name= :student_family_name AND student_first_name= :student_first_name AND student_family_name_ruby= :student_family_name_ruby AND student_first_name_ruby= :student_first_name_ruby AND email_address= :email_address AND phone_number= :phone_number AND name_of_the_univ= :name_of_the_univ AND faculty= :faculty AND department= :department AND school_year= :school_year AND the_year_of_grad= :the_year_of_grad AND agent_id= :agent_id";
                 $stmt_2 = $dbh_2->prepare($sql_2);
                 $stmt_2->bindValue(":student_family_name", $student_family_name, PDO::PARAM_STR);
+                $stmt_2->bindValue(":student_first_name", $student_first_name, PDO::PARAM_STR);
+                $stmt_2->bindValue(":student_family_name_ruby", $student_family_name_ruby, PDO::PARAM_STR);
+                $stmt_2->bindValue(":student_first_name_ruby", $student_first_name_ruby, PDO::PARAM_STR);
+                $stmt_2->bindValue(":email_address", $email_address, PDO::PARAM_STR);
+                $stmt_2->bindValue(":phone_number", $phone_number, PDO::PARAM_STR);
+                $stmt_2->bindValue(":name_of_the_univ", $name_of_the_univ, PDO::PARAM_STR);
+                $stmt_2->bindValue(":faculty", $faculty, PDO::PARAM_STR);
+                $stmt_2->bindValue(":department", $department, PDO::PARAM_STR);
+                $stmt_2->bindValue(":school_year", $school_year, PDO::PARAM_STR);
+                $stmt_2->bindValue(":the_year_of_grad", $the_year_of_grad, PDO::PARAM_STR);
                 $stmt_2->bindValue(":agent_id", $agent_id, PDO::PARAM_STR);
                 $stmt_2->execute();
                 $cnt = $stmt_2->rowCount();
