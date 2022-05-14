@@ -26,9 +26,10 @@
   .agent_info{
     &_wrapper{
       display: flex;
+      flex-wrap: wrap;
       background-color: #c4c4c4;
       width: 95%;
-      height: 64px;
+      padding: 4px;
       margin: 30px 0 0 30px;
       align-items: center;
     }
@@ -38,7 +39,7 @@
       height: 32px;
       line-height: 2;
       display: inline-block;
-      margin-left: 16px;
+      margin: 4px;
       padding: 0 10px;
     }
   }
