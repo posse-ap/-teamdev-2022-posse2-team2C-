@@ -2,7 +2,7 @@
 const tag = document.querySelector(".tag");
 const tag__background = document.querySelector(".tag__background");
 function show_tag(){
-  tag.style.display = "block";
+  tag.style.display = "flex";
   tag__background.style.display = "block";
 }
 function hide_tag(){

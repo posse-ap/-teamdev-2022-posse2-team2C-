@@ -98,7 +98,6 @@
                 $stmt_2->bindValue(":agent_id", $agent_id, PDO::PARAM_STR);
                 $stmt_2->execute();
                 $cnt = $stmt_2->rowCount();
-
                 $dbh_2 = null;
 
 
