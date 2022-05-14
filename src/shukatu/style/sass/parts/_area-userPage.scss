@@ -1,5 +1,7 @@
 @use "../base/var";
 @forward "../base/var";
+@use "../base/mixin";
+@forward "../base/mixin";
 
 //エリア検索ボタン
 .area-search {
@@ -92,10 +94,19 @@
   top: 30vh;
   width: 40vw;
   min-width: 420px;
-  left: 30vw;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px;
   opacity: 100%;
   z-index: 100;
+  @include mixin.sp{
+    width: 94vw;
+    min-width: 0;
+    height: 70vh;
+    left: 0;
+    padding: 15px 3vw;
+    transform: translateX(0);
+    }
 
   &__background{
     display: none;
@@ -150,8 +161,15 @@
     width: 40vw;
     justify-content: space-around;
     position: fixed;
-    top: 65vh;
-    left: 30vw;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mixin.sp{
+      width: 100vw;
+      left: 0;
+      transform: translateX(0);
+      bottom: 10vh;
+    }
     #reset_btn{
       width: 40%;
       height: 32px;

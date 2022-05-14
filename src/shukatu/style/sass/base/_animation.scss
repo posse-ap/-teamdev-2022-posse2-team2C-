@@ -154,32 +154,3 @@
   animation: close_menu_5 400ms;
   animation-fill-mode: forwards;
 }
-
-//タグ検索、モーダル
-// @keyframes show-tags{
-//   0%{
-//     transform: translateY(0);
-//   }
-//   100%{
-//     transform: translateY(-50vh);
-//   }
-// }
-// @keyframes hide-tags{
-//   0%{
-//     transform: translateY(-50vh);
-//   }
-//   100%{
-//     transform: translateY(0);
-//   }
-// }
-
-// .tag{
-//   &.shown{
-//     animation: show-tags 400ms;
-//     animation-fill-mode: forwards;
-//   }
-//   &.hidden{
-//     animation: hide-tags 400ms;
-//     animation-fill-mode: forwards;
-//   }
-// }

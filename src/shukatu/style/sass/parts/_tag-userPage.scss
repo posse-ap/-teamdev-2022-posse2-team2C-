@@ -1,5 +1,9 @@
 @use "../base/animation";
 @forward "../base/animation";
+@use "../base/mixin";
+@forward "../base/mixin";
+@use "../base/var";
+@forward "../base/var";
 .tag-area-search__wrapper {
   position: fixed;
   right: 2vh;
@@ -93,11 +97,20 @@
   background: #f0f0f0;
   border-radius: 15px;
   position: fixed;
-  height: 40vh;
+  height: 45vh;
   top: 30vh;
   width: 40vw;
   min-width: 420px;
-  left: 30vw;
+  left: 50%;
+  transform: translateX(-50%);
+  @include mixin.sp{
+  width: 94vw;
+  min-width: 0;
+  height: 70vh;
+  left: 0;
+  padding: 15px 3vw;
+  transform: translateX(0);
+  }
   padding: 15px;
   opacity: 100%;
   z-index: 100;
@@ -119,6 +132,24 @@
   }
   &__tittle {
     font-size: 16px;
+  }
+  &__determination-btn{
+    width: 16vw;
+    height: 32px;
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    line-height: 2;
+    color: #fff;
+    background-color: var.$main_color;
+    border-radius: 16px;
+    text-align: center;
+    @include mixin.sp{
+      width: 40vw;
+      bottom: 40px;
+    }
   }
   &__input {
     padding-right: 48px;

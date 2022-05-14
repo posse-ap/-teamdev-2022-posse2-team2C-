@@ -70,6 +70,7 @@ session_regenerate_id(true);
                     <div class="tag__input"><input type="checkbox" name="tag[]" value="13">ソフトウェア</div>
                     <div class="tag__input"><input type="checkbox" name="tag[]" value="14">官公庁・校舎・団体</div>
                     <div class="tag__input"><input type="checkbox" name="tag[]" value="15">商社</div>
+                    <div class="tag__determination-btn" onclick="hide_tag()">決定</div>
                     <input class="tag__submit" type="submit" value="検索しちゃうよ">
 
             </div>

@@ -1,264 +1,3 @@
-@-webkit-keyframes open_menu_1 {
-  100% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(-45deg);
-  }
-}
-@keyframes open_menu_1 {
-  100% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(-45deg);
-  }
-}
-@-webkit-keyframes open_menu_2 {
-  100% {
-    position: absolute;
-    top: 18px;
-    opacity: 0;
-  }
-}
-@keyframes open_menu_2 {
-  100% {
-    position: absolute;
-    top: 18px;
-    opacity: 0;
-  }
-}
-@-webkit-keyframes open_menu_3 {
-  100% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(45deg);
-  }
-}
-@keyframes open_menu_3 {
-  100% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(45deg);
-  }
-}
-@-webkit-keyframes open_menu_4 {
-  100% {
-    position: absolute;
-    top: 18px;
-    opacity: 1;
-  }
-}
-@keyframes open_menu_4 {
-  100% {
-    position: absolute;
-    top: 18px;
-    opacity: 1;
-  }
-}
-@-webkit-keyframes open_menu_5 {
-  100% {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 78px;
-  }
-}
-@keyframes open_menu_5 {
-  100% {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 78px;
-  }
-}
-#header #menu_wrapper #menu.cross span:nth-of-type(1) {
-  -webkit-animation: open_menu_1 400ms;
-          animation: open_menu_1 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-#header #menu_wrapper #menu.cross span:nth-of-type(2) {
-  -webkit-animation: open_menu_2 400ms;
-          animation: open_menu_2 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-#header #menu_wrapper #menu.cross span:nth-of-type(3) {
-  -webkit-animation: open_menu_3 400ms;
-          animation: open_menu_3 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-#header #menu_wrapper #menu.cross span:nth-of-type(4) {
-  -webkit-animation: open_menu_4 400ms;
-          animation: open_menu_4 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-#nav_area.shown {
-  -webkit-animation: open_menu_5 400ms;
-          animation: open_menu_5 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes close_menu_1 {
-  0% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(-45deg);
-  }
-  100% {
-    width: 45px;
-    top: 0;
-    left: 0;
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes close_menu_1 {
-  0% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(-45deg);
-  }
-  100% {
-    width: 45px;
-    top: 0;
-    left: 0;
-    transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes close_menu_2 {
-  0% {
-    position: absolute;
-    top: 18px;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    top: 7px;
-  }
-}
-@keyframes close_menu_2 {
-  0% {
-    position: absolute;
-    top: 18px;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    top: 7px;
-  }
-}
-@-webkit-keyframes close_menu_3 {
-  0% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(45deg);
-  }
-  100% {
-    width: 45px;
-    top: 30px;
-    left: 0;
-    transform: rotate(0deg);
-  }
-}
-@keyframes close_menu_3 {
-  0% {
-    width: 30px;
-    top: 5px;
-    left: 5px;
-    transform: rotate(45deg);
-  }
-  100% {
-    width: 45px;
-    top: 30px;
-    left: 0;
-    transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes close_menu_4 {
-  0% {
-    position: absolute;
-    top: 18px;
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: 7px;
-  }
-}
-@keyframes close_menu_4 {
-  0% {
-    position: absolute;
-    top: 18px;
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: 7px;
-  }
-}
-@-webkit-keyframes close_menu_5 {
-  0% {
-    top: 78px;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    opacity: 0;
-    top: 1000px;
-  }
-}
-@keyframes close_menu_5 {
-  0% {
-    top: 78px;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    opacity: 0;
-    top: 1000px;
-  }
-}
-#header #menu_wrapper #menu.menu span:nth-of-type(1) {
-  -webkit-animation: close_menu_1 400ms;
-          animation: close_menu_1 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-#header #menu_wrapper #menu.menu span:nth-of-type(2) {
-  -webkit-animation: close_menu_2 400ms;
-          animation: close_menu_2 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-#header #menu_wrapper #menu.menu span:nth-of-type(3) {
-  -webkit-animation: close_menu_3 400ms;
-          animation: close_menu_3 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-#header #menu_wrapper #menu.menu span:nth-of-type(4) {
-  -webkit-animation: close_menu_4 400ms;
-          animation: close_menu_4 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-#nav_area.hidden {
-  -webkit-animation: close_menu_5 400ms;
-          animation: close_menu_5 400ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
 header {
   background-color: #26a69a;
   width: 100vw;
@@ -675,6 +414,268 @@ footer #boozer_logo {
   line-height: 1.5;
 }
 
+@-webkit-keyframes open_menu_1 {
+  100% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes open_menu_1 {
+  100% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+}
+@-webkit-keyframes open_menu_2 {
+  100% {
+    position: absolute;
+    top: 18px;
+    opacity: 0;
+  }
+}
+@keyframes open_menu_2 {
+  100% {
+    position: absolute;
+    top: 18px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes open_menu_3 {
+  100% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+}
+@keyframes open_menu_3 {
+  100% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes open_menu_4 {
+  100% {
+    position: absolute;
+    top: 18px;
+    opacity: 1;
+  }
+}
+@keyframes open_menu_4 {
+  100% {
+    position: absolute;
+    top: 18px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes open_menu_5 {
+  100% {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 78px;
+  }
+}
+@keyframes open_menu_5 {
+  100% {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 78px;
+  }
+}
+#header #menu_wrapper #menu.cross span:nth-of-type(1) {
+  -webkit-animation: open_menu_1 400ms;
+          animation: open_menu_1 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#header #menu_wrapper #menu.cross span:nth-of-type(2) {
+  -webkit-animation: open_menu_2 400ms;
+          animation: open_menu_2 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#header #menu_wrapper #menu.cross span:nth-of-type(3) {
+  -webkit-animation: open_menu_3 400ms;
+          animation: open_menu_3 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#header #menu_wrapper #menu.cross span:nth-of-type(4) {
+  -webkit-animation: open_menu_4 400ms;
+          animation: open_menu_4 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#nav_area.shown {
+  -webkit-animation: open_menu_5 400ms;
+          animation: open_menu_5 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes close_menu_1 {
+  0% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+  100% {
+    width: 45px;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes close_menu_1 {
+  0% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+  100% {
+    width: 45px;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes close_menu_2 {
+  0% {
+    position: absolute;
+    top: 18px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 7px;
+  }
+}
+@keyframes close_menu_2 {
+  0% {
+    position: absolute;
+    top: 18px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 7px;
+  }
+}
+@-webkit-keyframes close_menu_3 {
+  0% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+  100% {
+    width: 45px;
+    top: 30px;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+@keyframes close_menu_3 {
+  0% {
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+  100% {
+    width: 45px;
+    top: 30px;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes close_menu_4 {
+  0% {
+    position: absolute;
+    top: 18px;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 7px;
+  }
+}
+@keyframes close_menu_4 {
+  0% {
+    position: absolute;
+    top: 18px;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 7px;
+  }
+}
+@-webkit-keyframes close_menu_5 {
+  0% {
+    top: 78px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    opacity: 0;
+    top: 1000px;
+  }
+}
+@keyframes close_menu_5 {
+  0% {
+    top: 78px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    opacity: 0;
+    top: 1000px;
+  }
+}
+#header #menu_wrapper #menu.menu span:nth-of-type(1) {
+  -webkit-animation: close_menu_1 400ms;
+          animation: close_menu_1 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#header #menu_wrapper #menu.menu span:nth-of-type(2) {
+  -webkit-animation: close_menu_2 400ms;
+          animation: close_menu_2 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#header #menu_wrapper #menu.menu span:nth-of-type(3) {
+  -webkit-animation: close_menu_3 400ms;
+          animation: close_menu_3 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#header #menu_wrapper #menu.menu span:nth-of-type(4) {
+  -webkit-animation: close_menu_4 400ms;
+          animation: close_menu_4 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#nav_area.hidden {
+  -webkit-animation: close_menu_5 400ms;
+          animation: close_menu_5 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .tag-area-search__wrapper {
   position: fixed;
   right: 2vh;
@@ -751,14 +752,25 @@ footer #boozer_logo {
   background: #f0f0f0;
   border-radius: 15px;
   position: fixed;
-  height: 40vh;
+  height: 45vh;
   top: 30vh;
   width: 40vw;
   min-width: 420px;
-  left: 30vw;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px;
   opacity: 100%;
   z-index: 100;
+}
+@media screen and (max-width: 767px) {
+  .tag {
+    width: 94vw;
+    min-width: 0;
+    height: 70vh;
+    left: 0;
+    padding: 15px 3vw;
+    transform: translateX(0);
+  }
 }
 .tag__background {
   display: none;
@@ -777,6 +789,26 @@ footer #boozer_logo {
 }
 .tag__tittle {
   font-size: 16px;
+}
+.tag__determination-btn {
+  width: 16vw;
+  height: 32px;
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  line-height: 2;
+  color: #fff;
+  background-color: #26a69a;
+  border-radius: 16px;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .tag__determination-btn {
+    width: 40vw;
+    bottom: 40px;
+  }
 }
 .tag__input {
   padding-right: 48px;
@@ -862,10 +894,21 @@ footer #boozer_logo {
   top: 30vh;
   width: 40vw;
   min-width: 420px;
-  left: 30vw;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px;
   opacity: 100%;
   z-index: 100;
+}
+@media screen and (max-width: 767px) {
+  .area {
+    width: 94vw;
+    min-width: 0;
+    height: 70vh;
+    left: 0;
+    padding: 15px 3vw;
+    transform: translateX(0);
+  }
 }
 .area__background {
   display: none;
@@ -916,8 +959,17 @@ footer #boozer_logo {
   width: 40vw;
   justify-content: space-around;
   position: fixed;
-  top: 65vh;
-  left: 30vw;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 767px) {
+  .area__btn-area {
+    width: 100vw;
+    left: 0;
+    transform: translateX(0);
+    bottom: 10vh;
+  }
 }
 .area__btn-area #reset_btn {
   width: 40%;
