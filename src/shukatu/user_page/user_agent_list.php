@@ -17,6 +17,7 @@ session_regenerate_id(true);
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
     <script src="../js/user_page.js" defer></script>
+    <script src="../js/user_top.js" defer></script>
 </head>
 
 <body>
@@ -50,6 +51,7 @@ session_regenerate_id(true);
 
         <div class="tag-area__wrapper">
 
+            <div class = "tag__background"></div>
             <div class="tag">
                 <span class="tag__tittle">タグ検索</span>
                 <form action="user_agent_list_tag.php" method="get" class="tag__form">
@@ -72,6 +74,7 @@ session_regenerate_id(true);
 
             </div>
 
+            <div class="area__background"></div>
             <div class="area">
                 <span class="area__tittle">エリア検索</span>
                 <div class="area__wrapper">
@@ -147,6 +150,7 @@ session_regenerate_id(true);
                     </div>
                 </div>
                 </form>
+                <div class="area__btn-area"></div>
             </div>
         </div>
 
