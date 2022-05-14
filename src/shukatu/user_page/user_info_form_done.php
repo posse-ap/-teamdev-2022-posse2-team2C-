@@ -1,6 +1,7 @@
 <?php session_start();
 
 $agent_id = $_GET["agent_id"];
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">

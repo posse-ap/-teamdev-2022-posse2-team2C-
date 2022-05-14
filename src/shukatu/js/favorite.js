@@ -16,5 +16,5 @@ $(".heart_link").on("click", function() {
     var link = $(this).attr('href');
     setTimeout(function() {
       location.href= link;
-    }, 2000);
+    }, 1000);
   });

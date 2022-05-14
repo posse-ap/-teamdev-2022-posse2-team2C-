@@ -172,7 +172,8 @@ CREATE TABLE shukatu.student_info (
   faculty VARCHAR(255) NOT NULL,
   department VARCHAR(255) NOT NULL,
   school_year INT NOT NULL,
-  the_year_of_grad INT NOT NULL
+  the_year_of_grad INT NOT NULL,
+  form_send_time DATETIME NOT NULL
 );
 
 -- INSERT INTO shukatu.student_info (student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad) VALUES
@@ -198,3 +199,22 @@ CREATE TABLE shukatu.student_agent_connection_table (
 -- (2),
 -- (4);
 
+-- 削除申請した学生
+DROP TABLE IF EXISTS shukatu.student_delete_request_table;
+CREATE TABLE shukatu.student_delete_request_table (
+  id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  student_id INT NOT NULL,
+  student_family_name VARCHAR(255) NOT NULL,
+  student_first_name VARCHAR(255) NOT NULL,
+  student_family_name_ruby VARCHAR(255) NOT NULL,
+  student_first_name_ruby VARCHAR(255) NOT NULL,
+  email_address VARCHAR(255) NOT NULL,
+  phone_number VARCHAR(255) NOT NULL,
+  name_of_the_univ VARCHAR(255) NOT NULL,
+  faculty VARCHAR(255) NOT NULL,
+  department VARCHAR(255) NOT NULL,
+  school_year INT NOT NULL,
+  the_year_of_grad INT NOT NULL,
+  agent_id INT NOT NULL,
+  reason VARCHAR(255) NOT NULL
+);
