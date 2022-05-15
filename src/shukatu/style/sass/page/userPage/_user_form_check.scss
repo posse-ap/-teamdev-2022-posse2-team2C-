@@ -1,0 +1,51 @@
+.check_area {
+  width: 90vw;
+  max-width: 650px;
+  margin: 0 auto;
+  h1{
+    margin: 20px auto;
+  }
+  form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 16px auto;
+    input{
+      display: block;
+      width: 45%;
+      &[name="agent_id"]{
+        display: none;
+      }
+    }
+  }
+  .student_info_check__btn_area {
+    position: relative;
+    width: 100%;
+    .back_btn {
+      background-color: #65a0f2;
+      color: #fff;
+      position: absolute;
+      width: 35%;
+      height: 64px;
+      left: 12%;
+      margin-top: 16px;
+      display: block;
+      border: none;
+      border-radius: 8px;
+      font-size: 32px;
+    }
+    .submit_btn{
+      background-color: #f5835f;
+      color: #fff;
+      position: absolute;
+      width: 35%;
+      height: 64px;
+      right: 12%;
+      margin-top: 16px;
+      display: block;
+      border: none;
+      border-radius: 8px;
+      font-size: 32px;
+    }
+  }
+}

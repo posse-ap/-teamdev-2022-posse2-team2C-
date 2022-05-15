@@ -24,8 +24,8 @@ if (isset($_SESSION["member_login"]) === true) {
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
     <link rel="stylesheet" href="../style/sass/parts/favorite_heart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -72,32 +72,30 @@ if (isset($_SESSION["member_login"]) === true) {
                 </div>
             </div>
             <div>
-            <span class="user_page__company_name"><?php print $rec["company_name"]; ?></span>
-            <span class="user_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
+                <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>
+                <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
             </div>
         </div>
-        <div></div>
+
+        <div class="detail_page__text_wrapper">
+            <!-- <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span> -->
+            <!-- <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span> -->
+            <span class="detail_page__feature"><?php print $rec["feature"]; ?></span>
+            <span class="detail_page__online_meeting">オンライン面談：<?php print $rec["online_meeting"]; ?></span>
+            <span class="detail_page__membership">会員数：<?php print $rec["membership"]; ?></span>
+            <span class="detail_page__pros"><?php print $rec["pros"]; ?></span>
+            <span class="detail_page__cons"><?php print $rec["cons"]; ?></span>
+        </div>
     </div>
 
-    </div>
-    <!-- <div class="user_page__text_wrapper">
-        <span class="user_page__company_name"><?php print $rec["company_name"]; ?></span>
-        <span class="user_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
-        <span class="user_page__catchphrase"><?php print $rec["feature"]; ?></span>
-        <span class="user_page__catchphrase"><?php print $rec["online_meeting"]; ?></span>
-        <span class="user_page__catchphrase"><?php print $rec["membership"]; ?></span>
-        <span class="user_page__catchphrase"><?php print $rec["pros"]; ?></span>
-        <span class="user_page__catchphrase"><?php print $rec["cons"]; ?></span>
-    </div> -->
 
     <a href='user_info_form_done.php?agent_id=<?php echo $agent_id; ?>' class='student-info-form__btn'>
         <span class="student-info-form__btn_text">個人情報入力に進む</span>
     </a>
 
-    </div>
 
     <form>
-        <input type="button" onclick="history.back()" value="一覧に戻る">
+        <input type="button" onclick="history.back()" value="一覧に戻る" class="detail-page__back_btn">
     </form>
 
     <!-- <h3>カテゴリー</h3> -->

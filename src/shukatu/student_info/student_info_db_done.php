@@ -7,15 +7,33 @@
 
     <title>個人情報登録完了</title>
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>
 
+    <?php include "../common/user_page_header.html" ?>
+    <div class="form-step">
+        <ol class="c-stepper">
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">情報の入力</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">内容確認</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item c-stepper__item_here">
+                <h3 class="c-stepper__title">申請完了</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+        </ol>
+    </div>
     <?php
     //日本時間を取得
     date_default_timezone_set('Asia/Tokyo');
-    echo date('Y-m-d H:i:s');
+    // echo date('Y-m-d H:i:s');
     try {
 
         require_once("../common/common.php");
@@ -113,8 +131,12 @@
         //member tableに値を登録
 
 
-        print "登録完了しました。<br><br>";
-        print "<a href='../user_page/user_agent_list.php'>トップへ戻る</a>";
+        print "<div class='done_message'>登録完了しました！</div>
+        <div class='done_message_text'>申請が完了しました。<br>
+        ご入力いただいた情報に従って各エージェント企業担当者より追ってご連絡差し上げます。
+        ご登録いただいたメールアドレスへのメールをご確認ください。</div>
+        ";
+        print "<a href='../user_page/user_agent_list.php' class='backToTop'>トップへ戻る</a>";
     } catch (Exception $e) {
         echo "（ ´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
         print "<a href='member_login.php'>ログインページへ戻る</a>";
