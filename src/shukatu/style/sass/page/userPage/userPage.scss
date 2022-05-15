@@ -5,11 +5,18 @@
 //フッター
 @use "../../parts/footer-userPage" as footer;
 
+// topページ
+@use "./user-agentList" as topPage;
 //お気に入りページ
 @use "./user_favorite" as favorite;
-@use "./user-agentList" as topPage;
+// 詳細ページ
+@use "./user_detail" as detail;
+// 使い方ガイド
 @use "./user-howToUse";
+// Q＆A
 @use "./user-Q&A" as q-a;
+// フォームデザイン
+@use "./user_form" as form;
 
 // タグ検索box
 @use "../../parts/tag-userPage" as tag;
