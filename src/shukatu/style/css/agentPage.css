@@ -148,6 +148,95 @@
   background-color: #fff;
 }
 
+.delete {
+  display: block;
+  margin-left: 2%;
+  margin-top: 5px;
+}
+
+.agent-page__right-page-container h1 {
+  margin: 16px;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_account_reg_wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #e2e2e2;
+  padding: 10px 0;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_account_reg_wrapper .agent_reg_form_tittle {
+  width: 100%;
+  text-align: center;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_account_reg_wrapper .agent_reg_form_box {
+  width: 45%;
+  margin: 5px 0;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_account_reg_wrapper .agent_reg_form_box_text {
+  display: block;
+  width: 100%;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_account_reg_wrapper .agent_reg_form_box input {
+  width: 100%;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_info_reg_wrapper {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #e2e2e2;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_info_reg_wrapper .agent_reg_form_tittle {
+  width: 100%;
+  text-align: center;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_info_reg_wrapper .agent_reg_form_box {
+  width: 45%;
+  margin: 5px 0;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_info_reg_wrapper .agent_reg_form_box_text {
+  display: block;
+  width: 100%;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_info_reg_wrapper .agent_reg_form_box input {
+  width: 100%;
+}
+.agent-page__right-page-container .agent_reg_form_wrapper .agent_info_reg_wrapper .checkbox_area {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  margin-top: 10px;
+}
+
+.agent-page__right-page-container .student-info {
+  background-color: #c4c4c4;
+  padding: 4px;
+  width: 90%;
+  margin: 0 auto;
+}
+.agent-page__right-page-container .student-info__span {
+  height: 32px;
+  font-size: 16px;
+  line-height: 2;
+  background-color: #fff;
+  padding: 0 10px;
+  display: inline-block;
+  margin: 4px;
+}
+.agent-page__right-page-container form {
+  background-color: #e2e2e2;
+  width: 90%;
+  margin: 10px auto;
+  padding: 16px 4px;
+}
+.agent-page__right-page-container form span {
+  display: block;
+}
+
 /********
 エージェントログインページ
 *********/

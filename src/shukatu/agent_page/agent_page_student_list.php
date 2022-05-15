@@ -102,11 +102,11 @@
 
 
                 if ($cnt == 0) { ?>
-                    <a href="./agent_page_student_delete.php?student_id=<?php echo $rec["id"] ?>&agent_id=<?php echo $agent_id; ?>">削除申請する！！</a>
+                    <a href="./agent_page_student_delete.php?student_id=<?php echo $rec["id"] ?>&agent_id=<?php echo $agent_id; ?>" class="delete">削除申請する！！</a>
                 <?php
                 }
                 if ($cnt == 1) { ?>
-                    <span>削除申請中だよんちょいとお待ち</span>
+                    <span class="delete">削除申請中だよんちょいとお待ち</span>
                 <?php
                 }
 

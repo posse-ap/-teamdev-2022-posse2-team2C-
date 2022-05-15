@@ -1,0 +1,65 @@
+.agent-page__right-page-container{
+  h1{
+    margin: 16px;
+  }
+  .agent_reg_form_wrapper{
+    .agent_account_reg_wrapper{
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #e2e2e2;
+      padding: 10px 0;
+      .agent_reg_form{
+        &_tittle{
+          width: 100%;
+          text-align: center;
+        }
+        &_box{
+          width: 45%;
+          margin: 5px 0;
+          &_text{
+            display: block;
+            width: 100%;
+          }
+          input{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .agent_info_reg_wrapper{
+      width: 90%;
+      margin: 10px auto;
+      padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #e2e2e2;
+      .agent_reg_form{
+        &_tittle{
+          width: 100%;
+          text-align: center;
+        }
+        &_box{
+          width: 45%;
+          margin: 5px 0;
+          &_text{
+            display: block;
+            width: 100%;
+          }
+          input{
+            width: 100%;
+          }
+        }
+      }
+      .checkbox_area{
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin-top: 10px;
+      }
+    }
+  }
+}

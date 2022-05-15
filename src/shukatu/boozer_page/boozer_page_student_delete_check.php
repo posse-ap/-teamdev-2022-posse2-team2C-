@@ -44,7 +44,7 @@ session_start();
     $student_id = $post["student_id"];
     ?>
     <div class="boozer-page__right-page-container">
-    <span>本当にこの学生を削除していいんですね？</span>
+    <span class = "delete_check">本当にこの学生を削除していいんですね？</span>
     <form action="boozer_page_student_delete_done.php" method="post">
         <input type="text" name="student_family_name" value="<?php echo $post["student_family_name"]; ?>">
         <input type="text" name="student_first_name" value="<?php echo $post["student_first_name"]; ?>">

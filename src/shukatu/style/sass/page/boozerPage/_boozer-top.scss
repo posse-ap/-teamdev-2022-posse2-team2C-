@@ -1,3 +1,5 @@
+@use "./boozer-deleteStudent-check";
+@forward "./boozer-deleteStudent-check";
 .user_info{
   &_container{
     width: 100%;
