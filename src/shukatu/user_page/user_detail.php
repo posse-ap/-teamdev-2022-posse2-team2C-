@@ -22,6 +22,10 @@ if (isset($_SESSION["member_login"]) === true) {
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
+    <link rel="stylesheet" href="../style/sass/parts/favorite_heart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -53,35 +57,44 @@ if (isset($_SESSION["member_login"]) === true) {
         print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
+    <div class="detail-page__agent_wrapper">
+        <div class="detail-page__agent">
+            <div class="detail-page__agent_img-wrapper">
+                <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="detail-page__agent_img">
+                <div class="detail-page__agent_tag"><span class="detail-page__agent_tag_text">#</span></div>
+                <div class="detail-page__agent_heart">
+                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                        <div class="Likes">
+                            <div class="LikesIcon"></div>
+                        </div>
 
-
-    <a href="user_cartin.php?agent_id=<?php print $agent_id; ?>">お気に入り一覧に入れる</a>
-
-
-    <div class="user_page__agent_container">
-        <div class="user_page__heart_img_wrapper">
-            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>">♡</a>
-            <div class="user_page__img_wrapper">
-
-            <img src="./agent_img/agent_img_<?php echo $agent_id;?>.png" alt="" class="user_page__img">
-
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="user_page__text_wrapper">
+            <div>
             <span class="user_page__company_name"><?php print $rec["company_name"]; ?></span>
             <span class="user_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
+            </div>
         </div>
-        <a href='user_info_form_check.php?agent_id=<?php echo $agent_id;?>'>個人情報入力に進む</a>
-        
+        <div></div>
     </div>
 
+    </div>
+    <!-- <div class="user_page__text_wrapper">
+        <span class="user_page__company_name"><?php print $rec["company_name"]; ?></span>
+        <span class="user_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
+        <span class="user_page__catchphrase"><?php print $rec["feature"]; ?></span>
+        <span class="user_page__catchphrase"><?php print $rec["online_meeting"]; ?></span>
+        <span class="user_page__catchphrase"><?php print $rec["membership"]; ?></span>
+        <span class="user_page__catchphrase"><?php print $rec["pros"]; ?></span>
+        <span class="user_page__catchphrase"><?php print $rec["cons"]; ?></span>
+    </div> -->
 
+    <a href='user_info_form_done.php?agent_id=<?php echo $agent_id; ?>' class='student-info-form__btn'>
+        <span class="student-info-form__btn_text">個人情報入力に進む</span>
+    </a>
 
-    エージェント名:<?php print $rec['agent_id']; ?>
-
-
-
-
+    </div>
 
     <form>
         <input type="button" onclick="history.back()" value="一覧に戻る">
@@ -94,6 +107,8 @@ if (isset($_SESSION["member_login"]) === true) {
 <a href="shop_list_niti.php">日用品</a><br>
 <a href="shop_list_sonota.php">その他</a><br> -->
     <script src="../js/header.js"></script>
+    <script src="../js/favorite.js"></script>
+    <script src="../js/user_page.js"></script>
 </body>
 
 </html>

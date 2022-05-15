@@ -1,0 +1,52 @@
+.detail-page {
+    &__agent {
+        margin-left: 5%;
+        margin-top: 3%;
+        padding: 3rem;
+
+        &_heart {
+            position: absolute;
+            top: -5%;
+        }
+
+        &_img-wrapper {
+            width: 40%;
+            height: auto;
+            position: relative;
+            border-radius: 30px;
+            filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        &_img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &_tag {
+            position: absolute;
+            top: 10%;
+            right: -5%;
+
+            &_text {
+                background: rgb(186, 185, 185);
+                padding: 0.7rem;
+            }
+        }
+    }
+}
+// 個人情報に進めのボタン
+.student-info-form {
+    &__btn {
+        background: #26A69A;
+        padding: 2% 3%;
+        margin-left: 45%;
+        border-radius: 5px;
+        filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+
+        &_text {
+            color: white;
+            font-family: 'Sawarabi Gothic', sans-serif;
+        }
+    }
+    
+}

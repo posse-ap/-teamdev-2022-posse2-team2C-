@@ -17,8 +17,25 @@ $agent_id = $_GET["agent_id"];
 </head>
 
 <body>
+    <?php include "../common/user_page_header.html" ?>
 
-    <h1>個人情報入力</h1>
+    <div class="form-step">
+        <ol class="c-stepper">
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">情報の入力</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">内容確認</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">申請完了</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+        </ol>
+
+    </div>
 
     <form action="../student_info/student_info_db_check.php" method="post">
         エージェントid

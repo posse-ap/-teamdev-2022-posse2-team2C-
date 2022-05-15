@@ -2,7 +2,7 @@
   &__agent {
     margin-left: 5%;
     padding: 3rem;
-
+    
     &_heart {
       position: absolute;
       top: -5%;
@@ -11,6 +11,8 @@
       width: 30%;
       height: auto;
       position: relative;
+      border-radius:30px;
+      filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.2));
     }
     &_img {
       width: 100%;

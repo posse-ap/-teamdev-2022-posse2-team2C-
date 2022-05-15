@@ -29,7 +29,7 @@ session_start();
 </head>
 
 <body>
-
+<?php include "../common/user_page_header.html" ?>
   <?php
   try {
     $cart = $_SESSION["cart"];

@@ -9,13 +9,19 @@ session_regenerate_id(true);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>就活エージェント比較サイトTOPページ</title>
+    <!-- cssファイル -->
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
     <link rel="stylesheet" href="../style/sass/parts/favorite_heart.css">
+    <!-- ファビコン -->
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <!-- js -->
     <script src="../js/user_page.js" defer></script>
     <script src="../js/user_top.js" defer></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- header -->
@@ -157,6 +163,7 @@ session_regenerate_id(true);
             }
             $agent_id = $rec["agent_id"];
         ?>
+        <div class="top-page__agent_position">
             <div class="top-page__agent">
                 <div class="top-page__agent_wrapper">
                     <div class="top-page__agent_img-wrapper">
@@ -179,6 +186,8 @@ session_regenerate_id(true);
                     <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
                 </a>
             </div>
+         </div>
+        
     <?php }
     } catch (Exception $e) {
         print "只今障害が発生しております。<br><br>";
