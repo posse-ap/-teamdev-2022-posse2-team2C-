@@ -1,8 +1,24 @@
+@use "../../base/mixin";
+@forward "../../base/mixin";
+@use "../../base/var";
+@forward "../../base/var";
+
 .detail-page {
     &__agent {
         margin-left: 5%;
         margin-top: 3%;
-        padding: 3rem;
+        width: 50%;
+        @include mixin.sp{
+            width: 80%;
+        }
+
+        &_wrapper{
+            display: flex;
+            justify-content: space-around;
+            @include mixin.sp{
+                display: block;
+            }
+        }
 
         &_heart {
             position: absolute;
@@ -10,7 +26,7 @@
         }
 
         &_img-wrapper {
-            width: 40%;
+            width: 100%;
             height: auto;
             position: relative;
             border-radius: 30px;
@@ -33,14 +49,64 @@
             }
         }
     }
+    &__back_btn{
+        border: none;
+        background-color: #65a0f2;
+        color: #fff;
+        display: block;
+        margin: 10px auto;
+        width: 10%;
+        min-width: 176px;
+        height: 48px;
+        font-size: 16px;
+        line-height: 3;
+        text-align: center;
+        border-radius: 8px;
+    }
 }
+.detail_page{
+    &__company_name{
+        font-size: 32px;
+        display: block;
+        margin-top: 10px;
+    }
+    &__catchphrase{
+        display: block;
+        margin-top: 5px;
+    }
+}
+.detail_page__text_wrapper{
+    width: 50%;
+    @include mixin.sp{
+        width: 100%;
+    }
+    padding-top: 3%;
+    span{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #fafafa;
+        border: #000 solid 1px;
+        font-size: 16px;
+        line-height: 2;
+        padding-left: 10px;
+    }
+}
+
+
 // 個人情報に進めのボタン
 .student-info-form {
     &__btn {
-        background: #26A69A;
-        padding: 2% 3%;
-        margin-left: 45%;
-        border-radius: 5px;
+        background: var.$main_color;
+        display: block;
+        margin: 10px auto;
+        width: 10%;
+        min-width: 176px;
+        height: 48px;
+        font-size: 16px;
+        line-height: 3;
+        text-align: center;
+        border-radius: 8px;
         filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
 
         &_text {
