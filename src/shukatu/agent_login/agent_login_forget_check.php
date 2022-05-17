@@ -3,7 +3,7 @@ try{
 
     require_once("../common/common.php");
 
-    $post = sanitize($_POST);  
+    $post = sanitize($_POST);
     $account_email_address = $post["account_email_address"];
 
     $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -75,17 +75,18 @@ try{
         $account_email_address = htmlspecialchars($_POST["account_email_address"], ENT_QUOTES, "UTF-8");
         // $mail_send_time = $_POST["mail_send_time"] ENT_QUOTES, "UTF-8";
 
+        // $dataってaccount_email_address情報の取得に使ってたので違う変数名にしましょう
+        $password_reset_data = [];
         //データをカラムに追加
-        $sql = "INSERT INTO password_reset(account_email_address, mail_send_time,passResetToken) VALUES(?,?,?)";
+
+        // password_reset -> password_resets テーブル名間違ってます
+        $sql = "INSERT INTO password_resets(account_email_address, mail_send_time, pass_reset_token) VALUES(?,?,?)";
         $stmt = $dbh->prepare($sql);
-        $data[] = $rec["account_email_address"];
-        $data[] = $mail_send_time;
-        $data[] = $passResetToken;
-        $stmt->execute($data);
+        $password_reset_data[] = $rec["account_email_address"];
+        $password_reset_data[] = $mail_send_time;
+        $password_reset_data[] = $passResetToken;
+        $stmt->execute($password_reset_data);
 
-        $dbh = null;
-
-        
         // if(!empty($rec["account_email_address"]) === true){
         //     $sql = "INSERT INTO password_reset values()";
         //     $stmt = $dbh -> prepare($sql);
