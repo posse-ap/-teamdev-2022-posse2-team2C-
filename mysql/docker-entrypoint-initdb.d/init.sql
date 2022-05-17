@@ -144,7 +144,14 @@ INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_
 ("4","doda","小林哲","akira@icloud.com","0115","momo@gmail.com","2022-3-1","2022-4-1"),
 ("5","キャリタス","三浦ぽんた","ponta@icloud.com","1009","momo@gmail.com","2022-3-1","2022-4-1");
 
+-- エージェントパスワードリセット用テーブル
+CREATE TABLE password_resets (
+    `account_email_address` VARCHAR(255) NOT NULL PRIMARY KEY,
+    `mail_send_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP  ON UPDATE CURRENT_TIMESTAMP
+    `passResetToken` VARCHAR(255) NOT NULL
+);
 
+-- boozerスタッフテーブル
 DROP TABLE IF EXISTS shukatu.staff;
 CREATE TABLE shukatu.staff (
 code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,

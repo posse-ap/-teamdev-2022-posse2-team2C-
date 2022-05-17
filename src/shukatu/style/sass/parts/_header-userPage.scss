@@ -2,8 +2,6 @@
 @forward "../base/var";
 @use "../base/mixin";
 @forward "../base/mixin";
-@use "../base/animation";
-@forward  "../base/animation";
 
 header {
   background-color: var.$main_color;

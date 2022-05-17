@@ -4,7 +4,7 @@ session_start();
 // セッションハイジャック防止（ページ毎にsession idをランダムに変更）
 session_regenerate_id(true);
 if (isset($_SESSION["login"]) === false) {
-    print "パスワードの再設定が必要となります。。<br><br>";
+    print "パスワードの再設定が必要となります。<br><br>";
     print "恐れ入りますが、登録されたメールアドレスをご入力いただき、受信されたメールの案内に従ってパスワードの再設定をお願いいたします。<br><br>";
 
     print "登録しているメールアドレス ";?>
