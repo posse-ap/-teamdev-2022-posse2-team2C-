@@ -18,7 +18,9 @@
 
 <body>
 
+
     <?php include "../common/agent_page_header.php"; ?>
+   
 
     <div class="agent-page__right-page-container">
 
