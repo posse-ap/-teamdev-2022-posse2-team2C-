@@ -21,6 +21,7 @@ if (isset($_SESSION["member_login"]) === true) {
     <title>就活エージェント詳細ページ</title>
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <!-- ファビコン -->
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
     <link rel="stylesheet" href="../style/sass/parts/favorite_heart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
