@@ -187,43 +187,35 @@ session_regenerate_id(true);
                 </div>
             </form>
         </div>
-        <?php
-
-        $arr1 = array();
-        foreach ($_GET['tag'] as $tag) {
-            $arr1[] = "tag_" . $tag . "=1";
-        }
-
-        $arr2 = array();
-        foreach ($_GET['region'] as $region) {
-            $arr2[] = "region" . $region . "=1";
-        }
-
-        $arr3 = array();
-        foreach ($_GET['prefecture'] as $prefecture) {
-            $arr3[] = "prefecture" . $prefecture . "=1";
-        }
-
-        $a = implode(" AND ", $arr1);
-        $b = implode(" AND ", $arr2);
-        $c = implode(" AND ", $arr3);
-
-        $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
-
-        $dbh = null;
-
-
-        while (true) {
-            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($rec === false) {
-                break;
+        
+            <?php
+            $arr1 = array();
+            foreach ($_GET['tag'] as $tag) {
+                $arr1[] = "tag_" . $tag . "=1";
             }
-            $agent_id = $rec["agent_id"];
-        ?>
+            $arr2 = array();
+            foreach ($_GET['region'] as $region) {
+                $arr2[] = "region" . $region . "=1";
+            }
+            $arr3 = array();
+            foreach ($_GET['prefecture'] as $prefecture) {
+                $arr3[] = "prefecture" . $prefecture . "=1";
+            }
+            $a = implode(" AND ", $arr1);
+            $b = implode(" AND ", $arr2);
+            $c = implode(" AND ", $arr3);
+            $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $dbh = null;
 
-            <div class="top-page__agent_position">
+            while (true) {
+                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($rec === false) {
+                    break;
+                }
+                $agent_id = $rec["agent_id"];
+            ?>
                 <div class="top-page__agent">
                     <div class="top-page__agent_wrapper">
                         <div class="top-page__agent_img-wrapper">
@@ -246,20 +238,21 @@ session_regenerate_id(true);
                         <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
                     </a>
                 </div>
-            </div>
-    <?php }
-    } catch (Exception $e) {
-        print "只今障害が発生しております。<br><br>";
-        echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-        print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
-    }
-    ?>
-    <footer>
-        <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
-    </footer>
 
-    <script src="../js/header.js"></script>
-    <script src="../js/user_page.js"></script>
+        <?php }
+        } catch (Exception $e) {
+            print "只今障害が発生しております。<br><br>";
+            echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
+            print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
+        }
+        ?>
+        </div>
+        <footer>
+            <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+        </footer>
+
+        <script src="../js/header.js"></script>
+        <script src="../js/user_page.js"></script>
 </body>
 
 </html>

@@ -181,16 +181,29 @@ footer #boozer_logo {
   width: 288px;
 }
 
+.top-page__agent_position {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 1.5rem;
+}
 .top-page__agent {
-  margin-left: 5%;
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vh;
+  padding: 4rem 3rem 3rem 3rem;
+  margin: 1rem;
+  background: #f2f2f2;
+  border: 0.7px solid black;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
 }
 .top-page__agent_heart {
   position: absolute;
   top: -5%;
 }
 .top-page__agent_img-wrapper {
-  width: 30%;
+  width: 100%;
   height: auto;
   position: relative;
   border-radius: 30px;
@@ -211,6 +224,7 @@ footer #boozer_logo {
 }
 .top-page__agent_text {
   display: flex;
+  margin-top: 1rem;
   margin-bottom: 3rem;
   align-items: baseline;
 }

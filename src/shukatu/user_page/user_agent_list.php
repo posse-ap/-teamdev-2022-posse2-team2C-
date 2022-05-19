@@ -46,9 +46,9 @@ session_regenerate_id(true);
         $stmt->execute();
         $dbh = null;
     ?>
-   
+
         <div class="tag-area-search__wrapper">
-        <span>エージェントが決まっていない人はここから！</span>
+            <span>エージェントが決まっていない人はここから！</span>
             <div class="tag-search">
                 <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
             </div>
@@ -169,15 +169,16 @@ session_regenerate_id(true);
         </div>
 
         </div>
-        <?php
-        while (true) {
-            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($rec === false) {
-                break;
-            }
-            $agent_id = $rec["agent_id"];
-        ?>
-            <div class="top-page__agent_position">
+        <div class="top-page__agent_position">
+            <?php
+            while (true) {
+                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($rec === false) {
+                    break;
+                }
+                $agent_id = $rec["agent_id"];
+            ?>
+
                 <div class="top-page__agent">
                     <div class="top-page__agent_wrapper">
                         <div class="top-page__agent_img-wrapper">
@@ -200,15 +201,16 @@ session_regenerate_id(true);
                         <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
                     </a>
                 </div>
-            </div>
 
-    <?php }
-    } catch (Exception $e) {
-        print "只今障害が発生しております。<br><br>";
-        echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-        print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
-    }
-    ?>
+
+            <?php } ?>
+        </div><?php
+            } catch (Exception $e) {
+                print "只今障害が発生しております。<br><br>";
+                echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
+                print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
+            }
+                ?>
     <footer>
         <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
     </footer>
