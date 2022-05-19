@@ -178,8 +178,7 @@ session_regenerate_id(true);
                 }
                 $agent_id = $rec["agent_id"];
             ?>
-
-                <div class="top-page__agent">
+            <div class="top-page__agent">
                     <div class="top-page__agent_wrapper">
                         <div class="top-page__agent_img-wrapper">
                             <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">

@@ -187,7 +187,7 @@ session_regenerate_id(true);
                 </div>
             </form>
         </div>
-        
+        <div class="top-page__agent_position">
             <?php
             $arr1 = array();
             foreach ($_GET['tag'] as $tag) {
