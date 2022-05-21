@@ -4,6 +4,36 @@
 @forward "../base/mixin";
 @use "../base/var";
 @forward "../base/var";
+.current-tag-area-search__wrapper {
+  width: 80%;
+  margin-left: 20vh;
+}
+.current-area {
+  background: rgb(239, 239, 239);
+  display: flex;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+
+  &_tittle {
+    border: 1px solid black;
+  padding: 3px;
+  }
+
+}
+
+.current-tag {
+  background: rgb(239, 239, 239);
+  display: flex;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  &_tittle {
+    border: 1px solid black;
+  padding: 3px;
+  }
+}
+
 .tag-area-search__wrapper {
   position: fixed;
   right: 5vh;
