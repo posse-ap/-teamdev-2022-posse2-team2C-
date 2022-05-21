@@ -61,14 +61,91 @@ session_regenerate_id(true);
         $password = "password";
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // $sql = "SELECT DISTINCT agent.agent_id, GROUP_CONCAT(tag_agent_connect.tag_code) FROM agent INNER JOIN tag_agent_connect ON agent.agent_id = tag_agent_connect.agent_id GROUP BY agent.agent_id";
 
-        // $stmt = $dbh->prepare($sql);
-        // $stmt->execute();
-
-        // $dbh_2 = null;
+        $arr1 = array();
+        foreach ($_GET['tag'] as $tag) {
+            $arr1[] = "tag_" . $tag . "=1";
+        }
+        $arr2 = array();
+        foreach ($_GET['region'] as $region) {
+            $arr2[] = "region" . $region . "=1";
+        }
+        $arr3 = array();
+        foreach ($_GET['prefecture'] as $prefecture) {
+            $arr3[] = "prefecture" . $prefecture . "=1";
+        }
+        $a = implode(" AND ", $arr1);
+        $b = implode(" AND ", $arr2);
+        $c = implode(" AND ", $arr3);
+        $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $dbh = null;
     ?>
 
+        <div class="current-tag-area-search__wrapper">
+            <div class="current-area">
+                <span class="current-area_tittle">
+                    選択されているエリア
+                </span>
+                <?php
+                $tag_names = $_GET["tag"];
+                foreach ($tag_names as $tag_name) {
+                    $show_tag = $tag_name;
+
+
+                    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+                    $user = "root";
+                    $password = "password";
+                    $dbh_2 = new PDO($dsn, $user, $password);
+                    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
+                    $stmt_2 = $dbh_2->prepare($sql_2);
+                    $stmt_2->execute();
+                    $dbh_2 = null;
+                    while (true) {
+                        $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                        if ($rec_2 === false) {
+                            break;
+                        } ?>
+                        <div><?php echo $rec_2["tag_name"]; ?>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
+            <div class="current-tag">
+                <span class="current-tag_tittle">
+                選択されているタグ
+                </span>
+                <?php
+                $tag_names = $_GET["tag"];
+                foreach ($tag_names as $tag_name) {
+                    $show_tag = $tag_name;
+
+
+                    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+                    $user = "root";
+                    $password = "password";
+                    $dbh_2 = new PDO($dsn, $user, $password);
+                    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
+                    $stmt_2 = $dbh_2->prepare($sql_2);
+                    $stmt_2->execute();
+                    $dbh_2 = null;
+                    while (true) {
+                        $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                        if ($rec_2 === false) {
+                            break;
+                        } ?>
+                        <div><?php echo $rec_2["tag_name"]; ?>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
         <div class="tag-area-search__wrapper">
             <div class="tag-search">
                 <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
@@ -188,27 +265,8 @@ session_regenerate_id(true);
             </form>
         </div>
         <div class="top-page__agent_position">
-            <?php
-            $arr1 = array();
-            foreach ($_GET['tag'] as $tag) {
-                $arr1[] = "tag_" . $tag . "=1";
-            }
-            $arr2 = array();
-            foreach ($_GET['region'] as $region) {
-                $arr2[] = "region" . $region . "=1";
-            }
-            $arr3 = array();
-            foreach ($_GET['prefecture'] as $prefecture) {
-                $arr3[] = "prefecture" . $prefecture . "=1";
-            }
-            $a = implode(" AND ", $arr1);
-            $b = implode(" AND ", $arr2);
-            $c = implode(" AND ", $arr3);
-            $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute();
-            $dbh = null;
 
+            <?php
             while (true) {
                 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
                 if ($rec === false) {
