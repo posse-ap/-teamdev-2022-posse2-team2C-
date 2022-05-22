@@ -147,7 +147,7 @@ INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_
 -- エージェントパスワードリセット用テーブル
 DROP TABLE IF EXISTS shukatu.password_resets;
 CREATE TABLE shukatu.password_resets (
-  account_email_address VARCHAR(255) NOT NULL PRIMARY KEY,
+  account_email_address VARCHAR(255) NOT NULL ,
   mail_send_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   pass_reset_token VARCHAR(255) NOT NULL
 );

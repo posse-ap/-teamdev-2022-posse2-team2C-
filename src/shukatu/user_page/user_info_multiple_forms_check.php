@@ -26,10 +26,12 @@ session_start();
   <title>エージェント購入チェック</title>
   <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 </head>
 
 <body>
-
+<?php include "../common/user_page_header.html" ?>
   <?php
   try {
     $cart = $_SESSION["cart"];

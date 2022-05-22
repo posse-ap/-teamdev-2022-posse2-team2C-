@@ -2,6 +2,7 @@ header {
   background-color: #26a69a;
   width: 100vw;
   height: 78px;
+  padding-top: 2%;
 }
 @media screen and (max-width: 980px) {
   header {
@@ -87,6 +88,7 @@ header #menu_wrapper #menu span:nth-of-type(4) {
 .page_switch {
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 @media screen and (max-width: 767px) {
   .page_switch {
@@ -106,15 +108,18 @@ header #menu_wrapper #menu span:nth-of-type(4) {
 }
 .page_switch_link .page_switch_button {
   color: #fff;
+  font-family: "Sawarabi Gothic", sans-serif;
   width: 100%;
   height: 32px;
   margin: 3px;
+  padding: 2% 1%;
   border-radius: 16px;
   font-size: 16px;
   text-align: center;
   line-height: 2;
-  background-color: #f5835f;
-  opacity: 50%;
+  background: linear-gradient(#fca388, #fa5a29);
+  opacity: 60%;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.3));
 }
 .page_switch_link_here {
   width: 20%;
@@ -126,14 +131,17 @@ header #menu_wrapper #menu span:nth-of-type(4) {
 }
 .page_switch_link_here .page_switch_button {
   color: #fff;
+  font-family: "Sawarabi Gothic", sans-serif;
   width: 100%;
   height: 32px;
-  margin: 3px;
+  margin: 10px 3px;
+  padding: 2% 1%;
   border-radius: 16px;
   font-size: 16px;
   text-align: center;
   line-height: 2;
-  background-color: #f5835f;
+  background: linear-gradient(#f5835f, #ff6435);
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
 }
 
 #nav_area {
@@ -173,18 +181,33 @@ footer #boozer_logo {
   width: 288px;
 }
 
+.top-page__agent_position {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 1.5rem;
+}
 .top-page__agent {
-  margin-left: 5%;
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vh;
+  padding: 4rem 3rem 3rem 3rem;
+  margin: 1rem;
+  background: #f2f2f2;
+  border: 0.7px solid black;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
 }
 .top-page__agent_heart {
   position: absolute;
   top: -5%;
 }
 .top-page__agent_img-wrapper {
-  width: 30%;
+  width: 100%;
   height: auto;
   position: relative;
+  border-radius: 30px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
 }
 .top-page__agent_img {
   width: 100%;
@@ -201,6 +224,7 @@ footer #boozer_logo {
 }
 .top-page__agent_text {
   display: flex;
+  margin-top: 1rem;
   margin-bottom: 3rem;
   align-items: baseline;
 }
@@ -219,6 +243,112 @@ footer #boozer_logo {
 }
 .top-page__agent_detail-btn_text {
   color: black;
+}
+
+.detail-page__agent {
+  margin-left: 5%;
+  margin-top: 3%;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .detail-page__agent {
+    width: 80%;
+  }
+}
+.detail-page__agent_wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 767px) {
+  .detail-page__agent_wrapper {
+    display: block;
+  }
+}
+.detail-page__agent_heart {
+  position: absolute;
+  top: -5%;
+}
+.detail-page__agent_img-wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-radius: 30px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+}
+.detail-page__agent_img {
+  width: 100%;
+  height: 100%;
+}
+.detail-page__agent_tag {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+}
+.detail-page__agent_tag_text {
+  background: #bab9b9;
+  padding: 0.7rem;
+}
+.detail-page__back_btn {
+  border: none;
+  background-color: #65a0f2;
+  color: #fff;
+  display: block;
+  margin: 10px auto;
+  width: 10%;
+  min-width: 176px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 3;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.detail_page__company_name {
+  font-size: 32px;
+  display: block;
+  margin-top: 10px;
+}
+.detail_page__catchphrase {
+  display: block;
+  margin-top: 5px;
+}
+
+.detail_page__text_wrapper {
+  width: 50%;
+  padding-top: 3%;
+}
+@media screen and (max-width: 767px) {
+  .detail_page__text_wrapper {
+    width: 100%;
+  }
+}
+.detail_page__text_wrapper span {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fafafa;
+  border: #000 solid 1px;
+  font-size: 16px;
+  line-height: 2;
+  padding-left: 10px;
+}
+
+.student-info-form__btn {
+  background: #26a69a;
+  display: block;
+  margin: 10px auto;
+  width: 10%;
+  min-width: 176px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 3;
+  text-align: center;
+  border-radius: 8px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+}
+.student-info-form__btn_text {
+  color: white;
+  font-family: "Sawarabi Gothic", sans-serif;
 }
 
 .head_howToUse {
@@ -412,6 +542,205 @@ footer #boozer_logo {
 }
 #Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea p {
   line-height: 1.5;
+}
+
+.check_area {
+  width: 90vw;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.check_area h1 {
+  margin: 20px auto;
+}
+.check_area form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 16px auto;
+}
+.check_area form input {
+  display: block;
+  width: 45%;
+}
+.check_area form input[name=agent_id] {
+  display: none;
+}
+.check_area .student_info_check__btn_area {
+  position: relative;
+  width: 100%;
+}
+.check_area .student_info_check__btn_area .back_btn {
+  background-color: #65a0f2;
+  color: #fff;
+  position: absolute;
+  width: 35%;
+  height: 64px;
+  left: 12%;
+  margin-top: 16px;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  font-size: 32px;
+}
+.check_area .student_info_check__btn_area .submit_btn {
+  background-color: #f5835f;
+  color: #fff;
+  position: absolute;
+  width: 35%;
+  height: 64px;
+  right: 12%;
+  margin-top: 16px;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  font-size: 32px;
+}
+
+.done_message {
+  background-color: #f5835f;
+  color: #fff;
+  font-size: 20px;
+  line-height: 2;
+  width: 200px;
+  margin: 30px auto;
+  text-align: center;
+}
+.done_message_text {
+  width: 90%;
+  margin: 20px auto;
+  max-width: 650px;
+  font-size: 16px;
+}
+
+.backToTop {
+  display: block;
+  background-color: #26a69a;
+  color: #fff;
+  font-size: 20px;
+  line-height: 2;
+  width: 150px;
+  margin: 30px auto;
+  text-align: center;
+  border-radius: 16px;
+}
+
+:root {
+  --circle-size: clamp(1.5rem, 5vw, 3rem);
+  --spacing: clamp(0.25rem, 2vw, 0.5rem);
+}
+
+.c-stepper {
+  display: flex;
+}
+
+.c-stepper__item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+.c-stepper__item:before {
+  --size: 3rem;
+  content: "";
+  display: block;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  background: pink;
+  margin: 0 auto 1rem;
+}
+.c-stepper__item_here:before {
+  --size: 3rem;
+  content: "";
+  display: block;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  background: #f8788d;
+  margin: 0 auto 1rem;
+}
+.c-stepper__item:not(:last-child):after {
+  content: "";
+  position: relative;
+  top: calc(var(--circle-size) / 2);
+  width: calc(100% - var(--circle-size) - var(--spacing) * 2);
+  left: calc(50% + var(--circle-size) / 2 + var(--spacing));
+  height: 2px;
+  background-color: #e0e0e0;
+  order: -1;
+}
+
+.c-stepper__title {
+  font-weight: bold;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  margin-bottom: 0.5rem;
+}
+
+.c-stepper__desc {
+  color: grey;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+}
+
+.student_info__form {
+  width: 90%;
+  max-width: 650px;
+  margin: 25px auto;
+  position: relative;
+}
+.student_info__form div {
+  background-color: #fafafa;
+  display: flex;
+  width: 100%;
+}
+.student_info__form_tittle {
+  font-size: 16px;
+  line-height: 2;
+  border: solid #000 1px;
+  padding-left: 10px;
+  width: 25%;
+  display: block;
+}
+.student_info__form_input_area {
+  display: block;
+  height: 32px;
+  width: 75%;
+  border: solid #000 1px;
+  padding: 8px 0 0 5px;
+}
+.student_info__form_input_area input {
+  width: 45%;
+}
+.student_info__form_back_btn {
+  background-color: #65a0f2;
+  color: #fff;
+  position: absolute;
+  width: 35%;
+  height: 64px;
+  left: 12%;
+  margin-top: 16px;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  font-size: 32px;
+}
+.student_info__form_ok_btn {
+  background-color: #f5835f;
+  color: #fff;
+  position: absolute;
+  width: 35%;
+  height: 64px;
+  right: 12%;
+  margin-top: 16px;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  font-size: 32px;
+}
+.student_info__agent_id {
+  display: none;
+  position: absolute;
 }
 
 @-webkit-keyframes open_menu_1 {
@@ -678,16 +1007,24 @@ footer #boozer_logo {
 
 .tag-area-search__wrapper {
   position: fixed;
-  right: 2vh;
-  top: 20vh;
+  right: 5vh;
+  top: 30vh;
+  background: #efefef;
+  border: 1px solid black;
+  padding: 10px 10px 15vh 10px;
+  filter: drop-shadow(10px 10px 10px rgba(57, 57, 57, 0.2));
 }
 
-.tag-search {
+.both-search {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  right: 7vh;
+  top: 50vh;
+  filter: drop-shadow(10px 10px 10px rgba(57, 57, 57, 0.2));
 }
-.tag-search__btn {
-  font-size: 1.6rem;
+.both-search__btn {
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
   position: relative;
@@ -710,45 +1047,68 @@ footer #boozer_logo {
   border-radius: 0.75rem;
   border: none;
 }
+.both-search__btn_text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  transition: all 0.3s;
+  border: 1.5px solid #000;
+  border-radius: inherit;
+  background: #ff9500;
+}
+.both-search__btn:hover {
+  transform: translate(0, 0.25rem);
+  background: #ff9500;
+}
+.both-search__btn:active {
+  transform: translate(0rem, 0.75rem);
+}
+
+.tag-search {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  filter: drop-shadow(10px 10px 10px rgba(57, 57, 57, 0.2));
+}
+.tag-search__btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: none;
+}
 .tag-search__btn_text {
   position: relative;
   display: block;
-  padding: 1rem 3rem;
+  padding: 0.7rem 2rem;
   transition: all 0.3s;
-  border: 2px solid #000;
+  border: 1.5px solid #000;
   border-radius: inherit;
-  background: #fff100;
-}
-.tag-search__btn:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  transition: all 0.3s;
-  transform: translate3d(0, 0.75rem, -1rem);
-  border: 2px solid #000;
-  border-radius: inherit;
-  background: #ccc100;
-  box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
-}
-.tag-search__btn:hover {
-  transform: translate(0, 0.25rem);
-  background: #fff100;
-}
-.tag-search__btn:hover::before {
-  transform: translate3d(0, 0.5rem, -1rem);
-  box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
-}
-.tag-search__btn:active {
-  transform: translate(0rem, 0.75rem);
+  background: #cacaca;
 }
 
 .tag {
   display: none;
+  flex-wrap: wrap;
+  align-content: flex-start;
   background: #f0f0f0;
   border-radius: 15px;
   position: fixed;
@@ -783,10 +1143,6 @@ footer #boozer_logo {
   opacity: 50%;
   z-index: 99;
 }
-.tag__form {
-  display: flex;
-  flex-wrap: wrap;
-}
 .tag__tittle {
   font-size: 16px;
 }
@@ -815,17 +1171,19 @@ footer #boozer_logo {
   background-color: #fff;
   height: 32px;
   border-radius: 16px;
-  box-shadow: 0 2px 2px #000;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
   line-height: 2;
-  margin: 10px 15px 0 0;
+  margin-top: 15px;
+  margin-right: 15px;
 }
 
 .area-search {
   display: flex;
   flex-direction: column;
+  filter: drop-shadow(10px 10px 10px rgba(57, 57, 57, 0.2));
 }
 .area-search__btn {
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
   position: relative;
@@ -845,44 +1203,17 @@ footer #boozer_logo {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   border: none;
 }
 .area-search__btn_text {
   position: relative;
   display: block;
-  padding: 1rem 3rem;
+  padding: 0.7rem 2rem;
   transition: all 0.3s;
-  border: 2px solid #000;
+  border: 1.5px solid #000;
   border-radius: inherit;
-  background: #fff100;
-}
-.area-search__btn:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  transition: all 0.3s;
-  transform: translate3d(0, 0.75rem, -1rem);
-  border: 2px solid #000;
-  border-radius: inherit;
-  background: #ccc100;
-  box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
-}
-.area-search__btn:hover {
-  transform: translate(0, 0.25rem);
-  background: #fff100;
-}
-.area-search__btn:hover::before {
-  transform: translate3d(0, 0.5rem, -1rem);
-  box-shadow: 0 0.35rem 0 0 rgba(0, 0, 0, 0.2);
-}
-.area-search__btn:active {
-  transform: translate(0rem, 0.75rem);
+  background: #cacaca;
 }
 
 .area {
@@ -937,7 +1268,7 @@ footer #boozer_logo {
   background-color: #fff;
   height: 32px;
   border-radius: 16px;
-  box-shadow: 0 2px 2px #000;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
   line-height: 2;
   margin: 10px 15px 0 0;
 }
@@ -950,7 +1281,7 @@ footer #boozer_logo {
   background-color: #fff;
   height: 32px;
   border-radius: 16px;
-  box-shadow: 0 2px 2px #000;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
   line-height: 2;
   margin: 10px 15px 0 0;
 }

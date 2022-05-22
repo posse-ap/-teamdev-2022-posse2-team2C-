@@ -48,9 +48,10 @@ if (isset($_SESSION["login"]) === false) {
         <?php include "../common/boozer_page_header.php"; ?>
         <div class="boozer-page__right-page-container">
             <h1 class="text-center">スタッフ一覧</h1>
-            <form action='boozer_staff_branch.php' method='post'>
+            <form action='boozer_staff_branch.php' method='post' class="form_staffList">
             <?php
             //trueの間は実行=永久ぐるぐる、レコードの情報を$recに格納
+            print "<div class = 'staffs'>";
             while (true) {
                 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
                 //全レコード入れ終わったらループ抜ける
@@ -58,22 +59,23 @@ if (isset($_SESSION["login"]) === false) {
                     break;
                 }
                 //staff codeをpost送信
-                print "<input type='radio' name='code' value='" . $rec['code'] . "'>";
-                print $rec["name"];
-                print "<br>";
+                print "<div class = 'staff'><input type='radio' name='code' value='" . $rec['code'] . "'>";
+                print $rec["name"] . "</div>";
             }
+            print"</div/>";
             print "<br>";
+            print "<div class = 'btn'>";
             print "<input type='submit' name='disp' value='詳細'>";
             print "<input type='submit' name='add' value='追加'>";
             print "<input type='submit' name='edit' value='修正'>";
             print "<input type='submit' name='delete' value='削除'>";
+            print "</div>";
         } catch (Exception $e) {
             echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
             print "<a href='./boozer_login/boozer_login.php'>ログイン画面へ</a>";
         }
             ?>
         </div>
-        <br><br>
         <a href="../boozer_login/../boozer_login/boozer_login_top.php">管理画面TOPへ</a>
 </body>
 

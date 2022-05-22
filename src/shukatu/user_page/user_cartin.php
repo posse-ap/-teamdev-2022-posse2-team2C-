@@ -30,6 +30,8 @@ session_start();
 
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 
 </head>
 

@@ -7,15 +7,33 @@
 
     <title>個人情報登録完了</title>
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>
 
+    <?php include "../common/user_page_header.html" ?>
+    <div class="form-step">
+        <ol class="c-stepper">
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">情報の入力</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">内容確認</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item c-stepper__item_here">
+                <h3 class="c-stepper__title">申請完了</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+        </ol>
+    </div>
     <?php
     //日本時間を取得
-date_default_timezone_set('Asia/Tokyo');
-echo date('Y-m-d H:i:s') ;
+    date_default_timezone_set('Asia/Tokyo');
+    // echo date('Y-m-d H:i:s');
     try {
 
         require_once("../common/common.php");
@@ -63,7 +81,7 @@ echo date('Y-m-d H:i:s') ;
         // $password = "password";
         // $dbh_3 = new PDO($dsn, $user, $password);
         // $dbh_3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      
+
 
         // $sql_3 = $dbh_3->prepare('SELECT id FROM student_info 
         // WHERE student_family_name = :student_family_name, 
@@ -93,7 +111,7 @@ echo date('Y-m-d H:i:s') ;
         // $dbh_3 = null;
 
         // $rec_3 = $sql_3->fetch(PDO::FETCH_ASSOC);
-    
+
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
@@ -104,7 +122,7 @@ echo date('Y-m-d H:i:s') ;
         $sql_2 = "INSERT INTO student_agent_connection_table(agent_id) VALUES(?)";
         $stmt_2 = $dbh_2->prepare($sql_2);
         $data_2[] = $agent_id;
-        $stmt_2->execute($data_2); 
+        $stmt_2->execute($data_2);
 
         $dbh_2 = null;
 
@@ -113,8 +131,12 @@ echo date('Y-m-d H:i:s') ;
         //member tableに値を登録
 
 
-        print "登録完了しました。<br><br>";
-        print "<a href='../user_page/user_agent_list.php'>トップへ戻る</a>";
+        print "<div class='done_message'>登録完了しました！</div>
+        <div class='done_message_text'>申請が完了しました。<br>
+        ご入力いただいた情報に従って各エージェント企業担当者より追ってご連絡差し上げます。
+        ご登録いただいたメールアドレスへのメールをご確認ください。</div>
+        ";
+        print "<a href='../user_page/user_agent_list.php' class='backToTop'>トップへ戻る</a>";
     } catch (Exception $e) {
         echo "（ ´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
         print "<a href='member_login.php'>ログインページへ戻る</a>";

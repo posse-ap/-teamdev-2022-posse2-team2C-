@@ -35,12 +35,10 @@ if (isset($_SESSION["login"]) === false) {
     $sql_2 = "SELECT * FROM student_delete_request_table";
     $stmt_2 = $dbh_2->prepare($sql_2);
     $stmt_2->execute();
-
     $dbh_2 = null;
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -67,6 +65,7 @@ if (isset($_SESSION["login"]) === false) {
                 <li class="user_info"><span class="user_info_text">メールアドレス</span><span><?php print $rec["mail_address"] ?></span></li>
             </ul>
         </div>
+
         <div class="request_list">
             <h1>学生削除申請</h1>
             <?php
@@ -84,15 +83,27 @@ if (isset($_SESSION["login"]) === false) {
                     <li><?php echo $rec_2["phone_number"]; ?></li>
                     <li><?php echo $rec_2["name_of_the_univ"]; ?></li>
                     <li><?php echo $rec_2["faculty"]; ?></li>
+                    <li>理由：<?php echo $rec_2["reason"]; ?></li>
+                    <li>agent_id:<?php echo $rec_2["agent_id"]; ?></li>
+                    <li>student_id:<?php echo $rec_2["student_id"]; ?></li>
                 </ul>
 
-                <form action="boozer_page_student_delete.php">
-                    <input type="text">
+                <form action="../boozer_page/boozer_page_student_delete_check.php" method="post">
+                    <input type="hidden" name="student_family_name" value="<?php echo $rec_2["student_family_name"]; ?>">
+                    <input type="hidden" name="student_first_name" value="<?php echo $rec_2["student_first_name"]; ?>">
+                    <input type="hidden" name="student_family_name_ruby" value="<?php echo $rec_2["student_family_name_ruby"]; ?>">
+                    <input type="hidden" name="student_first_name_ruby" value="<?php echo $rec_2["student_first_name_ruby"]; ?>">
+                    <input type="hidden" name="email_address" value="<?php echo $rec_2["email_address"]; ?>">
+                    <input type="hidden" name="phone_number" value="<?php echo $rec_2["phone_number"]; ?>">
+                    <input type="hidden" name="name_of_the_univ" value="<?php echo $rec_2["name_of_the_univ"]; ?>">
+                    <input type="hidden" name="faculty" value="<?php echo $rec_2["faculty"]; ?>">
+                    <input type="hidden" name="reason" value="<?php echo $rec_2["reason"]; ?>">
+                    <input type="hidden" name="agent_id" value="<?php echo $rec_2["agent_id"]; ?>">
+                    <input type="hidden" name="student_id" value="<?php echo $rec_2["student_id"]; ?>">
+
                     <input type="submit" value="削除する">
                 </form>
-
             <?php }
-
             ?>
         </div>
     </div>

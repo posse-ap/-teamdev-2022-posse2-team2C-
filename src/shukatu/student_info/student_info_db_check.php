@@ -7,7 +7,8 @@
 
     <title>個人情報入力チェック</title>
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>
@@ -15,6 +16,28 @@
     <?php
 
     require_once("../common/common.php");
+
+    include "../common/user_page_header.html"; ?>
+
+    <div class="form-step">
+    <ol class="c-stepper">
+        <li class="c-stepper__item">
+            <h3 class="c-stepper__title">情報の入力</h3>
+            <p class="c-stepper__desc">Some desc text</p>
+        </li>
+        <li class="c-stepper__item c-stepper__item_here">
+            <h3 class="c-stepper__title">内容確認</h3>
+            <p class="c-stepper__desc">Some desc text</p>
+        </li>
+        <li class="c-stepper__item">
+            <h3 class="c-stepper__title">申請完了</h3>
+            <p class="c-stepper__desc">Some desc text</p>
+        </li>
+    </ol>
+
+</div>
+
+    <?php
 
     $post = sanitize($_POST);
 
@@ -31,7 +54,7 @@
     $school_year = $post["school_year"];
     $the_year_of_grad = $post["the_year_of_grad"];
 
-    // $okflag = true;
+    $okflag = true;
 
     // if(empty($name) === true) {
     //     print "お名前を入力してください。<br>";
@@ -71,7 +94,7 @@
         print "<form><br>";
         print "<input type='button' onclick='history.back()' value='戻る'>";
     } else {
-        print "下記内容で登録しますか？<br><br>";
+        print "<div class='check_area'><h1>下記内容で登録しますか？</h1>";
     ?>
 
         <form action='student_info_db_done.php' method='post'>
@@ -88,12 +111,15 @@
             <input type="text" name="school_year" value="<?php print $school_year ?>">
             <input type="text" name="the_year_of_grad" value="<?php print $the_year_of_grad ?>">
 
-            <input type='button' onclick='history.back()' value='戻る'>
-            <input type='submit' value='登録'>
+            <div class="student_info_check__btn_area">
+                <input type='button' onclick='history.back()' value='戻る' class="back_btn">
+                <input type='submit' value='登録' class="submit_btn">
+            </div>
 
         <?php
     }
         ?>
+    </div>
 </body>
 
 </html>

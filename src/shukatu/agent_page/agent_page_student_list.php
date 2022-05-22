@@ -18,7 +18,9 @@
 
 <body>
 
+
     <?php include "../common/agent_page_header.php"; ?>
+   
 
     <div class="agent-page__right-page-container">
 
@@ -98,16 +100,15 @@
                 $stmt_2->bindValue(":agent_id", $agent_id, PDO::PARAM_STR);
                 $stmt_2->execute();
                 $cnt = $stmt_2->rowCount();
-
                 $dbh_2 = null;
 
 
                 if ($cnt == 0) { ?>
-                    <a href="./agent_page_student_delete.php?student_id=<?php echo $rec["id"] ?>&agent_id=<?php echo $agent_id; ?>">削除申請する！！</a>
+                    <a href="./agent_page_student_delete.php?student_id=<?php echo $rec["id"] ?>&agent_id=<?php echo $agent_id; ?>" class="delete">削除申請する！！</a>
                 <?php
                 }
                 if ($cnt == 1) { ?>
-                    <span>削除申請中だよんちょいとお待ち</span>
+                    <span class="delete">削除申請中だよんちょいとお待ち</span>
                 <?php
                 }
 

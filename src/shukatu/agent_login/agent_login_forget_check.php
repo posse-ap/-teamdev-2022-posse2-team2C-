@@ -43,7 +43,7 @@ try{
         // mb_language("Japanese");
         // mb_internal_encoding("UTF-8");
         $passResetToken = md5(uniqid(rand(),true));
-        $url = "https://shukatu/agent_login/agent_login_forget_check.php?passreset={$passResetToken}";
+        $url = "http://localhost:80/shukatu/agent_login/agent_login_reset_check.php?passreset={$passResetToken}";
         $from = 'onokan@gmail.com';
         $to = $account_email_address;
         $subject =  'パスワードリセットのご案内';
@@ -61,17 +61,7 @@ try{
         print("メールが送信されました。");
         date_default_timezone_set('Asia/Tokyo');
         $mail_send_time = date("Y/m/d H:i:s");
-        echo $rec["account_email_address"];
-        echo "+";
-        echo $mail_send_time;
-        echo "+";
-        echo $passResetToken;
 
-
-
-
-
-        
         $account_email_address = htmlspecialchars($_POST["account_email_address"], ENT_QUOTES, "UTF-8");
         // $mail_send_time = $_POST["mail_send_time"] ENT_QUOTES, "UTF-8";
 
@@ -84,8 +74,15 @@ try{
         $stmt = $dbh->prepare($sql);
         $password_reset_data[] = $rec["account_email_address"];
         $password_reset_data[] = $mail_send_time;
-        $password_reset_data[] = $passResetToken;
+        $password_reset_data[] = $passResetToken;     
+        // これがエラーを吐いている↓↓
         $stmt->execute($password_reset_data);
+
+        echo $rec["account_email_address"];
+        echo "+";
+        echo $mail_send_time;
+        echo "+";
+        echo $passResetToken;
 
         // if(!empty($rec["account_email_address"]) === true){
         //     $sql = "INSERT INTO password_reset values()";

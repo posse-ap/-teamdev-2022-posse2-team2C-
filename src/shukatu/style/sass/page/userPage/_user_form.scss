@@ -1,0 +1,132 @@
+@use "./user_form_check";
+@forward "./user_form_check";
+@use "./user_info_done";
+@forward "./user_info_done";
+
+:root {
+    --circle-size: clamp(1.5rem, 5vw, 3rem);
+    --spacing: clamp(0.25rem, 2vw, 0.5rem);
+}
+
+.c-stepper {
+    display: flex;
+}
+
+.c-stepper__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+
+    &:before {
+        --size: 3rem;
+        content: "";
+        display: block;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        border-radius: 50%;
+        background: pink;
+        margin: 0 auto 1rem;
+    }
+
+    &_here:before{
+        --size: 3rem;
+        content: "";
+        display: block;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        border-radius: 50%;
+        background: rgb(248, 120, 141);
+        margin: 0 auto 1rem;
+    }
+
+    &:not(:last-child) {
+        &:after {
+            content: "";
+            position: relative;
+            top: calc(var(--circle-size) / 2);
+            width: calc(100% - var(--circle-size) - calc(var(--spacing) * 2));
+            left: calc(50% + calc(var(--circle-size) / 2 + var(--spacing)));
+            height: 2px;
+            background-color: #e0e0e0;
+            order: -1;
+        }
+    }
+}
+
+.c-stepper__title {
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    margin-bottom: 0.5rem;
+}
+
+.c-stepper__desc {
+    color: grey;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+}
+
+.student_info{
+    &__form{
+        width: 90%;
+        max-width: 650px;
+        margin: 25px auto;
+        position: relative;
+        
+        div{
+            background-color: #fafafa;
+            display: flex;
+            width: 100%;
+        }
+        &_tittle{
+            font-size: 16px;
+            line-height: 2;
+            border: solid #000 1px;
+            padding-left: 10px;
+            width: 25%;
+            display: block;
+        }
+        &_input_area{
+            display: block;
+            height: 32px;
+            width: 75%;
+            border: solid #000 1px;
+            padding: 8px 0 0 5px;
+            input{
+                width: 45%;
+            }
+        }
+
+        &_back_btn{
+            background-color: #65a0f2;
+            color: #fff;
+            position: absolute;
+            width: 35%;
+            height: 64px;
+            left: 12%;
+            margin-top: 16px;
+            display: block;
+            border: none;
+            border-radius: 8px;
+            font-size: 32px;
+        }
+        &_ok_btn{
+            background-color: #f5835f;
+            color: #fff;
+            position: absolute;
+            width: 35%;
+            height: 64px;
+            right: 12%;
+            margin-top: 16px;
+            display: block;
+            border: none;
+            border-radius: 8px;
+            font-size: 32px;
+        }
+    }
+    &__agent_id{
+        display: none;
+        position: absolute;
+    }
+}
