@@ -1,22 +1,31 @@
+@use "../../base/mixin";
+@forward "../../base/mixin";
 .top-page {
   &__agent_position {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    margin-left: 1.5rem;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
 
   }
   &__agent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50vh;
-    padding: 4rem 3rem 3rem 3rem;
-    margin: 1rem;
+    width: 25%;
+    @include mixin.sp{
+      width: 100%;
+    }
+    // padding: 4rem 3rem 3rem 3rem;
+    padding: 16px;
+    margin: 16px;
+    // margin: 1rem;
     background:rgb(242, 242, 242);
     border: .7px solid black;
-    filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.2));
-    
+    filter: drop-shadow(10px 10px 2px rgba(0,0,0,0.2));
+    position: relative;
+
     &_heart {
       position: absolute;
       top: -5%;
@@ -43,9 +52,8 @@
       }
     }
     &_text {
-      display: flex;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
+      margin-top: 16px;
+      margin-bottom: 75px;
       align-items: baseline;
 
       &_company-name {
@@ -55,13 +63,22 @@
       }
       &_catchphrase {
         font-size: 0.7rem;
+        display: block;
       }
     }
     &_detail-btn {
       border: 8px double #0090bb;
       background: #80cbc4;
       padding: 1rem 1.5rem;
+      position: absolute;
+      bottom: 16px;
+      transition: 200ms;
 
+      &:hover{
+        background: #ff6600;
+        font-size: 20px;
+        border: 8px double #ff6600;
+      }
       &_text {
         color: black;
       }

@@ -5,19 +5,19 @@
   h1{
     margin: 20px auto;
   }
-  form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 16px auto;
-    input{
-      display: block;
-      width: 45%;
-      &[name="agent_id"]{
-        display: none;
-      }
-    }
-  }
+  // form{
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   margin: 16px auto;
+  //   input{
+  //     display: block;
+  //     width: 45%;
+  //     &[name="agent_id"]{
+  //       display: none;
+  //     }
+  //   }
+  // }
   .student_info_check__btn_area {
     position: relative;
     width: 100%;

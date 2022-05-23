@@ -39,6 +39,7 @@ $agent_id = $_GET["agent_id"];
     </div>
 
     <form action="../student_info/student_info_db_check.php" method="post" class = "student_info__form">
+        <span class="student_info__form_warning">※全ての情報の入力してください</span>
         <input type="text" name="agent_id" value="<?php echo $agent_id; ?>" class = "student_info__agent_id">
         <div>
             <span class="student_info__form_tittle">お名前</span>
