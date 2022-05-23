@@ -18,6 +18,8 @@
 
 // フォームデザイン
 @use "./user_form" as form;
+//複数用
+@use "./user_form_multiple";
 
 // タグ検索box
 @use "../../parts/tag-userPage" as tag;

@@ -10,6 +10,7 @@
             <li class="agent-page__side-menu_li"><a href="../agent_login/agent_login_top.php" class="agent-page__side-menu_text">ホーム</a></li>
             <li class="agent-page__side-menu_li"><a href="../agent_page/agent_page_student_list.php?agent_id=<?php print $_SESSION["agent_id"];?>" class="agent-page__side-menu_text">学生情報一覧</a></li>
             <li class="agent-page__side-menu_li"><a href="../agent_page/agent_info_edit_request.php?agent_id=<?php print $_SESSION["agent_id"];?>" class="agent-page__side-menu_text">掲載情報編集</a></li>
+            <li class = agent-page__side-menu_li><a href="../agent_page/agent_info_invoice.php?agent_id=<?php print $_SESSION["agent_id"];?>" class="agent-page__side-menu_text">請求画面へ</a></li>
             <li class="agent-page__side-menu_li"><a href="../agent_login/agent_logout.php" class="agent-page__side-menu_text">ログアウト</a></li>
         </ul>
     </div>

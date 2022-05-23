@@ -39,6 +39,7 @@ $agent_id = $_GET["agent_id"];
     </div>
 
     <form action="../student_info/student_info_db_check.php" method="post" class = "student_info__form">
+        <span class="student_info__form_warning">※全ての情報の入力してください</span>
         <input type="text" name="agent_id" value="<?php echo $agent_id; ?>" class = "student_info__agent_id">
         <div>
             <span class="student_info__form_tittle">お名前</span>
@@ -96,12 +97,12 @@ $agent_id = $_GET["agent_id"];
                 <input type="text" name="the_year_of_grad">
             </span>
         </div>
-        <input type="button" onclick="history.back()" value="戻る" class="student_info__form_back_btn">
-        <input type="submit" value="OK" class="student_info__form_ok_btn">
-        <br><br>
+        <span class="student_info__form_btn">
+            <input type="button" onclick="history.back()" value="戻る" class="student_info__form_btn_back">
+            <input type="submit" value="OK" class="student_info__form_btn_ok">
+        </span>
 
     </form>
-    <br><br>
 
 </body>
 
