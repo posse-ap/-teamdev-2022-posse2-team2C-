@@ -1,2 +1,88 @@
+@use "../../base/var";
+@forward "../../base/var";
+@use "../../base/mixin";
+@forward "../../base/mixin";
 
+.user_favorite{
+  &__btn{
+    width: 90%;
+    max-width: 650;
+    margin: 20px auto;
+    display: flex;
+    @include mixin.sp{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    justify-content: center;
+    &_delete{
+      background-color: #ffff65;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 2;
+      padding: 0 10px;
+      margin-right: 5px;
+      box-shadow: #555 3px 3px 3px;
+      transition: 200ms;
+      @include mixin.sp{
+        margin: 5px;
+      }
+      &:hover{
+        transform: translateY(1px);
+        box-shadow: #000 1px 1px 1px;
+      }
+    }
+    &_back{
+      display: block;
+      background-color: #65a0f2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 80px;
+      line-height: 2;
+      padding: 0 10px;
+      margin: 0 5px;
+      box-shadow: #555 3px 3px 3px;
+      transition: 200ms;
+      @include mixin.sp{
+        margin: 5px;
+      }
+      &:hover{
+        transform: translateY(1px);
+        box-shadow: #000 1px 1px 1px;
+      }
+    }
+  }
+  &__go_form{
+    display: block;
+    margin-left: 5px;
+    width: 80px;
+    background-color: var.$main_color;
+    color: #fff;
+    font-size: 16px;
+    line-height: 2;
+    padding: 0 10px;
+    border-radius: 8px;
+    box-shadow: #555 3px 3px 3px;
+    transition: 200ms;
+    @include mixin.sp{
+      margin: 5px;
+      text-align: center;
+    }
+    &:hover{
+      transform: translateY(1px);
+      box-shadow: #000 1px 1px 1px;
+    }
+  }
+}
 
+.empty_cart{
+  width: 90%;
+  max-width: 650px;
+  margin: 25px auto;
+  &__message{
+    display: block;
+    padding: 0 auto;
+  }
+}
