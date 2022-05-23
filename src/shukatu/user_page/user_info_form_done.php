@@ -97,12 +97,12 @@ $agent_id = $_GET["agent_id"];
                 <input type="text" name="the_year_of_grad">
             </span>
         </div>
-        <input type="button" onclick="history.back()" value="戻る" class="student_info__form_back_btn">
-        <input type="submit" value="OK" class="student_info__form_ok_btn">
-        <br><br>
+        <span class="student_info__form_btn">
+            <input type="button" onclick="history.back()" value="戻る" class="student_info__form_btn_back">
+            <input type="submit" value="OK" class="student_info__form_btn_ok">
+        </span>
 
     </form>
-    <br><br>
 
 </body>
 

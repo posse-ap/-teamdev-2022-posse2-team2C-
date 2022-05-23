@@ -185,7 +185,7 @@ footer #boozer_logo {
 .top-page__agent_position {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 95%;
   margin: 0 auto;
 }
@@ -261,6 +261,96 @@ footer #boozer_logo {
   color: black;
 }
 
+.user_favorite__btn {
+  width: 90%;
+  max-width: 650;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .user_favorite__btn {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.user_favorite__btn_delete {
+  background-color: #ffff65;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 2;
+  padding: 0 10px;
+  margin-right: 5px;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+@media screen and (max-width: 767px) {
+  .user_favorite__btn_delete {
+    margin: 5px;
+  }
+}
+.user_favorite__btn_delete:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
+}
+.user_favorite__btn_back {
+  display: block;
+  background-color: #65a0f2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 80px;
+  line-height: 2;
+  padding: 0 10px;
+  margin: 0 5px;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+@media screen and (max-width: 767px) {
+  .user_favorite__btn_back {
+    margin: 5px;
+  }
+}
+.user_favorite__btn_back:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
+}
+.user_favorite__go_form {
+  display: block;
+  margin-left: 5px;
+  width: 80px;
+  background-color: #26a69a;
+  color: #fff;
+  font-size: 16px;
+  line-height: 2;
+  padding: 0 10px;
+  border-radius: 8px;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+@media screen and (max-width: 767px) {
+  .user_favorite__go_form {
+    margin: 5px;
+    text-align: center;
+  }
+}
+.user_favorite__go_form:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
+}
+
+.empty_cart {
+  width: 90%;
+  max-width: 650px;
+  margin: 25px auto;
+}
+.empty_cart__message {
+  display: block;
+  padding: 0 auto;
+}
+
 .detail-page__agent {
   margin-left: 5%;
   margin-top: 3%;
@@ -312,11 +402,16 @@ footer #boozer_logo {
   margin: 10px auto;
   width: 10%;
   min-width: 176px;
-  height: 48px;
   font-size: 16px;
-  line-height: 3;
+  line-height: 2;
   text-align: center;
   border-radius: 8px;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.detail-page__back_btn:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 
 .detail_page__company_name {
@@ -359,12 +454,16 @@ footer #boozer_logo {
   margin: 10px auto;
   width: 10%;
   min-width: 176px;
-  height: 48px;
   font-size: 16px;
-  line-height: 3;
+  line-height: 2;
   text-align: center;
   border-radius: 8px;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.student-info-form__btn:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 .student-info-form__btn_text {
   color: white;
@@ -573,34 +672,43 @@ footer #boozer_logo {
   margin: 20px auto;
 }
 .check_area .student_info_check__btn_area {
-  position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .check_area .student_info_check__btn_area .back_btn {
   background-color: #65a0f2;
   color: #fff;
-  position: absolute;
-  width: 35%;
-  height: 64px;
-  left: 12%;
-  margin-top: 16px;
+  margin: 16px 5px 0 0;
   display: block;
   border: none;
   border-radius: 8px;
-  font-size: 32px;
+  font-size: 16px;
+  width: 80px;
+  line-height: 2;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.check_area .student_info_check__btn_area .back_btn:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 .check_area .student_info_check__btn_area .submit_btn {
   background-color: #f5835f;
   color: #fff;
-  position: absolute;
-  width: 35%;
-  height: 64px;
-  right: 12%;
-  margin-top: 16px;
+  margin: 16px 0 0 5px;
   display: block;
   border: none;
   border-radius: 8px;
-  font-size: 32px;
+  font-size: 16px;
+  width: 80px;
+  line-height: 2;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.check_area .student_info_check__btn_area .submit_btn:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 
 .done_message {
@@ -730,35 +838,119 @@ footer #boozer_logo {
 .student_info__form_input_area input {
   width: 45%;
 }
-.student_info__form_back_btn {
+.student_info__form_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.student_info__form_btn_back {
   background-color: #65a0f2;
   color: #fff;
-  position: absolute;
-  width: 35%;
-  height: 64px;
-  left: 12%;
-  margin-top: 16px;
+  margin: 16px 5px 0 0;
   display: block;
   border: none;
   border-radius: 8px;
-  font-size: 32px;
+  font-size: 16px;
+  width: 80px;
+  line-height: 2;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
 }
-.student_info__form_ok_btn {
+.student_info__form_btn_back:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
+}
+.student_info__form_btn_ok {
   background-color: #f5835f;
   color: #fff;
-  position: absolute;
-  width: 35%;
-  height: 64px;
-  right: 12%;
-  margin-top: 16px;
+  margin: 16px 0 0 5px;
   display: block;
   border: none;
   border-radius: 8px;
-  font-size: 32px;
+  font-size: 16px;
+  width: 80px;
+  line-height: 2;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.student_info__form_btn_ok:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 .student_info__agent_id {
   display: none;
   position: absolute;
+}
+
+.user_info_multiple__wrapper {
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+  border: solid 5px #c4c4c4;
+}
+.user_info_multiple__head {
+  font-size: 24px;
+  line-height: 3;
+  background-color: #e2e2e2;
+}
+.user_info_multiple__company {
+  padding: 16px;
+}
+.user_info_multiple__company_name {
+  margin-bottom: 12px;
+}
+.user_info_multiple__company_img {
+  height: 200px;
+  width: auto;
+}
+.user_info_multiple__company:nth-of-type(2n-1) {
+  background-color: #c4c4c4;
+}
+.user_info_multiple__company:nth-of-type(2n) {
+  background-color: #e2e2e2;
+}
+.user_info_multiple_form {
+  width: 90%;
+  max-width: 650px;
+  margin: 25px auto 30px;
+}
+.user_info_multiple_form__btn {
+  display: flex;
+  justify-content: center;
+}
+.user_info_multiple_form__btn_back {
+  display: block;
+  background-color: #65a0f2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 2;
+  padding: 0 10px;
+  margin: 0 5px;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.user_info_multiple_form__btn_back:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
+}
+.user_info_multiple_form__btn_go_form {
+  display: block;
+  margin-left: 5px;
+  background-color: #26a69a;
+  color: #fff;
+  font-size: 16px;
+  line-height: 2;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.user_info_multiple_form__btn_go_form:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 
 @-webkit-keyframes open_menu_1 {

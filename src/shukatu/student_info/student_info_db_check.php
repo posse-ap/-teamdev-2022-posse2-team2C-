@@ -155,10 +155,10 @@
                     <input type="text" name="the_year_of_grad" value="<?php print $the_year_of_grad ?>">
                 </span>
             </div>
-            <div class="student_info_check__btn_area">
+            <span class="student_info_check__btn_area">
                 <input type='button' onclick='history.back()' value='戻る' class="back_btn">
                 <input type='submit' value='登録' class="submit_btn">
-            </div>
+            </span>
 
         <?php
     }

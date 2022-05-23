@@ -188,7 +188,7 @@ session_regenerate_id(true);
                                     <div class="Likes">
                                         <div class="LikesIcon"></div>
                                     </div>
-                            </div>
+                                </div>
                             </a>
                         </div>
                     </div>

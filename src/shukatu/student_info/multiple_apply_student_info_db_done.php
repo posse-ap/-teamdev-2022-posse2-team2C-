@@ -8,11 +8,28 @@ session_start(); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
 
 <body>
-    <h1>申請が完了しましたよ！！！</h1>
-    <a href="../user_page/user_agent_list.php">エージェント一覧に戻る</a>
+    <?php include "../common/user_page_header.html"; ?>
+    <div class="form-step">
+        <ol class="c-stepper">
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">情報の入力</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item">
+                <h3 class="c-stepper__title">内容確認</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+            <li class="c-stepper__item c-stepper__item_here">
+                <h3 class="c-stepper__title">申請完了</h3>
+                <p class="c-stepper__desc">Some desc text</p>
+            </li>
+        </ol>
+    </div>
 </body>
 
 </html>
@@ -71,8 +88,6 @@ try {
 
     foreach ($cart as $key => $val) {
 
-        echo $val;
-
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
         $user = "root";
         $password = "password";
@@ -85,6 +100,12 @@ try {
 
         $dbh_2 = null;
     }
+    print "<div class='done_message'>登録完了しました！</div>
+    <div class='done_message_text'>申請が完了しました。<br>
+    ご入力いただいた情報に従って各エージェント企業担当者より追ってご連絡差し上げます。
+    ご登録いただいたメールアドレスへのメールをご確認ください。</div>
+    ";
+    print "<a href='../user_page/user_agent_list.php' class='backToTop'>トップへ戻る</a>";
 } catch (Exception $e) {
     print "只今障害が発生しております。<br><br>";
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";

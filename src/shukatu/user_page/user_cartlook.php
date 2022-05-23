@@ -41,9 +41,10 @@ session_start();
     if (empty($_SESSION["cart"]) === true) {
         include "../common/user_page_header.html";
 
-        print "お気に入りにエージェントはありません。<br><br>";
-
-        print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
+        print "<div class='empty_cart'>";
+        print "<p class='empty_cart__message'>お気に入りにエージェントはありません。</p>";
+        print "<a href='user_agent_list.php' class='user_favorite__btn_back'>一覧に戻る</a>";
+        print "</div>";
         exit();
     }
 
@@ -89,7 +90,7 @@ session_start();
         <div class="top-page__agent_position">
             <?php for ($i = 0; $i < $max; $i++) {; ?>
                 <div class="top-page__agent">
-                <span>お気に入りから削除:<input type="checkbox" name="delete<?php print $i; ?>"></span> 
+                    <span>お気に入りから削除:<input type="checkbox" name="delete<?php print $i; ?>"></span>
                     <div class="top-page__agent_wrapper">
                         <div class="top-page__agent_img-wrapper">
                             <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
@@ -108,20 +109,17 @@ session_start();
                         <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
                     </a>
                 </div>
-                
-             <?php }; ?>
+
+            <?php }; ?>
         </div>
-        <br><br>
         <input type="hidden" name="max" value="<?php print $max; ?>">
 
-        <input type="submit" value="お気に入りから削除">
-
-        <br><br>
-        <input type="button" onclick="history.back()" value="戻る">
+        <div class="user_favorite__btn">
+            <input type="submit" value="選んだエージェントを削除" class="user_favorite__btn_delete">
+            <input type="button" onclick="history.back()" value="一覧に戻る" class="user_favorite__btn_back">
+            <a href="user_info_multiple_forms_check.php" class="user_favorite__go_form">一括で申請</a>
+        </div>
     </form>
-    <br>
-
-    <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
 
 </body>
 
