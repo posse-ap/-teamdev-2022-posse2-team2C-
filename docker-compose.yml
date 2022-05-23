@@ -41,7 +41,5 @@ services:
     # networks:
     #   - br0
 
-# networks:
-#   br0:
-#     driver: bridge
+
 
