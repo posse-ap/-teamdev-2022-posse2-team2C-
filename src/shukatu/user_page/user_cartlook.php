@@ -29,8 +29,6 @@ session_start();
 
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
-    <!-- ファビコン -->
-    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
     <script src="../js/header.js" defer></script>
 </head>
 
@@ -41,10 +39,9 @@ session_start();
     if (empty($_SESSION["cart"]) === true) {
         include "../common/user_page_header.html";
 
-        print "<div class='empty_cart'>";
-        print "<p class='empty_cart__message'>お気に入りにエージェントはありません。</p>";
-        print "<a href='user_agent_list.php' class='user_favorite__btn_back'>一覧に戻る</a>";
-        print "</div>";
+        print "お気に入りにエージェントはありません。<br><br>";
+
+        print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
         exit();
     }
 
@@ -73,10 +70,12 @@ session_start();
 
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $agent_id = $rec["agent_id"];
-            $company_name = $rec["company_name"];
-            $catchphrase = $rec["catchphrase"];
-            $feature = $rec["feature"];
+            $agent_id[] = $rec["agent_id"];
+
+            $company_name[] = $rec["company_name"];
+
+            $catchphrase[] = $rec["catchphrase"];
+            $feature[] = $rec["feature"];
         }
         $dbh = null;
     } catch (Exception $e) {
@@ -87,39 +86,51 @@ session_start();
     ?>
 
     <form action="agent_quantity.php" method="post">
-        <div class="top-page__agent_position">
-            <?php for ($i = 0; $i < $max; $i++) {; ?>
-                <div class="top-page__agent">
-                    <span>お気に入りから削除:<input type="checkbox" name="delete<?php print $i; ?>"></span>
-                    <div class="top-page__agent_wrapper">
-                        <div class="top-page__agent_img-wrapper">
-                            <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
-                            <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
-                            <div class="top-page__agent_heart">
-                                <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                            </div>
-                            </a>
+        お気に入り一覧<br><br>
+        <?php for ($i = 0; $i < $max; $i++) {; ?>
+            <div class="top-page__agent">
+                <div class="top-page__agent_wrapper">
+                    <div class="top-page__agent_img-wrapper">
+                        <img src="./agent_img/agent_img_<?php echo $agent_id[$i]; ?>.png" alt="" class="top-page__agent_img">
+                        <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
+                        <div class="top-page__agent_heart">
+                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                <div class="Likes">
+                                    <div class="LikesIcon"></div>
+                                </div>
                         </div>
+                        </a>
                     </div>
-                    <div class="top-page__agent_text">
-                        <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
-                        <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
-                    </div>
-                    <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
-                        <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
-                    </a>
                 </div>
+                <div class="top-page__agent_text">
+                    <span class="top-page__agent_text_company-name"><?php print $company_name[$i]; ?></span>
+                    <span class="top-page__agent_text_catchphrase"><?php print $catchphrase[$i]; ?></span>
+                </div>
+                <a href='user_detail.php?agent_id=<?php echo $agent_id[$i]; ?>' class="top-page__agent_detail-btn">
+                    <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
+                </a>
+            </div>
 
-            <?php }; ?>
-        </div>
+
+
+
+            お気に入りから削除する:<input type="checkbox" name="delete<?php print $i; ?>"><br>
+
+            <br>
+
+        <?php }; ?>
+
+        <br><br>
         <input type="hidden" name="max" value="<?php print $max; ?>">
 
-        <div class="user_favorite__btn">
-            <input type="submit" value="選んだエージェントを削除" class="user_favorite__btn_delete">
-            <input type="button" onclick="history.back()" value="一覧に戻る" class="user_favorite__btn_back">
-            <a href="user_info_multiple_forms_check.php" class="user_favorite__go_form">一括で申請</a>
-        </div>
+        <input type="submit" value="お気に入りから削除">
+
+        <br><br>
+        <input type="button" onclick="history.back()" value="戻る">
     </form>
+    <br>
+
+    <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
 
 </body>
 

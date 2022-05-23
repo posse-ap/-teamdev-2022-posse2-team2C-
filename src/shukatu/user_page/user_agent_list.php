@@ -180,16 +180,18 @@ session_regenerate_id(true);
             ?>
                 <div class="top-page__agent">
                     <div class="top-page__agent_wrapper">
+                        
                         <div class="top-page__agent_img-wrapper">
-                            <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
-                            <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
-                            <div class="top-page__agent_heart">
+                        <div class="top-page__agent_heart">
                                 <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
                                     <div class="Likes">
                                         <div class="LikesIcon"></div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+                            <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
+                            <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
+                            
                         </div>
                     </div>
                     <div class="top-page__agent_text">
@@ -200,8 +202,6 @@ session_regenerate_id(true);
                         <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
                     </a>
                 </div>
-
-
             <?php } ?>
         </div><?php
             } catch (Exception $e) {

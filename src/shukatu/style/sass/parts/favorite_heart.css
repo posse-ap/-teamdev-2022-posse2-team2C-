@@ -2,8 +2,6 @@
     position: relative;
   }
  .LikesIcon{
-    position: absolute;
-    left: -48px;
     background: url("../../img/web_heart_animation.png");
     background-position: left;
     background-size: 2900%;
