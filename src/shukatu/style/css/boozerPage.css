@@ -321,6 +321,55 @@
   display: block;
 }
 
+.operate_agent__ng_message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.operate_agent__ng_back {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+}
+
+.right_page_container {
+  margin-left: 15%;
+}
+.right_page_container .agent-detail__tittle {
+  transform: translateX(-10px);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 15px;
+  padding-top: 18px;
+}
+.right_page_container .agent-detail__info {
+  margin: 5px 0;
+}
+.right_page_container .agent-detail__info-wrapper {
+  background-color: #f4f4f4;
+  padding: 0 25px 25px;
+  border-bottom: solid #fafafa 2px;
+}
+.right_page_container .agent-detail__tag {
+  margin: 10px 0;
+  padding-right: 15px;
+  border-bottom: solid #000 1px;
+}
+.right_page_container .agent-detail__tag-wrapper {
+  background-color: #f4f4f4;
+  padding: 0 25px 25px;
+}
+.right_page_container .agent-detail__tag-area {
+  display: flex;
+}
+.right_page_container .agent-detail__tag-existence {
+  margin: 10px 0;
+  border-bottom: solid #000 1px;
+}
+.right_page_container .agent_delete {
+  padding: 25px;
+}
+
 /**************
 
 * ログインページ

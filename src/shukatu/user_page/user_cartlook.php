@@ -43,7 +43,7 @@ session_start();
 
         print "<div class='empty_cart'>";
         print "<p class='empty_cart__message'>お気に入りにエージェントはありません。</p>";
-        print "<a href='user_agent_list.php' class='user_favorite__btn_back'>一覧に戻る</a>";
+        print "<a href='user_agent_list.php' class='empty_cart__btn_back'>一覧に戻る</a>";
         print "</div>";
         exit();
     }
