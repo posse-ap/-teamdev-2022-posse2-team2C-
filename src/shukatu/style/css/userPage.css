@@ -1023,6 +1023,35 @@ footer #boozer_logo {
           animation-fill-mode: forwards;
 }
 
+.current-tag-area-search__wrapper {
+  width: 80%;
+  margin-left: 20vh;
+}
+
+.current-area {
+  background: #efefef;
+  display: flex;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+.current-area_tittle {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.current-tag {
+  background: #efefef;
+  display: flex;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+.current-tag_tittle {
+  border: 1px solid black;
+  padding: 3px;
+}
+
 .tag-area-search__wrapper {
   z-index: 50;
   width: 200px;
