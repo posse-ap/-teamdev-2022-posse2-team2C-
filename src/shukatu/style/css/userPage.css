@@ -192,7 +192,6 @@ footer #boozer_logo {
 .top-page__agent {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 25%;
   padding: 16px;
   margin: 16px;
@@ -208,7 +207,8 @@ footer #boozer_logo {
 }
 .top-page__agent_heart {
   position: absolute;
-  top: -5%;
+  top: 100%;
+  left: 80%;
 }
 .top-page__agent_img-wrapper {
   width: 100%;
@@ -231,17 +231,16 @@ footer #boozer_logo {
   padding: 0.7rem;
 }
 .top-page__agent_text {
-  margin-top: 16px;
-  margin-bottom: 75px;
   align-items: baseline;
+  margin: 10% 0 50%;
+  line-height: 2rem;
 }
 .top-page__agent_text_company-name {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  padding-right: 1rem;
 }
 .top-page__agent_text_catchphrase {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   display: block;
 }
 .top-page__agent_detail-btn {
@@ -251,6 +250,8 @@ footer #boozer_logo {
   position: absolute;
   bottom: 16px;
   transition: 200ms;
+  margin-left: 20%;
+  margin-bottom: 10%;
 }
 .top-page__agent_detail-btn:hover {
   background: #ff6600;
