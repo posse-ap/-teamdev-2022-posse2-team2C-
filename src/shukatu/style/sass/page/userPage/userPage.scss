@@ -15,8 +15,11 @@
 @use "./user-howToUse";
 // Q＆A
 @use "./user-Q&A" as q-a;
+
 // フォームデザイン
 @use "./user_form" as form;
+//複数用
+@use "./user_form_multiple";
 
 // タグ検索box
 @use "../../parts/tag-userPage" as tag;

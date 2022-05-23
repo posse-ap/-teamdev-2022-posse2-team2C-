@@ -60,6 +60,10 @@ if (isset($_SESSION["member_login"]) === true) {
     ?>
     <div class="detail-page__agent_wrapper">
         <div class="detail-page__agent">
+            <div>
+                <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>
+                <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
+            </div>
             <div class="detail-page__agent_img-wrapper">
                 <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="detail-page__agent_img">
                 <div class="detail-page__agent_tag"><span class="detail-page__agent_tag_text">#</span></div>
@@ -72,10 +76,6 @@ if (isset($_SESSION["member_login"]) === true) {
                     </a>
                 </div>
             </div>
-            <div>
-                <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>
-                <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
-            </div>
         </div>
 
         <div class="detail_page__text_wrapper">
@@ -84,8 +84,8 @@ if (isset($_SESSION["member_login"]) === true) {
             <span class="detail_page__feature"><?php print $rec["feature"]; ?></span>
             <span class="detail_page__online_meeting">オンライン面談：<?php print $rec["online_meeting"]; ?></span>
             <span class="detail_page__membership">会員数：<?php print $rec["membership"]; ?></span>
-            <span class="detail_page__pros"><?php print $rec["pros"]; ?></span>
-            <span class="detail_page__cons"><?php print $rec["cons"]; ?></span>
+            <span class="detail_page__pros">メリット：<?php print $rec["pros"]; ?></span>
+            <span class="detail_page__cons">デメリット：<?php print $rec["cons"]; ?></span>
         </div>
     </div>
 

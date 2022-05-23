@@ -20,7 +20,6 @@ session_regenerate_id(true);
     <script src="../js/user_page.js" defer></script>
     <script src="../js/user_top.js" defer></script>
     <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script src="../js/header.js" defer></script>
     <script src="../js/favorite.js" defer></script>
     <script src="../js/user_page.js" defer></script>
     <!-- google fonts -->
@@ -47,8 +46,9 @@ session_regenerate_id(true);
         $dbh = null;
     ?>
 
+
         <div class="tag-area-search__wrapper">
-            <span>エージェントが決まっていない人はここから！</span>
+            <!-- <span>エージェントが決まっていない人はここから！</span> -->
             <div class="tag-search">
                 <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
             </div>
@@ -178,7 +178,7 @@ session_regenerate_id(true);
                 }
                 $agent_id = $rec["agent_id"];
             ?>
-            <div class="top-page__agent">
+                <div class="top-page__agent">
                     <div class="top-page__agent_wrapper">
                         <div class="top-page__agent_img-wrapper">
                             <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
@@ -188,7 +188,7 @@ session_regenerate_id(true);
                                     <div class="Likes">
                                         <div class="LikesIcon"></div>
                                     </div>
-                            </div>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -210,6 +210,11 @@ session_regenerate_id(true);
                 print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
             }
                 ?>
+    <div class="search_box_switcher">
+        <div>
+            絞り込み
+        </div>
+    </div>
     <footer>
         <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
     </footer>
