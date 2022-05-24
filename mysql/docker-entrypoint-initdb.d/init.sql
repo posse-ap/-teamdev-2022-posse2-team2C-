@@ -226,3 +226,11 @@ CREATE TABLE shukatu.student_delete_request_table (
   agent_id INT NOT NULL,
   reason VARCHAR(255) NOT NULL
 );
+
+DROP TABLE IF EXISTS shukatu.student_inquiry_form_table;
+CREATE TABLE shukatu.student_inquiry_form_table (
+  id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  student_name VARCHAR(255) NOT NULL,
+  mail_address VARCHAR(255) NOT NULL,
+  question VARCHAR(255) NOT NULL
+)
