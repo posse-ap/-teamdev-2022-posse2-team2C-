@@ -125,11 +125,10 @@ if (isset($_SESSION["login"]) === false) {
                             if ($rec_2 === false) {
                                 break;
                             } ?><div class="checkboxes">
-    
-    
+
                                 <input type="checkbox" class="agent-edit__tag-existence" name="tag[]" value=<?php echo $rec_2["tag_code"]; ?>>
                                 <?php echo $rec_2["tag_name"]; ?></input>
-                            </div><?php }?>
+                            </div><?php } ?>
                     </div>
 
                     <input type="submit" value="OK" class="form_submit_btn">
