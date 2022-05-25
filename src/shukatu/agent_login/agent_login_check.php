@@ -13,6 +13,7 @@ $pass = $post["pass"];
 // 入力された情報が変なものだったとき用に入力されたものを一旦意味のない文字列に変換する
 //$pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
 
+    
 
     //パスワード乱数化
     // $pass = md5($pass);
@@ -68,3 +69,5 @@ $pass = $post["pass"];
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
     print "<a href='agent_login.php'>戻る</a>";
 }
+
+// 小野寛太

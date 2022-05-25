@@ -1,10 +1,3 @@
-<!-- 作業の手順
-１、請求ボタンからこのページに飛べるようにする
-２、agent_page_student_listの登録されている学生情報を表示させる
-３、これで請求していいか確認
-４、おっけー→メールに情報を載せてブザーにそうしん
-５、確認用にエージェント側にも送信 -->
-
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -24,7 +17,12 @@
 </head>
 
 <body>
-
+<!-- 作業の手順
+１、請求ボタンからこのページに飛べるようにする
+２、agent_page_student_listの登録されている学生情報を表示させる
+３、これで請求していいか確認
+４、おっけー→メールに情報を載せてブザーにそうしん
+５、確認用にエージェント側にも送信 -->
 
     <?php include "../common/agent_page_header.php"; ?>
    
@@ -50,13 +48,16 @@
             $stmt->execute($data);
 
             $dbh = null;
+            
+$i = 0;
 
             while (true) {
                 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
                 if ($rec === false) {
                     break;
                 }
-
+                $akj = 1;
+                $i++;
 
         ?>
                 <div class="agent_page_student_info_wrapper">
@@ -72,58 +73,14 @@
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['school_year']; ?>年</span>
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['the_year_of_grad']; ?>年卒</span>
                 </div>
-                <?php
-                $student_family_name = $rec['student_family_name'];
-                $student_first_name = $rec['student_first_name'];
-                $student_family_name_ruby = $rec['student_family_name_ruby'];
-                $student_first_name_ruby = $rec["student_first_name_ruby"];
-                $email_address = $rec["email_address"];
-                $phone_number = $rec["phone_number"];
-                $name_of_the_univ = $rec["name_of_the_univ"];
-                $faculty = $rec["faculty"];
-                $department = $rec["department"];
-                $school_year = $rec["school_year"];
-                $the_year_of_grad = $rec["the_year_of_grad"];
-
-                $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                $user = "root";
-                $password = "password";
-                $dbh_2 = new PDO($dsn, $user, $password);
-                $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                $sql_2 = "SELECT * FROM student_delete_request_table WHERE student_family_name= :student_family_name AND student_first_name= :student_first_name AND student_family_name_ruby= :student_family_name_ruby AND student_first_name_ruby= :student_first_name_ruby AND email_address= :email_address AND phone_number= :phone_number AND name_of_the_univ= :name_of_the_univ AND faculty= :faculty AND department= :department AND school_year= :school_year AND the_year_of_grad= :the_year_of_grad AND agent_id= :agent_id";
-                $stmt_2 = $dbh_2->prepare($sql_2);
-                $stmt_2->bindValue(":student_family_name", $student_family_name, PDO::PARAM_STR);
-                $stmt_2->bindValue(":student_first_name", $student_first_name, PDO::PARAM_STR);
-                $stmt_2->bindValue(":student_family_name_ruby", $student_family_name_ruby, PDO::PARAM_STR);
-                $stmt_2->bindValue(":student_first_name_ruby", $student_first_name_ruby, PDO::PARAM_STR);
-                $stmt_2->bindValue(":email_address", $email_address, PDO::PARAM_STR);
-                $stmt_2->bindValue(":phone_number", $phone_number, PDO::PARAM_STR);
-                $stmt_2->bindValue(":name_of_the_univ", $name_of_the_univ, PDO::PARAM_STR);
-                $stmt_2->bindValue(":faculty", $faculty, PDO::PARAM_STR);
-                $stmt_2->bindValue(":department", $department, PDO::PARAM_STR);
-                $stmt_2->bindValue(":school_year", $school_year, PDO::PARAM_STR);
-                $stmt_2->bindValue(":the_year_of_grad", $the_year_of_grad, PDO::PARAM_STR);
-                $stmt_2->bindValue(":agent_id", $agent_id, PDO::PARAM_STR);
-                $stmt_2->execute();
-                $cnt = $stmt_2->rowCount();
-                $dbh_2 = null;
-
-
-                if ($cnt == 0) { ?>
-                    <a href="./agent_page_student_delete.php?student_id=<?php echo $rec["id"] ?>&agent_id=<?php echo $agent_id; ?>" class="delete">削除申請する！！</a>
-                <?php
-                }
-                if ($cnt == 1) { ?>
-                    <span class="delete">削除申請中だよんちょいとお待ち</span>
-                <?php
-                }
-
-
-                ?>
+                <div class="agent_page_student_info_wrapper">
+                    <p><?= $a ?>人の学生から請求が来ています。請求しますか？<br></p>
+                    <a href="./agent_info_invoice_check_done.php">請求する</a>
+                </div>
 
         <?php
             }
+            echo($i);
         } catch (Exception $e) {
             echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
             print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
@@ -141,7 +98,7 @@
 
     </div>
     </div>
-
+        
 
 
 </body>
