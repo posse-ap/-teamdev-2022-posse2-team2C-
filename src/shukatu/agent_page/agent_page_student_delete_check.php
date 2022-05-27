@@ -52,7 +52,7 @@
                 }
                 // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
-                <h1>申請が完了しました boozerからの連絡をお待ちになって</h1>
+                <h1>申請が完了しました。 boozerからの連絡をお待ちください。</h1>
         <?php
                 require_once("../common/common.php");
 
@@ -96,6 +96,26 @@
                 $stmt->execute();
 
                 $dbh = null;
+
+                
+
+$agent = "irodas";
+// これはログインしているエージェント
+$bad_student_name = $rec['student_family_name'];
+$from = 'onokan@icloud.com';
+// この上のメルアドがログインしているエージェントのメルアドにしたい
+$to = "onokan@gmail.com";
+$subject =  '学生情報による請求';
+$body = <<<EOD
+    {$agent}から {$bad_student_name}の削除申請が来ています。至急対応してください。
+    EOD;
+$headers = "From: onokan@gmail.com";
+// 最終的なメール
+// メールを送信する
+mb_send_mail($to, $subject, $body, $headers); 
+$ret = mb_send_mail($to, $subject, $body, "From: {$from} \r\n");
+// print("メールが送信されました。もうしばらくお待ちください。");
+
             }
         } catch (Exception $e) {
             echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
@@ -104,7 +124,7 @@
         ?>
     </div>
     </div>
-
+        
 
 
 </body>
