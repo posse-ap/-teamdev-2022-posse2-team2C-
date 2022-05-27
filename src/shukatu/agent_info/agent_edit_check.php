@@ -40,8 +40,9 @@ if (isset($_SESSION["login"]) === false) {
 
     $catchphrase = $post["catchphrase"];
     $feature = $post["feature"];
-    $region_code = $post["region_code"];
-    $prefecture_code = $post["prefecture_code"];
+    // 地域コードとって来れていないかも
+    // $region_code = $post["region_code"];
+    // $prefecture_code = $post["prefecture_code"];
     $online_meeting = $post["online_meeting"];
     $membership = $post["membership"];
     $pros = $post["pros"];
@@ -106,8 +107,8 @@ if (isset($_SESSION["login"]) === false) {
 
         print "<input type='hidden' name='catchphrase' value='" . $catchphrase . "'>";
         print "<input type='hidden' name='feature' value='" . $feature . "'>";
-        print "<input type='hidden' name='region_code' value='" . $region_code . "'>";
-        print "<input type='hidden' name='prefecture_code' value='" . $prefecture_code . "'>";
+        // print "<input type='hidden' name='region_code' value='" . $region_code . "'>";
+        // print "<input type='hidden' name='prefecture_code' value='" . $prefecture_code . "'>";
         print "<input type='hidden' name='online_meeting' value='" . $online_meeting . "'>";
         print "<input type='hidden' name='membership' value='" . $membership . "'>";
         print "<input type='hidden' name='pros' value='" . $pros . "'>";
