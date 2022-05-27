@@ -49,38 +49,39 @@
 
             $dbh = null;
             
-$i = 0;
+            $i = 0;
 
             while (true) {
                 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
                 if ($rec === false) {
                     break;
                 }
-                $akj = 1;
                 $i++;
 
         ?>
                 <div class="agent_page_student_info_wrapper">
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_family_name']; ?></span>
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_first_name']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_family_name_ruby']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_first_name_ruby']; ?></span>
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['email_address']; ?></span>
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['phone_number']; ?></span>
                     <span class="agent_page_student_info_wrapper_span"><?php echo $rec['name_of_the_univ']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['faculty']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['department']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['school_year']; ?>年</span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['the_year_of_grad']; ?>年卒</span>
-                </div>
-                <div class="agent_page_student_info_wrapper">
-                    <p><?= $a ?>人の学生から請求が来ています。請求しますか？<br></p>
-                    <a href="./agent_info_invoice_check_done.php">請求する</a>
                 </div>
 
         <?php
             }
-            echo($i);
+            ?>
+
+
+            <div class =" agent_page_student_info_wrapper">
+                <p><?php echo($i);?>名からお問い合わせが来ています。<?php echo($i);?>名分CRAFTに請求します。</p>
+                <form action="agent_info_invoice_check_done.php" method="post">
+                    <span>mail address</span>
+                    <input type="text" name="account_email_address" placeholder="email address">
+                    <a href="./agent_info_invoice_check_done.php">請求する</a>            
+                </form>        
+            </div>
+
+            <?php
         } catch (Exception $e) {
             echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
             print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
@@ -88,17 +89,17 @@ $i = 0;
 
         ?>
 
+            
 
 
-        <?php
 
-        ?>
 
 
 
     </div>
     </div>
         
+
 
 
 </body>
