@@ -109,6 +109,9 @@ if (isset($_SESSION["login"]) === false) {
         <div class="request_list">
             <h1>学生からのお問合せ</h1>
         </div>
+        <div class="request_list">
+            <h1>掲載情報編集申請</h1>
+        </div>
     </div>
     </div>
 </body>
