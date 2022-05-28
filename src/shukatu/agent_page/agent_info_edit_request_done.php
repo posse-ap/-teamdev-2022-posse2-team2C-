@@ -53,7 +53,7 @@
 
 
 $agent = "irodas";
-// これはログインしているエージェントにしたい（汎用性持たせる）
+// これはログインしているエージェント名にしたい（汎用性持たせる）
 $from = 'onokan@icloud.com';
 // この上のメルアドがログインしているエージェントのメルアドにしたい
 $to = "onokan@gmail.com";
@@ -66,8 +66,6 @@ $headers = "From: onokan@gmail.com";
 // 最終的なメール
 // メールを送信する
 mb_send_mail($to, $subject, $body, $headers); 
-$ret = mb_send_mail($to, $subject, $body, "From: {$from} \r\n");
-// print("メールが送信されました。もうしばらくお待ちください。");
 ?>
                 <h1>申請が完了しました。 boozerからの連絡をお待ちください。</h1>
 
