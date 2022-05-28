@@ -57,45 +57,24 @@
                     break;
                 }
                 $i++;
-
         ?>
-                <div class="agent_page_student_info_wrapper">
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_family_name']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['student_first_name']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['email_address']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['phone_number']; ?></span>
-                    <span class="agent_page_student_info_wrapper_span"><?php echo $rec['name_of_the_univ']; ?></span>
-                </div>
-
         <?php
             }
             ?>
-
-
             <div class =" agent_page_student_info_wrapper">
-                <p><?php echo($i);?>名からお問い合わせが来ています。<?php echo($i);?>名分CRAFTに請求します。</p>
+                <h1><?php echo($i);?>名からお問い合わせが来ています。<?php echo($i);?>名分CRAFTに請求します。</h1>
                 <form action="agent_info_invoice_check_done.php" method="post">
                     <span>mail address</span>
                     <input type="text" name="account_email_address" placeholder="email address">
                     <a href="./agent_info_invoice_check_done.php">請求する</a>            
                 </form>        
             </div>
-
             <?php
         } catch (Exception $e) {
             echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
             print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
         }
-
         ?>
-
-            
-
-
-
-
-
-
     </div>
     </div>
         
