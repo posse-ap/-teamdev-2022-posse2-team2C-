@@ -47,7 +47,11 @@ try{
         $from = 'onokan@gmail.com';
         $to = $account_email_address;
         $subject =  'パスワードリセットのご案内';
-
+        
+        ?>
+        <form method="POST" action="/agent_login_reset_check.php">
+        <input type="hidden"  value="<?=$passResetToken?>">
+        </form><?php
         $body = <<<EOD
             24時間以内に下記URLへアクセスし、パスワードの変更を完了してください。
             {$url}
