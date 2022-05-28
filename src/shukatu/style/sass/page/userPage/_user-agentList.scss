@@ -5,7 +5,7 @@
 
 .top-page {
   &__main_contents{
-    background-color: #e4e3e3;
+    background-color: #fff;
     max-width: var.$max_width;
     margin: 0 auto;
     display: flex;
@@ -19,7 +19,7 @@
     }
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     width: 75%;
     @include mixin.sp{
       margin: 0 auto;

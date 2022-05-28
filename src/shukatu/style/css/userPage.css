@@ -185,7 +185,7 @@ footer #boozer_logo {
 }
 
 .top-page__main_contents {
-  background-color: #e4e3e3;
+  background-color: #fff;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -194,7 +194,7 @@ footer #boozer_logo {
 .top-page__agent_position {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   width: 75%;
 }
 @media screen and (min-width: 767px) {
@@ -1389,6 +1389,18 @@ footer #boozer_logo {
 @media screen and (max-width: 767px) {
   .top_page__search_area_pc {
     display: none;
+  }
+}
+.top_page__search_area_pc.fixed {
+  position: fixed;
+  top: 0;
+  left: 75%;
+}
+@media screen and (min-width: 1200px) {
+  .top_page__search_area_pc.fixed {
+    left: 50%;
+    transform: translateX(300px);
+    width: 300px;
   }
 }
 .top_page__search_area_pc .tag-search {

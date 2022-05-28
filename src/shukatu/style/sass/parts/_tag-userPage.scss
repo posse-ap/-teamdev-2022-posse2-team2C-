@@ -42,6 +42,16 @@
   @include mixin.sp{
     display: none;
   }
+  &.fixed{
+    position: fixed;
+    top: 0;
+    left: 75%;
+    @media screen and (min-width: 1200px) {
+      left: 50%;
+      transform: translateX(300px);
+      width: 300px;
+    }
+  }
   .tag-search{
     // height: 2000px;
   

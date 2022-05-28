@@ -110,6 +110,18 @@ for (let i = 0; i < region.length; i++) {
 }
 
 //検索ボタンの位置
+const agents = document.querySelector(".top-page__agent_position");
+window.addEventListener("scroll",function(){
+  const agents_position = agents.getBoundingClientRect().top;
+  const search_area_pc = document.querySelector(".top_page__search_area_pc")
+  if (agents_position < 0){
+    search_area_pc.classList.add("fixed");
+  } else {
+    search_area_pc.classList.remove("fixed");
+  }
+})
+
+//スマホ版ボタン
 const search_switcher = document.querySelector(".search_box_switcher");
 const search_box = document.querySelector(".tag-area-search__wrapper");
 const searchBtn = document.querySelector(".both-search");
