@@ -7,8 +7,8 @@ if (isset($_SESSION["login"]) === false) {
     print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"] . "さんログイン中";
-    print "<br><br>";
+    // print $_SESSION["name"] . "さんログイン中";
+    // print "<br><br>";
 }
 ?>
 
@@ -19,7 +19,8 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント削除</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
 </head>
 
 <body>
@@ -65,24 +66,29 @@ if (isset($_SESSION["login"]) === false) {
         print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
-    エージェント詳細<br><br>
-    エージェントコード<br>
-    <?php print $rec["agent_id"]; ?>
-    <br><br>
-    エージェント名<br>
-    <?php print $rec["company_name"]; ?>
-    <br><br>
-    担当者名<br>
-    <?php print $rec["company_staff"]; ?>
-    円<br>
-    <br><br>
-    上記情報を削除しますか？<br><br>
-    <form action="agent_delete_done.php" method="post">
-        <input type="hidden" name="agent_id" value="<?php print $rec['agent_id']; ?>">
-
-        <input type="button" onclick="history.back()" value="戻る">
-        <input type="submit" value="OK">
-    </form>
+    <div class="right_page_container">
+        <div class="agent_delete">
+            <div class="agent_delete__tittle">
+                エージェント詳細
+            </div>
+            エージェントコード
+            <?php print $rec["agent_id"]; ?>
+            <br><br>
+            エージェント名<br>
+            <?php print $rec["company_name"]; ?>
+            <br><br>
+            担当者名<br>
+            <?php print $rec["company_staff"]; ?>
+            <br><br>
+            上記情報を削除しますか？<br><br>
+            <form action="agent_delete_done.php" method="post">
+                <input type="hidden" name="agent_id" value="<?php print $rec['agent_id']; ?>">
+        
+                <input type="button" onclick="history.back()" value="戻る">
+                <input type="submit" value="OK">
+            </form>
+        </div>
+    </div>
 
 </body>
 

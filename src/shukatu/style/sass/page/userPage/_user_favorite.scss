@@ -39,7 +39,7 @@
       border: none;
       border-radius: 8px;
       font-size: 16px;
-      width: 80px;
+      width: 100px;
       line-height: 2;
       padding: 0 10px;
       margin: 0 5px;
@@ -83,6 +83,33 @@
   margin: 25px auto;
   &__message{
     display: block;
-    padding: 0 auto;
+    width: 304px;
+    font-size: 16px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  &__btn_back{
+    display: block;
+    background-color: #65a0f2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 80px;
+    line-height: 2;
+    padding: 0 10px;
+    box-shadow: #555 3px 3px 3px;
+    transition: 200ms;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    @include mixin.sp{
+      margin: 5px;
+    }
+    &:hover{
+      transform: translate3d(-50%, -45%, 0);
+      box-shadow: #000 1px 1px 1px;
+    }
   }
 }
