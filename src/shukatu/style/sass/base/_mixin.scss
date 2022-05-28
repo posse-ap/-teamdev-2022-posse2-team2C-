@@ -12,3 +12,9 @@
     @content;
   }
 }
+
+@mixin pc {
+  @media screen and (min-width: var.$sp){
+    @content;
+  }
+}

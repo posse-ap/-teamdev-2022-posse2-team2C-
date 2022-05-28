@@ -10,17 +10,27 @@ function hide_tag() {
   tag__background.style.display = "none";
 }
 document
-  .querySelector(".tag-search__btn")
-  .addEventListener("click", function () {
-    show_tag();
+  .querySelectorAll(".tag-search__btn").forEach(function(element){
+    element.addEventListener("click", function () {
+      show_tag();
+    });
   });
-tag__background.addEventListener("click", function () {
+
+tag__background.addEventListener('click', function(){
   hide_tag();
-});
+})
+
 
 //エリアから探すボタン
 const area = document.querySelector(".area");
 const area__background = document.querySelector(".area__background");
+
+document
+  .querySelectorAll(".area-search__btn").forEach(function(element){
+    element.addEventListener("click", function () {
+      show_area();
+    });
+  });
 
 function show_area() {
   area.style.display = "block";
