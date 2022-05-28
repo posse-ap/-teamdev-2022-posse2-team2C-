@@ -87,51 +87,48 @@ session_start();
     ?>
 
     <form action="agent_quantity.php" method="post">
-        お気に入り一覧<br><br>
-        <?php for ($i = 0; $i < $max; $i++) {; ?>
-            <div class="top-page__agent">
-                <div class="top-page__agent_wrapper">
-                    <div class="top-page__agent_img-wrapper">
-                        <img src="./agent_img/agent_img_<?php echo $agent_id[$i]; ?>.png" alt="" class="top-page__agent_img">
-                        <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
-                        <div class="top-page__agent_heart">
-                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                                <div class="Likes">
-                                    <div class="LikesIcon"></div>
+        <h1 class="user_favorite__tittle">お気に入り一覧</h1>
+
+        <div class="user_favorite__agent_position">
+            <?php for ($i = 0; $i < $max; $i++) {; ?>
+                <div class="user_favorite__agent">
+                    <div class="user_favorite__agent_wrapper">
+                        <div class="user_favorite__agent_img-wrapper">
+                            <img src="./agent_img/agent_img_<?php echo $agent_id[$i]; ?>.png" alt="" class="user_favorite__agent_img">
+                            <div class="user_favorite__agent_tag"><span class="user_favorite__agent_tag_text">#</span></div>
+                            <div class="user_favorite__agent_heart">
+                                <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                    <div class="Likes">
+                                        <div class="LikesIcon"></div>
+                                    </div>
                                 </div>
+                            </a>
                         </div>
-                        </a>
+                    </div>
+                    <div class="user_favorite__agent_text">
+                        <span class="user_favorite__agent_text_company-name"><?php print $company_name[$i]; ?></span>
+                        <span class="user_favorite__agent_text_catchphrase"><?php print $catchphrase[$i]; ?></span>
+                    </div>
+                    <a href='user_detail.php?agent_id=<?php echo $agent_id[$i]; ?>' class="user_favorite__agent_detail-btn">
+                        <span class="user_favorite__agent_detail-btn_text">詳しくはこちら！</span>
+                    </a>
+                    <div class="user_favorite__delete">
+                        <label for="delete<?php print $i; ?>">お気に入りから削除する:</label>
+                        <input type="checkbox" name="delete<?php print $i; ?>" id = "delete<?php print $i; ?>">
                     </div>
                 </div>
-                <div class="top-page__agent_text">
-                    <span class="top-page__agent_text_company-name"><?php print $company_name[$i]; ?></span>
-                    <span class="top-page__agent_text_catchphrase"><?php print $catchphrase[$i]; ?></span>
-                </div>
-                <a href='user_detail.php?agent_id=<?php echo $agent_id[$i]; ?>' class="top-page__agent_detail-btn">
-                    <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
-                </a>
-            </div>
-
-
-
-
-            お気に入りから削除する:<input type="checkbox" name="delete<?php print $i; ?>"><br>
-
-            <br>
-
-        <?php }; ?>
-
-        <br><br>
+            <?php }; ?>
+        </div>
         <input type="hidden" name="max" value="<?php print $max; ?>">
-
-        <input type="submit" value="お気に入りから削除">
-
-        <br><br>
-        <input type="button" onclick="history.back()" value="戻る">
+        <div class="user_favorite__btn">
+            <input type="submit" value="お気に入りから削除" class="user_favorite__btn_delete">
+            <input type="button" onclick="history.back()" value="戻る" class="user_favorite__btn_back">
+            <a href="user_info_multiple_forms_check.php" class="user_favorite__go_form">個人情報入力に進む</a>
+        </div>
     </form>
-    <br>
-
-    <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
+    <footer>
+        <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+    </footer>
 
 </body>
 
