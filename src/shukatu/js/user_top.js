@@ -111,6 +111,7 @@ for (let i = 0; i < region.length; i++) {
 
 //検索ボタンの位置
 const agents = document.querySelector(".top-page__agent_position");
+const footer = document.querySelector("footer");
 window.addEventListener("scroll",function(){
   const agents_position = agents.getBoundingClientRect().top;
   const search_area_pc = document.querySelector(".top_page__search_area_pc")
@@ -119,7 +120,15 @@ window.addEventListener("scroll",function(){
   } else {
     search_area_pc.classList.remove("fixed");
   }
+
+  const footer_position = footer.getBoundingClientRect().top;
+  if (footer_position < screen.availHeight){
+    searchBtn.classList.add("float");
+  } else {
+    searchBtn.classList.remove("float");
+  }
 })
+
 
 //スマホ版ボタン
 const search_switcher = document.querySelector(".search_box_switcher");

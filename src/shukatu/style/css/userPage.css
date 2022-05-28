@@ -1411,14 +1411,6 @@ footer #boozer_logo {
   width: 90%;
   margin: 0 auto;
 }
-.top_page__search_area_pc .both-search {
-  display: block;
-  width: 100%;
-}
-.top_page__search_area_pc .both-search__btn {
-  display: block;
-  margin: 0 auto;
-}
 
 .tag-area-search__wrapper {
   display: none;
@@ -1476,11 +1468,10 @@ footer #boozer_logo {
 
 .both-search {
   z-index: 55;
-  display: none;
+  display: flex;
 }
 @media screen and (max-width: 767px) {
   .both-search {
-    display: flex;
     flex-direction: column;
     position: fixed;
     left: 100vw;
@@ -1492,6 +1483,26 @@ footer #boozer_logo {
   .both-search.shown {
     transform: translateX(-220px);
     transition: 400ms;
+  }
+}
+@media screen and (min-width: 767px) {
+  .both-search {
+    position: fixed;
+    bottom: 20px;
+    right: 12.5%;
+    transform: translateX(50%);
+    transition: 1s;
+  }
+}
+@media screen and (min-width: 767px) and (min-width: 1200px) {
+  .both-search {
+    right: 50%;
+    transform: translateX(545px);
+  }
+}
+@media screen and (min-width: 767px) {
+  .both-search.float {
+    bottom: 120px;
   }
 }
 .both-search__btn {
