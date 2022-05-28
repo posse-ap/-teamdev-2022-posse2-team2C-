@@ -106,6 +106,9 @@ if (isset($_SESSION["login"]) === false) {
             <?php }
             ?>
         </div>
+        <div class="request_list">
+            <h1>学生からのお問合せ</h1>
+        </div>
     </div>
     </div>
 </body>
