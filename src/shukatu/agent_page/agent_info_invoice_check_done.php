@@ -47,17 +47,18 @@ try {
 
 <?php include "../common/agent_page_header.php";?>
 <div class="agent-page__right-page-container">
+
+
     <!-- ブザーへの申請メール -->
-
-
-
 <?php
-$invoice_cost = "5";
+$invoice_cost = "4";
+// これは前のagent_info_invoice_check_done.phpで計算した$i(=請求された人数)＊1000の数値を出せるようにしたい。＄iのとってくる方法がわからなかったから適当に4って数字をぶち込んでいる。
 $agent = "irodas";
-// これは前のinvoice.phpで計算した$i＊1000の数値を出せるようにしたい。
+// 請求があったエージェントの名前をとってきたい。
 $from = 'onokan@@icloud.com';
 // この上のメルアドがログインしているエージェントのメルアドにしたい
 $to = "onokan@gmail.com";
+// スタッフのメルアド
 $subject =  '学生情報による請求';
 $body = <<<EOD
     {$agent}からの請求金額は {$invoice_cost}円です。
@@ -66,7 +67,6 @@ $headers = "From: onokan@gmail.com";
 // 最終的なメール
 // メールを送信する
 mb_send_mail($to, $subject, $body, $headers); 
-$ret = mb_send_mail($to, $subject, $body, "From: {$from} \r\n");
 print("メールが送信されました。確認メールも送付しております。ご確認ください。");
 ?>
 
@@ -75,23 +75,20 @@ print("メールが送信されました。確認メールも送付しており�
 <!-- ブザーからの確認メール -->
 <?php
 $invoice_cost = "4";
+// これは前のagent_info_invoice_check_done.phpで計算した$i(=請求された人数)＊1000の数値を出せるようにしたい。＄iのとってくる方法がわからなかったから適当に4って数字をぶち込んでいる。
 $agent = "irodas";
-// これは前のinvoice.phpで計算した$i＊1000の数値を出せるようにしたい。
-
+// 請求があったエージェントの名前をとってきたい。
 $from = "onokan@gmail.com";
-
+// スタッフのメルアド
 $to = 'onokan@@icloud.com';
 // この上のメルアドがログインしているエージェントのメルアドにしたい
 $subject =  '学生情報による請求（確認メール）';
 $body = <<<EOD
     {$agent}様からの請求金額は {$invoice_cost}円です。承りました。後ほどお支払いいたします。
     EOD;
-$headers = "From: onokan@gmail.com";
-// 最終的なメール
-// メールを送信する
+$headers = "From: {$from}";
+
 mb_send_mail($to, $subject, $body, $headers); 
-$ret = mb_send_mail($to, $subject, $body, "From: {$from} \r\n");
-// print("メールが送信されました。確認メールも送付しております。ご確認ください。");
 ?>
 
     <!-- <p>請求完了しました。メールをご確認ください。</p> -->
