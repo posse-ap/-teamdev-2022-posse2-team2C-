@@ -52,7 +52,7 @@
     ?>
     <div class="agent-page__right-page-container">
         <h1><?php print $rec["company_name"]; ?>の情報を修正します。</h1>
-        <form action="agent_edit_check.php" method="post" enctype="multipart/form-data" width="100%">
+        <form action="agent_info_edit_request_done.php" method="post" enctype="multipart/form-data" width="100%">
             <div class="agent_reg_form_wrapper">
                 <div class="agent_account_reg_wrapper">
                     <h2 class="agent_reg_form_tittle">アカウント情報の登録</h2>

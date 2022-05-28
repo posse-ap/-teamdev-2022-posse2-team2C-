@@ -42,8 +42,8 @@ if (isset($_SESSION["login"]) === false) {
 
         $catchphrase = $post["catchphrase"];
         $feature = $post["feature"];
-        $region_code = $post["region_code"];
-        $prefecture_code = $post["prefecture_code"];
+        // $region_code = $post["region_code"];
+        // $prefecture_code = $post["prefecture_code"];
         $online_meeting = $post["online_meeting"];
         $membership = $post["membership"];
         $pros = $post["pros"];
@@ -96,6 +96,22 @@ if (isset($_SESSION["login"]) === false) {
         $stmt_2->execute($data_2);
 
         $dbh_2 = null;
+
+// ここからメール送信
+
+$agent = $company_name;
+$to = $account_email_address;
+$from = "onokan@gmail.com";
+// この上のメルアドもログインしているスタッフの誰か（全部これだと小野に送られちゃう）にしたい
+$subject =  '掲載情報編集完了のお知らせ';
+$body = <<<EOD
+    {$agent}様の掲載情報を変更いたしました。ご確認ください。
+    EOD;
+$headers = "From: onokan@gmail.com";
+// 最終的なメール
+// メールを送信する
+mb_send_mail($to, $subject, $body, $headers); 
+$ret = mb_send_mail($to, $subject, $body, "From: {$from} \r\n");
     } catch (Exception $e) {
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
         print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
