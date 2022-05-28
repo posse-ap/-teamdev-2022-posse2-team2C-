@@ -126,10 +126,42 @@
 
         $dbh_2 = null;
 
+// 学生へのサンクスメール
+        $student_name = "小野";
+        // これは申請しようとしている学生名にしたい
+        $from = "onokan@gmail.com";
+        // この上のメルアドはログインしているスタッフの誰か（全部これだと小野に送られちゃう）にしたい
+        $to = 'onokan@dさだskl.com';
+        // この上のメルアドが学生のメールアドレスにしたい
+        $subject =  '申請に関しまして';
+        $body = <<<EOD
+            {$student_name}様。申請ありがとうございます。該当のエージェントに申請完了しました。ご入力いただいた情報に従って各エージェント企業担当者より追ってご連絡差し上げます。ご登録いただいたメールアドレスへのメールをご確認ください。
+            EOD;
+        $headers = "From: onokan@gmail.com";
+        // 最終的なメール
+        // メールを送信する
+        mb_send_mail($to, $subject, $body, $headers);
 
 
-        //member tableに値を登録
-
+// エージェントへの通知メール
+        $url = "http://localhost:80/shukatu/agent_login/agent_login.php";
+        $agent_name = "irodas";
+        //申請されたエージェント名にしたい
+        $from = "onokan@gmail.com";
+        // この上のメルアドはログインしているスタッフの誰か（全部これだと小野に送られちゃう）にしたい
+        $to = 'onokan@dさだskl.com';
+        // 申請されたエージェントのメルアドにしたい
+        $subject =  '学生からの申請通知';
+        $body = <<<EOD
+            {$agent_name}様。学生の{$student_name}さんより申請がありました。
+            至急管理者画面からご確認ください。
+            <管理者ログインページ>
+            {$url}
+            EOD;
+        $headers = "From: onokan@gmail.com";
+        // 最終的なメール
+        // メールを送信する
+        mb_send_mail($to, $subject, $body, $headers);
 
         print "<div class='done_message'>登録完了しました！</div>
         <div class='done_message_text'>申請が完了しました。<br>
