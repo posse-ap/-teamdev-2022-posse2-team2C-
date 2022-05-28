@@ -67,11 +67,18 @@
         </div>
       </div>
     </div>
+
   </section>
-
   <section class="user-contact">
-    
-
+  <form action="user_Q&A_mail.php" method="post" enctype="multipart/form-data" width="100%">
+    <span>お問合せ事項</span>  
+    <input type="text" name="question">
+    <span>お名前</span>
+    <input type="text" name="name">
+    <span>メールアドレス</span>
+    <input type="text" name="mail_address">
+    <input type="submit" value="OK" class="form_submit_btn">
+    </form>
   </section>
 </body>
 
