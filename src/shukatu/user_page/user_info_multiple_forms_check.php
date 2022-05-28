@@ -32,6 +32,7 @@ session_start();
 
 <body>
   <?php include "../common/user_page_header.html" ?>
+  <section class="user-favorites">
   <?php
   try {
     $cart = $_SESSION["cart"];
@@ -83,7 +84,10 @@ session_start();
     print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
   }
   ?>
-
+  </section>
+  <footer>
+    <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+  </footer>
 </body>
 
 </html>

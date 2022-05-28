@@ -37,7 +37,6 @@
 //pc用
 .top_page__search_area_pc {
   width: 25%;
-  border-top: solid 1px #000;
   @include mixin.sp {
     display: none;
   }
@@ -52,8 +51,6 @@
     }
   }
   .tag-search {
-    // height: 2000px;
-
     width: 90%;
     margin: 25px auto 5px;
   }
@@ -61,14 +58,6 @@
     width: 90%;
     margin: 0 auto;
   }
-  // .both-search{
-  //   display: block;
-  //   width: 100%;
-  //   &__btn{
-  //     display: block;
-  //     margin: 0 auto;
-  //   }
-  // }
 }
 
 //スマホ用
@@ -142,7 +131,7 @@
     bottom: 20px;
     right: 12.5%;
     transform: translateX(50%);
-    transition: 1s;
+    transition: 200ms;
     @media screen and (min-width: 1200px) {
       right: 50%;
       transform: translateX(545px);

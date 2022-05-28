@@ -1,7 +1,17 @@
+@use "../../base/var";
+@forward "../../base/var";
+
+.user_howToUse{
+  width: 100%;
+  max-width: var.$max_width;
+  margin: 0 auto;
+  padding-top: 45px;
+  background-color: #fff;
+}
 
 .head_howToUse{
   background-color: #26a69a;
-  margin: 45px auto 25px;
+  margin: 0 auto 25px;
   color: #fff;
   height: 50px;
   width: 400px;

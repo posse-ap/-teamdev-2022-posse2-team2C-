@@ -3,6 +3,10 @@
 @use "../../base/var";
 @forward "../../base/var";
 
+body{
+  background-color: var.$second_color;
+}
+
 .top-page {
   &__main_contents{
     background-color: #fff;
@@ -13,7 +17,6 @@
   }
   &__agent_position {
     @include mixin.pc{
-      border-top: solid 1px #000;
       border-right: solid 1px #000;
       box-sizing: border-box;
     }

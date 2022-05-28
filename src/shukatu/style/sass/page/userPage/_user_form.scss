@@ -2,6 +2,8 @@
 @forward "./user_form_check";
 @use "./user_info_done";
 @forward "./user_info_done";
+@use "../../base/var";
+@forward "../../base/var";
 
 .form-step{
     margin: 5px auto;
