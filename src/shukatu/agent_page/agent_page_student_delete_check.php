@@ -100,11 +100,12 @@
                 
 
 $agent = "irodas";
-// これはログインしているエージェント
+// これはログインしているエージェントにしたい
 $bad_student_name = $rec['student_family_name'];
 $from = 'onokan@icloud.com';
 // この上のメルアドがログインしているエージェントのメルアドにしたい
 $to = "onokan@gmail.com";
+// これは汎用性あるスタッフのメルアドにしたい
 $subject =  '学生情報による請求';
 $body = <<<EOD
     {$agent}から {$bad_student_name}の削除申請が来ています。至急対応してください。
@@ -113,8 +114,6 @@ $headers = "From: onokan@gmail.com";
 // 最終的なメール
 // メールを送信する
 mb_send_mail($to, $subject, $body, $headers); 
-$ret = mb_send_mail($to, $subject, $body, "From: {$from} \r\n");
-// print("メールが送信されました。もうしばらくお待ちください。");
 
             }
         } catch (Exception $e) {
