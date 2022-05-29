@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/sass/base/reset.css">
-    <link rel="stylesheet" href="../style/css/userPage.css">
-    <!-- ファビコン -->
-    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
+  <link rel="stylesheet" href="../style/css/userPage.css">
+  <!-- ファビコン -->
+  <link rel="icon" href="../style/img/favicon.ico" id="favicon">
   <script src="../js/header.js" defer></script>
   <title>使い方ガイドページ</title>
 </head>
@@ -20,59 +20,49 @@
     <div class="user_flow">
       <div id="step1" class="steps">
         <h2 class="head_flow">step1 絞り込み</h2>
-        <div class="text_flow">・自分の住んでいるエリアで面談可能なエージェントを絞り込み</div>
-        <div class="images">
-          <img src="../user_page/img/flow_sort_1.png" alt="" id="flow_img_1">
-          <div class="arrow_flow">→</div>
-          <img src="../user_page/img/flow_sort_2.png" alt="" id="flow_img_2">
-        </div>
         <div class="text_flow">・タグを使って自分にぴったりのエージェントを探す</div>
-        <div class="images">
-          <img src="../user_page/img/flow_sort_3.png" alt="" id="flow_img_3">
-          <div class="arrow_flow">→</div>
-          <img src="../user_page/img/flow_sort_4.png" alt="" id="flow_img_4">
+
+        <div class="user_flow__small-step">
+          <p class="user_flow__small-step_text"><span class="user_flow__btn">タグから探す</span> ボタンを押してタグを選択</p>
+          <img src="./img/user-flow/user-flow_tag.png" class="user_flow__img_tag">
         </div>
-  
+
+        <div class="text_flow">・自分の住んでいるエリアで面談可能なエージェントを探す
+        </div>
+        <div class="user_flow__small-step">
+          <p class="user_flow__small-step_text"><span class="user_flow__btn">エリアから探す</span> ボタンを押してエリアを選択</p>
+          <img src="./img/user-flow/user-flow_area-1.png" class="user_flow__img_area">
+          <img src="./img/user-flow/user-flow_area-2.png" class="user_flow__img_area">
+        </div>
+
+        <div class="text_flow">・選んだタグ、エリアで絞り込み</div>
+        <div class="user_flow__small-step">
+          <p class="user_flow__small-step_text"><span class="user_flow__btn-search">絞り込む<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                <path d="M23.832 19.641l-6.821-6.821c2.834-5.878-1.45-12.82-8.065-12.82-4.932 0-8.946 4.014-8.946 8.947 0 6.508 6.739 10.798 12.601 8.166l6.879 6.879c1.957.164 4.52-2.326 4.352-4.351zm-14.886-4.721c-3.293 0-5.973-2.68-5.973-5.973s2.68-5.973 5.973-5.973c3.294 0 5.974 2.68 5.974 5.973s-2.68 5.973-5.974 5.973z" />
+              </svg></span> ボタンを押して絞り込む</p>
+        </div>
+
       </div>
-  
+
       <div id="step2" class="steps">
         <h2 class="head_flow">step2 申請</h2>
-        <div class="text_flow">・気になるエージェントの詳細画面へ行き、申請ボタンをクリック</div>
-        <div class="images">
-          <img src="../user_page/img/flow_5.png" alt="" id="flow_img_5">
-          <div class="arrow_flow">→</div>
-          <img src="../user_page/img/flow_6.png" alt="" id="flow_img_6">
+        <div class="text_flow">・気になるエージェントの画像をクリックorタップ → <span class="user_flow__btn_go-form">申請に進む</span> ボタンを押す</div>
+        <div class="user_flow__small-step">
+          <img src="./img/user-flow/user-flow_agent.png" class="user_flow__img">
         </div>
+
         <div class="text_flow">・必要な情報を入力して、申請する</div>
-        <div class="images">
-          <img src="../user_page/img/flow_7.png" alt="" id="flow_img_7">
-          <div class="arrow_flow">→</div>
-          <img src="../user_page/img/flow_8.png" alt="" id="flow_img_8">
-        </div>
-      </div>
-  
-      <div id="step3" class="steps">
-        <h2 class="head_flow">あとは待つだけ！</h2>
-        <div class="text_flow">エージェントから個別にメールがきます</div>
-        <div class="images">
-          <img src="../user_page/img/flow_9.png" alt="" id="flow_img_9">
+        <div class="user_flow__small-step">
+          <img src="./img/user-flow/user-flow_form.png" class="user_flow__img form">
         </div>
       </div>
     </div>
-  
+
     <h1 class="head_howToUse">まとめて申請もできる！</h1>
     <div class="user_flow">
       <div class="steps">
-        <div class="text_flow">一覧画面やエージェント詳細ページの❤️からお気に入り登録</div>
-        <div class="images">
-          <img src="../user_page/img/flow_10.png" alt="" id="flow_img_10">
-          <p>or</p>
-          <img src="../user_page/img/flow_11.png" alt="" id="flow_img_11">
-        </div>
-        <div class="text_flow">お気に入り一覧から一括申請！</div>
-        <div class="images">
-          <img src="../user_page/img/flow_12.png" alt="" id="flow_img_12">
-        </div>
+        <div class="text_flow">一覧画面やエージェント詳細ページの❤️からお気に入り登録 → お気に入り一覧から一括申請！</div>
+        <img src="./img/user-flow/user-flow_cart.png" alt="" class="user_flow__img cart">
       </div>
     </div>
   </section>
