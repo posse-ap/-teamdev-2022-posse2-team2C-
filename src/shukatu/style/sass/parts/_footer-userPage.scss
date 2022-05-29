@@ -1,0 +1,22 @@
+@use "../base/var";
+@forward "../base/var";
+
+footer {
+  background-color: var.$main_color;
+  width: 100vw;
+  height: 100px;
+  box-sizing: border-box;
+  padding-top: 16px;
+  #boozer_logo {
+    margin: 0 auto;
+    display: block;
+    width: 288px;
+  }
+}
+
+.whole-wrapper{
+  footer{
+    position: absolute;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,60 @@
+.check_area {
+  width: 90vw;
+  max-width: 650px;
+  margin: 0 auto;
+  h1{
+    margin: 20px auto;
+  }
+  // form{
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   margin: 16px auto;
+  //   input{
+  //     display: block;
+  //     width: 45%;
+  //     &[name="agent_id"]{
+  //       display: none;
+  //     }
+  //   }
+  // }
+  .student_info_check__btn_area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .back_btn {
+      background-color: #65a0f2;
+      color: #fff;
+      margin: 16px 5px 0 0;
+      display: block;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 80px;
+      line-height: 2;
+      box-shadow: #555 3px 3px 3px;
+      transition: 200ms;
+      &:hover{
+          transform: translateY(1px);
+          box-shadow: #000 1px 1px 1px;
+      }
+    }
+    .submit_btn{
+      background-color: #f5835f;
+      color: #fff;
+      margin: 16px 0 0 5px;
+      display: block;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 80px;
+      line-height: 2;
+      box-shadow: #555 3px 3px 3px;
+      transition: 200ms;
+      &:hover{
+          transform: translateY(1px);
+          box-shadow: #000 1px 1px 1px;
+      }
+    }
+  }
+}

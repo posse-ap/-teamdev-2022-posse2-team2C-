@@ -1,0 +1,154 @@
+@use "../../base/var";
+@forward "../../base/var";
+@use "../../base/mixin";
+@forward "../../base/mixin";
+
+.user_howToUse {
+  width: 100%;
+  max-width: var.$max_width;
+  margin: 0 auto;
+  padding: 40px 0 30px;
+  background-color: #fff;
+}
+
+.head_howToUse {
+  background-color: #26a69a;
+  margin: 40px auto 25px;
+  color: #fff;
+  height: 50px;
+  width: 365px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2;
+}
+
+.user_flow {
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+  &__small-step {
+    padding: 16px 0;
+    width: 90%;
+    margin: 0 auto;
+    &_text {
+      line-height: 1.2;
+    }
+  }
+  &__btn {
+    padding: 1px 5px;
+    background-color: #cacaca;
+    border-radius: 6px;
+    border: solid 1px #000;
+    box-sizing: border-box;
+    &-search {
+      background: #ff9500;
+      line-height: 1.2;
+      padding: 0 5px;
+      border-radius: 5px;
+      border: solid #000 1px;
+    }
+    &_go-form {
+      padding: 2px 5px;
+      background-color: var.$main_color;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+  &__img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    @include mixin.sp {
+      width: 100%;
+    }
+    &_tag {
+      width: 50%;
+      @include mixin.sp {
+        width: 100%;
+      }
+      border-radius: 10px;
+      margin: 16px auto;
+      display: block;
+      box-shadow: #555 3px 3px 10px;
+    }
+    &_area {
+      width: 50%;
+      @include mixin.sp {
+        width: 100%;
+      }
+      border-radius: 10px;
+      margin: 16px auto;
+      display: block;
+      box-shadow: #555 3px 3px 10px;
+    }
+    &.form{
+      border-radius: 10px;
+      border: solid #000 1px;
+    }
+    &.cart{
+      border-radius: 10px;
+      border: solid #000 1px;
+    }
+  }
+  .steps {
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px #000;
+    margin-bottom: 15px;
+    .head_flow {
+      margin: 0;
+    }
+    .text_flow {
+      margin-top: 40px;
+      line-height: 1.5;
+    }
+    .images {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      // margin-bottom: 70px;
+      .arrow_flow {
+        font-size: large;
+      }
+      #flow_img_ {
+        &1 {
+          width: 150px;
+        }
+        &2 {
+          width: 150px;
+        }
+        &3 {
+          width: 150px;
+        }
+        &4 {
+          width: 300px;
+        }
+        &5 {
+          width: 300px;
+        }
+        &6 {
+          width: 300px;
+        }
+        &7 {
+          width: 300px;
+        }
+        &8 {
+          width: 300px;
+        }
+        &9 {
+          width: 300px;
+        }
+        &10 {
+          width: 300px;
+        }
+        &11 {
+          width: 300px;
+        }
+        &12 {
+          width: 300px;
+        }
+      }
+    }
+  }
+}

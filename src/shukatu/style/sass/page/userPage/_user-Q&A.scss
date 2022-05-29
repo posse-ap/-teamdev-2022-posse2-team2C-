@@ -1,0 +1,223 @@
+@use "../../base/var";
+@forward "../../base/var";
+@use "../../base/mixin";
+@forward "../../base/mixin";
+
+.user_Q-A{
+  width: 100%;
+  max-width: var.$max-width;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+#Q-A{
+  margin: 0 auto 0;
+  max-width: 650px;
+  background-color: #fff;
+  padding: 45px 30px 20px;
+  #Q-A_title{
+    background-color: #26a69a;
+    margin: 0 auto 25px;
+    color: #fff;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 2;
+  }
+  #Q-A_area{
+    width: 100%;
+    .pare_of_Q-A{
+      width: 100%;
+      margin-bottom: 35px;
+      .question{
+        width: 100%;
+        margin: 5px 0;
+        background-color: #f3f3f3;
+        display: flex;
+        position: relative;
+        .Q{
+          width: 24px;
+          opacity: 50%;
+          background-color: #26a69a;
+          color: #fff;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .question_textarea{
+          padding: 10px 25px 10px 10px;
+          p{
+            line-height: 1.5;
+          }
+        }
+        .show_ans_wrapper{
+          display: flex;
+          align-items: center;
+          position: absolute;
+          right: 4px;
+          height: 100%;
+          .show_ans{
+            width: 24px;
+            height: 20px;
+            position: relative;
+            &::before{
+              content: "";
+              width: 2px;
+              height: 20px;
+              background-color: #000;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 9px;
+            }
+            &::after{
+              content: "";
+              width: 2px;
+              height: 20px;
+              background-color: #000;
+              display: block;
+              transform: rotate(90deg);
+              position: absolute;
+              top: 0;
+              left: 9px;
+            }
+          }
+          .hide_ans{
+            width: 24px;
+            height: 20px;
+            position: relative;
+            &::after{
+              content: "";
+              width: 2px;
+              height: 20px;
+              background-color: #000;
+              display: block;
+              transform: rotate(90deg);
+              position: absolute;
+              top: 0;
+              left: 9px;
+            }
+          }
+        }
+      }
+      .answer{
+        width: 100%;
+        margin: 5px 0;
+        background-color: #f3f3f3;
+        display: none;
+        position: relative;
+        .A{
+          width: 24px;
+          opacity: 50%;
+          background-color: #ff7575;
+          color: #fff;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .ans_textarea{
+          padding: 10px 25px 10px 10px;
+          p{
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.user-contact{
+  max-width: var.$max_width;
+  margin: 0 auto;
+  padding: 45px 30px 20px;
+  &__tittle{
+    background-color: #26a69a;
+    margin: 0 auto 25px;
+    color: #fff;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 2;
+    &.done{
+      width: 275px;
+      margin-top: 25px;
+    }
+    &.contact{
+      width: 200px;
+    }
+  }
+  &__form{
+    max-width: 650px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    border-radius: 16px;
+    border: solid #000 1px;
+    &_inputBox{
+      display: flex;
+      justify-content: center;
+    }
+    &_contents{
+      width: 164px;
+      margin: 2.5px 35px 0 0;
+      @include mixin.sp{
+        display: none;
+      }
+      &_li{
+        margin-bottom: 25px;
+      }
+    }
+    &_input-area{
+      &_input{
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    &_head{
+      margin-bottom: 3px;
+      @include mixin.pc{
+        display: none;
+      }
+    }
+    &_submit{
+      background-color: #65a0f6;
+      color: #fff;
+      display: block;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 2;
+      padding: 0 20px;
+      box-shadow: #555 3px 3px 3px;
+      transition: 200ms;
+      margin: 0 auto;
+      &:hover{
+          transform: translateY(1px);
+          box-shadow: #000 1px 1px 1px;
+      }
+    }
+  }
+}
+
+.return_q-a{
+  background-color: #65a0f6;
+  color: #fff;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 144px;
+  line-height: 2;
+  text-align: center;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+  margin: 20vh auto 0;
+  &:hover{
+      transform: translateY(1px);
+      box-shadow: #000 1px 1px 1px;
+  }
+}

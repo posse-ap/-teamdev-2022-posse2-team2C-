@@ -1,0 +1,156 @@
+//ヘッダーのハンバーガーメニュー
+//開く
+@keyframes open_menu_1 {
+  100%{
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes open_menu_2 {
+  100%{
+    position: absolute;
+    top: 18px;
+    opacity: 0;
+  }
+}
+@keyframes open_menu_3 {
+  100%{
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+}
+@keyframes open_menu_4 {
+  100%{
+    position: absolute;
+    top: 18px;
+    opacity: 1;
+  }
+}
+@keyframes open_menu_5 {
+  100%{
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5);
+    top: 78px;
+  }
+}
+
+#header{
+  #menu_wrapper{
+    #menu.cross{
+      span:nth-of-type(1){
+        animation: open_menu_1 400ms;
+        animation-fill-mode: forwards;
+      }
+      span:nth-of-type(2){
+        animation: open_menu_2 400ms;
+        animation-fill-mode: forwards;
+      }
+      span:nth-of-type(3){
+        animation: open_menu_3 400ms;
+        animation-fill-mode: forwards;
+      }
+      span:nth-of-type(4){
+        animation: open_menu_4 400ms;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+#nav_area.shown{
+  animation: open_menu_5 400ms;
+  animation-fill-mode: forwards;
+}
+//閉じる
+@keyframes close_menu_1 {
+  0%{
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+  100%{
+    width: 45px;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+@keyframes close_menu_2 {
+  0%{
+    position: absolute;
+    top: 18px;
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    top: 7px;
+  }
+}
+@keyframes close_menu_3 {
+  0%{
+    width: 30px;
+    top: 5px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+  100%{
+    width: 45px;
+    top: 30px;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+@keyframes close_menu_4 {
+  0%{
+    position: absolute;
+    top: 18px;
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    top: 7px;
+  }
+}
+@keyframes close_menu_5 {
+  0%{
+    top: 78px;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5);
+  }
+  100%{
+    opacity: 0;
+    top: 1000px;
+  }
+}
+
+#header{
+  #menu_wrapper{
+    #menu.menu{
+      span:nth-of-type(1){
+        animation: close_menu_1 400ms;
+        animation-fill-mode: forwards;
+      }
+      span:nth-of-type(2){
+        animation: close_menu_2 400ms;
+        animation-fill-mode: forwards;
+      }
+      span:nth-of-type(3){
+        animation: close_menu_3 400ms;
+        animation-fill-mode: forwards;
+      }
+      span:nth-of-type(4){
+        animation: close_menu_4 400ms;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+#nav_area.hidden{
+  animation: close_menu_5 400ms;
+  animation-fill-mode: forwards;
+}
