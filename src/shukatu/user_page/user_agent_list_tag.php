@@ -312,7 +312,7 @@ session_regenerate_id(true);
                         </a>
                     </div>
 
-            <?php }
+            <?php }}
             } catch (Exception $e) {
                 print "只今障害が発生しております。<br><br>";
                 echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
