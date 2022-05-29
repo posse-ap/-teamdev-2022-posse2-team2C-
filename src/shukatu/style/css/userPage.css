@@ -482,7 +482,7 @@ body {
 .user_favorite__btn {
   width: 90%;
   max-width: 650;
-  margin: 20px auto 0;
+  margin: 20px auto 30px;
   display: flex;
   justify-content: center;
 }
@@ -1261,6 +1261,22 @@ body {
   color: #ff3c00;
   display: block;
 }
+.student_info__form_agree_text {
+  overflow: scroll;
+  height: 80px;
+  border: solid 1px #000;
+  box-sizing: border-box;
+}
+.student_info__form_agree_text p {
+  padding: 5px;
+  background-color: #fff;
+}
+.student_info__form_agree_checkbox {
+  padding: 3px;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
 .student_info__form div {
   background-color: #fafafa;
   display: flex;
@@ -1281,8 +1297,12 @@ body {
   border: solid #000 1px;
   padding: 8px 0 0 5px;
 }
-.student_info__form_input_area input {
+.student_info__form_input_area input[type=text] {
   width: 45%;
+}
+.student_info__form_input_area.agree {
+  height: 110px;
+  position: relative;
 }
 .student_info__form_btn {
   width: 100%;
@@ -1322,6 +1342,9 @@ body {
 .student_info__form_btn_ok:hover {
   transform: translateY(1px);
   box-shadow: #000 1px 1px 1px;
+}
+.student_info__form_btn_ok.untouchable {
+  pointer-events: none;
 }
 .student_info__agent_id {
   display: none;
@@ -1892,6 +1915,12 @@ body {
 .both-search__btn:active {
   transform: translate(0rem, 0.75rem);
 }
+.both-search.untouchable {
+  pointer-events: none;
+}
+.both-search.untouchable .both-search__btn_text {
+  background: #c4c4c4;
+}
 
 .tag-search {
   display: flex;
@@ -1928,9 +1957,15 @@ body {
   display: block;
   padding: 0.7rem 2rem;
   transition: all 0.3s;
-  border: 1.5px solid #000;
   border-radius: inherit;
-  background: #cacaca;
+  background: #26a69a;
+  color: #fff;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.tag-search__btn_text:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 
 .tag {
@@ -2027,7 +2062,7 @@ body {
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: #212529;
+  color: #fff;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0;
@@ -2039,9 +2074,14 @@ body {
   display: block;
   padding: 0.7rem 2rem;
   transition: all 0.3s;
-  border: 1.5px solid #000;
   border-radius: inherit;
-  background: #cacaca;
+  background: #26a69a;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.area-search__btn_text:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
 }
 
 .area {

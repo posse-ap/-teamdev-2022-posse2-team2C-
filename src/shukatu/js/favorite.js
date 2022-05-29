@@ -18,3 +18,4 @@ $(".heart_link").on("click", function() {
       location.href= link;
     }, 1000);
   });
+

@@ -16,6 +16,7 @@ $agent_id = $_GET["agent_id"];
     <link rel="stylesheet" href="../style/css/userPage.css">
     <!-- ファビコン -->
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
+    <script src="../js/form.js" defer></script>
 </head>
 
 <body>
@@ -26,15 +27,12 @@ $agent_id = $_GET["agent_id"];
             <ol class="c-stepper">
                 <li class="c-stepper__item c-stepper__item_here">
                     <h3 class="c-stepper__title">情報の入力</h3>
-                    <p class="c-stepper__desc">Some desc text</p>
                 </li>
                 <li class="c-stepper__item">
                     <h3 class="c-stepper__title">内容確認</h3>
-                    <p class="c-stepper__desc">Some desc text</p>
                 </li>
                 <li class="c-stepper__item">
                     <h3 class="c-stepper__title">申請完了</h3>
-                    <p class="c-stepper__desc">Some desc text</p>
                 </li>
             </ol>
         </div>
@@ -116,9 +114,26 @@ $agent_id = $_GET["agent_id"];
                     <input type="text" name="the_year_of_grad">
                 </span>
             </div>
+            <div>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    個人情報の取り扱い</span>
+                <span class="student_info__form_input_area agree">
+                    <div class="student_info__form_agree_text">
+                        <p>
+                            boozer（以下「当社」といいます）は、個人情報の取扱いに関する社内規程を定め、当社個人情報の取扱いの総責任者となる個人情報保護管理者のもと各部門個人情報管理者を選任し、個人情報の管理体制を整備しています。当社がお客さま、お取引先やパートナー企業さま等（以下「お客さま等」といいます）からお預かりする個人情報、匿名加工情報（以下「個人情報等」）は次のものです。<br>
+                            当社は、匿名加工情報の適正な取扱いを確保するため、個人情報と同様の安全管理措置、個人情報の開示、訂正、削除等の処理などの措置を講じております。
+                        </p>
+                    </div>
+                    <span class="student_info__form_agree_checkbox">
+                        <label for="agree">同意する</label>
+                        <input type="checkbox" id="agree" value="同意する">
+                    </span>
+                </span>
+            </div>
             <span class="student_info__form_btn">
                 <input type="button" onclick="history.back()" value="戻る" class="student_info__form_btn_back">
-                <input type="submit" value="OK" class="student_info__form_btn_ok">
+                <input type="submit" value="OK" class="student_info__form_btn_ok untouchable">
             </span>
 
         </form>

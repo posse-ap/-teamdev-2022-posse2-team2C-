@@ -80,6 +80,7 @@ function reset() {
   prefectures.forEach(function (element) {
     element.firstElementChild.checked = false;
   });
+  both_search_btn.classList.add("untouchable");
 }
 function determine() {
   hide_area();
@@ -139,4 +140,35 @@ const search_box = document.querySelector(".tag-area-search__wrapper");
 search_switcher.addEventListener("click", function () {
   search_box.classList.toggle("shown");
   searchBtn.classList.toggle("shown");
+});
+
+//タグ、エリア選んでないとき
+const checkboxes_tag = document.querySelectorAll(".tag__input");
+const checkboxes_prefecture = document.querySelectorAll(".area__prefecture");
+const both_search_btn = document.querySelector(".both-search");
+const tag_reset_btn = document.querySelector("#rest_btn");
+
+function search_btn_color(){
+  both_search_btn.classList.add("untouchable");
+  checkboxes_tag.forEach(function (element_tag) {
+    if (element_tag.firstChild.checked) {
+      checkboxes_prefecture.forEach(function (element_prefecture) {
+        if (element_prefecture.firstChild.checked) {
+          both_search_btn.classList.remove("untouchable");
+        }
+      });
+    }
+  });
+}
+
+checkboxes_tag.forEach(function (element) {
+  element.firstChild.addEventListener("click", function () {
+    search_btn_color();
+  });
+});
+
+checkboxes_prefecture.forEach(function (element) {
+  element.firstChild.addEventListener("click", function () {
+    search_btn_color();
+  });
 });
