@@ -103,35 +103,6 @@ if (isset($_SESSION["login"]) === false) {
         </div>
         </div>
     <?php
-
-        //ずっとループ
-
-        //  $rec_2 = $stmt_2 -> fetch(PDO::FETCH_ASSOC);
-        //  if($rec_2 === false) {
-        //      break;
-        //  }
-        //  //エージェントid
-        //  print $rec_2["agent_id"]."<br>";
-        //  //キャッチフレーズ
-        //  print $rec_2["catchphrase"]."<br>";
-        //  //特徴
-        //  print $rec_2["feature"]."<br>";
-        //  //地域code tableできたら繋げる
-        //  print $rec_2["region_code"]."<br>";
-        //  //県code
-        //  print $rec_2["prefecture_code"]."<br>";
-        //  //オンライン面談可否
-        //  print $rec_2["online_meeting"]."<br>";
-        //  print "<br>";
-        //   //会員数
-        //   print $rec_2["membership"]."<br>";
-        //   print "<br>";
-        //    //メリット
-        //  print $rec_2["pros"]."<br>";
-        //  print "<br>";
-        //   //デメリット
-        //   print $rec_2["cons"]."<br>";
-        //   print "<br>";
     } catch (Exception $e) {
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
         print "<a href='../boozer_login/boozer_login.html'>ログイン画面へ</a>";

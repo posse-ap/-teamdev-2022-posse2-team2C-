@@ -40,10 +40,6 @@ if (isset($_SESSION["login"]) === false) {
 
 <body>
     <?php include "../common/boozer_page_header.php"; ?>
-
-    <!-- <div class="boozer_top_page_container"> -->
-
-
     <div class="boozer-page__right-page-container">
         <form action="agent_add_check.php" method="post" enctype="multipart/form-data" width="100%">
             <div class="agent_reg_form_wrapper">
@@ -130,7 +126,6 @@ if (isset($_SESSION["login"]) === false) {
                                 <?php echo $rec_2["tag_name"]; ?></input>
                             </div><?php } ?>
                     </div>
-
                     <input type="submit" value="OK" class="form_submit_btn">
                 </div>
             </div>
