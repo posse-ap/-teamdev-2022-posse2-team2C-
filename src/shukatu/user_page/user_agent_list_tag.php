@@ -271,7 +271,7 @@ session_regenerate_id(true);
                 <div class="current-tag-area-search__wrapper">
                     <div class="current-area">
                         <span class="current-area_tittle">
-                            選択されているエリア
+                            エリア
                         </span>
                         <div class="current-area__areas_box">
                             <?php
@@ -304,8 +304,9 @@ session_regenerate_id(true);
                     </div>
                     <div class="current-tag">
                         <span class="current-tag_tittle">
-                            選択されているタグ
+                            タグ
                         </span>
+                        <div class="current-tag__tags_box">
                         <?php
                         $tag_names = $_GET["tag"];
                         foreach ($tag_names as $tag_name) {
@@ -332,6 +333,7 @@ session_regenerate_id(true);
                             }
                         }
                         ?>
+                        </div>
                     </div>
                 </div>
                 <div class="top-page__agent_position top-page__agent_position_tag">

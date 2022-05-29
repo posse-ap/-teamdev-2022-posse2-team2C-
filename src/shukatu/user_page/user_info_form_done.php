@@ -38,62 +38,80 @@ $agent_id = $_GET["agent_id"];
                 </li>
             </ol>
         </div>
-    
-        <form action="../student_info/student_info_db_check.php" method="post" class = "student_info__form">
-            <span class="student_info__form_warning">※全ての情報の入力してください</span>
-            <input type="text" name="agent_id" value="<?php echo $agent_id; ?>" class = "student_info__agent_id">
+
+        <form action="../student_info/student_info_db_check.php" method="post" class="student_info__form">
+            <span class="required">※は必須です。</span>
+            <input type="text" name="agent_id" value="<?php echo $agent_id; ?>" class="student_info__agent_id">
             <div>
-                <span class="student_info__form_tittle">お名前</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    お名前</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="student_family_name">
                     <input type="text" name="student_first_name">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">ふりがな</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    ふりがな</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="student_family_name_ruby">
                     <input type="text" name="student_first_name_ruby">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">メール</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    メール</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="email_address">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">電話番号</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    電話番号</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="phone_number">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">大学名</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    大学名</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="name_of_the_univ">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">学部</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    学部</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="faculty">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">学科</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    学科</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="department">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">学年</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    学年</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="school_year">
                 </span>
             </div>
             <div>
-                <span class="student_info__form_tittle">卒年</span>
+                <span class="student_info__form_tittle">
+                    <span class="required">※</span>
+                    卒年</span>
                 <span class="student_info__form_input_area">
                     <input type="text" name="the_year_of_grad">
                 </span>
@@ -102,7 +120,7 @@ $agent_id = $_GET["agent_id"];
                 <input type="button" onclick="history.back()" value="戻る" class="student_info__form_btn_back">
                 <input type="submit" value="OK" class="student_info__form_btn_ok">
             </span>
-    
+
         </form>
     </section>
     <footer>
