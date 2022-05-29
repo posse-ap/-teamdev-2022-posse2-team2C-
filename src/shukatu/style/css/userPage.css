@@ -1261,6 +1261,22 @@ body {
   color: #ff3c00;
   display: block;
 }
+.student_info__form_agree_text {
+  overflow: scroll;
+  height: 80px;
+  border: solid 1px #000;
+  box-sizing: border-box;
+}
+.student_info__form_agree_text p {
+  padding: 5px;
+  background-color: #fff;
+}
+.student_info__form_agree_checkbox {
+  padding: 3px;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
 .student_info__form div {
   background-color: #fafafa;
   display: flex;
@@ -1281,8 +1297,12 @@ body {
   border: solid #000 1px;
   padding: 8px 0 0 5px;
 }
-.student_info__form_input_area input {
+.student_info__form_input_area input[type=text] {
   width: 45%;
+}
+.student_info__form_input_area.agree {
+  height: 110px;
+  position: relative;
 }
 .student_info__form_btn {
   width: 100%;
@@ -1322,6 +1342,9 @@ body {
 .student_info__form_btn_ok:hover {
   transform: translateY(1px);
   box-shadow: #000 1px 1px 1px;
+}
+.student_info__form_btn_ok.untouchable {
+  pointer-events: none;
 }
 .student_info__agent_id {
   display: none;
