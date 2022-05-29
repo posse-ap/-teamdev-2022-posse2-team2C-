@@ -133,24 +133,9 @@
     &_detail-btn {
       display: block;
       transition: 400ms;
-      // border: 8px double #0090bb;
-      // background: #80cbc4;
-      // width: 128px;
-      // line-height: 2;
-      // padding: 0 16px;
-      // position: absolute;
-      // left: 50%;
-      // transform: translateX(-50%);
-      // bottom: 16px;
-      // transition: 200ms;
       &:hover{
-        // background: #ff6600;
-        // border: 8px double #ff6600;
         border: 3px solid var.$main_color;
       }
-      // &_text {
-      //   color: black;
-      // }
     }
   }
   &__tittle{
@@ -200,7 +185,7 @@
   &__btn{
     width: 90%;
     max-width: 650;
-    margin: 20px auto 0;
+    margin: 20px auto 30px;
     display: flex;
     @include mixin.sp{
       display: flex;

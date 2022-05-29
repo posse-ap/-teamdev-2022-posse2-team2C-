@@ -155,7 +155,7 @@ session_regenerate_id(true);
                     </div>
                     <div class="area__btn-area"></div>
                 </div>
-                <div class="both-search">
+                <div class="both-search untouchable">
                     <button class="both-search__btn">
                         <span class="both-search__btn_text">絞り込む
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
