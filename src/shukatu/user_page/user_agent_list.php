@@ -178,17 +178,30 @@ session_regenerate_id(true);
                         break;
                     }
                     $agent_id = $rec["agent_id"];
+
+                    $cart = $_SESSION["cart"];
                 ?>
                     <div class="top-page__agent">
                         <div class="top-page__agent_wrapper">
 
                             <div class="top-page__agent_img-wrapper">
                                 <div class="top-page__agent_heart">
-                                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                                        <div class="Likes">
-                                            <div class="LikesIcon"></div>
+                                    <?php
+                                    if (in_array($agent_id, $cart) === true) { ?>
+                                        <div class="likes">
+                                            <div class="LikedIcon">
+                                                <img src="../style/img/liked.png" width="150%">
+                                            </div>
                                         </div>
-                                    </a>
+
+                                    <?php };
+                                    if (in_array($agent_id, $cart) === false) { ?>
+                                        <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                            <div class="Likes">
+                                                <div class="LikesIcon"></div>
+                                            </div>
+                                        </a>
+                                    <?php }; ?>
                                 </div>
                                 <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
                                     <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
@@ -200,7 +213,7 @@ session_regenerate_id(true);
                             <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
                             <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
                         </div>
-                    
+
                     </div>
                 <?php } ?>
             </div>
