@@ -39,8 +39,10 @@ session_start();
 
     <?php
 
-    include "../common/user_page_header.html";
+    include "../common/user_page_header.html"; ?>
 
+    <section class="cart-in">
+    <?php
     //getでcodeの情報取ってくる    
     $agent_id = $_GET["agent_id"];
 
@@ -61,8 +63,8 @@ session_start();
 
         //既にお気に入りに入ってたらだめ
         if (in_array($agent_id, $cart) === true) {
-            print "すでにお気に入りにあります。<br><br>";
-            print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
+            print "<div class='cart-in_message'><p>すでにお気に入りにあります。</p></div>";
+            print "<a href='user_agent_list.php' class='cart-in_back_btn'>エージェント一覧へ戻る</a>";
         }
     }
     //どっちもクリアしてたら
@@ -72,13 +74,16 @@ session_start();
         $_SESSION["cart"] = $cart;
         $_SESSION["quantity"] = $quantity;
 
-        print "お気に入りに追加しました。<br><br>";
-        print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
+        print "<div class='cart-in_message'>お気に入りに追加しました。</div>";
+        print "<a href='user_agent_list.php' class='cart-in_back_btn'>エージェント一覧へ戻る</a>";
     }
 
     ?>
-    <br><br>
+    </section>
     <script src="../js/header.js"></script>
+    <footer class="footer_fixed">
+        <img src="../user_page/img/boozer_logo.png" alt="" id="boozer_logo">
+    </footer>
 </body>
 
 </html>
