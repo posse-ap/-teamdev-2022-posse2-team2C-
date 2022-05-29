@@ -1,6 +1,17 @@
 @use "../../base/var";
 @forward "../../base/var";
 
+.user_multiple-form{
+  width: 100%;
+  max-width: var.$max_width;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px 0;
+  &_fix_footer{
+    min-height: 100vh;
+  }
+}
+
 .user_info_multiple{
   &__wrapper{
     width: 90%;

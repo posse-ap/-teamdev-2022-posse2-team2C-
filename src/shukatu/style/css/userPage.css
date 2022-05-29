@@ -176,12 +176,24 @@ header #menu_wrapper #menu span:nth-of-type(4) {
 
 footer {
   background-color: #26a69a;
+  width: 100vw;
   height: 100px;
+  box-sizing: border-box;
+  padding-top: 16px;
 }
 footer #boozer_logo {
   margin: 0 auto;
   display: block;
   width: 288px;
+}
+
+.footer_fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+body {
+  background-color: #e2fffc;
 }
 
 .top-page__main_contents {
@@ -199,7 +211,6 @@ footer #boozer_logo {
 }
 @media screen and (min-width: 767px) {
   .top-page__agent_position {
-    border-top: solid 1px #000;
     border-right: solid 1px #000;
     box-sizing: border-box;
   }
@@ -276,11 +287,75 @@ footer #boozer_logo {
   box-shadow: #888 1px 1px 1px;
 }
 
+.cartArea {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 0;
+  margin: 0 auto;
+  padding: 20px 0 100px;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.cart-in {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 0;
+  margin: 0 auto;
+  padding: 20vh 0 0;
+  background-color: #fff;
+  min-height: 100vh;
+}
+.cart-in_message {
+  margin: 0 auto 30px;
+  font-size: 16px;
+  width: 230px;
+}
+.cart-in_back_btn {
+  display: block;
+  background-color: #65a0f2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 175px;
+  line-height: 2;
+  padding: 0 10px;
+  margin: 0 auto;
+  box-shadow: #555 3px 3px 3px;
+  transition: 200ms;
+}
+.cart-in_back_btn:hover {
+  transform: translateY(1px);
+  box-shadow: #000 1px 1px 1px;
+}
+
+.user_empty-cart {
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 25px;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.user-favorites {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px 0;
+}
+
 .user_favorite__agent_position {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 95%;
+  max-width: 900px;
   margin: 0 auto;
 }
 .user_favorite__agent {
@@ -326,7 +401,7 @@ footer #boozer_logo {
 }
 .user_favorite__agent_text {
   align-items: baseline;
-  margin-bottom: 75px;
+  margin-bottom: 16px;
   line-height: 2rem;
 }
 .user_favorite__agent_text_company-name {
@@ -338,27 +413,15 @@ footer #boozer_logo {
   display: block;
 }
 .user_favorite__agent_detail-btn {
-  border: 8px double #0090bb;
-  background: #80cbc4;
-  width: 128px;
-  line-height: 2;
-  padding: 0 16px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 16px;
-  transition: 200ms;
+  display: block;
+  transition: 400ms;
 }
 .user_favorite__agent_detail-btn:hover {
-  background: #ff6600;
-  border: 8px double #ff6600;
-}
-.user_favorite__agent_detail-btn_text {
-  color: black;
+  border: 3px solid #26a69a;
 }
 .user_favorite__tittle {
   background-color: #26a69a;
-  margin: 45px auto 25px;
+  margin: 0 auto 25px;
   color: #fff;
   height: 50px;
   width: 300px;
@@ -368,12 +431,41 @@ footer #boozer_logo {
   line-height: 2;
 }
 .user_favorite__delete {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+.user_favorite__delete input[type=checkbox] {
+  display: none;
+}
+.user_favorite__delete input[type=checkbox] + label {
+  position: relative;
+}
+.user_favorite__delete input[type=checkbox] + label::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: solid 1px #000;
+}
+.user_favorite__delete input[type=checkbox]:checked + label::after {
+  content: "";
+  width: 20px;
+  height: 10px;
+  border-left: 2px solid #26a69a;
+  border-bottom: 2px solid #26a69a;
+  transform: rotate(-45deg);
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -23px;
 }
 .user_favorite__btn {
   width: 90%;
   max-width: 650;
-  margin: 20px auto;
+  margin: 20px auto 0;
   display: flex;
   justify-content: center;
 }
@@ -384,6 +476,7 @@ footer #boozer_logo {
   }
 }
 .user_favorite__btn_delete {
+  display: none;
   background-color: #ffff65;
   border: none;
   border-radius: 8px;
@@ -429,7 +522,7 @@ footer #boozer_logo {
 .user_favorite__go_form {
   display: block;
   margin-left: 5px;
-  width: 144px;
+  width: 160px;
   background-color: #26a69a;
   color: #fff;
   font-size: 16px;
@@ -487,6 +580,14 @@ footer #boozer_logo {
 .empty_cart__btn_back:hover {
   transform: translate3d(-50%, -45%, 0);
   box-shadow: #000 1px 1px 1px;
+}
+
+.user_agentDetail {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #fff;
 }
 
 .detail-page__agent {
@@ -608,9 +709,17 @@ footer #boozer_logo {
   font-family: "Sawarabi Gothic", sans-serif;
 }
 
+.user_howToUse {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 45px;
+  background-color: #fff;
+}
+
 .head_howToUse {
   background-color: #26a69a;
-  margin: 45px auto 25px;
+  margin: 0 auto 25px;
   color: #fff;
   height: 50px;
   width: 400px;
@@ -682,14 +791,22 @@ footer #boozer_logo {
   width: 300px;
 }
 
-#Q-A {
-  width: 90%;
+.user_Q-A {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  background-color: #fff;
+}
+
+#Q-A {
+  margin: 0 auto 0;
   max-width: 650px;
+  background-color: #fff;
+  padding: 45px 30px 20px;
 }
 #Q-A #Q-A_title {
   background-color: #26a69a;
-  margin: 45px auto 25px;
+  margin: 0 auto 25px;
   color: #fff;
   height: 50px;
   width: 200px;
@@ -723,7 +840,7 @@ footer #boozer_logo {
   justify-content: center;
 }
 #Q-A #Q-A_area .pare_of_Q-A .question .question_textarea {
-  padding: 10px;
+  padding: 10px 25px 10px 10px;
 }
 #Q-A #Q-A_area .pare_of_Q-A .question .question_textarea p {
   line-height: 1.5;
@@ -795,10 +912,35 @@ footer #boozer_logo {
   justify-content: center;
 }
 #Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea {
-  padding: 10px;
+  padding: 10px 25px 10px 10px;
 }
 #Q-A #Q-A_area .pare_of_Q-A .answer .ans_textarea p {
   line-height: 1.5;
+}
+
+.user-contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 45px 30px 20px;
+  background-color: #fff;
+}
+.user-contact__tittle {
+  background-color: #26a69a;
+  margin: 0 auto 25px;
+  color: #fff;
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2;
+}
+.user-contact__form {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  padding: 20px;
+  border-radius: 16px;
+  border: solid #000 1px;
 }
 
 .check_area {
@@ -1018,6 +1160,17 @@ footer #boozer_logo {
 .student_info__agent_id {
   display: none;
   position: absolute;
+}
+
+.user_multiple-form {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 25px 0;
+}
+.user_multiple-form_fix_footer {
+  min-height: 100vh;
 }
 
 .user_info_multiple__wrapper {
@@ -1384,7 +1537,6 @@ footer #boozer_logo {
 
 .top_page__search_area_pc {
   width: 25%;
-  border-top: solid 1px #000;
 }
 @media screen and (max-width: 767px) {
   .top_page__search_area_pc {
@@ -1491,7 +1643,7 @@ footer #boozer_logo {
     bottom: 20px;
     right: 12.5%;
     transform: translateX(50%);
-    transition: 1s;
+    transition: 200ms;
   }
 }
 @media screen and (min-width: 767px) and (min-width: 1200px) {

@@ -15,99 +15,67 @@
 
 <body>
   <?php include "../common/user_page_header.html" ?>
-  <!-- figma通りやったやつ（途中まで） -->
-  <!-- <div id="title_howToUse">CRAFT利用の流れ</div>
-  <div id="user_flow">
-    <div class="steps">
-      <p id="step_1">①エージェントを探す</p>
-      <div class="icon"></div>
-    </div>
-    <div id="arrow_flow">→</div>
-
-    <div class="steps">
-      <p id="step_2">②問い合わせ申請</p>
-      <div class="icon"></div>
-    </div>
-    <div id="arrow_flow">→</div>
-
-    <div class="steps">
-      <p id="step_3">③各エージェントから連絡</p>
-      <div class="icon"></div>
-    </div>
-    <div id="arrow_flow">→</div>
-
-    <div class="steps">
-      <p id="step_4">④エージェントに登録</p>
-      <div class="icon"></div>
-    </div>
-    <div id="arrow_flow">→</div>
-
-    <div class="steps">
-      <p id="step_5">⑤面談や企業紹介</p>
-      <div class="icon"></div>
-    </div>
-  </div> -->
-
-  <!-- こっち勝手にやったやつ -->
-  <h1 class="head_howToUse">CRAFT利用簡単2ステップ!</h1>
-  <div class="user_flow">
-    <div id="step1" class="steps">
-      <h2 class="head_flow">step1 絞り込み</h2>
-      <div class="text_flow">・自分の住んでいるエリアで面談可能なエージェントを絞り込み</div>
-      <div class="images">
-        <img src="../user_page/img/flow_sort_1.png" alt="" id="flow_img_1">
-        <div class="arrow_flow">→</div>
-        <img src="../user_page/img/flow_sort_2.png" alt="" id="flow_img_2">
+  <section class="user_howToUse">
+    <h1 class="head_howToUse">CRAFT利用簡単2ステップ!</h1>
+    <div class="user_flow">
+      <div id="step1" class="steps">
+        <h2 class="head_flow">step1 絞り込み</h2>
+        <div class="text_flow">・自分の住んでいるエリアで面談可能なエージェントを絞り込み</div>
+        <div class="images">
+          <img src="../user_page/img/flow_sort_1.png" alt="" id="flow_img_1">
+          <div class="arrow_flow">→</div>
+          <img src="../user_page/img/flow_sort_2.png" alt="" id="flow_img_2">
+        </div>
+        <div class="text_flow">・タグを使って自分にぴったりのエージェントを探す</div>
+        <div class="images">
+          <img src="../user_page/img/flow_sort_3.png" alt="" id="flow_img_3">
+          <div class="arrow_flow">→</div>
+          <img src="../user_page/img/flow_sort_4.png" alt="" id="flow_img_4">
+        </div>
+  
       </div>
-      <div class="text_flow">・タグを使って自分にぴったりのエージェントを探す</div>
-      <div class="images">
-        <img src="../user_page/img/flow_sort_3.png" alt="" id="flow_img_3">
-        <div class="arrow_flow">→</div>
-        <img src="../user_page/img/flow_sort_4.png" alt="" id="flow_img_4">
+  
+      <div id="step2" class="steps">
+        <h2 class="head_flow">step2 申請</h2>
+        <div class="text_flow">・気になるエージェントの詳細画面へ行き、申請ボタンをクリック</div>
+        <div class="images">
+          <img src="../user_page/img/flow_5.png" alt="" id="flow_img_5">
+          <div class="arrow_flow">→</div>
+          <img src="../user_page/img/flow_6.png" alt="" id="flow_img_6">
+        </div>
+        <div class="text_flow">・必要な情報を入力して、申請する</div>
+        <div class="images">
+          <img src="../user_page/img/flow_7.png" alt="" id="flow_img_7">
+          <div class="arrow_flow">→</div>
+          <img src="../user_page/img/flow_8.png" alt="" id="flow_img_8">
+        </div>
       </div>
-
-    </div>
-
-    <div id="step2" class="steps">
-      <h2 class="head_flow">step2 申請</h2>
-      <div class="text_flow">・気になるエージェントの詳細画面へ行き、申請ボタンをクリック</div>
-      <div class="images">
-        <img src="../user_page/img/flow_5.png" alt="" id="flow_img_5">
-        <div class="arrow_flow">→</div>
-        <img src="../user_page/img/flow_6.png" alt="" id="flow_img_6">
-      </div>
-      <div class="text_flow">・必要な情報を入力して、申請する</div>
-      <div class="images">
-        <img src="../user_page/img/flow_7.png" alt="" id="flow_img_7">
-        <div class="arrow_flow">→</div>
-        <img src="../user_page/img/flow_8.png" alt="" id="flow_img_8">
+  
+      <div id="step3" class="steps">
+        <h2 class="head_flow">あとは待つだけ！</h2>
+        <div class="text_flow">エージェントから個別にメールがきます</div>
+        <div class="images">
+          <img src="../user_page/img/flow_9.png" alt="" id="flow_img_9">
+        </div>
       </div>
     </div>
-
-    <div id="step3" class="steps">
-      <h2 class="head_flow">あとは待つだけ！</h2>
-      <div class="text_flow">エージェントから個別にメールがきます</div>
-      <div class="images">
-        <img src="../user_page/img/flow_9.png" alt="" id="flow_img_9">
+  
+    <h1 class="head_howToUse">まとめて申請もできる！</h1>
+    <div class="user_flow">
+      <div class="steps">
+        <div class="text_flow">一覧画面やエージェント詳細ページの❤️からお気に入り登録</div>
+        <div class="images">
+          <img src="../user_page/img/flow_10.png" alt="" id="flow_img_10">
+          <p>or</p>
+          <img src="../user_page/img/flow_11.png" alt="" id="flow_img_11">
+        </div>
+        <div class="text_flow">お気に入り一覧から一括申請！</div>
+        <div class="images">
+          <img src="../user_page/img/flow_12.png" alt="" id="flow_img_12">
+        </div>
       </div>
     </div>
-  </div>
-
-  <h1 class="head_howToUse">まとめて申請もできる！</h1>
-  <div class="user_flow">
-    <div class="steps">
-      <div class="text_flow">一覧画面やエージェント詳細ページの❤️からお気に入り登録</div>
-      <div class="images">
-        <img src="../user_page/img/flow_10.png" alt="" id="flow_img_10">
-        <p>or</p>
-        <img src="../user_page/img/flow_11.png" alt="" id="flow_img_11">
-      </div>
-      <div class="text_flow">お気に入り一覧から一括申請！</div>
-      <div class="images">
-        <img src="../user_page/img/flow_12.png" alt="" id="flow_img_12">
-      </div>
-    </div>
-  </div>
+  </section>
 
   <footer>
     <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
