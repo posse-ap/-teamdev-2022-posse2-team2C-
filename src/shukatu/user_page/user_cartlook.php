@@ -34,7 +34,8 @@ session_start();
 </head>
 
 <body>
-
+<section class="whole-wrapper">
+    <div class="whole-wrapper__background"></div>
     <?php
     if (empty($_SESSION["cart"]) === true) {
         include "../common/user_page_header.html";
@@ -47,7 +48,7 @@ session_start();
         print "<a href='user_agent_list.php' class='empty_cart__btn_back'>一覧に戻る</a>";
         print "</div>"; ?>
         </section>
-        <footer class="footer_fixed">
+        <footer>
         <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
     </footer>
     <?php
@@ -137,9 +138,10 @@ session_start();
                 </div>
             </form>
         </section>
-        <footer class="footer_fixed">
+        <footer>
             <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
         </footer>
+</section>
 
 </body>
 

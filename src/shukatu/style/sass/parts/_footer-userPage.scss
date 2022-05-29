@@ -14,7 +14,9 @@ footer {
   }
 }
 
-.footer_fixed{
-  position: fixed;
-  bottom: 0;
+.whole-wrapper{
+  footer{
+    position: absolute;
+    bottom: 0;
+  }
 }

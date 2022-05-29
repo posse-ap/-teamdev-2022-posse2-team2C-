@@ -5,8 +5,8 @@
 @use "../base/var";
 @forward "../base/var";
 .current-tag-area-search__wrapper {
-  width: 80%;
-  margin-left: 20vh;
+  width: 90%;
+  margin: 20px auto 20px;
 }
 .current-area {
   background: rgb(239, 239, 239);
@@ -14,7 +14,6 @@
   border: 1px solid black;
   padding: 5px;
   margin: 5px;
-
   &_tittle {
     border: 1px solid black;
     padding: 3px;

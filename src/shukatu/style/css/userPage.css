@@ -1,3 +1,19 @@
+.whole-wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+.whole-wrapper__background {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  z-index: -1000;
+}
+
 header {
   background-color: #26a69a;
   width: 100vw;
@@ -187,8 +203,8 @@ footer #boozer_logo {
   width: 288px;
 }
 
-.footer_fixed {
-  position: fixed;
+.whole-wrapper footer {
+  position: absolute;
   bottom: 0;
 }
 
@@ -219,6 +235,9 @@ body {
   .top-page__agent_position {
     margin: 0 auto;
   }
+}
+.top-page__agent_position_tag {
+  padding-bottom: 130px;
 }
 .top-page__agent {
   display: flex;
@@ -295,7 +314,6 @@ body {
   margin: 0 auto;
   padding: 20px 0 100px;
   background-color: #fff;
-  min-height: 100vh;
 }
 
 .cart-in {
@@ -334,12 +352,11 @@ body {
 
 .user_empty-cart {
   display: block;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 25px;
   background-color: #fff;
-  min-height: 100vh;
 }
 
 .user-favorites {
@@ -545,7 +562,7 @@ body {
 
 .empty_cart {
   width: 90%;
-  max-width: 650px;
+  max-width: 1200px;
   margin: 25px auto;
 }
 .empty_cart__message {
@@ -585,7 +602,6 @@ body {
 .user_agentDetail {
   width: 100%;
   max-width: 1200px;
-  min-height: 100vh;
   margin: 0 auto;
   background-color: #fff;
 }
@@ -1507,8 +1523,8 @@ body {
 }
 
 .current-tag-area-search__wrapper {
-  width: 80%;
-  margin-left: 20vh;
+  width: 90%;
+  margin: 20px auto 20px;
 }
 
 .current-area {
