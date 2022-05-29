@@ -83,71 +83,6 @@ session_regenerate_id(true);
             $stmt->execute();
             $dbh = null;
         ?>
-
-            <!-- <div class="current-tag-area-search__wrapper">
-                <div class="current-area">
-                    <span class="current-area_tittle">
-                        選択されているエリア
-                    </span>
-                    <?php
-                    $tag_names = $_GET["tag"];
-                    foreach ($tag_names as $tag_name) {
-                        $show_tag = $tag_name;
-
-
-                        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                        $user = "root";
-                        $password = "password";
-                        $dbh_2 = new PDO($dsn, $user, $password);
-                        $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                        $stmt_2 = $dbh_2->prepare($sql_2);
-                        $stmt_2->execute();
-                        $dbh_2 = null;
-                        while (true) {
-                            $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                            if ($rec_2 === false) {
-                                break;
-                            } ?>
-                            <div><?php echo $rec_2["tag_name"]; ?>
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="current-tag">
-                    <span class="current-tag_tittle">
-                    選択されているタグ
-                    </span>
-                    <?php
-                    $tag_names = $_GET["tag"];
-                    foreach ($tag_names as $tag_name) {
-                        $show_tag = $tag_name;
-
-
-                        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                        $user = "root";
-                        $password = "password";
-                        $dbh_2 = new PDO($dsn, $user, $password);
-                        $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                        $stmt_2 = $dbh_2->prepare($sql_2);
-                        $stmt_2->execute();
-                        $dbh_2 = null;
-                        while (true) {
-                            $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                            if ($rec_2 === false) {
-                                break;
-                            } ?>
-                            <div><?php echo $rec_2["tag_name"]; ?>
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
-                </div> -->
             <div class="tag-area-search__wrapper">
                 <div class="tag-search">
                     <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
@@ -269,7 +204,7 @@ session_regenerate_id(true);
 
             <div class="top-page__main_contents">
                 <div class="current-tag-area-search__wrapper">
-                    <div class="current-area">
+                    <!-- <div class="current-area">
                         <span class="current-area_tittle">
                             エリア
                         </span>
@@ -301,7 +236,7 @@ session_regenerate_id(true);
                             }
                             ?>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="current-tag">
                         <span class="current-tag_tittle">
                             タグ
