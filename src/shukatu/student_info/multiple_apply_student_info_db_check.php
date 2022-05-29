@@ -21,10 +21,9 @@ $max = count($cart);
 
 <body>
 
-    <?php
+    <?php include "../common/user_page_header.html"; ?>
 
-    include "../common/user_page_header.html"; ?>
-
+    <section class="user_multiple-form">
     <div class="form-step">
         <ol class="c-stepper">
             <li class="c-stepper__item">
@@ -103,7 +102,7 @@ $max = count($cart);
     ?>
 
         <form action='multiple_apply_student_info_db_done.php' method='post' class="student_info__form">
-            <input type="hidden" name="cart" value="<?php echo $cart; ?>">
+        <input type="hidden" name="cart" value="<?php echo $cart; ?>">
 
             <div>
                 <span class="student_info__form_tittle">お名前</span>
@@ -161,30 +160,6 @@ $max = count($cart);
                     <input type="text" name="the_year_of_grad" value="<?php print $the_year_of_grad ?>">
                 </span>
             </div>
-
-
-            <!-- <li><input type="text" name="student_family_name" value="<?php echo $student_family_name ?>"></li>
-
-                <li><input type="text" name="student_first_name" value="<?php echo $student_first_name ?>"></li> -->
-
-            <!-- <li><input type="text" name="student_family_name_ruby" value="<?php echo $student_family_name_ruby ?>"></li> -->
-
-            <!-- <li><input type="text" name="student_first_name_ruby" value="<?php print $student_first_name_ruby ?>"></li> -->
-
-            <!-- <li><input type="text" name="email_address" value="<?php print $email_address ?>"></li> -->
-
-            <!-- <li><input type="text" name="phone_number" value="<?php print $phone_number ?>"></li> -->
-
-            <!-- <li><input type="text" name="name_of_the_univ" value="<?php print $name_of_the_univ ?>"></li> -->
-
-            <!-- <li><input type="text" name="faculty" value="<?php print $faculty ?>"></li> -->
-
-            <!-- <li><input type="text" name="department" value="<?php print $department ?>"></li> -->
-
-            <!-- <li><input type="text" name="school_year" value="<?php print $school_year ?>"></li> -->
-
-            <!-- <li><input type="text" name="the_year_of_grad" value="<?php print $the_year_of_grad ?>"></li> -->
-
             <span class="student_info_check__btn_area">
                 <input type='button' onclick='history.back()' value='戻る' class="back_btn">
                 <input type='submit' value='登録' class="submit_btn">
@@ -194,6 +169,10 @@ $max = count($cart);
         <?php
     }
         ?>
+    </section>
+    <footer>
+        <img src="../user_page/img/boozer_logo.png" alt="" id="boozer_logo">
+    </footer>
 </body>
 
 </html>
