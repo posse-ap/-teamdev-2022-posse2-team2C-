@@ -193,7 +193,7 @@ session_regenerate_id(true);
                                 <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
                                     <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
                                 </a>
-                                <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
+                                <!-- <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div> -->
                             </div>
                         </div>
                         <div class="top-page__agent_text">

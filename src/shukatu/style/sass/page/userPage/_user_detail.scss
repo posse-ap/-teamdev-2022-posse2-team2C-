@@ -14,9 +14,13 @@
     &__agent {
         margin-left: 5%;
         margin-top: 3%;
+        padding: 5px;
         width: 50%;
+        border: solid #c4c4c4 2px;
+        position: relative;
         @include mixin.sp{
             width: 80%;
+            margin: 25px auto 0;
         }
 
         &_wrapper{
@@ -29,13 +33,13 @@
 
         &_heart {
             position: absolute;
-            top: -5%;
+            top: -26px;
+            right: -20px;
         }
 
         &_img-wrapper {
             width: 100%;
             height: auto;
-            position: relative;
             border-radius: 30px;
             filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
         }
@@ -74,6 +78,11 @@
             transform: translateY(1px);
             box-shadow: #000 1px 1px 1px;
         }
+        &_wrapper{
+            @include mixin.sp{
+                padding-bottom: 130px;
+            }
+        }
     }
 }
 .detail_page{
@@ -89,10 +98,11 @@
 }
 .detail_page__text_wrapper{
     width: 50%;
+    margin-top: 100px;
     @include mixin.sp{
         width: 100%;
+        margin-top: 30px;
     }
-    margin-top: 100px;
     span{
         display: block;
         width: 80%;

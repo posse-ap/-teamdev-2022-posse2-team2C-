@@ -63,21 +63,21 @@ if (isset($_SESSION["member_login"]) === true) {
             ?>
             <div class="detail-page__agent_wrapper">
                 <div class="detail-page__agent">
+                    <div class="detail-page__agent_heart">
+                        <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                            <div class="Likes">
+                                <div class="LikesIcon"></div>
+                            </div>
+
+                        </a>
+                    </div>
                     <div>
                         <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>
                         <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
                     </div>
                     <div class="detail-page__agent_img-wrapper">
                         <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="detail-page__agent_img">
-                        <div class="detail-page__agent_tag"><span class="detail-page__agent_tag_text">#</span></div>
-                        <div class="detail-page__agent_heart">
-                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                                <div class="Likes">
-                                    <div class="LikesIcon"></div>
-                                </div>
-
-                            </a>
-                        </div>
+                        <!-- <div class="detail-page__agent_tag"><span class="detail-page__agent_tag_text">#</span></div> -->
                     </div>
                 </div>
 
@@ -94,24 +94,16 @@ if (isset($_SESSION["member_login"]) === true) {
 
 
             <a href='user_info_form_done.php?agent_id=<?php echo $agent_id; ?>' class='student-info-form__btn'>
-                <span class="student-info-form__btn_text">個人情報入力に進む</span>
+                <span class="student-info-form__btn_text">申請に進む</span>
             </a>
 
 
-            <form>
+            <form class="detail-page__back_btn_wrapper">
                 <input type="button" onclick="history.back()" value="一覧に戻る" class="detail-page__back_btn">
             </form>
         </section>
 
-        <!-- <h3>カテゴリー</h3> -->
-        <!-- <a href="shop_list_eart.php">食品</a><br>
-    <a href="shop_list_kaden.php">家電</a><br>
-    <a href="shop_list_book.php">書籍</a><br>
-    <a href="shop_list_niti.php">日用品</a><br>
-    <a href="shop_list_sonota.php">その他</a><br> -->
-        <script src="../js/header.js"></script>
-        <script src="../js/favorite.js"></script>
-        <script src="../js/user_page.js"></script>
+
         <footer>
             <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
         </footer>
