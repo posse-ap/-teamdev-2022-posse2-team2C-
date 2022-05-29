@@ -13,86 +13,93 @@
 </head>
 
 <body>
-    <?php include "../common/user_page_header.html" ?>
-    <?php
-    try {
-        require_once("../common/common.php");
-        //いつものやつ    
-        $post = sanitize($_POST);
-        $name = $post["name"];
-        $mail_address = $post["mail_address"];
-        $question = $post["question"];
+    <section class="whole-wrapper">
+        <div class="whole-wrapper__background"></div>
+        <?php include "../common/user_page_header.html" ?>
+        <?php
+        try {
+            require_once("../common/common.php");
+            //いつものやつ    
+            $post = sanitize($_POST);
+            $name = $post["name"];
+            $mail_address = $post["mail_address"];
+            $question = $post["question"];
 
-        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-        $user = "root";
-        $password = "password";
-        $dbh = new PDO($dsn, $user, $password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+            $user = "root";
+            $password = "password";
+            $dbh = new PDO($dsn, $user, $password);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //アカウント情報
-        $stmt = $dbh->prepare("INSERT INTO student_inquiry_form_table (student_name, mail_address, question) VALUES (:student_name, :mail_address, :question)");
-        $stmt->bindParam(':student_name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':mail_address', $mail_address, PDO::PARAM_STR);
-        $stmt->bindParam(':question', $question, PDO::PARAM_STR);
-        $stmt->execute();
-        $dbh = null;
+            //アカウント情報
+            $stmt = $dbh->prepare("INSERT INTO student_inquiry_form_table (student_name, mail_address, question) VALUES (:student_name, :mail_address, :question)");
+            $stmt->bindParam(':student_name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':mail_address', $mail_address, PDO::PARAM_STR);
+            $stmt->bindParam(':question', $question, PDO::PARAM_STR);
+            $stmt->execute();
+            $dbh = null;
 
-        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-        $user = "root";
-        $password = "password";
-        $dbh_2 = new PDO($dsn, $user, $password);
-        $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql_2 = "SELECT * FROM staff WHERE code=1";
-        $stmt_2 = $dbh_2->prepare($sql_2);
-        $stmt_2->execute();
-        $dbh_2 = null;
-        $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-    } catch (Exception $e) {
-        echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-        print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
-    }
-    ?>
-    <?php
-    $name = $_POST["name"];
-    $email = $_POST["mail_address"];
-    $text = $_POST["question"];
-    //boozerのメールアドレスはagent_code 1 が担当
-    $boozer_email = $rec_2["mail_address"];
+            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+            $user = "root";
+            $password = "password";
+            $dbh_2 = new PDO($dsn, $user, $password);
+            $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql_2 = "SELECT * FROM staff WHERE code=1";
+            $stmt_2 = $dbh_2->prepare($sql_2);
+            $stmt_2->execute();
+            $dbh_2 = null;
+            $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
+            print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
+        }
+        ?>
+        <?php
+        $name = $_POST["name"];
+        $email = $_POST["mail_address"];
+        $text = $_POST["question"];
+        //boozerのメールアドレスはagent_code 1 が担当
+        $boozer_email = $rec_2["mail_address"];
 
 
-    //boozer宛てメール
-    $from = $email;
-    $to = $boozer_email;
-    $subject =  'お問合せ';
-    $body = <<<EOD
-    学生の{$name}さんからお問合せが来ています。
-    <内容>
-    {$text}
-    至急対応してください。
-    EOD;
-    $headers = "From: {$email}";
-    // 最終的なメール
-    // メールを送信する
-    mb_send_mail($to, $subject, $body, $headers);
-    print("メールが送信されました。担当の方から該当のメールアドレスの方にお答えさせていただきます。少々お待ちください。");
+        //boozer宛てメール
+        $from = $email;
+        $to = $boozer_email;
+        $subject =  'お問合せ';
+        $body = <<<EOD
+        学生の{$name}さんからお問合せが来ています。
+        <内容>
+        {$text}
+        至急対応してください。
+        EOD;
+        $headers = "From: {$email}";
+        // 最終的なメール
+        // メールを送信する
+        mb_send_mail($to, $subject, $body, $headers);
+        // print("メールが送信されました。担当の方から該当のメールアドレスの方にお答えさせていただきます。少々お待ちください。");
 
-    //学生宛てメール
-    $from = $boozer_email;
-    $to = $email;
-    $subject =  '先ほどのお問合せに関しましてご案内';
-    $body = <<<EOD
-    {$name}さんのお問合せを承りました。
-    担当のものが回答いたします。もう少々お待ちください。
-    EOD;
-    $headers = "From: onokan@gmail.com";
-    // 最終的なメール
-    // メールを送信する
-    mb_send_mail($to, $subject, $body, $headers);
-    ?>
-    <div></div>
-    <h1>送信が完了しました。</h1>
-    <a href="./user_Q&A.php">Q&Aページに戻る</a>
-    </div>
+        //学生宛てメール
+        $from = $boozer_email;
+        $to = $email;
+        $subject =  '先ほどのお問合せに関しましてご案内';
+        $body = <<<EOD
+        {$name}さんのお問合せを承りました。
+        担当のものが回答いたします。もう少々お待ちください。
+        EOD;
+        $headers = "From: onokan@gmail.com";
+        // 最終的なメール
+        // メールを送信する
+        mb_send_mail($to, $subject, $body, $headers);
+        ?>
+        <div></div>
+        <h1 class="user-contact__tittle done">送信が完了しました</h1>
+        <a href="./user_Q&A.php" class="return_q-a">Q&Aページに戻る</a>
+        </div>
+        <footer>
+            <img src="../user_page/img/boozer_logo.png" alt="" id="boozer_logo">
+        </footer>
+    </section>
 
 </body>
+
 </html>

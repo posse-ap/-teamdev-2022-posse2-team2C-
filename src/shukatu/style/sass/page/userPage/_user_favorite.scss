@@ -11,7 +11,7 @@
   margin: 0 auto;
   padding: 20px 0 100px; 
   background-color: #fff;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 .cart-in{
@@ -50,12 +50,11 @@
 
 .user_empty-cart{
   display: block;
-  width: 90%;
+  width: 100%;
   max-width: var.$max_width;
   margin: 0 auto;
   padding-top: 25px;
   background-color: #fff;
-  min-height: 100vh;
 }
 
 .user-favorites{
@@ -63,7 +62,7 @@
   max-width: var.$max_width;
   margin: 0 auto;
   background-color: #fff;
-  padding: 25px 0;
+  padding: 25px 0 130px;
 }
 
 .user_favorite{
@@ -274,7 +273,7 @@
 
 .empty_cart{
   width: 90%;
-  max-width: 650px;
+  max-width: var.$max_width;
   margin: 25px auto;
   &__message{
     display: block;

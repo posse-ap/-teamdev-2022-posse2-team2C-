@@ -76,24 +76,24 @@
 
     </section>
     <section class="user-contact">
-      <h1 class="user-contact__tittle">お問い合わせ</h1>
+      <h1 class="user-contact__tittle contact">お問い合わせ</h1>
       <form action="user_inquiry_form_check.php" method="post" enctype="multipart/form-data" class="user-contact__form">
-        <div class="user-contact__user-info">
-          <div class="user-contact__form_name">
-            <span>お名前</span>
-            <input type="text" name="name">
-          </div>
-          <div class="user-contact__form_address">
-            <span>メールアドレス</span>
-            <input type="text" name="mail_address">
+        <div class="user-contact__form_inputBox">
+          <ul class="user-contact__form_contents">
+            <li class="user-contact__form_contents_li"><span class="required">必須　</span>氏名</li>
+            <li class="user-contact__form_contents_li"><span class="required">必須　</span>メールアドレス</li>
+            <li class="user-contact__form_contents_li"><span class="required">必須　</span>お問い合わせ事項</li>
+          </ul>
+          <div class="user-contact__form_input-area">
+          <div class="user-contact__form_head"><span class="required">必須　</span>氏名</div>
+            <input type="text" name="name" class="user-contact__form_input-area_input">
+            <div class="user-contact__form_head"><span class="required">必須　</span>メールアドレス</div>
+            <input type="text" name="mail_address" class="user-contact__form_input-area_input">
+            <div class="user-contact__form_head"><span class="required">必須　</span>お問い合わせ事項</div>
+            <textarea name="question" cols="30" rows="10" wrap="hard" class="user-contact__form_input-area_input"></textarea>
           </div>
         </div>
-        <div class="user-contact__form_text">
-          <span>お問い合わせ事項</span>
-          <!-- <input type="textarea" name="question"> -->
-          <textarea name="question" id="" cols="30" rows="10" wrap="hard"></textarea>
-        </div>
-        <input type="submit" value="送信" class="form_submit_btn">
+        <input type="submit" value="送信" class="user-contact__form_submit">
       </form>
     </section>
   </section>

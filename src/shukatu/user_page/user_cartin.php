@@ -42,43 +42,43 @@ session_start();
     include "../common/user_page_header.html"; ?>
 
     <section class="cart-in">
-    <?php
-    //getでcodeの情報取ってくる    
-    $agent_id = $_GET["agent_id"];
+        <?php
+        //getでcodeの情報取ってくる    
+        $agent_id = $_GET["agent_id"];
 
-    // echo $code;
+        // echo $code;
 
 
-    // SESSION関数は、
-    // session_start後に利用できるsession IDと結びついた特別な変数で、
-    // 格納した値はログアウト（セッション切れ含む）しない限り消えることなく、
-    // postやgetで値を渡さなくともページ移動で値が保持されるもの 
+        // SESSION関数は、
+        // session_start後に利用できるsession IDと結びついた特別な変数で、
+        // 格納した値はログアウト（セッション切れ含む）しない限り消えることなく、
+        // postやgetで値を渡さなくともページ移動で値が保持されるもの 
 
-    //cartが空っぽじゃなかったらtrue
+        //cartが空っぽじゃなかったらtrue
 
-    if (isset($_SESSION["cart"]) === true) {
-        //複数選択されたら配列を渡したいから一旦任意の変数に情報を移す
-        $cart = $_SESSION["cart"];
-        $quantity = $_SESSION["quantity"];
+        if (isset($_SESSION["cart"]) === true) {
+            //複数選択されたら配列を渡したいから一旦任意の変数に情報を移す
+            $cart = $_SESSION["cart"];
+            $quantity = $_SESSION["quantity"];
 
-        //既にお気に入りに入ってたらだめ
-        if (in_array($agent_id, $cart) === true) {
-            print "<div class='cart-in_message'><p>すでにお気に入りにあります。</p></div>";
+            //既にお気に入りに入ってたらだめ
+            if (in_array($agent_id, $cart) === true) {
+                print "<div class='cart-in_message'><p>すでにお気に入りにあります。</p></div>";
+                print "<a href='user_agent_list.php' class='cart-in_back_btn'>エージェント一覧へ戻る</a>";
+            }
+        }
+        //どっちもクリアしてたら
+        if (empty($_SESSION["cart"]) === true or in_array($agent_id, $cart) === false) {
+            $cart[] = $agent_id;
+            $quantity[] = 1;
+            $_SESSION["cart"] = $cart;
+            $_SESSION["quantity"] = $quantity;
+
+            print "<div class='cart-in_message'>お気に入りに追加しました。</div>";
             print "<a href='user_agent_list.php' class='cart-in_back_btn'>エージェント一覧へ戻る</a>";
         }
-    }
-    //どっちもクリアしてたら
-    if (empty($_SESSION["cart"]) === true or in_array($agent_id, $cart) === false) {
-        $cart[] = $agent_id;
-        $quantity[] = 1;
-        $_SESSION["cart"] = $cart;
-        $_SESSION["quantity"] = $quantity;
 
-        print "<div class='cart-in_message'>お気に入りに追加しました。</div>";
-        print "<a href='user_agent_list.php' class='cart-in_back_btn'>エージェント一覧へ戻る</a>";
-    }
-
-    ?>
+        ?>
     </section>
     <script src="../js/header.js"></script>
     <footer class="footer_fixed">

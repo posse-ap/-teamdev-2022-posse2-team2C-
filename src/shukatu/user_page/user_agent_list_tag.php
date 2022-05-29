@@ -23,7 +23,6 @@ session_regenerate_id(true);
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/favorite.js" defer></script>
-    <script src="../js/user_page.js" defer></script>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,29 +30,31 @@ session_regenerate_id(true);
 </head>
 
 <body>
-    <!-- header -->
-    <?php include "../common/user_page_header.html";
+    <section class="whole-wrapper">
+        <div class="whole-wrapper__background"></div>
+        <!-- header -->
+        <?php include "../common/user_page_header.html";
 
-    try {
+        try {
 
 
-        // require_once("../common/common.php");
+            // require_once("../common/common.php");
 
-        if (isset($_POST["1"]) === true) {
-            $tag_1 = 1;
-            // echo $tag_1;
-        } else {
-            $tag_1 = 0;
-            // echo $tag_1;
-        }
+            if (isset($_POST["1"]) === true) {
+                $tag_1 = 1;
+                // echo $tag_1;
+            } else {
+                $tag_1 = 0;
+                // echo $tag_1;
+            }
 
-        if (isset($_POST["2"])) {
+            if (isset($_POST["2"])) {
 
-            $tag_2 = 1;
-        } else {
-            $tag_2 = 0;
-            // echo $tag_1;
-        }
+                $tag_2 = 1;
+            } else {
+                $tag_2 = 0;
+                // echo $tag_1;
+            }
 
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -105,26 +106,27 @@ session_regenerate_id(true);
                     $show_tag = $tag_name;
 
 
-                    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                    $user = "root";
-                    $password = "password";
-                    $dbh_2 = new PDO($dsn, $user, $password);
-                    $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                    $stmt_2 = $dbh_2->prepare($sql_2);
-                    $stmt_2->execute();
-                    $dbh_2 = null;
-                    while (true) {
-                        $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                        if ($rec_2 === false) {
-                            break;
-                        } ?>
-                        <div><?php echo $rec_2["tag_name"]; ?>
-                        </div>
-                <?php
+                        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+                        $user = "root";
+                        $password = "password";
+                        $dbh_2 = new PDO($dsn, $user, $password);
+                        $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
+                        $stmt_2 = $dbh_2->prepare($sql_2);
+                        $stmt_2->execute();
+                        $dbh_2 = null;
+                        while (true) {
+                            $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                            if ($rec_2 === false) {
+                                break;
+                            } ?>
+                            <div><?php echo $rec_2["tag_name"]; ?>
+                            </div>
+                    <?php
+                        }
                     }
                 }
-                }
+                
                 ?>
             </div>
             <div class="tag-area-search__wrapper">
