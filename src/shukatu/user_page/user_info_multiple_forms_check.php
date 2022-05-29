@@ -1,21 +1,5 @@
 <?php
-
 session_start();
-// session_regenerate_id(true);
-
-// if(isset($_SESSION["member_login"]) === false) {
-//     print "ログインしてく下さい。<br><br>";
-//     print "<a href='../member_login/member_login.html'>ログイン画面へ<br><br></a>";
-//     print "<a href='shop_list.php'>TOP画面へ</a>";
-// }
-//     if(isset($_SESSION["member_login"]) === true) {
-//     print "ようこそ";
-//     print $_SESSION["member_name"];
-//     print "様　";
-//     print "<a href='../member_login/member_logout.php'>ログアウト</a>";
-//     print "<br><br>";
-//     }
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -33,57 +17,53 @@ session_start();
 <body>
   <?php include "../common/user_page_header.html" ?>
   <section class="user-favorites">
-  <?php
-  try {
-    $cart = $_SESSION["cart"];
-    $quantity = $_SESSION["quantity"];
-    $max = count($cart);
+    <?php
+    try {
+      $cart = $_SESSION["cart"];
+      $quantity = $_SESSION["quantity"];
+      $max = count($cart);
 
-    $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-    $user = "root";
-    $password = "password";
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+      $user = "root";
+      $password = "password";
+      $dbh = new PDO($dsn, $user, $password);
+      $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    print "<div class='user_info_multiple__wrapper'><h1 class='user_info_multiple__head'>【申請エージェント】</h1>";
+      print "<div class='user_info_multiple__wrapper'><h1 class='user_info_multiple__head'>【申請エージェント】</h1>";
 
-    foreach ($cart as $key => $val) {
+      foreach ($cart as $key => $val) {
 
-      $sql = "SELECT * FROM agent WHERE agent_id=?";
-      $stmt = $dbh->prepare($sql);
-      $data[0] = $val;
-      $stmt->execute($data);
+        $sql = "SELECT * FROM agent WHERE agent_id=?";
+        $stmt = $dbh->prepare($sql);
+        $data[0] = $val;
+        $stmt->execute($data);
 
-      $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      $agent_id = $rec['agent_id'];
-      $company_name = $rec['company_name'];
-      print "<div class='user_info_multiple__company'>";
-      print "<div class='user_info_multiple__company_name'>・$company_name</div>"; ?>
-
-      <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" class="user_info_multiple__company_img">
+        $agent_id = $rec['agent_id'];
+        $company_name = $rec['company_name'];
+        print "<div class='user_info_multiple__company'>";
+        print "<div class='user_info_multiple__company_name'>・$company_name</div>"; ?>
+        <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" class="user_info_multiple__company_img">
+      <?php
+        print "</div>";
+      }
+      $dbh = null;
+      ?>
+      </div>
+      <form action='user_info_multiple_forms_done.php' method='post' class="user_info_multiple_form">
+        <span class="user_info_multiple_form__btn">
+          <input type='button' onclick='history.back()' value='戻る' class="user_info_multiple_form__btn_back">
+          <input type='submit' value='個人情報入力にすすむ' class="user_info_multiple_form__btn_go_form">
+        </span>
+      </form>
 
     <?php
-      print "</div>";
+    } catch (Exception $e) {
+      print "只今障害が発生しております。<br><br>";
+      print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
-    $dbh = null;
-
     ?>
-
-    </div>
-    <form action='user_info_multiple_forms_done.php' method='post' class="user_info_multiple_form">
-      <span class="user_info_multiple_form__btn">
-        <input type='button' onclick='history.back()' value='戻る' class="user_info_multiple_form__btn_back">
-        <input type='submit' value='個人情報入力にすすむ' class="user_info_multiple_form__btn_go_form">
-      </span>
-    </form>
-
-  <?php
-  } catch (Exception $e) {
-    print "只今障害が発生しております。<br><br>";
-    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
-  }
-  ?>
   </section>
   <footer>
     <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
