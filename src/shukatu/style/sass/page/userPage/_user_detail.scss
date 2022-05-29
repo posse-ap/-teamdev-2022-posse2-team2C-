@@ -3,6 +3,13 @@
 @use "../../base/var";
 @forward "../../base/var";
 
+.user_agentDetail{
+    width: 100%;
+    max-width: var.$max_width;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
 .detail-page {
     &__agent {
         margin-left: 5%;
@@ -57,11 +64,16 @@
         margin: 10px auto;
         width: 10%;
         min-width: 176px;
-        height: 48px;
         font-size: 16px;
-        line-height: 3;
+        line-height: 2;
         text-align: center;
         border-radius: 8px;
+        box-shadow: #555 3px 3px 3px;
+        transition: 200ms;
+        &:hover{
+            transform: translateY(1px);
+            box-shadow: #000 1px 1px 1px;
+        }
     }
 }
 .detail_page{
@@ -80,7 +92,7 @@
     @include mixin.sp{
         width: 100%;
     }
-    padding-top: 3%;
+    margin-top: 100px;
     span{
         display: block;
         width: 80%;
@@ -90,6 +102,12 @@
         font-size: 16px;
         line-height: 2;
         padding-left: 10px;
+    }
+    .detail_page{
+        &__feature{
+            font-size: 20px;
+            font-weight: bold;
+        }
     }
 }
 
@@ -102,12 +120,16 @@
         margin: 10px auto;
         width: 10%;
         min-width: 176px;
-        height: 48px;
         font-size: 16px;
-        line-height: 3;
+        line-height: 2;
         text-align: center;
         border-radius: 8px;
-        filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.2));
+        box-shadow: #555 3px 3px 3px;
+        transition: 200ms;
+        &:hover{
+            transform: translateY(1px);
+            box-shadow: #000 1px 1px 1px;
+        }
 
         &_text {
             color: white;

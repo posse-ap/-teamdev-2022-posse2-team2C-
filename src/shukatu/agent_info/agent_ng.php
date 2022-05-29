@@ -7,8 +7,6 @@ if (isset($_SESSION["login"]) === false) {
     print "<a href='boozer_login.php'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"] . "さんログイン中";
-    print "<br><br>";
 }
 ?>
 
@@ -19,14 +17,19 @@ if (isset($_SESSION["login"]) === false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>エージェント選択NG</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/sass/base/reset.css">
+    <link rel="stylesheet" href="../style/css/boozerPage.css">
 </head>
 
 <body>
 
+    <?php include "../common/boozer_page_header.php"; ?>
+    
     <!-- ラジオボタン選択されてない時はこのページに飛ぶ -->
-    エージェントを選択して下さい<br><br>
-    <a href="agent_list.php">エージェント一覧へ</a>
+    <div class="operate_agent__ng_message">
+        エージェントを選択して下さい
+    </div>
+    <a href="agent_list.php" class="operate_agent__ng_back">エージェント一覧へ</a>
 
 </body>
 

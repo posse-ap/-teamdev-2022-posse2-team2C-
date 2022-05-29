@@ -21,6 +21,7 @@ if (isset($_SESSION["member_login"]) === true) {
     <title>就活エージェント詳細ページ</title>
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <!-- ファビコン -->
     <link rel="icon" href="../style/img/favicon.ico" id="favicon">
     <link rel="stylesheet" href="../style/sass/parts/favorite_heart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,84 +30,92 @@ if (isset($_SESSION["member_login"]) === true) {
 </head>
 
 <body>
-    <?php include "../common/user_page_header.html" ?>
-    <?php
-    try {
-        //選択したエージェントだけ表示
-        //shop_list.phpでのっけたurlをgetでとってくる
-        $agent_id = $_GET["agent_id"];
+    <section class="whole-wrapper">
+        <div class="whole-wrapper__background"></div>
+        <?php include "../common/user_page_header.html" ?>
+        <section class="user_agentDetail">
+            <?php
+            try {
+                //選択したエージェントだけ表示
+                //shop_list.phpでのっけたurlをgetでとってくる
+                $agent_id = $_GET["agent_id"];
 
-        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-        $user = "root";
-        $password = "password";
-        $dbh = new PDO($dsn, $user, $password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+                $user = "root";
+                $password = "password";
+                $dbh = new PDO($dsn, $user, $password);
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-        $sql = "SELECT * FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
+                $sql = "SELECT * FROM agent INNER JOIN agent_account ON agent.id=agent_account.agent_id WHERE agent.agent_id=?";
 
-        $stmt = $dbh->prepare($sql);
-        $data[] = $agent_id;
-        $stmt->execute($data);
+                $stmt = $dbh->prepare($sql);
+                $data[] = $agent_id;
+                $stmt->execute($data);
 
-        $dbh = null;
+                $dbh = null;
 
-        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-    } catch (Exception $e) {
-        print "只今障害が発生しております。<br><br>";
-        print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
-    }
-    ?>
-    <div class="detail-page__agent_wrapper">
-        <div class="detail-page__agent">
-            <div class="detail-page__agent_img-wrapper">
-                <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="detail-page__agent_img">
-                <div class="detail-page__agent_tag"><span class="detail-page__agent_tag_text">#</span></div>
-                <div class="detail-page__agent_heart">
-                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                        <div class="Likes">
-                            <div class="LikesIcon"></div>
+                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            } catch (Exception $e) {
+                print "只今障害が発生しております。<br><br>";
+                print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
+            }
+            ?>
+            <div class="detail-page__agent_wrapper">
+                <div class="detail-page__agent">
+                    <div>
+                        <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>
+                        <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
+                    </div>
+                    <div class="detail-page__agent_img-wrapper">
+                        <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="detail-page__agent_img">
+                        <div class="detail-page__agent_tag"><span class="detail-page__agent_tag_text">#</span></div>
+                        <div class="detail-page__agent_heart">
+                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                <div class="Likes">
+                                    <div class="LikesIcon"></div>
+                                </div>
+
+                            </a>
                         </div>
+                    </div>
+                </div>
 
-                    </a>
+                <div class="detail_page__text_wrapper">
+                    <!-- <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span> -->
+                    <!-- <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span> -->
+                    <span class="detail_page__feature"><?php print $rec["feature"]; ?></span>
+                    <span class="detail_page__online_meeting">オンライン面談：<?php print $rec["online_meeting"]; ?></span>
+                    <span class="detail_page__membership">会員数：<?php print $rec["membership"]; ?></span>
+                    <span class="detail_page__pros">メリット：<?php print $rec["pros"]; ?></span>
+                    <span class="detail_page__cons">デメリット：<?php print $rec["cons"]; ?></span>
                 </div>
             </div>
-            <div>
-                <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>
-                <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span>
-            </div>
-        </div>
-
-        <div class="detail_page__text_wrapper">
-            <!-- <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span> -->
-            <!-- <span class="detail_page__catchphrase"><?php print $rec["catchphrase"]; ?></span> -->
-            <span class="detail_page__feature"><?php print $rec["feature"]; ?></span>
-            <span class="detail_page__online_meeting">オンライン面談：<?php print $rec["online_meeting"]; ?></span>
-            <span class="detail_page__membership">会員数：<?php print $rec["membership"]; ?></span>
-            <span class="detail_page__pros"><?php print $rec["pros"]; ?></span>
-            <span class="detail_page__cons"><?php print $rec["cons"]; ?></span>
-        </div>
-    </div>
 
 
-    <a href='user_info_form_done.php?agent_id=<?php echo $agent_id; ?>' class='student-info-form__btn'>
-        <span class="student-info-form__btn_text">個人情報入力に進む</span>
-    </a>
+            <a href='user_info_form_done.php?agent_id=<?php echo $agent_id; ?>' class='student-info-form__btn'>
+                <span class="student-info-form__btn_text">個人情報入力に進む</span>
+            </a>
 
 
-    <form>
-        <input type="button" onclick="history.back()" value="一覧に戻る" class="detail-page__back_btn">
-    </form>
+            <form>
+                <input type="button" onclick="history.back()" value="一覧に戻る" class="detail-page__back_btn">
+            </form>
+        </section>
 
-    <!-- <h3>カテゴリー</h3> -->
-    <!-- <a href="shop_list_eart.php">食品</a><br>
-<a href="shop_list_kaden.php">家電</a><br>
-<a href="shop_list_book.php">書籍</a><br>
-<a href="shop_list_niti.php">日用品</a><br>
-<a href="shop_list_sonota.php">その他</a><br> -->
-    <script src="../js/header.js"></script>
-    <script src="../js/favorite.js"></script>
-    <script src="../js/user_page.js"></script>
+        <!-- <h3>カテゴリー</h3> -->
+        <!-- <a href="shop_list_eart.php">食品</a><br>
+    <a href="shop_list_kaden.php">家電</a><br>
+    <a href="shop_list_book.php">書籍</a><br>
+    <a href="shop_list_niti.php">日用品</a><br>
+    <a href="shop_list_sonota.php">その他</a><br> -->
+        <script src="../js/header.js"></script>
+        <script src="../js/favorite.js"></script>
+        <script src="../js/user_page.js"></script>
+        <footer>
+            <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+        </footer>
+    </section>
 </body>
 
 </html>

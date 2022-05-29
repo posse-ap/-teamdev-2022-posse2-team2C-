@@ -144,7 +144,15 @@ INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_
 ("4","doda","小林哲","akira@icloud.com","0115","momo@gmail.com","2022-3-1","2022-4-1"),
 ("5","キャリタス","三浦ぽんた","ponta@icloud.com","1009","momo@gmail.com","2022-3-1","2022-4-1");
 
+-- エージェントパスワードリセット用テーブル
+DROP TABLE IF EXISTS shukatu.password_resets;
+CREATE TABLE shukatu.password_resets (
+  account_email_address VARCHAR(255) NOT NULL ,
+  mail_send_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  pass_reset_token VARCHAR(255) NOT NULL
+);
 
+-- boozerスタッフテーブル
 DROP TABLE IF EXISTS shukatu.staff;
 CREATE TABLE shukatu.staff (
 code INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -218,3 +226,11 @@ CREATE TABLE shukatu.student_delete_request_table (
   agent_id INT NOT NULL,
   reason VARCHAR(255) NOT NULL
 );
+
+DROP TABLE IF EXISTS shukatu.student_inquiry_form_table;
+CREATE TABLE shukatu.student_inquiry_form_table (
+  id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  student_name VARCHAR(255) NOT NULL,
+  mail_address VARCHAR(255) NOT NULL,
+  question VARCHAR(255) NOT NULL
+)

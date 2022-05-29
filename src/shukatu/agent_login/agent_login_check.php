@@ -3,10 +3,17 @@ try {
 
     require_once("../common/common.php");
 
-    //入力された情報をpostで取得（クロスサイトスクリプティング防止）
-    $account_email_address = htmlspecialchars($_POST["account_email_address"], ENT_QUOTES, "UTF-8");
-    // 入力された情報が変なものだったとき用に入力されたものを一旦意味のない文字列に変換する
-    $pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
+
+$post = sanitize($_POST);  
+$account_email_address = $post["account_email_address"];
+$pass = $post["pass"];
+
+//入力された情報をpostで取得（クロスサイトスクリプティング防止）
+// $account_email_address = htmlspecialchars($_POST["account_email_address"], ENT_QUOTES, "UTF-8");
+// 入力された情報が変なものだったとき用に入力されたものを一旦意味のない文字列に変換する
+//$pass = htmlspecialchars($_POST["pass"], ENT_QUOTES, "UTF-8");
+
+    
 
     //パスワード乱数化
     // $pass = md5($pass);
@@ -62,3 +69,5 @@ try {
     echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
     print "<a href='agent_login.php'>戻る</a>";
 }
+
+// 小野寛太

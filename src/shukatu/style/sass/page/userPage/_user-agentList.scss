@@ -1,14 +1,58 @@
+@use "../../base/mixin";
+@forward "../../base/mixin";
+@use "../../base/var";
+@forward "../../base/var";
+
+body{
+  background-color: var.$second_color;
+}
+
 .top-page {
+  &__main_contents{
+    background-color: #fff;
+    max-width: var.$max_width;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__agent_position {
+    @include mixin.pc{
+      border-right: solid 1px #000;
+      box-sizing: border-box;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 75%;
+    @include mixin.sp{
+      margin: 0 auto;
+    }
+    &_tag{
+      padding-bottom: 130px;
+    }
+  }
   &__agent {
-    margin-left: 5%;
-    padding: 3rem;
-    
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 285px;
+    @include mixin.sp{
+      width: 100%;
+    }
+    padding: 16px;
+    margin: 16px;
+    background:rgb(242, 242, 242);
+    border: .7px solid #000;
+    filter: drop-shadow(10px 10px 2px rgba(0,0,0,0.2));
+    position: relative;
+
     &_heart {
-      position: absolute;
-      top: -5%;
+    position: absolute;
+    top: 89%;
+    left: 76%;
     }
     &_img-wrapper {
-      width: 30%;
+      width: 100%;
       height: auto;
       position: relative;
       border-radius:30px;
@@ -26,29 +70,33 @@
       &_text {
         background: rgb(186, 185, 185);
         padding: 0.7rem;
+
       }
     }
     &_text {
-      display: flex;
-      margin-bottom: 3rem;
       align-items: baseline;
+      // margin-bottom: 15px;
+      margin-top: 15px;
+      line-height:2rem;
 
       &_company-name {
-        font-size: 2rem;
+        font-size: 21px;
         font-weight: bold;
-        padding-right: 1rem;
+        width: 90%;
+        display: block;
       }
       &_catchphrase {
-        font-size: 0.7rem;
+        font-size: 13px;
+        display: block;
       }
     }
     &_detail-btn {
-      border: 8px double #0090bb;
-      background: #80cbc4;
-      padding: 1rem 1.5rem;
-
-      &_text {
-        color: black;
+      display: block;
+      transition: 400ms;
+      &:hover{
+        border: solid 3px var.$main_color;
+        transform: translateY(3px);
+        box-shadow: #888 1px 1px 1px;
       }
     }
   }

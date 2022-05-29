@@ -1,15 +1,15 @@
 <?php session_start();
 
- $cart = $_SESSION["cart"];
- $quantity = $_SESSION["quantity"];
- $max = count($cart);
+$cart = $_SESSION["cart"];
+$quantity = $_SESSION["quantity"];
+$max = count($cart);
 
- $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-    $user = "root";
-    $password = "password";
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- 
+$dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+$user = "root";
+$password = "password";
+$dbh = new PDO($dsn, $user, $password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 ?>
 <!DOCTYPE html>
@@ -21,77 +21,119 @@
     <title>個人情報入力ページ</title>
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 </head>
 
 <body>
 
-    <h1>個人情報入力</h1>
+    <?php include "../common/user_page_header.html"; ?>
 
-    <form action="../student_info/multiple_apply_student_info_db_check.php" method="post">
+    <section class="user_multiple-form">
+        <div class="form-step">
+            <ol class="c-stepper">
+                <li class="c-stepper__item c-stepper__item_here">
+                    <h3 class="c-stepper__title">情報の入力</h3>
+                    <p class="c-stepper__desc">Some desc text</p>
+                </li>
+                <li class="c-stepper__item">
+                    <h3 class="c-stepper__title">内容確認</h3>
+                    <p class="c-stepper__desc">Some desc text</p>
+                </li>
+                <li class="c-stepper__item">
+                    <h3 class="c-stepper__title">申請完了</h3>
+                    <p class="c-stepper__desc">Some desc text</p>
+                </li>
+            </ol>
+        </div>
 
-    <?php
-       foreach ($cart as $key => $val) {
+        <form action="../student_info/multiple_apply_student_info_db_check.php" method="post" class="student_info__form">
+            <span class="student_info__form_warning">※全ての情報の入力してください</span>
 
-        $sql = "SELECT * FROM agent WHERE agent_id=?";
-        $stmt = $dbh->prepare($sql);
-        $data[0] = $val;
-        $stmt->execute($data);
+            <?php
+            foreach ($cart as $key => $val) {
 
-        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+                $sql = "SELECT * FROM agent WHERE agent_id=?";
+                $stmt = $dbh->prepare($sql);
+                $data[0] = $val;
+                $stmt->execute($data);
 
-        $agent_id[] = $rec["agent_id"];
-        ?>
-<!-- 後でtypeはhiddenに -->
-        エージェントid
-        <input type="text" name="agent_id_<?php echo $rec['agent_id'];?>" value="<?php  echo $rec['agent_id'];?>">
-        <?php
-    }
-    ?>
-        
-        <div>
-            <span>お名前</span>
-            <input type="text" name="student_family_name">
-            <input type="text" name="student_first_name">
-        </div>
-        <div>
-            <span>ふりがな</span>
-            <input type="text" name="student_family_name_ruby">
-            <input type="text" name="student_first_name_ruby">
-        </div>
-        <div>
-            <span>メールアドレス</span>
-            <input type="text" name="email_address">
-        </div>
-        <div>
-            <span>電話番号</span>
-            <input type="text" name="phone_number">
-        </div>
-        <div>
-            <span>大学名</span>
-            <input type="text" name="name_of_the_univ">
-        </div>
-        <div>
-            <span>学部</span>
-            <input type="text" name="faculty">
-        </div>
-        <div>
-            <span>学科</span>
-            <input type="text" name="department">
-        </div>
-        <div>
-            <span>学年</span>
-            <input type="text" name="school_year">
-        </div>
-        <div>
-            <span>卒年</span>
-            <input type="text" name="the_year_of_grad">
-        </div>
-        <input type="button" onclick="history.back()" value="戻る">
-        <input type="submit" value="OK">
-        <br><br>
+                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    </form>
-    <br><br>
+                $agent_id[] = $rec["agent_id"];
+            ?>
+                <!-- 後でtypeはhiddenに -->
+                <!-- エージェントid -->
+                <input type="hidden" name="agent_id_<?php echo $rec['agent_id']; ?>" value="<?php echo $rec['agent_id']; ?>">
+            <?php
+            }
+            ?>
+
+            <div>
+                <span class="student_info__form_tittle">お名前</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="student_family_name">
+                    <input type="text" name="student_first_name">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">ふりがな</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="student_family_name_ruby">
+                    <input type="text" name="student_first_name_ruby">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">メールアドレス</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="email_address">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">電話番号</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="phone_number">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">大学名</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="name_of_the_univ">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">学部</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="faculty">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">学科</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="department">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">学年</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="school_year">
+                </span>
+            </div>
+            <div>
+                <span class="student_info__form_tittle">卒年</span>
+                <span class="student_info__form_input_area">
+                    <input type="text" name="the_year_of_grad">
+                </span>
+            </div>
+            <span class="student_info__form_btn">
+                <input type="button" onclick="history.back()" value="戻る" class="student_info__form_btn_back">
+                <input type="submit" value="OK" class="student_info__form_btn_ok">
+            </span>
+        </form>
+    </section>
+    <footer>
+        <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+    </footer>
 
 </body>
 

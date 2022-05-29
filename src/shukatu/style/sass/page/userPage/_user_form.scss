@@ -2,6 +2,14 @@
 @forward "./user_form_check";
 @use "./user_info_done";
 @forward "./user_info_done";
+@use "../../base/var";
+@forward "../../base/var";
+
+.form-step{
+    margin: 5px auto;
+    width: 90%;
+    max-width: 650px;
+}
 
 :root {
     --circle-size: clamp(1.5rem, 5vw, 3rem);
@@ -73,6 +81,11 @@
         max-width: 650px;
         margin: 25px auto;
         position: relative;
+        &_warning{
+            margin: 5px 0;
+            color: #ff3c00;
+            display: block;
+        }
         
         div{
             background-color: #fafafa;
@@ -98,31 +111,44 @@
             }
         }
 
-        &_back_btn{
-            background-color: #65a0f2;
-            color: #fff;
-            position: absolute;
-            width: 35%;
-            height: 64px;
-            left: 12%;
-            margin-top: 16px;
-            display: block;
-            border: none;
-            border-radius: 8px;
-            font-size: 32px;
-        }
-        &_ok_btn{
-            background-color: #f5835f;
-            color: #fff;
-            position: absolute;
-            width: 35%;
-            height: 64px;
-            right: 12%;
-            margin-top: 16px;
-            display: block;
-            border: none;
-            border-radius: 8px;
-            font-size: 32px;
+        &_btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            &_back{
+                background-color: #65a0f2;
+                color: #fff;
+                margin: 16px 5px 0 0;
+                display: block;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                width: 80px;
+                line-height: 2;
+                box-shadow: #555 3px 3px 3px;
+                transition: 200ms;
+                &:hover{
+                    transform: translateY(1px);
+                    box-shadow: #000 1px 1px 1px;
+                }
+            }
+            &_ok{
+                background-color: #f5835f;
+                color: #fff;
+                margin: 16px 0 0 5px;
+                display: block;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                width: 80px;
+                line-height: 2;
+                box-shadow: #555 3px 3px 3px;
+                transition: 200ms;
+                &:hover{
+                    transform: translateY(1px);
+                    box-shadow: #000 1px 1px 1px;
+                }
+            }
         }
     }
     &__agent_id{

@@ -26,6 +26,8 @@ session_start();
   <title>エージェント購入チェック</title>
   <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
+    <!-- ファビコン -->
+    <link rel="icon" href="../style/img/favicon.ico" id="favicon">
 </head>
 
 <body>

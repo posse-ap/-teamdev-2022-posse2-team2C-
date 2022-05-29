@@ -30,18 +30,28 @@ session_start();
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
     <script src="../js/header.js" defer></script>
+    <script src="../js/user_btn.js" defer></script>
 </head>
 
 <body>
-
+<section class="whole-wrapper">
+    <div class="whole-wrapper__background"></div>
     <?php
-
     if (empty($_SESSION["cart"]) === true) {
         include "../common/user_page_header.html";
+    ?>
+        <section class="user_empty-cart">
 
-        print "お気に入りにエージェントはありません。<br><br>";
-
-        print "<a href='user_agent_list.php'>エージェント一覧へ戻る</a>";
+        <?php
+        print "<div class='empty_cart'>";
+        print "<p class='empty_cart__message'>お気に入りにエージェントはありません。</p>";
+        print "<a href='user_agent_list.php' class='empty_cart__btn_back'>一覧に戻る</a>";
+        print "</div>"; ?>
+        </section>
+        <footer>
+        <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+    </footer>
+    <?php
         exit();
     }
 
@@ -82,42 +92,56 @@ session_start();
         print "只今障害が発生しております。<br><br>";
         print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
-    
-    ?>
 
-    <form action="agent_quantity.php" method="post">
-        お気に入り一覧<br><br>
-        <?php for ($i = 0; $i < $max; $i++) {; ?>
+        ?>
 
-            <div class="user_page__heart_img_wrapper">
-            <div class="user_page__img_wrapper">
-            <img src="./agent_img/agent_img_<?php echo $agent_id[$i];?>.png" alt="" class="user_page__img">
-            </div>
-        </div>
-        <div class="user_page__text_wrapper">
-            <span class="user_page__company_name"><?php print $company_name[$i]; ?></span>
-            <span class="user_page__catchphrase"><?php print $catchphrase[$i]; ?></span>
-        </div>
+        <section class="cartArea">
 
-            
+            <form action="agent_quantity.php" method="post">
+                <h1 class="user_favorite__tittle">お気に入り一覧</h1>
 
-            お気に入りから削除する:<input type="checkbox" name="delete<?php print $i; ?>"><br>
-
-            <br>
-
-        <?php }; ?>
-
-        <br><br>
-        <input type="hidden" name="max" value="<?php print $max; ?>">
-
-        <input type="submit" value="お気に入りから削除">
-
-        <br><br>
-        <input type="button" onclick="history.back()" value="戻る">
-    </form>
-    <br>
-
-    <a href="user_info_multiple_forms_check.php">個人情報入力に進む</a>
+                <div class="user_favorite__agent_position">
+                    <?php for ($i = 0; $i < $max; $i++) {; ?>
+                        <div class="user_favorite__agent">
+                            <div class="user_favorite__agent_wrapper">
+                                <div class="user_favorite__agent_img-wrapper">
+                                    <a href='user_detail.php?agent_id=<?php echo $agent_id[$i]; ?>' class="user_favorite__agent_detail-btn">
+                                        <img src="./agent_img/agent_img_<?php echo $agent_id[$i]; ?>.png" alt="" class="user_favorite__agent_img">
+                                    </a>
+                                    <div class="user_favorite__agent_tag"><span class="user_favorite__agent_tag_text">#</span></div>
+                                    <div class="user_favorite__agent_heart">
+                                        <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                            <div class="Likes">
+                                                <div class="LikesIcon"></div>
+                                            </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="user_favorite__agent_text">
+                                <span class="user_favorite__agent_text_company-name"><?php print $company_name[$i]; ?></span>
+                                <span class="user_favorite__agent_text_catchphrase"><?php print $catchphrase[$i]; ?></span>
+                            </div>
+                            <div class="user_favorite__delete">
+                                <input type="checkbox" name="delete<?php print $i; ?>" id="delete<?php print $i; ?>" class="delete_checkbox">
+                                <label for="delete<?php print $i; ?>" class="delete_label">お気に入りから削除する
+                                </label>
+                            </div>
+                        </div>
+                    <?php }; ?>
+                </div>
+                <input type="hidden" name="max" value="<?php print $max; ?>">
+                <div class="user_favorite__btn">
+                    <input type="submit" value="選んだエージェントを削除" class="user_favorite__btn_delete">
+                    <input type="button" onclick="history.back()" value="戻る" class="user_favorite__btn_back">
+                    <a href="user_info_multiple_forms_check.php" class="user_favorite__go_form">お気に入りに一括申請</a>
+                </div>
+            </form>
+        </section>
+        <footer>
+            <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
+        </footer>
+</section>
 
 </body>
 

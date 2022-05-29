@@ -5,6 +5,7 @@ session_regenerate_id(true);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +19,15 @@ session_regenerate_id(true);
     <!-- js -->
     <script src="../js/user_page.js" defer></script>
     <script src="../js/user_top.js" defer></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="../js/favorite.js" defer></script>
+    <script src="../js/user_page.js" defer></script>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- header -->
     <?php
@@ -40,7 +45,10 @@ session_regenerate_id(true);
         $stmt->execute();
         $dbh = null;
     ?>
+
+
         <div class="tag-area-search__wrapper">
+            <!-- <span>エージェントが決まっていない人はここから！</span> -->
             <div class="tag-search">
                 <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
             </div>
@@ -148,61 +156,81 @@ session_regenerate_id(true);
                     <div class="area__btn-area"></div>
                 </div>
                 <div class="both-search">
-                    <button class="both-search__btn"><span class="both-search__btn_text">検索するよ</span></button>
+                    <button class="both-search__btn">
+                        <span class="both-search__btn_text">絞り込む
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M23.832 19.641l-6.821-6.821c2.834-5.878-1.45-12.82-8.065-12.82-4.932 0-8.946 4.014-8.946 8.947 0 6.508 6.739 10.798 12.601 8.166l6.879 6.879c1.957.164 4.52-2.326 4.352-4.351zm-14.886-4.721c-3.293 0-5.973-2.68-5.973-5.973s2.68-5.973 5.973-5.973c3.294 0 5.974 2.68 5.974 5.973s-2.68 5.973-5.974 5.973z" />
+                            </svg>
+                        </span>
+                    </button>
                 </div>
+
+            </form>
         </div>
 
-        </form>
-        
         </div>
-        <?php
-        while (true) {
-            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($rec === false) {
-                break;
-            }
-            $agent_id = $rec["agent_id"];
-        ?>
-        <div class="top-page__agent_position">
-            <div class="top-page__agent">
-                <div class="top-page__agent_wrapper">
-                    <div class="top-page__agent_img-wrapper">
-                        <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
-                        <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
-                        <div class="top-page__agent_heart">
-                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                                <div class="Likes">
-                                    <div class="LikesIcon"></div>
+        <div class="top-page__main_contents">
+            <div class="top-page__agent_position">
+                <?php
+                while (true) {
+                    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if ($rec === false) {
+                        break;
+                    }
+                    $agent_id = $rec["agent_id"];
+                ?>
+                    <div class="top-page__agent">
+                        <div class="top-page__agent_wrapper">
+
+                            <div class="top-page__agent_img-wrapper">
+                                <div class="top-page__agent_heart">
+                                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                        <div class="Likes">
+                                            <div class="LikesIcon"></div>
+                                        </div>
+                                    </a>
                                 </div>
+                                <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
+                                    <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
+                                </a>
+                                <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
+                            </div>
                         </div>
-                        </a>
+                        <div class="top-page__agent_text">
+                            <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
+                            <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
+                        </div>
+                    
                     </div>
-                </div>
-                <div class="top-page__agent_text">
-                    <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
-                    <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
-                </div>
-                <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
-                    <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
-                </a>
+                <?php } ?>
             </div>
-         </div>
-        
-    <?php }
+
+            <div class="top_page__search_area_pc">
+                <div class="tag-search">
+                    <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
+                </div>
+                <div class="area-search">
+                    <button class="area-search__btn"><span class="area-search__btn_text">エリアから探す</span></button>
+                </div>
+            </div>
+        </div>
+
+
+    <?php
     } catch (Exception $e) {
         print "只今障害が発生しております。<br><br>";
         echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
         print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
     }
     ?>
+    <div class="search_box_switcher">
+        <div>
+            絞り込み
+        </div>
+    </div>
     <footer>
         <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
     </footer>
-
-    <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script src="../js/header.js"></script>
-    <script src="../js/favorite.js"></script>
-    <script src="../js/user_page.js"></script>
 
 </body>
 
