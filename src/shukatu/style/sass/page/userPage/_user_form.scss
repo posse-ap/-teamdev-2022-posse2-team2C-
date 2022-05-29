@@ -86,7 +86,22 @@
             color: #ff3c00;
             display: block;
         }
-        
+        &_agree_text{
+            overflow: scroll;
+            height: 80px;
+            border: solid 1px #000;
+            box-sizing: border-box;
+            p{
+                padding: 5px;
+                background-color: #fff;
+            }
+        }
+        &_agree_checkbox{
+            padding: 3px;
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+        }
         div{
             background-color: #fafafa;
             display: flex;
@@ -106,8 +121,12 @@
             width: 75%;
             border: solid #000 1px;
             padding: 8px 0 0 5px;
-            input{
+            input[type="text"]{
                 width: 45%;
+            }
+            &.agree{
+                height: 110px;
+                position: relative;
             }
         }
 
@@ -147,6 +166,9 @@
                 &:hover{
                     transform: translateY(1px);
                     box-shadow: #000 1px 1px 1px;
+                }
+                &.untouchable{
+                    pointer-events: none;
                 }
             }
         }
