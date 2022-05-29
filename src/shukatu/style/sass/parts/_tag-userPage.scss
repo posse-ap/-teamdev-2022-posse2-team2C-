@@ -5,31 +5,58 @@
 @use "../base/var";
 @forward "../base/var";
 .current-tag-area-search__wrapper {
-  width: 80%;
-  margin-left: 20vh;
+  width: 90%;
+  margin: 20px auto 20px;
 }
 .current-area {
-  background: rgb(239, 239, 239);
-  display: flex;
-  border: 1px solid black;
-  padding: 5px;
   margin: 5px;
-
+  padding: 5px;
   &_tittle {
-    border: 1px solid black;
     padding: 3px;
+    font-size: 16px;
+  }
+  &__areas {
+    &_box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 3px;
+
+      background: rgb(239, 239, 239);
+      border: 1px solid black;
+    }
+    font-size: 16px;
+    margin: 3px;
+    padding: 3px 10px;
+    border-radius: 11px;
+    background-color: var.$main_color;
+    color: #fff;
   }
 }
 
 .current-tag {
-  background: rgb(239, 239, 239);
-  display: flex;
-  border: 1px solid black;
   padding: 5px;
   margin: 5px;
   &_tittle {
-    border: 1px solid black;
+    font-size: 16px;
     padding: 3px;
+  }
+  &__tags {
+    &_box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 3px;
+
+      background: rgb(239, 239, 239);
+      border: 1px solid black;
+    }
+    font-size: 16px;
+    margin: 3px;
+    padding: 3px 10px;
+    border-radius: 11px;
+    background-color: var.$main_color;
+    color: #fff;
   }
 }
 
@@ -136,7 +163,7 @@
       right: 50%;
       transform: translateX(545px);
     }
-    &.float{
+    &.float {
       bottom: 120px;
     }
   }

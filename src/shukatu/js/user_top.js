@@ -9,28 +9,25 @@ function hide_tag() {
   tag.style.display = "none";
   tag__background.style.display = "none";
 }
-document
-  .querySelectorAll(".tag-search__btn").forEach(function(element){
-    element.addEventListener("click", function () {
-      show_tag();
-    });
+document.querySelectorAll(".tag-search__btn").forEach(function (element) {
+  element.addEventListener("click", function () {
+    show_tag();
   });
+});
 
-tag__background.addEventListener('click', function(){
+tag__background.addEventListener("click", function () {
   hide_tag();
-})
-
+});
 
 //エリアから探すボタン
 const area = document.querySelector(".area");
 const area__background = document.querySelector(".area__background");
 
-document
-  .querySelectorAll(".area-search__btn").forEach(function(element){
-    element.addEventListener("click", function () {
-      show_area();
-    });
+document.querySelectorAll(".area-search__btn").forEach(function (element) {
+  element.addEventListener("click", function () {
+    show_area();
   });
+});
 
 function show_area() {
   area.style.display = "block";
@@ -112,30 +109,34 @@ for (let i = 0; i < region.length; i++) {
 //検索ボタンの位置
 const agents = document.querySelector(".top-page__agent_position");
 const footer = document.querySelector("footer");
-window.addEventListener("scroll",function(){
+const searchBtn = document.querySelector(".both-search");
+window.addEventListener("scroll", function () {
   const agents_position = agents.getBoundingClientRect().top;
-  const search_area_pc = document.querySelector(".top_page__search_area_pc")
-  if (agents_position < 0){
+  const search_area_pc = document.querySelector(".top_page__search_area_pc");
+  if (agents_position < 0) {
     search_area_pc.classList.add("fixed");
   } else {
     search_area_pc.classList.remove("fixed");
   }
 
   const footer_position = footer.getBoundingClientRect().top;
-  if (footer_position < screen.availHeight){
+  if (footer_position < screen.availHeight) {
     searchBtn.classList.add("float");
   } else {
     searchBtn.classList.remove("float");
   }
-})
+});
 
+const footer_position_default = footer.getBoundingClientRect().top;
+if (footer_position_default < screen.availHeight) {
+  searchBtn.classList.add("float");
+}
 
 //スマホ版ボタン
 const search_switcher = document.querySelector(".search_box_switcher");
 const search_box = document.querySelector(".tag-area-search__wrapper");
-const searchBtn = document.querySelector(".both-search");
 
-search_switcher.addEventListener("click", function(){
+search_switcher.addEventListener("click", function () {
   search_box.classList.toggle("shown");
   searchBtn.classList.toggle("shown");
-})
+});

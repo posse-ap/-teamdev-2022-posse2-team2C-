@@ -27,7 +27,9 @@ body{
     @include mixin.sp{
       margin: 0 auto;
     }
-
+    &_tag{
+      padding-bottom: 130px;
+    }
   }
   &__agent {
     display: flex;
@@ -96,23 +98,6 @@ body{
         transform: translateY(3px);
         box-shadow: #888 1px 1px 1px;
       }
-      // border: 8px double #0090bb;
-      // background: #80cbc4;
-      // width: 128px;
-      // line-height: 2;
-      // padding: 0 16px;
-      // position: absolute;
-      // left: 50%;
-      // transform: translateX(-50%);
-      // bottom: 16px;
-      // transition: 200ms;
-      // &:hover{
-      //   background: #ff6600;
-      //   border: 8px double #ff6600;
-      // }
-      // &_text {
-      //   color: black;
-      // }
     }
   }
 }

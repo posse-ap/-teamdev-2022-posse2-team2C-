@@ -194,16 +194,13 @@ session_regenerate_id(true);
                                     <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
                                 </a>
                                 <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
-
                             </div>
                         </div>
                         <div class="top-page__agent_text">
                             <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
                             <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
                         </div>
-                        <!-- <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn"> -->
-                        <!-- <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span> -->
-                        <!-- </a> -->
+                    
                     </div>
                 <?php } ?>
             </div>
@@ -215,17 +212,6 @@ session_regenerate_id(true);
                 <div class="area-search">
                     <button class="area-search__btn"><span class="area-search__btn_text">エリアから探す</span></button>
                 </div>
-                <!-- <form action="user_agent_list_tag.php" method="get">
-                    <div class="both-search">
-                        <button class="both-search__btn">
-                            <span class="both-search__btn_text">絞り込む
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M23.832 19.641l-6.821-6.821c2.834-5.878-1.45-12.82-8.065-12.82-4.932 0-8.946 4.014-8.946 8.947 0 6.508 6.739 10.798 12.601 8.166l6.879 6.879c1.957.164 4.52-2.326 4.352-4.351zm-14.886-4.721c-3.293 0-5.973-2.68-5.973-5.973s2.68-5.973 5.973-5.973c3.294 0 5.974 2.68 5.974 5.973s-2.68 5.973-5.974 5.973z" />
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
-                </form> -->
             </div>
         </div>
 
