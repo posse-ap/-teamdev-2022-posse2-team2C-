@@ -102,7 +102,7 @@ $max = count($cart);
     ?>
 
         <form action='multiple_apply_student_info_db_done.php' method='post' class="student_info__form">
-            <input type="hidden" name="cart" value="<?php echo $cart; ?>">
+        <input type="hidden" name="cart" value="<?php echo $cart; ?>">
 
             <div>
                 <span class="student_info__form_tittle">お名前</span>

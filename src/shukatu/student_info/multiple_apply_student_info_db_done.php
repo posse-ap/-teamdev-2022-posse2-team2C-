@@ -7,7 +7,7 @@ session_start(); ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>複数のエージェント宛の個人情報登録完了</title>
     <link rel="stylesheet" href="../style/sass/base/reset.css">
     <link rel="stylesheet" href="../style/css/userPage.css">
 </head>
@@ -32,6 +32,8 @@ session_start(); ?>
             </ol>
         </div>
         <?php
+         //日本時間を取得
+        date_default_timezone_set('Asia/Tokyo');
         $cart = $_SESSION["cart"];
         $quantity = $_SESSION["quantity"];
         $max = count($cart);
@@ -58,6 +60,7 @@ session_start(); ?>
             $quantity = $_SESSION["quantity"];
             $max = count($cart);
 
+            // 学生情報登録
             for ($i = 0; $i < $max; $i++) {
                 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
                 $user = "root";
@@ -82,7 +85,7 @@ session_start(); ?>
 
                 $dbh = null;
             }
-
+            // エージェントと学生を紐付けるtableに登録
             foreach ($cart as $key => $val) {
 
                 $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -97,6 +100,78 @@ session_start(); ?>
 
                 $dbh_2 = null;
             }
+
+            //boozer staff情報取得
+            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+            $user = "root";
+            $password = "password";
+            $dbh_3 = new PDO($dsn, $user, $password);
+            $dbh_3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql_3 = "SELECT * FROM staff WHERE code=1";
+            $stmt_3 = $dbh_3->prepare($sql_3);
+            $stmt_3->execute();
+            $dbh_3 = null;
+            $rec_3 = $stmt_3->fetch(PDO::FETCH_ASSOC);
+            $boozer_email = $rec_3["mail_address"];
+
+            //メールに記述するagent情報を取得
+            // $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+            // $user = "root";
+            // $password = "password";
+            // $dbh_4 = new PDO($dsn, $user, $password);
+            // $dbh_4->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // $sql_4 = "SELECT * FROM agent_account WHERE id =?";
+            // $stmt_4 = $dbh_4->prepare($sql_4);
+            // // $data_4[] = $agent_id;
+            // $stmt_4->execute($data_4);
+            // $dbh_4 = null;
+            // $rec_4 = $stmt_4->fetch(PDO::FETCH_ASSOC);
+            // $agent_name = $rec_4["company_name"];
+            // $agent_email = $rec_4["account_email_address"];
+
+            // 学生へのサンクスメール
+            $student_name = $student_family_name . $student_first_name;
+            $from = $boozer_email;
+            $to = $email_address;
+            $subject =  '申請に関して';
+            $body = <<<EOD
+            -----------------
+            {$student_name}様
+            -----------------
+
+            申請ありがとうございます。
+            該当のエージェントに申請完了しました。
+
+            ご入力いただいた情報に従って各エージェント企業担当者より追ってご連絡差し上げます。
+            ご登録いただいたメールアドレスへのメールをご確認ください。
+            EOD;
+            $headers = "From:" . $boozer_email;
+            // 最終的なメール
+            // メールを送信する
+            mb_send_mail($to, $subject, $body, $headers);
+
+            // foreach
+
+            // // エージェントへの通知メール
+            // $url = "http://localhost:80/shukatu/agent_login/agent_login.php";
+            // $from = $boozer_email;
+            // $to = $agent_email;
+            // // 申請されたエージェントのメルアドにしたい
+            // $subject =  '学生からの申請通知';r
+            // $body = <<<EOD
+            // -----------------
+            // {$agent_name}様
+            // -----------------
+            // 学生の{$student_name}さんより申請がありました。
+            // 至急管理者画面からご確認ください。
+            // <管理者ログインページ>
+            // {$url}
+            // EOD;
+            // $headers = "From:" . $boozer_email;
+            // // 最終的なメール
+            // // メールを送信する
+            // mb_send_mail($to, $subject, $body, $headers);
+
             print "<div class='done_message'>登録完了しました！</div>
     <div class='done_message_text'>申請が完了しました。<br>
     ご入力いただいた情報に従って各エージェント企業担当者より追ってご連絡差し上げます。
