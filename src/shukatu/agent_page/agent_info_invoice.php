@@ -62,11 +62,11 @@
             }
             ?>
             <div class =" agent_page_student_info_wrapper">
-                <h1><?php echo($i);?>名からお問い合わせが来ています。<?php echo($i);?>名分CRAFTに請求します。</h1>
+                <h1><?php echo($i);?>名からお問い合わせが来ています。<?php echo($i);?>名分CRAFTに支払う旨通達します。</h1>
                 <form action="agent_info_invoice_check_done.php" method="post">
                     <span>mail address</span>
                     <input type="text" name="account_email_address" placeholder="email address">
-                    <a href="./agent_info_invoice_check_done.php">請求する</a>            
+                    <a href="./agent_info_invoice_check_done.php">通達する</a>            
                 </form>        
             </div>
             <?php

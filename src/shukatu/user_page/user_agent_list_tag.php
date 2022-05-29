@@ -36,8 +36,6 @@ session_regenerate_id(true);
         <?php include "../common/user_page_header.html";
 
         try {
-
-
             // require_once("../common/common.php");
 
             if (isset($_POST["1"]) === true) {
@@ -233,6 +231,7 @@ session_regenerate_id(true);
                                     </div>
                             <?php
                                 }
+                            
                             }
                             ?>
                         </div>
@@ -266,6 +265,7 @@ session_regenerate_id(true);
                                     </div>
                             <?php
                                 }
+                            
                             }
                             ?>
                         </div>

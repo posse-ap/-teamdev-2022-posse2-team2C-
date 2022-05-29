@@ -59,9 +59,9 @@ $from = 'onokan@@icloud.com';
 // この上のメルアドがログインしているエージェントのメルアドにしたい
 $to = "onokan@gmail.com";
 // スタッフのメルアド
-$subject =  '学生情報による請求';
+$subject =  '学生情報による請求承諾メール';
 $body = <<<EOD
-    {$agent}からの請求金額は {$invoice_cost}円です。
+    {$agent}からの金額は {$invoice_cost}円です。
     EOD;
 $headers = "From: onokan@gmail.com";
 // 最終的なメール
@@ -84,7 +84,7 @@ $to = 'onokan@@icloud.com';
 // この上のメルアドがログインしているエージェントのメルアドにしたい
 $subject =  '学生情報による請求（確認メール）';
 $body = <<<EOD
-    {$agent}様からの請求金額は {$invoice_cost}円です。承りました。後ほどお支払いいたします。
+    {$agent}様からのお支払い金額は {$invoice_cost}円です。承りました。
     EOD;
 $headers = "From: {$from}";
 
