@@ -24,8 +24,8 @@ if (isset($_SESSION["login"]) === false) {
 </head>
 
 <body>
-    <?php include "../common/boozer_page_header.php"; 
-    
+    <?php include "../common/boozer_page_header.php";
+
     try {
         //agent_branch.phpでurlに乗せたやつを取ってくる 
         $agent_id = $_GET["agent_id"];

@@ -57,73 +57,53 @@ session_regenerate_id(true);
             }
 
 
-            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-            $user = "root";
-            $password = "password";
-            $dbh = new PDO($dsn, $user, $password);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $arr1 = array();
-            foreach ($_GET['tag'] as $tag) {
-                $arr1[] = "tag_" . $tag . "=1";
-            }
-            $arr2 = array();
-            foreach ($_GET['region'] as $region) {
-                $arr2[] = "region" . $region . "=1";
-            }
-            $arr3 = array();
-            foreach ($_GET['prefecture'] as $prefecture) {
-                $arr3[] = "prefecture" . $prefecture . "=1";
-            }
-            $a = implode(" AND ", $arr1);
-            $b = implode(" AND ", $arr2);
-            $c = implode(" AND ", $arr3);
-            $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
+        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+        $user = "root";
+        $password = "password";
+        $dbh = new PDO($dsn, $user, $password);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $arr1 = array();
+        
+        if ($_GET == false) {
+            $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id";
             $stmt = $dbh->prepare($sql);
             $stmt->execute();
             $dbh = null;
-        ?>
+            ?>
+            <h1>絞り込まれていないため、全エージェントを表示しています。</h1>
+            <?php
 
-            <!-- <div class="current-tag-area-search__wrapper">
-                <div class="current-area">
-                    <span class="current-area_tittle">
-                        選択されているエリア
-                    </span>
-                    <?php
-                    $tag_names = $_GET["tag"];
-                    foreach ($tag_names as $tag_name) {
-                        $show_tag = $tag_name;
+        }else {
 
+        foreach ($_GET['tag'] as $tag) {
+            $arr1[] = "tag_" . $tag . "=1";
+        }
+        $arr2 = array();
+        foreach ($_GET['region'] as $region) {
+            $arr2[] = "region" . $region . "=1";
+        }
+        $arr3 = array();
+        foreach ($_GET['prefecture'] as $prefecture) {
+            $arr3[] = "prefecture" . $prefecture . "=1";
+        }
+        $a = implode(" AND ", $arr1);
+        $b = implode(" AND ", $arr2);
+        $c = implode(" AND ", $arr3);
+        $sql = "SELECT DISTINCT agent.agent_id, company_name, catchphrase FROM agent INNER JOIN tag_existence ON agent.agent_id = tag_existence.agent_id WHERE $a";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $dbh = null;
+    ?>
 
-                        $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                        $user = "root";
-                        $password = "password";
-                        $dbh_2 = new PDO($dsn, $user, $password);
-                        $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                        $stmt_2 = $dbh_2->prepare($sql_2);
-                        $stmt_2->execute();
-                        $dbh_2 = null;
-                        while (true) {
-                            $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                            if ($rec_2 === false) {
-                                break;
-                            } ?>
-                            <div><?php echo $rec_2["tag_name"]; ?>
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="current-tag">
-                    <span class="current-tag_tittle">
+        <div class="current-tag-area-search__wrapper">
+            <div class="current-tag">
+                <span class="current-tag_tittle">
                     選択されているタグ
-                    </span>
-                    <?php
-                    $tag_names = $_GET["tag"];
-                    foreach ($tag_names as $tag_name) {
-                        $show_tag = $tag_name;
+                </span>
+                <?php
+                $tag_names = $_GET["tag"];
+                foreach ($tag_names as $tag_name) {
+                    $show_tag = $tag_name;
 
 
                         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -145,9 +125,10 @@ session_regenerate_id(true);
                     <?php
                         }
                     }
-                    ?>
-                </div>
-                </div> -->
+                }
+                
+                ?>
+            </div>
             <div class="tag-area-search__wrapper">
                 <div class="tag-search">
                     <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
@@ -266,146 +247,53 @@ session_regenerate_id(true);
                     </div>
                 </form>
             </div>
+            <div class="top-page__agent_position">
 
-            <div class="top-page__main_contents">
-                <div class="current-tag-area-search__wrapper">
-                    <div class="current-area">
-                        <span class="current-area_tittle">
-                            エリア
-                        </span>
-                        <div class="current-area__areas_box">
-                            <?php
-                            $tag_names = $_GET["tag"];
-                            foreach ($tag_names as $tag_name) {
-                                $show_tag = $tag_name;
-
-
-                                $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                                $user = "root";
-                                $password = "password";
-                                $dbh_2 = new PDO($dsn, $user, $password);
-                                $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                                $stmt_2 = $dbh_2->prepare($sql_2);
-                                $stmt_2->execute();
-                                $dbh_2 = null;
-                                while (true) {
-                                    $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                                    if ($rec_2 === false) {
-                                        break;
-                                    } ?>
-                                    <div class="current-area__areas"><?php echo $rec_2["tag_name"]; ?>
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="current-tag">
-                        <span class="current-tag_tittle">
-                            タグ
-                        </span>
-                        <div class="current-tag__tags_box">
-                            <?php
-                            $tag_names = $_GET["tag"];
-                            foreach ($tag_names as $tag_name) {
-                                $show_tag = $tag_name;
-
-
-                                $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                                $user = "root";
-                                $password = "password";
-                                $dbh_2 = new PDO($dsn, $user, $password);
-                                $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                                $stmt_2 = $dbh_2->prepare($sql_2);
-                                $stmt_2->execute();
-                                $dbh_2 = null;
-                                while (true) {
-                                    $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                                    if ($rec_2 === false) {
-                                        break;
-                                    } ?>
-                                    <div class="current-tag__tags"><?php echo $rec_2["tag_name"]; ?>
-                                    </div>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="top-page__agent_position top-page__agent_position_tag">
-
-                    <?php
-                    while (true) {
-                        $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-                        if ($rec === false) {
-                            break;
-                        }
-                        $agent_id = $rec["agent_id"];
-                    ?>
-                        <div class="top-page__agent">
-                            <div class="top-page__agent_wrapper">
-                                <div class="top-page__agent_img-wrapper">
-                                    <div class="top-page__agent_heart">
-                                        <?php
-                                        $cart = $_SESSION["cart"];
-                                        if (in_array($agent_id, $cart) === true) { ?>
-                                            <div class="likes">
-                                                <div class="LikedIcon">
-                                                    <img src="../style/img/liked.png" width="150%">
-                                                </div>
-                                            </div>
-
-                                        <?php };
-                                        if (in_array($agent_id, $cart) === false) { ?>
-                                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                                                <div class="Likes">
-                                                    <div class="LikesIcon"></div>
-                                                </div>
-                                            </a>
-                                        <?php }; ?>
-                                    </div>
-                                    <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
-                                        <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
-                                    </a>
-                                    <!-- <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div> -->
-                                </div>
-                            </div>
-                            <div class="top-page__agent_text">
-                                <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
-                                <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
-                            </div>
-                        </div>
-
-                <?php }
-                } catch (Exception $e) {
-                    print "只今障害が発生しております。<br><br>";
-                    echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
-                    print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
-                }
+                <?php
+                while (true) {
+                    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if ($rec === false) {
+                        break;
+                    }
+                    $agent_id = $rec["agent_id"];
                 ?>
-                </div>
-                <div class="top_page__search_area_pc">
-                    <div class="tag-search">
-                        <button class="tag-search__btn"><span class="tag-search__btn_text">タグから探す</span></button>
+                    <div class="top-page__agent">
+                        <div class="top-page__agent_wrapper">
+                            <div class="top-page__agent_img-wrapper">
+                                <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
+                                <div class="top-page__agent_tag"><span class="top-page__agent_tag_text">#</span></div>
+                                <div class="top-page__agent_heart">
+                                    <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                        <div class="Likes">
+                                            <div class="LikesIcon"></div>
+                                        </div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="top-page__agent_text">
+                            <span class="top-page__agent_text_company-name"><?php print $rec["company_name"]; ?></span>
+                            <span class="top-page__agent_text_catchphrase"><?php print $rec["catchphrase"]; ?></span>
+                        </div>
+                        <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
+                            <span class="top-page__agent_detail-btn_text">詳しくはこちら！</span>
+                        </a>
                     </div>
-                    <div class="area-search">
-                        <button class="area-search__btn"><span class="area-search__btn_text">エリアから探す</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="search_box_switcher">
-                <div>
-                    絞り込み
-                </div>
+
+            <?php }
+            } catch (Exception $e) {
+                print "只今障害が発生しております。<br><br>";
+                echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
+                print "<a href='../boozer_login/boozer_login.php'>ログイン画面へ</a>";
+            }
+            ?>
             </div>
             <footer>
                 <img src="./img/boozer_logo.png" alt="" id="boozer_logo">
             </footer>
-    </section>
+
+            <script src="../js/header.js"></script>
+            <script src="../js/user_page.js"></script>
 </body>
 
 </html>

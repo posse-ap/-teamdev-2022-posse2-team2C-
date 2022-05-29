@@ -34,12 +34,7 @@ session_start();
 <?php include "../common/user_page_header.html" ?>
   <?php
   try {
-    // $cart = $_SESSION["cart"];
-    // $quantity = $_SESSION["quantity"];
-    // $max = count($cart);
     $agent_id = $_GET['agent_id'];
-
-
     $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
     $user = "root";
     $password = "password";
@@ -58,28 +53,7 @@ session_start();
       $dbh = null;
       $rec = $stmt->fetch(PDO::FETCH_ASSOC);
       $agent_id = $_GET['agent_id'];
-      // var_dump($agent_id);
-
-      // if(empty($rec["image"]) === true) {
-      // $disp_image = "";
-      // } else {
-      // $disp_image = "<img src='../product/image/".$rec['image']."'>";
-      // }
-      // print "<div class='box'>";
-      // print "<div class='list'>";
-      // print "<div class='img'>";
-      // print $disp_image;
-      // print "</div>";
-      // print "<div class='npe'>";
       print "エージェント名:" . $rec['company_name'] . "<br>ほんとに問い合わせちゃうけど大丈夫かい？";
-      // print "価格:".$rec['price']."円　<br>";
-      // print "数量:".$quantity[$i]."<br>";
-      // print "合計価格:".$rec['price'] * $quantity[$i]."円<br><br>";
-      // $goukei[] = $rec['price'] * $quantity[$i];
-      // print "</div></div></div><br>";
-    // }
-    
-    // print "【ご請求金額】---".array_sum($goukei)."円<br>いらないですねこれ<br><br>";
   ?>
 
     <form action='user_info_form_done.php?agent_id=<?php echo $agent_id; ?>' method='post'>

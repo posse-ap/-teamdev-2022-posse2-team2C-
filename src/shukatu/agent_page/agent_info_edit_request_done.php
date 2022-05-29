@@ -28,49 +28,50 @@
 
 
         try {
-            //スタッフ一覧を表示させたいからdbにconnect
+            //エージェント情報取得
             $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
             $user = "root";
             $password = "password";
             $dbh = new PDO($dsn, $user, $password);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // $sql = "SELECT student_id FROM student_agent_connection_table WHERE agent_id=?";
-            $sql = "SELECT student_info.id, student_family_name, student_first_name, student_family_name_ruby, student_first_name_ruby, email_address, phone_number, name_of_the_univ, faculty, department, school_year, the_year_of_grad FROM student_info INNER JOIN student_agent_connection_table ON student_info.id=student_agent_connection_table.student_id WHERE student_id=?";
-
+            $sql = "SELECT * FROM agent_account WHERE agent_id=?";
             $stmt = $dbh->prepare($sql);
-            $data[] = $student_id;
+            $data[] = $agent_id;
             $stmt->execute($data);
-
             $dbh = null;
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            $agent_name = $rec["company_name"];
+            $account_email_address = $rec["account_email_address"];
 
-            while (true) {
-                $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-                if ($rec === false) {
-                    break;
-                }
-                // $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            //boozer staff情報取得
+            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+            $user = "root";
+            $password = "password";
+            $dbh_2 = new PDO($dsn, $user, $password);
+            $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql_2 = "SELECT * FROM staff WHERE code=1";
+            $stmt_2 = $dbh_2->prepare($sql_2);
+            $stmt_2->execute();
+            $dbh_2 = null;
+            $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+            $boozer_email = $rec_2["mail_address"];
 
+            $agent = $agent_name;
+            $from = $boozer_email;
+            $to = $account_email_address;
+            $subject =  '掲載情報編集の要請';
+            $body = <<<EOD
+                {$agent}様から掲載情報変更の申請が来ています。
+                至急対応してください。
+                EOD;
+            $headers = "From:" . $boozer_email;
+            // 最終的なメール
+            // メールを送信する
+            mb_send_mail($to, $subject, $body, $headers);
+        ?>
+            <h1>申請が完了しました。 boozerからの連絡をお待ちください。</h1>
 
-$agent = "irodas";
-// これはログインしているエージェント名にしたい（汎用性持たせる）
-$from = 'onokan@icloud.com';
-// この上のメルアドがログインしているエージェントのメルアドにしたい
-$to = "onokan@gmail.com";
-// この上のメルアドもログインしているスタッフの誰か（全部これだと小野に送られちゃう）にしたい
-$subject =  '掲載情報編集の要請';
-$body = <<<EOD
-    {$agent}から掲載情報変更の申請が来ています。至急対応してください。
-    EOD;
-$headers = "From: onokan@gmail.com";
-// 最終的なメール
-// メールを送信する
-mb_send_mail($to, $subject, $body, $headers); 
-?>
-                <h1>申請が完了しました。 boozerからの連絡をお待ちください。</h1>
-
-<?php
-            }
+        <?php
         } catch (Exception $e) {
             echo "（　´∀｀）つ□ 涙拭けよ: " . $e->getMessage() . "\n";
             print "<a href='./boozer_staff_login/boozer_boozer_login.php'>ログイン画面へ</a>";
@@ -78,7 +79,7 @@ mb_send_mail($to, $subject, $body, $headers);
         ?>
     </div>
     </div>
-        
+
 
 
 </body>
