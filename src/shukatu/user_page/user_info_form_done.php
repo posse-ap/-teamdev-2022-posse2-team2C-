@@ -27,15 +27,12 @@ $agent_id = $_GET["agent_id"];
             <ol class="c-stepper">
                 <li class="c-stepper__item c-stepper__item_here">
                     <h3 class="c-stepper__title">情報の入力</h3>
-                    <p class="c-stepper__desc">Some desc text</p>
                 </li>
                 <li class="c-stepper__item">
                     <h3 class="c-stepper__title">内容確認</h3>
-                    <p class="c-stepper__desc">Some desc text</p>
                 </li>
                 <li class="c-stepper__item">
                     <h3 class="c-stepper__title">申請完了</h3>
-                    <p class="c-stepper__desc">Some desc text</p>
                 </li>
             </ol>
         </div>

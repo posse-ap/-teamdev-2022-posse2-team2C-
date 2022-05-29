@@ -307,32 +307,32 @@ session_regenerate_id(true);
                             タグ
                         </span>
                         <div class="current-tag__tags_box">
-                        <?php
-                        $tag_names = $_GET["tag"];
-                        foreach ($tag_names as $tag_name) {
-                            $show_tag = $tag_name;
+                            <?php
+                            $tag_names = $_GET["tag"];
+                            foreach ($tag_names as $tag_name) {
+                                $show_tag = $tag_name;
 
 
-                            $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
-                            $user = "root";
-                            $password = "password";
-                            $dbh_2 = new PDO($dsn, $user, $password);
-                            $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
-                            $stmt_2 = $dbh_2->prepare($sql_2);
-                            $stmt_2->execute();
-                            $dbh_2 = null;
-                            while (true) {
-                                $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
-                                if ($rec_2 === false) {
-                                    break;
-                                } ?>
-                                <div class="current-tag__tags"><?php echo $rec_2["tag_name"]; ?>
-                                </div>
-                        <?php
+                                $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
+                                $user = "root";
+                                $password = "password";
+                                $dbh_2 = new PDO($dsn, $user, $password);
+                                $dbh_2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                $sql_2 = "SELECT tag_name FROM tag WHERE tag_code = $tag_name";
+                                $stmt_2 = $dbh_2->prepare($sql_2);
+                                $stmt_2->execute();
+                                $dbh_2 = null;
+                                while (true) {
+                                    $rec_2 = $stmt_2->fetch(PDO::FETCH_ASSOC);
+                                    if ($rec_2 === false) {
+                                        break;
+                                    } ?>
+                                    <div class="current-tag__tags"><?php echo $rec_2["tag_name"]; ?>
+                                    </div>
+                            <?php
+                                }
                             }
-                        }
-                        ?>
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -350,11 +350,23 @@ session_regenerate_id(true);
                             <div class="top-page__agent_wrapper">
                                 <div class="top-page__agent_img-wrapper">
                                     <div class="top-page__agent_heart">
-                                        <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
-                                            <div class="Likes">
-                                                <div class="LikesIcon"></div>
+                                        <?php
+                                        $cart = $_SESSION["cart"];
+                                        if (in_array($agent_id, $cart) === true) { ?>
+                                            <div class="likes">
+                                                <div class="LikedIcon">
+                                                    <img src="../style/img/liked.png" width="150%">
+                                                </div>
                                             </div>
-                                        </a>
+
+                                        <?php };
+                                        if (in_array($agent_id, $cart) === false) { ?>
+                                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                                <div class="Likes">
+                                                    <div class="LikesIcon"></div>
+                                                </div>
+                                            </a>
+                                        <?php }; ?>
                                     </div>
                                     <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
                                         <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
