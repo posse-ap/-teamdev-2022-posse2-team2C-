@@ -179,7 +179,8 @@ session_regenerate_id(true);
                     }
                     $agent_id = $rec["agent_id"];
 
-                    $cart = $_SESSION["cart"];
+                // var_dump($_SESSION["cart"]); 
+                $cart = $_SESSION["cart"];
                 ?>
                     <div class="top-page__agent">
                         <div class="top-page__agent_wrapper">

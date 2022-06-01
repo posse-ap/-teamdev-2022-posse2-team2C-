@@ -141,8 +141,8 @@ INSERT INTO agent_account (agent_id, company_name, company_staff, account_email_
 ("1","irodas","小野寛太","onokan@icloud.com","0706","onokan@gmail.com","2022-3-1","2022-4-1"),
 ("2","リクナビ就職エージェント","寺下渓志朗","terashi@icloud.com","0225","terashi@gmail.com","2022-3-1","2022-4-1"),
 ("3","マイナビ","冨永桃","momo@icloud.com","0315","momo@gmail.com","2022-3-1","2022-4-1"),
-("4","doda","小林哲","akira@icloud.com","0115","momo@gmail.com","2022-3-1","2022-4-1"),
-("5","キャリタス","三浦ぽんた","ponta@icloud.com","1009","momo@gmail.com","2022-3-1","2022-4-1");
+("4","doda","歩瀬太郎","posse@icloud.com","0123","momo@gmail.com","2022-3-1","2022-4-1"),
+("5","キャリタス","歩瀬花子","posses@icloud.com","4567","momo@gmail.com","2022-3-1","2022-4-1");
 
 -- エージェントパスワードリセット用テーブル
 DROP TABLE IF EXISTS shukatu.password_resets;
