@@ -65,7 +65,8 @@ if (isset($_SESSION["member_login"]) === true) {
                 <div class="detail-page__agent">
                                     <div class="detail-page__agent_heart">
                                         <?php
-                                        $cart = $_SESSION["cart"];
+                                        if(array_key_exists("cart", $_SESSION)){
+                                            $cart = $_SESSION["cart"];
                                         if (in_array($agent_id, $cart) === true) { ?>
                                             <div class="likes">
                                                 <div class="LikedIcon">
@@ -80,7 +81,15 @@ if (isset($_SESSION["member_login"]) === true) {
                                                     <div class="LikesIcon"></div>
                                                 </div>
                                             </a>
-                                        <?php }; ?>
+                                        <?php }; 
+                                        } else { ?>
+                                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                                <div class="Likes">
+                                                    <div class="LikesIcon"></div>
+                                                </div>
+                                            </a>
+                                        <?php }
+                                        ?>
                                     </div>
                     <div>
                         <span class="detail_page__company_name"><?php print $rec["company_name"]; ?></span>

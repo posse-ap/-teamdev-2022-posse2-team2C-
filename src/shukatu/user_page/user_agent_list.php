@@ -179,8 +179,10 @@ session_regenerate_id(true);
                     }
                     $agent_id = $rec["agent_id"];
 
-                // var_dump($_SESSION["cart"]); 
-                $cart = $_SESSION["cart"];
+                    // var_dump($_SESSION["cart"]); 
+                    if (array_key_exists("cart", $_SESSION)) {
+                        $cart = $_SESSION["cart"];
+                    }
                 ?>
                     <div class="top-page__agent">
                         <div class="top-page__agent_wrapper">
@@ -188,21 +190,32 @@ session_regenerate_id(true);
                             <div class="top-page__agent_img-wrapper">
                                 <div class="top-page__agent_heart">
                                     <?php
-                                    if (in_array($agent_id, $cart) === true) { ?>
-                                        <div class="likes">
-                                            <div class="LikedIcon">
-                                                <img src="../style/img/liked.png" width="150%">
-                                            </div>
-                                        </div>
+                                    if (array_key_exists("cart", $_SESSION)) {
 
-                                    <?php };
-                                    if (in_array($agent_id, $cart) === false) { ?>
+                                        if (in_array($agent_id, $cart) === true) { ?>
+                                            <div class="likes">
+                                                <div class="LikedIcon">
+                                                    <img src="../style/img/liked.png" width="150%">
+                                                </div>
+                                            </div>
+
+                                        <?php };
+
+                                        if (in_array($agent_id, $cart) === false) { ?>
+                                            <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
+                                                <div class="Likes">
+                                                    <div class="LikesIcon"></div>
+                                                </div>
+                                            </a>
+                                        <?php };
+                                    } else { ?>
                                         <a href="user_cartin.php?agent_id=<?php echo $agent_id; ?>" class="heart_link">
                                             <div class="Likes">
                                                 <div class="LikesIcon"></div>
                                             </div>
                                         </a>
-                                    <?php }; ?>
+                                    <?php } ?>
+
                                 </div>
                                 <a href='user_detail.php?agent_id=<?php echo $agent_id; ?>' class="top-page__agent_detail-btn">
                                     <img src="./agent_img/agent_img_<?php echo $agent_id; ?>.png" alt="" class="top-page__agent_img">
