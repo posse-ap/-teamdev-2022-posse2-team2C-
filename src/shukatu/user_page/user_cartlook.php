@@ -59,8 +59,6 @@ session_start();
         //header表示
         include "../common/user_page_header.html";
         $cart = $_SESSION["cart"];
-        var_dump($cart);
-        // $quantity = $_SESSION["quantity"];
         $max = count($cart);
 
         $dsn = "mysql:host=db;dbname=shukatu;charset=utf8";
@@ -78,7 +76,6 @@ session_start();
 
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
             $agent_id[] = $rec["agent_id"];
-            var_dump($agent_id);
             $company_name[] = $rec["company_name"];
             $catchphrase[] = $rec["catchphrase"];
             $feature[] = $rec["feature"];
